@@ -1,0 +1,77 @@
+// ======================================================================================================== \\
+//
+// ----------------------------------------------- %RULES% ---------------------------------------------- \\
+//
+// ======================================================================================================== \\
+// 
+// Variable naming
+// $type__object-modificator__(subobject-)cssrule
+// $object__table__cell-padding
+// $object__popover__content-background
+// $theme__line-height
+// $modificator__top
+//
+// ======================================================================================================== \\
+
+$theme__font-size: 14px;
+$theme__line-height: 14px;
+$theme__color: #333;
+$theme__background-color: #eee;
+$theme__font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+// ======================================================================================================== \\
+//
+// ----------------------------------------------- %TYPOGRAPHY% ---------------------------------------------- \\
+//
+// ======================================================================================================== \\
+
+// --------------------- %blockquote% ---------------------
+$theme__blockquote-padding: 10px;
+$theme__blockquote-margin-bottom: 10px;
+$theme__blockquote-border: 4px solid #eee;
+$theme__blockquote__sign-color: #999;
+
+// --------------------- %descriptions% ---------------------
+$theme__description-margin: 0 0 15px 0;
+$theme__description-line-height: $theme__line-height + 5px;
+$theme__description__defenition-margin-left: 15px;
+$theme__description-defenition-inline-width: 120px;
+
+// --------------------- %lists% ---------------------
+$theme__list-margin-left: 20px;
+$theme__list-margin: 0 0 0 $theme__list-margin-left;
+$theme__list-line-height: $theme__line-height + 5px;
+
+
+
+// ======================================================================================================== \\
+//
+// ----------------------------------------------- %OBJECTS% ---------------------------------------------- \\
+//
+// ======================================================================================================== \\
+
+// ------------ Section
+$object__section: -section;
+$object__section-margin-bottom: 15px;
+$object__section-margin: 0 0 $object__section-margin-bottom 0;
+
+// ------------ Column
+$object__column: -col;
+$object__column-quantity: 12;
+$object__column-width: 70px;
+$object__column__gutter-width: 30px;
+
+// ------------ Row
+$object__row: -row;
+$object__row-width: $object__column-quantity * $object__column-width  +  ($object__column-quantity - 1) * $object__column__gutter-width;
+
+
+
+
+// ======================================================================================================== \\
+//
+// ----------------------------------------------- %MIXINS% ---------------------------------------------- \\
+//
+// ======================================================================================================== \\
+$mixin__float-right: mx-pull-right;

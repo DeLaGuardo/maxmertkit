@@ -1,0 +1,104 @@
+body {
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 14px;
+  color: #333333;
+  background-color: #eeeeee; }
+
+section,
+.-section {
+  margin: 0 0 15px 0; }
+
+p {
+  margin-bottom: 7.5px; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0; }
+
+h1 {
+  font-size: 36px;
+  line-height: 31px;
+  margin-bottom: 18px; }
+
+h2 {
+  font-size: 32px;
+  line-height: 28px;
+  margin-bottom: 16px; }
+
+h3 {
+  font-size: 27px;
+  line-height: 24px;
+  margin-bottom: 13.5px; }
+
+h4 {
+  font-size: 23px;
+  line-height: 21px;
+  margin-bottom: 11.5px; }
+
+h5 {
+  font-size: 18px;
+  line-height: 17px;
+  margin-bottom: 9px; }
+
+h6 {
+  font-size: 14px;
+  line-height: 14px;
+  margin-bottom: 7px; }
+
+small {
+  font-size: 85%; }
+
+strong {
+  font-weight: bold; }
+
+em {
+  font-style: normal; }
+
+abbr {
+  border-bottom: 1px dotted; }
+  abbr[title] {
+    cursor: help; }
+
+blockquote {
+  padding: 0 0 0 10px;
+  border-left: 4px solid #eeeeee;
+  margin: 0 0 10px;
+  font-weight: 300; }
+  blockquote small {
+    color: #999999; }
+    blockquote small:before {
+      content: '\2014 \00A0'; }
+  blockquote.mx-pull-right {
+    float: right;
+    padding: 0 10px 0 0;
+    border-left: none;
+    border-right: 4px solid #eeeeee;
+    text-align: right; }
+
+address {
+  font-style: normal;
+  margin: 0 0 15px 0; }
+
+ul, ol {
+  margin: 0 0 0 20px;
+  padding: 0;
+  line-height: 19px; }
+  ul ul, ul ol, ol ul, ol ol {
+    margin-bottom: 0; }
+
+dl {
+  margin: 0 0 15px 0;
+  line-height: 19px; }
+  dl dt {
+    font-weight: bold; }
+  dl dd {
+    margin-left: 15px; }
+
+.-row {
+  margin-left: -30px;
+  *zoom: 1; }
+  .-row:before, .-row:after {
+    display: table;
+    content: " ";
+    line-height: 0; }
+  .-row:after {
+    clear: both; }
