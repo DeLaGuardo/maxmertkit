@@ -1,0 +1,27 @@
+@mixin init_modificator-status{
+	
+	@each $status in $mod__status {
+		$num: index( $mod__status, $status );
+
+		%#{$__inheritance}-status-#{$status}-color {
+			color: nth($mod__status-color, $num);
+		}
+
+		%#{$__inheritance}-status-#{$status}-border-color {
+			border-color: nth($mod__status-border-color, $num);
+		}
+
+		%#{$__inheritance}-status-#{$status}-border-color-darken {
+			border-color: nth($mod__status-border-color-darken, $num);
+		}
+
+		%#{$__inheritance}-status-#{$status}-border-color-lighten {
+			border-color: nth($mod__status-border-color-lighten, $num);
+		}
+
+		%#{$__inheritance}-status-#{$status}-outline {
+			@include box-shadow(#{nth($mod__status-outline, $num)});
+		}
+	}
+
+}

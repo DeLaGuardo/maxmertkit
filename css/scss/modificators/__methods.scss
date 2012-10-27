@@ -1,26 +1,15 @@
-@mixin init_modificator( $type ) {
-	
-	@if $type == status {
-
-		@each $status in $mod__status {
-			$num: index( $mod__status, $status );
-
-			%#{$__inheritance}-status-#{$status}-color {
-				color: nth($mod__status-color, $num);
-			}
-		}
-
-	}
-	
-}
-
 @mixin set_modificator ($type-list, $mods... ) {
 
 
 	@each $mod in $mods {
 
-		
-				@include __set_modificator-status( $type-list, $mod )
+		@if index( $mod__status, nth($type-list, 1) ) !=false {
+			@include __set_modificator-type(status, $type-list, $mod )
+		}
+
+		@if index( $mod__size, nth($type-list, 1) ) != false {
+			@include __set_modificator-type(size, $type-list, $mod )
+		}
 			
 	}
 
@@ -31,27 +20,45 @@
 @function _get-modificator-name( $name ) {
 	$_result: '';
 
-	@debug( index( $mod__status, $name ) );
+	@if index( $mod__status, $name ) != false and $name != default {
+		$_result: '.-#{$name}-';
+	}
+
+	@if index( $mod__size, $name ) != false and $name != default {
+		$_result: '._#{$name}';
+	}
 
 	@return $_result;
 }
 
-@function _get-modificator-nesting( $name ) {
-	@return #{$__before-object} + ' ' + #{$__object} + _get-modificator-name( $status ) + ' ' + #{$__after-object};
+@function _get-modificator-nesting( $name, $_before, $_obj, $_after ) {
+	$_result: #{$_before} #{$_obj}#{_get-modificator-name( $name )} #{$_after};
+	@return $_result;
 }
 
-@mixin __set_modificator-status( $list, $mod ) {
+@mixin __set_modificator-type( $type, $list, $mod ) {
 	@each $status in $list {
 		@if $__object == this {
-			&.-#{$status}- {
-				@extend %#{$__inheritance}-status-#{$status}-#{$mod};
+			$__name: _get-modificator-name( $status );
+			&#{$__name} {
+				@extend %#{$__inheritance}-#{$type}-#{$status}-#{$mod};
 			}
 		}
 		@else {
-			$_nesting: _get-modificator-nesting( $status );
-			#{$_nesting} {
-				@extend %#{$__inheritance}-status-#{$status}-#{$mod};
-			}
+			
+
+				@each $_obj in $__object {
+					@each $_before in $__before-object {
+						@each $_after in $__after-object {
+							$_nesting: _get-modificator-nesting( $status, $_before, $_obj, $_after );
+							#{$_nesting} {
+								@extend %#{$__inheritance}-#{$type}-#{$status}-#{$mod};
+							}
+						}
+					}
+				}
+
+			
 		}
 	}
 }

@@ -20,3 +20,19 @@
 	-o-box-sizing: $box-sizing;
 	box-sizing: $box-sizing;
 }
+
+@mixin box-shadow( $box-shadow... ) {
+	-webkit-box-shadow: $box-shadow;
+	-moz-box-shadow: $box-shadow;
+	-ms-box-shadow: $box-shadow;
+	-o-box-shadow: $box-shadow;
+	box-shadow: $box-shadow;
+}
+
+@mixin border-radius( $border-radius... ) {
+	-webkit-border-radius: $border-radius;
+	-moz-border-radius: $border-radius;
+	-ms-border-radius: $border-radius;
+	-o-border-radius: $border-radius;
+	border-radius: $border-radius;
+}

@@ -1,3 +1,8 @@
+$__inheritance: object;
+$__before-object: '> * >';
+$__object: '.-slider';
+$__after-object: ' > .text';
+
 .-btn {
 	@extend %__object;
 	

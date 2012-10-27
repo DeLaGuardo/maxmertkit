@@ -14,9 +14,9 @@
 // ======================================================================================================== \\
 
 $theme__font-size: 14px;
-$theme__line-height: 14px;
+$theme__line-height: 16px;
 $theme__color: #333;
-$theme__background-color: #eee;
+$theme__background-color: #fff;
 $theme__font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 
@@ -78,6 +78,18 @@ $object__row-fluid-width: 100%;
 $object__row-fluid__column-width: $object__column-width / $object__row-width * 100%;
 $object__row-fluid__column__gutter-width: $object__column__gutter-width / $object__row-width * 100%;
 
+// ------------ Form
+$object__form: -form;
+$object__form__row: #{$object__form}-row;
+$object__form__group: #{$object__form}-group;
+$object__form__field: #{$object__form}-field;
+$object__form__field-border-width: 3px;
+$object__form__field__placeholder: #{$object__form__field}-placeholder;
+$object__form__field__help: #{$object__form__field}-help;
+$object__form__field__help-color: #666;
+$object__form__input-border-width: 1px;
+$object__form__input-shadow: 0 0 ;
+
 
 
 
@@ -102,5 +114,25 @@ $mixin__float-right: mx-pull-right;
 // ======================================================================================================== \\
 
 // ------------- Status
-$mod__status:					unstyled						normal							error						success							info							warning						disabled;
-$mod__status-color:				$theme__color 					$theme__color 					red 						green 							blue 							yellow 						#ccc;
+$mod__status:							unstyled						default							error							success							info							warning							disabled;
+$mod__status-color:						$theme__color 					$theme__color 					red 							green 							blue 							yellow 							#ccc;
+$mod__status-border-color:				transparent						#d9d9d9							#d96464 						#64d986							#64cfd9							#d9ab64							#d9d9d9;
+$mod__status-border-color-lighten:		transparent						lighten(#d9d9d9, 5%)			lighten(#d96464, 20%)			lighten(#64d986, 10%)			lighten(#64cfd9, 10%)			lighten(#d9ab64, 10%)			lighten(#d9d9d9, 10%);
+$mod__status-border-color-darken:		transparent						darken(#d9d9d9, 10%)			darken(#d96464, 10%)			darken(#64d986, 10%)			darken(#64cfd9, 10%)			darken(#d9ab64, 10%)			darken(#d9d9d9, 10%);
+$mod__status-outline:					none							'0 0 10px rgba(100,207,217,1)'	'0 0 10px rgba(217,100,100,1)' 	'0 0 10px rgba(100,217,134,1)'	'0 0 10px rgba(100,207,217,1)'	'0 0 10px rgba(217,171,100,1)' 	none;
+
+
+
+// ------------- Status
+$mod__size:			tiny		small		default		big			huge;
+$mod__size-delta:	-4 			-2 			2 			4 			6;
+
+
+$mod__vertical: _vertical_;
+$mod__horizontal: _horizontal_;
+
+
+
+
+
+
