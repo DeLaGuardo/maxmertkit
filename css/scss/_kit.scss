@@ -1,3 +1,11 @@
-@import "themes/basic";
-@import "mixins";
-@import "init";
+@import 'themes/basic';
+@import 'mixins';
+
+@import 'modificators/status';
+
+@import 'init';
+
+@import 'modificators/_methods';
+@import 'classes/object';
+
+@import 'objects/button';

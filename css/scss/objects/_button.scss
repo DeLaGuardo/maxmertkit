@@ -1,0 +1,6 @@
+.-btn {
+	@extend %__object;
+	
+	@include set_modificator($mod__status, color);
+	
+}

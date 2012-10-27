@@ -1,0 +1,13 @@
+$__inheritance: object;
+$__before-object: '';
+$__object: 'this';
+$__after-object: '';
+
+@include init_modificator( status );
+
+%__object {
+	display: inline-block;
+	vertical-align: middle;
+	outline: none;
+	@include box-sizing( content-box );
+}

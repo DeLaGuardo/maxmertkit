@@ -17,7 +17,8 @@ $theme__font-size: 14px;
 $theme__line-height: 14px;
 $theme__color: #333;
 $theme__background-color: #eee;
-$theme__font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$theme__font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 
 
 // ======================================================================================================== \\
@@ -25,6 +26,8 @@ $theme__font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 // ----------------------------------------------- %TYPOGRAPHY% ---------------------------------------------- \\
 //
 // ======================================================================================================== \\
+
+$theme__header-font-family: 'Lucida Grande';
 
 // --------------------- %blockquote% ---------------------
 $theme__blockquote-padding: 10px;
@@ -56,15 +59,24 @@ $object__section: -section;
 $object__section-margin-bottom: 15px;
 $object__section-margin: 0 0 $object__section-margin-bottom 0;
 
+// ------------ Container
+$object__container: -container;
+
 // ------------ Column
 $object__column: -col;
 $object__column-quantity: 12;
 $object__column-width: 70px;
+$object__column-offset: #{$object__column}-offset;
 $object__column__gutter-width: 30px;
 
 // ------------ Row
 $object__row: -row;
-$object__row-width: $object__column-quantity * $object__column-width  +  ($object__column-quantity - 1) * $object__column__gutter-width;
+$object__row-width: $object__column-quantity * $object__column-width  +  $object__column-quantity * $object__column__gutter-width;
+
+$object__row-fluid: #{$object__row}-fluid;
+$object__row-fluid-width: 100%;
+$object__row-fluid__column-width: $object__column-width / $object__row-width * 100%;
+$object__row-fluid__column__gutter-width: $object__column__gutter-width / $object__row-width * 100%;
 
 
 
@@ -75,3 +87,20 @@ $object__row-width: $object__column-quantity * $object__column-width  +  ($objec
 //
 // ======================================================================================================== \\
 $mixin__float-right: mx-pull-right;
+
+
+
+
+
+
+
+
+// ======================================================================================================== \\
+//
+// ----------------------------------------------- %MODIFICATORS% ---------------------------------------------- \\
+//
+// ======================================================================================================== \\
+
+// ------------- Status
+$mod__status:					unstyled						normal							error						success							info							warning						disabled;
+$mod__status-color:				$theme__color 					$theme__color 					red 						green 							blue 							yellow 						#ccc;

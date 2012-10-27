@@ -1,0 +1,57 @@
+@mixin init_modificator( $type ) {
+	
+	@if $type == status {
+
+		@each $status in $mod__status {
+			$num: index( $mod__status, $status );
+
+			%#{$__inheritance}-status-#{$status}-color {
+				color: nth($mod__status-color, $num);
+			}
+		}
+
+	}
+	
+}
+
+@mixin set_modificator ($type-list, $mods... ) {
+
+
+	@each $mod in $mods {
+
+		
+				@include __set_modificator-status( $type-list, $mod )
+			
+	}
+
+
+
+}
+
+@function _get-modificator-name( $name ) {
+	$_result: '';
+
+	@debug( index( $mod__status, $name ) );
+
+	@return $_result;
+}
+
+@function _get-modificator-nesting( $name ) {
+	@return #{$__before-object} + ' ' + #{$__object} + _get-modificator-name( $status ) + ' ' + #{$__after-object};
+}
+
+@mixin __set_modificator-status( $list, $mod ) {
+	@each $status in $list {
+		@if $__object == this {
+			&.-#{$status}- {
+				@extend %#{$__inheritance}-status-#{$status}-#{$mod};
+			}
+		}
+		@else {
+			$_nesting: _get-modificator-nesting( $status );
+			#{$_nesting} {
+				@extend %#{$__inheritance}-status-#{$status}-#{$mod};
+			}
+		}
+	}
+}
