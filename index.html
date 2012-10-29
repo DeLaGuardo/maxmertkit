@@ -4,6 +4,7 @@
 		<title>MOSKVA.FM</title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="js/libs/html5shiv.js"></script>
 	</head>
 	<body>
 		<div class="-container">
@@ -140,10 +141,9 @@
 			</div>
 
 			<h1>Forms</h1>
-			<div class="-row">
-				<div class="-col12 -section">
+			<article class="-row">
+				<article class="-col12">
 					<form class="-form">
-						<input type="text">
 						<span class="-form-field _tiny">
 							<!-- <span class="-form-field-placeholder">Placeholder</span> -->
 							<input type="text">
@@ -164,11 +164,88 @@
 							<!-- <span class="-form-field-placeholder">Placeholder</span> -->
 							<input type="text">
 						</span>
+						<span class="-form-field -disabled- _huge">
+							<!-- <span class="-form-field-placeholder">Placeholder</span> -->
+							<input type="text" disabled="disabled">
+						</span>
+					</form>
+				</article>
+				<div class="-col12 -section">
+					<form class="-form">
+						<div class="-form-field-row">
+							
+							<span class="-form-field -info- -col3 _huge">
+								<input type="text" class="" value="_huge">
+							</span>
+							<span class="-form-field -info- -col3 _big">
+								<input type="text" class="" value="_big">
+							</span>
+							<span class="-form-field -info- -col3">
+								<input type="text" class="" value="no modificator">
+							</span>
+							<span class="-form-field -info- -col3 _small">
+								<input type="text" class="" value="_small">
+							</span>
+						</div>
 					</form>
 				</div>
+				<div class="-col12 -section">
+					<form class="-form">
+						<div class="-form-field-row">
+							<input type="text" class="-col3" value="-col3">
+							<input type="text" class="-col3" value="-col3">
+							<input type="text" class="-col3" value="-col3">
+							<input type="text" class="-col3" value="-col3">
+						</div>
+					</form>
+				</div>
+				<section class="-col12">
+					<form class="-form">
+						<div class="-form-field-row">
+							<input type="text" class="-col1" value="-col1">
+							<input type="text" class="-col1" value="-col1">
+							<input type="text" class="-col1" value="-col1">
+							<input type="text" class="-col1" value="-col1">
+							<input type="text" class="-col1" value="-col1">
+							<input type="text" class="-col1" value="-col1">
+							<input type="text" class="-col1" value="-col1">
+							<input type="text" class="-col1" value="-col1">
+							<input type="text" class="-col1" value="-col1">
+							<input type="text" class="-col1" value="-col1">
+							<input type="text" class="-col1" value="-col1">
+							<input type="text" class="-col1" value="-col1">
+						</div>
+					</form>
+				</section>
+				<article class="-col12">
+					<form class="-form">
+						<div class="-form-field-row">
+							<select class="-col3 _huge">
+								<option>-col3 _huge</option>
+								<option>Option 2</option>
+								<option>Option 3</option>
+							</select>
+							<select class="-col3 _big">
+								<option>-col3 _big</option>
+								<option>Option 2</option>
+								<option>Option 3</option>
+							</select>
+							<select class="-col3">
+								<option>-col3</option>
+								<option>Option 2</option>
+								<option>Option 3</option>
+							</select>
+							<select class="-col3 _small">
+								<option>-col3 _small</option>
+								<option>Option 2</option>
+								<option>Option 3</option>
+							</select>
+						</div>
+					</form>
+				</article>
 				<div class="-col6">
 					<form class="-form _vertical_">
-						
+						<h3>Form vertical</h3>
 						<label>Login</label>
 						<span class="-form-field">
 							<input type="text">
@@ -180,22 +257,45 @@
 							<input type="text">
 						</span>
 
+						<label>Short bio</label>
+						<span class="-form-field">
+							<textarea></textarea>
+						</span>
+						
+						<label></label>
+						<a class="-btn">Save</a>&nbsp;&nbsp;&nbsp;<a class="-btn -error- -unstyled- _small">Cancel</a>
+
 					</form>
 				</div>
 				<div class="-col6">
 					<form class="-form _horizontal_">
+						<h3>Form horizontal</h3>
 						<div class="-form-row">
 							<label>Login</label>
-							<span class="-form-field">
-								<input type="text">
+							<span class="-form-field -col3">
+								<input type="text" value="-col3">
 							</span>
 							<span class="-form-field-help">Help me with this field</span>
 						</div>
 
 						<div class="-form-row">
 							<label>Password</label>
-							<span class="-form-field">
-								<input type="text">
+							<span class="-form-field -col1">
+								<input type="text" value="-col1">
+							</span>
+							<span class="-form-field -col2">
+								<input type="text" value="-col2">
+							</span>
+						</div>
+
+						<div class="-form-row">
+							<label>Country</label>
+							<span class="-form-field -col3">
+								<select>
+									<option>Russia</option>
+									<option>USA</option>
+									<option>Germany</option>
+								</select>
 							</span>
 						</div>
 
@@ -209,13 +309,25 @@
 
 						<div class="-form-row">
 							<div class="-form-group">
-								<button>Enter</button>
+								<a href="" class="-btn">Enter</a> <a href="" class="-btn -error-">Reset</a>
 							</div>
 						</div>
 
 					</form>
 				</div>
-			</div>
+			</article>
+
+			<h1>Buttons</h1>
+			<article class="-row">
+				<section class="-col12">
+					<a class="-btn -disabled- _tiny">Tiny disabled</a>
+					<a class="-btn _small _loading_">Normal small</a>
+					<a class="-btn -error-">Error normal</a>
+					<a class="-btn -warning- _big">Warning big</a>
+					<a class="-btn -info- _huge">Info huge</a>
+					<a class="-btn -success- _huge">Success huge</a>
+				</section>
+			</article>
 		</div>
 	</body>
 </html>

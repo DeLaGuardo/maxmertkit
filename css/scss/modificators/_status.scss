@@ -1,26 +1,100 @@
+@-webkit-keyframes stripes-animation {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+@-moz-keyframes stripes-animation {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+@-ms-keyframes stripes-animation {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+@-o-keyframes stripes-animation {
+  from  { background-position: 0 0; }
+  to    { background-position: 40px 0; }
+}
+
+@keyframes stripes-animation {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
 @mixin init_modificator-status{
 	
 	@each $status in $mod__status {
 		$num: index( $mod__status, $status );
+		$important: '';
+
+		@if $status == disabled {
+			$important: '!important';
+		}
 
 		%#{$__inheritance}-status-#{$status}-color {
-			color: nth($mod__status-color, $num);
+			color: nth($mod__status-color, $num)#{$important};
+		}
+
+		%#{$__inheritance}-status-#{$status}-color-invert {
+			color: nth($mod__status-color-invert, $num)#{$important};
+		}
+
+		%#{$__inheritance}-status-#{$status}-text-shadow {
+			@include text-shadow( #{nth($mod__status-text-shadow, $num)}#{$important} );
 		}
 
 		%#{$__inheritance}-status-#{$status}-border-color {
-			border-color: nth($mod__status-border-color, $num);
+			border-color: nth($mod__status-border-color, $num)#{$important};
 		}
 
 		%#{$__inheritance}-status-#{$status}-border-color-darken {
-			border-color: nth($mod__status-border-color-darken, $num);
+			border-color: nth($mod__status-border-color-darken, $num)#{$important};
 		}
 
 		%#{$__inheritance}-status-#{$status}-border-color-lighten {
-			border-color: nth($mod__status-border-color-lighten, $num);
+			border-color: nth($mod__status-border-color-lighten, $num)#{$important};
 		}
 
+		%#{$__inheritance}-status-#{$status}-background-color {
+			background-color: nth($mod__status-background-color, $num)#{$important};
+		}
+
+		%#{$__inheritance}-status-#{$status}-background-color-darken {
+			background-color: nth($mod__status-background-color-darken, $num)#{$important};
+		}
+
+		%#{$__inheritance}-status-#{$status}-background-color-darkener {
+			background-color: nth($mod__status-background-color-darkener, $num)#{$important};
+		}
+
+		// %#{$__inheritance}-status-#{$status}-shadow {
+		// 	@include box-shadow(#{nth($mod__status-shadow, $num)});
+		// }
+
+		// %#{$__inheritance}-status-#{$status}-shadow-long {
+		// 	@include box-shadow(#{nth($mod__status-shadow-long, $num)});
+		// }
+
 		%#{$__inheritance}-status-#{$status}-outline {
-			@include box-shadow(#{nth($mod__status-outline, $num)});
+			@include box-shadow(#{nth($mod__status-outline, $num)}#{$important});
+		}
+
+		%#{$__inheritance}-status-#{$status}-loading {
+			
+			@include gradient-stripes( 45deg );
+			background-size: 40px 40px;
+			@include animation( stripes-animation 2s linear infinite );
+
+		}
+
+		%#{$__inheritance}-status-#{$status}-loading-dark {
+			
+			@include gradient-stripes-dark( 45deg );
+			background-size: 40px 40px;
+			@include animation( stripes-animation 2s linear infinite );
+
 		}
 	}
 

@@ -29,10 +29,42 @@
 	box-shadow: $box-shadow;
 }
 
+@mixin text-shadow( $text-shadow... ) {
+	-webkit-text-shadow: $text-shadow;
+	-moz-text-shadow: $text-shadow;
+	-ms-text-shadow: $text-shadow;
+	-o-text-shadow: $text-shadow;
+	text-shadow: $text-shadow;
+}
+
 @mixin border-radius( $border-radius... ) {
 	-webkit-border-radius: $border-radius;
 	-moz-border-radius: $border-radius;
 	-ms-border-radius: $border-radius;
 	-o-border-radius: $border-radius;
 	border-radius: $border-radius;
+}
+
+@mixin gradient-stripes($angle) {
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.35, rgba(255,255,255,.35)), color-stop(.35, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255,255,255,.35)), color-stop(.75, rgba(255,255,255,.35)), color-stop(.75, transparent), to(transparent))!important;
+    background-image: -webkit-linear-gradient($angle, rgba(255,255,255,.35) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.35) 50%, rgba(255,255,255,.35) 75%, transparent 75%, transparent)!important;
+    background-image: -moz-linear-gradient($angle, rgba(255,255,255,.35) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.35) 50%, rgba(255,255,255,.35) 75%, transparent 75%, transparent)!important;
+    background-image: -o-linear-gradient($angle, rgba(255,255,255,.35) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.35) 50%, rgba(255,255,255,.35) 75%, transparent 75%, transparent)!important;
+    background-image: linear-gradient($angle, rgba(255,255,255,.35) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.35) 50%, rgba(255,255,255,.35) 75%, transparent 75%, transparent)!important;
+}
+
+@mixin gradient-stripes-dark($angle) {
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.1, rgba(0,0,0,.1)), color-stop(.1, transparent), color-stop(.5, transparent), color-stop(.5, rgba(0,0,0,.1)), color-stop(.75, rgba(0,0,0,.1)), color-stop(.75, transparent), to(transparent));
+    background-image: -webkit-linear-gradient($angle, rgba(0,0,0,.1) 25%, transparent 25%, transparent 50%, rgba(0,0,0,.1) 50%, rgba(0,0,0,.1) 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient($angle, rgba(0,0,0,.1) 25%, transparent 25%, transparent 50%, rgba(0,0,0,.1) 50%, rgba(0,0,0,.1) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient($angle, rgba(0,0,0,.1) 25%, transparent 25%, transparent 50%, rgba(0,0,0,.1) 50%, rgba(0,0,0,.1) 75%, transparent 75%, transparent);
+    background-image: linear-gradient($angle, rgba(0,0,0,.1) 25%, transparent 25%, transparent 50%, rgba(0,0,0,.1) 50%, rgba(0,0,0,.1) 75%, transparent 75%, transparent);
+}
+
+@mixin animation( $animation... ) {
+	animation: $animation;
+	-webkit-animation: $animation;
+	-moz-animation: $animation;
+	-o-animation: $animation;
+	-ms-animation: $animation;
 }

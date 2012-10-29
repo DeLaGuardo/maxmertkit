@@ -39,7 +39,7 @@ $theme__blockquote__sign-color: #999;
 $theme__description-margin: 0 0 15px 0;
 $theme__description-line-height: $theme__line-height + 5px;
 $theme__description__defenition-margin-left: 15px;
-$theme__description-defenition-inline-width: 120px;
+$theme__description__defenition__inline-width: 120px;
 
 // --------------------- %lists% ---------------------
 $theme__list-margin-left: 20px;
@@ -58,6 +58,10 @@ $theme__list-line-height: $theme__line-height + 5px;
 $object__section: -section;
 $object__section-margin-bottom: 15px;
 $object__section-margin: 0 0 $object__section-margin-bottom 0;
+
+// ------------ Article
+$object__article: -article;
+$object__article-margin-bottom: 35px;
 
 // ------------ Container
 $object__container: -container;
@@ -87,8 +91,20 @@ $object__form__field-border-width: 3px;
 $object__form__field__placeholder: #{$object__form__field}-placeholder;
 $object__form__field__help: #{$object__form__field}-help;
 $object__form__field__help-color: #666;
+$object__form__field__row: #{$object__form__field}-row;
 $object__form__input-border-width: 1px;
 $object__form__input-shadow: 0 0 ;
+
+// ------------ Button
+$object__button: -btn;
+// $object__button-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$object__button-font-weight: 300;
+$object__button-border-width: 0;
+$object__button-border-radius: 3px;
+$object__button-shadow: 0px 1px 2px rgba(0,0,0,.2), 0px 1px 2px rgba(0,0,0,.2), 0 4px 4px rgba(0,0,0,.05), 0 6px 6px rgba(0,0,0,.1), inset 0 -4px 4px rgba(0,0,0,.05);
+$object__button-hover-shadow: 1px 1px 2px rgba(0,0,0,.2), -1px 1px 2px rgba(0,0,0,.2), 0 4px 4px rgba(0,0,0,.05), 0 6px 6px rgba(0,0,0,.1);
+$object__button-active-shadow: 0 1px 2px rgba(0,0,0,.4), inset 0 -15px 15px rgba(0,0,0,.1);
+
 
 
 
@@ -114,12 +130,24 @@ $mixin__float-right: mx-pull-right;
 // ======================================================================================================== \\
 
 // ------------- Status
-$mod__status:							unstyled						default							error							success							info							warning							disabled;
-$mod__status-color:						$theme__color 					$theme__color 					red 							green 							blue 							yellow 							#ccc;
+$mod__status__disabled: disabled; // Use it in a list below
+$mod__status__unstyled: unstyled;
+
+$mod__status:							$mod__status__unstyled			default							error							success							info							warning							$mod__status__disabled;
+$mod__status-color:						$theme__color 					$theme__color 					red 							#62c462 						#64cfd9 						#EDB723 						#ccc;
+$mod__status-color-invert:				$theme__color 					$theme__color 					#fff 							#fff 							#fff 							#fff 							#ccc;
 $mod__status-border-color:				transparent						#d9d9d9							#d96464 						#64d986							#64cfd9							#d9ab64							#d9d9d9;
 $mod__status-border-color-lighten:		transparent						lighten(#d9d9d9, 5%)			lighten(#d96464, 20%)			lighten(#64d986, 10%)			lighten(#64cfd9, 10%)			lighten(#d9ab64, 10%)			lighten(#d9d9d9, 10%);
 $mod__status-border-color-darken:		transparent						darken(#d9d9d9, 10%)			darken(#d96464, 10%)			darken(#64d986, 10%)			darken(#64cfd9, 10%)			darken(#d9ab64, 10%)			darken(#d9d9d9, 10%);
 $mod__status-outline:					none							'0 0 10px rgba(100,207,217,1)'	'0 0 10px rgba(217,100,100,1)' 	'0 0 10px rgba(100,217,134,1)'	'0 0 10px rgba(100,207,217,1)'	'0 0 10px rgba(217,171,100,1)' 	none;
+$mod__status-background-color:			transparent						#fbfbfb		 					#da4a39							#62c462							#64cfd9							#EDB723							lighten(#d9d9d9, 10%);
+$mod__status-background-color-darken:	transparent						darken(#fbfbfb, 5%)				darken(#da4a39, 5%)				darken(#62c462, 5%)				darken(#64cfd9, 5%)				darken(#EDB723, 5%)				lighten(#d9d9d9, 10%);
+$mod__status-background-color-darkener:	transparent						darken(#fbfbfb, 10%)			darken(#da4a39, 10%)			darken(#62c462, 10%)			darken(#64cfd9, 10%)			darken(#EDB723, 10%)			lighten(#d9d9d9, 10%);
+$mod__status-text-shadow:				none							'0 1px 0 rgba(255,255,255,1)'	'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			none;
+
+
+// $mod__status-shadow:					none							'0 2px 2px rgba(0,0,0,.1)'		none							none							none							none							none;
+// $mod__status-shadow-long:				none							'0 6px 6px rgba(0,0,0,.05)'		none							none							none							none							none;
 
 
 
@@ -128,6 +156,8 @@ $mod__size:			tiny		small		default		big			huge;
 $mod__size-delta:	-4 			-2 			2 			4 			6;
 
 
+$mod__active: _active_;
+$mod__loading: _loading_;
 $mod__vertical: _vertical_;
 $mod__horizontal: _horizontal_;
 

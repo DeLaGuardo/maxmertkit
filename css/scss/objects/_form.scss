@@ -1,19 +1,4 @@
-$_input-list: 'input[type="text"]' 'input[type="password"]' 'input[type="datetime"]' 'input[type="datetime-local"]' 'input[type="date"]' 'input[type="month"]' 'input[type="time"]' 'input[type="week"]' 'input[type="number"]' 'input[type="email"]' 'input[type="url"]' 'input[type="search"]' 'input[type="tel"]' 'input[type="color"]';
-
-@function _append-list( $list, $appendix-before:'', $appendix-after:'' ) {
-	$_result: '';
-	@each $item in $list {
-		$_concat: #{$appendix-before}#{$item}#{$appendix-after};
-		@if $_result != '' {
-			$_result: $_result + ',' + $_concat;
-		}
-		@else {
-			$_result: $_concat;
-		}
-		
-	}
-	@return $_result;
-}
+$_input-list: 'input[type="text"]' 'input[type="password"]' 'input[type="datetime"]' 'input[type="datetime-local"]' 'input[type="date"]' 'input[type="month"]' 'input[type="time"]' 'input[type="week"]' 'input[type="number"]' 'input[type="email"]' 'input[type="url"]' 'input[type="search"]' 'input[type="tel"]' 'input[type="color"]' 'textarea' 'select';
 
 .#{$object__form} {
 	.#{$object__form__field} {
@@ -55,7 +40,9 @@ $_input-list: 'input[type="text"]' 'input[type="password"]' 'input[type="datetim
 	input[type="url"],
 	input[type="search"],
 	input[type="tel"],
-	input[type="color"] {
+	input[type="color"],
+	textarea,
+	select {
 		@extend %__object;
 
 		border-width: $object__form__input-border-width;
@@ -63,6 +50,10 @@ $_input-list: 'input[type="text"]' 'input[type="password"]' 'input[type="datetim
 
 		@include set_modificator($mod__status, border-color);
 		@include set_modificator($mod__size, line-height, font-size, padding);
+
+		&[disabled="disabled"] {
+			@include set_modificator($mod__status__disabled, background-color, color);
+		}
 	}
 
 	label {
@@ -149,16 +140,16 @@ $_input-list: 'input[type="text"]' 'input[type="password"]' 'input[type="datetim
 .#{$object__form} {
 	$__inheritance: object;
 	$__before-object: '';
-	$__object: _append-list( $_input-list, '', ':hover' );
+	$__object: append-list( $_input-list, '', ':hover' );
 	$__after-object: '';
-	@include set_modificator($mod__status, border-color-darken);
+	@include set_modificator(exclude-items($mod__status,$mod__status__disabled), border-color-darken);
 }
 
 // Create	 .-form-field input.-modificator-:focus
 .#{$object__form} {
 	$__inheritance: object;
 	$__before-object: '';
-	$__object: _append-list( $_input-list, '', ':focus' );
+	$__object: append-list( $_input-list, '', ':focus' );
 	$__after-object: '';
 	@include set_modificator($mod__status, outline);
 }
@@ -168,7 +159,7 @@ $_input-list: 'input[type="text"]' 'input[type="password"]' 'input[type="datetim
 	$__inheritance: object;
 	$__before-object: '';
 	$__object: '.#{$object__form__field}';
-	$__after-object: _append-list( $_input-list, ' > ', '' );
+	$__after-object: append-list( $_input-list, ' > ', '' );
 	@include set_modificator($mod__status, border-color);
 }
 
@@ -177,8 +168,8 @@ $_input-list: 'input[type="text"]' 'input[type="password"]' 'input[type="datetim
 	$__inheritance: object;
 	$__before-object: '';
 	$__object: '.#{$object__form__field}:hover';
-	$__after-object: _append-list( $_input-list, ' > ', '' );
-	@include set_modificator($mod__status, border-color-darken);
+	$__after-object: append-list( $_input-list, ' > ', '' );
+	@include set_modificator(exclude-items($mod__status,$mod__status__disabled), border-color-darken);
 }
 
 // Create	 .-form-field.-modificator- input:focus;
@@ -186,6 +177,138 @@ $_input-list: 'input[type="text"]' 'input[type="password"]' 'input[type="datetim
 	$__inheritance: object;
 	$__before-object: '';
 	$__object: '.#{$object__form__field}';
-	$__after-object: _append-list( $_input-list, ' > ', ':focus' );
+	$__after-object: append-list( $_input-list, ' > ', ':focus' );
 	@include set_modificator($mod__status, outline);
+}
+
+
+// Create	 .-form-field.-DISABLED-;
+.#{$object__form} {
+	$__inheritance: object;
+	$__before-object: '';
+	$__object: '.#{$object__form__field}';
+	$__after-object: append-list( $_input-list, ' > ', '' );
+	@include set_modificator($mod__status__disabled, background-color, color);
+}
+
+
+
+
+
+
+.#{$object__form} {
+	[class*='#{$object__column}'] {
+		float: none;
+		margin-left: 0;
+	}
+
+	@for $i from 1 through $object__column-quantity {
+		$_inputs: append-list( $_input-list, '', '.#{$object__column}#{$i}', comma );
+		// $_inputs: exclude-items($_inputs, selec);
+		#{$_inputs},
+		textarea.#{$object__column}#{$i} {
+			@each $size in $mod__size {
+				$num: index( $mod__size, $size );
+				$_horizontal: 4px;
+
+				@if (4px + nth($mod__size-delta, $num)) > 0 {
+					$_horizontal: 4px + nth($mod__size-delta, $num);
+				}
+				
+				@if $size != default
+				{
+					&._#{$size} {
+						width: __get-column-width($i) - $object__form__input-border-width * 2 - $_horizontal * 2;
+					}
+				}
+				@else {
+					width: __get-column-width($i) - $object__form__input-border-width * 2 - $_horizontal * 2;
+				}
+				
+			}
+		}
+
+		.#{$object__form__field}.#{$object__column}#{$i} {
+			width: __get-column-width($i) - $object__form__field-border-width * 2;
+
+			@each $size in $mod__size {
+				$num: index( $mod__size, $size );
+				$_horizontal: 4px;
+				
+				@if (4px + nth($mod__size-delta, $num)) > 0 {
+					$_horizontal: 4px + nth($mod__size-delta, $num);
+				}
+				
+				@if $size != default
+				{
+					&._#{$size} {
+						input, textarea, select {
+							width: __get-column-width($i) - $object__form__input-border-width * 2 - $_horizontal * 2 - $object__form__field-border-width * 2
+						}
+
+						@media screen and (-webkit-min-device-pixel-ratio:0) {
+							select {
+								width: __get-column-width($i) - $object__form__input-border-width * 2 - $object__form__field-border-width * 2
+							}
+						}
+					}
+				}
+				@else {
+					input, textarea, select {
+						width: __get-column-width($i) - $object__form__input-border-width * 2 - $_horizontal * 2 - $object__form__field-border-width * 2
+					}
+
+					@media screen and (-webkit-min-device-pixel-ratio:0) {
+						select {
+							width: __get-column-width($i) - $object__form__input-border-width * 2 - $object__form__field-border-width * 2
+						}
+					}
+				}
+				
+			}
+
+		}
+
+		@media screen and (-webkit-min-device-pixel-ratio:0) {
+		 	select.#{$object__column}#{$i} {
+				width: __get-column-width($i) - $object__form__input-border-width * 2 ;
+
+				@each $size in $mod__size {
+					$num: index( $mod__size, $size );
+					$_horizontal: 4px;
+					
+					@if (4px + nth($mod__size-delta, $num)) > 0 {
+						$_horizontal: 4px + nth($mod__size-delta, $num);
+					}
+					
+					@if $size != default
+					{
+						&._#{$size} {
+							width: __get-column-width($i) - $object__form__input-border-width * 2;
+						}
+					}
+					
+				}
+			}
+		}
+
+		// & > .#{$object__column-offset}#{$i} {
+		// 	margin-left: __get-column-offset-width($i);
+		// }
+	}
+}
+
+
+.#{$object__form} .#{$object__form__field__row}{
+
+	margin-left: -$object__column__gutter-width;
+	// width: $object__row-width;
+	@include clearfix;
+
+	[class*='#{$object__column}'] {
+		float: left;
+		margin-left: $object__column__gutter-width;
+	}
+
+	
 }
