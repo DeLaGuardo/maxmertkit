@@ -270,25 +270,27 @@ dl {
   .-row-fluid > .-col-offset12 {
     margin-left: 102.5%; }
 
-button.-unstyled-, button.-unstyled-:hover, button.-unstyled-:active, button.__active__.-unstyled-,
+button.-unstyled-, button.-unstyled-:hover, button.-unstyled-:active, button._active_.-unstyled-, button.-disabled-.-unstyled-,
 .-btn.-unstyled-,
 .-btn.-unstyled-:hover,
 .-btn.-unstyled-:active,
-.-btn.__active__.-unstyled-,
+.-btn._active_.-unstyled-,
+.-btn.-disabled-.-unstyled-,
 input[type="button"].-unstyled-,
 input[type="button"].-unstyled-:hover,
 input[type="button"].-unstyled-:active,
-input[type="button"].__active__.-unstyled- {
+input[type="button"]._active_.-unstyled-,
+input[type="button"].-disabled-.-unstyled- {
   color: #333333; }
 
 button.-unstyled-,
 .-btn.-unstyled-,
-input[type="button"].-unstyled- {
+input[type="button"].-unstyled-, .-group .-group-appendix.-unstyled-, .-group.-unstyled- .-group-appendix, .-group.-unstyled- button, .-group.-unstyled- input[type="button"], .-group.-unstyled- .-btn {
   color: #333333; }
 
 button.-unstyled-,
 .-btn.-unstyled-,
-input[type="button"].-unstyled- {
+input[type="button"].-unstyled-, .-group .-group-appendix.-unstyled-, .-group.-unstyled- .-group-appendix, .-group.-unstyled- button, .-group.-unstyled- input[type="button"], .-group.-unstyled- .-btn {
   -webkit-text-shadow: none;
   -moz-text-shadow: none;
   -ms-text-shadow: none;
@@ -312,10 +314,10 @@ input[type="button"].-unstyled- {
 .-form textarea.-unstyled-,
 .-form select.-unstyled-, .-form .-form-field.-unstyled- > input[type="text"], .-form .-form-field.-unstyled- > input[type="password"], .-form .-form-field.-unstyled- > input[type="datetime"], .-form .-form-field.-unstyled- > input[type="datetime-local"], .-form .-form-field.-unstyled- > input[type="date"], .-form .-form-field.-unstyled- > input[type="month"], .-form .-form-field.-unstyled- > input[type="time"], .-form .-form-field.-unstyled- > input[type="week"], .-form .-form-field.-unstyled- > input[type="number"], .-form .-form-field.-unstyled- > input[type="email"], .-form .-form-field.-unstyled- > input[type="url"], .-form .-form-field.-unstyled- > input[type="search"], .-form .-form-field.-unstyled- > input[type="tel"], .-form .-form-field.-unstyled- > input[type="color"], .-form .-form-field.-unstyled- > textarea, .-form .-form-field.-unstyled- > select, button.-unstyled-,
 .-btn.-unstyled-,
-input[type="button"].-unstyled- {
+input[type="button"].-unstyled-, .-group .-group-appendix.-unstyled-, .-group.-unstyled- input[type="text"], .-group.-unstyled- input[type="password"], .-group.-unstyled- input[type="datetime"], .-group.-unstyled- input[type="datetime-local"], .-group.-unstyled- input[type="date"], .-group.-unstyled- input[type="month"], .-group.-unstyled- input[type="time"], .-group.-unstyled- input[type="week"], .-group.-unstyled- input[type="number"], .-group.-unstyled- input[type="email"], .-group.-unstyled- input[type="url"], .-group.-unstyled- input[type="search"], .-group.-unstyled- input[type="tel"], .-group.-unstyled- input[type="color"], .-group.-unstyled- textarea, .-group.-unstyled- select, .-group.-unstyled- .-group-appendix, .-group.-unstyled- button, .-group.-unstyled- input[type="button"], .-group.-unstyled- .-btn {
   border-color: transparent; }
 
-.-form input[type="text"].-unstyled-:hover, .-form input[type="password"].-unstyled-:hover, .-form input[type="datetime"].-unstyled-:hover, .-form input[type="datetime-local"].-unstyled-:hover, .-form input[type="date"].-unstyled-:hover, .-form input[type="month"].-unstyled-:hover, .-form input[type="time"].-unstyled-:hover, .-form input[type="week"].-unstyled-:hover, .-form input[type="number"].-unstyled-:hover, .-form input[type="email"].-unstyled-:hover, .-form input[type="url"].-unstyled-:hover, .-form input[type="search"].-unstyled-:hover, .-form input[type="tel"].-unstyled-:hover, .-form input[type="color"].-unstyled-:hover, .-form textarea.-unstyled-:hover, .-form select.-unstyled-:hover, .-form .-form-field:hover.-unstyled- > input[type="text"], .-form .-form-field:hover.-unstyled- > input[type="password"], .-form .-form-field:hover.-unstyled- > input[type="datetime"], .-form .-form-field:hover.-unstyled- > input[type="datetime-local"], .-form .-form-field:hover.-unstyled- > input[type="date"], .-form .-form-field:hover.-unstyled- > input[type="month"], .-form .-form-field:hover.-unstyled- > input[type="time"], .-form .-form-field:hover.-unstyled- > input[type="week"], .-form .-form-field:hover.-unstyled- > input[type="number"], .-form .-form-field:hover.-unstyled- > input[type="email"], .-form .-form-field:hover.-unstyled- > input[type="url"], .-form .-form-field:hover.-unstyled- > input[type="search"], .-form .-form-field:hover.-unstyled- > input[type="tel"], .-form .-form-field:hover.-unstyled- > input[type="color"], .-form .-form-field:hover.-unstyled- > textarea, .-form .-form-field:hover.-unstyled- > select {
+.-form input[type="text"].-unstyled-:hover, .-form input[type="password"].-unstyled-:hover, .-form input[type="datetime"].-unstyled-:hover, .-form input[type="datetime-local"].-unstyled-:hover, .-form input[type="date"].-unstyled-:hover, .-form input[type="month"].-unstyled-:hover, .-form input[type="time"].-unstyled-:hover, .-form input[type="week"].-unstyled-:hover, .-form input[type="number"].-unstyled-:hover, .-form input[type="email"].-unstyled-:hover, .-form input[type="url"].-unstyled-:hover, .-form input[type="search"].-unstyled-:hover, .-form input[type="tel"].-unstyled-:hover, .-form input[type="color"].-unstyled-:hover, .-form textarea.-unstyled-:hover, .-form select.-unstyled-:hover, .-form .-form-field:hover.-unstyled- > input[type="text"], .-form .-form-field:hover.-unstyled- > input[type="password"], .-form .-form-field:hover.-unstyled- > input[type="datetime"], .-form .-form-field:hover.-unstyled- > input[type="datetime-local"], .-form .-form-field:hover.-unstyled- > input[type="date"], .-form .-form-field:hover.-unstyled- > input[type="month"], .-form .-form-field:hover.-unstyled- > input[type="time"], .-form .-form-field:hover.-unstyled- > input[type="week"], .-form .-form-field:hover.-unstyled- > input[type="number"], .-form .-form-field:hover.-unstyled- > input[type="email"], .-form .-form-field:hover.-unstyled- > input[type="url"], .-form .-form-field:hover.-unstyled- > input[type="search"], .-form .-form-field:hover.-unstyled- > input[type="tel"], .-form .-form-field:hover.-unstyled- > input[type="color"], .-form .-form-field:hover.-unstyled- > textarea, .-form .-form-field:hover.-unstyled- > select, .-group.-unstyled- input[type="text"]:hover, .-group.-unstyled- input[type="password"]:hover, .-group.-unstyled- input[type="datetime"]:hover, .-group.-unstyled- input[type="datetime-local"]:hover, .-group.-unstyled- input[type="date"]:hover, .-group.-unstyled- input[type="month"]:hover, .-group.-unstyled- input[type="time"]:hover, .-group.-unstyled- input[type="week"]:hover, .-group.-unstyled- input[type="number"]:hover, .-group.-unstyled- input[type="email"]:hover, .-group.-unstyled- input[type="url"]:hover, .-group.-unstyled- input[type="search"]:hover, .-group.-unstyled- input[type="tel"]:hover, .-group.-unstyled- input[type="color"]:hover, .-group.-unstyled- textarea:hover, .-group.-unstyled- select:hover {
   border-color: transparent; }
 
 .-form .-form-field.-unstyled- {
@@ -323,22 +325,25 @@ input[type="button"].-unstyled- {
 
 button.-unstyled-,
 .-btn.-unstyled-,
-input[type="button"].-unstyled- {
+input[type="button"].-unstyled-, .-group.-unstyled- button, .-group.-unstyled- input[type="button"], .-group.-unstyled- .-btn {
+  background-color: transparent; }
+
+.-group .-group-appendix.-unstyled-, .-group.-unstyled- .-group-appendix {
   background-color: transparent; }
 
 button.-unstyled-:hover,
 .-btn.-unstyled-:hover,
-input[type="button"].-unstyled-:hover {
+input[type="button"].-unstyled-:hover, .-group.-unstyled- button:hover, .-group.-unstyled- input[type="button"]:hover, .-group.-unstyled- .-btn:hover {
   background-color: transparent; }
 
-button.-unstyled-:active, button.__active__.-unstyled-,
+button.-unstyled-:active, button._active_.-unstyled-,
 .-btn.-unstyled-:active,
-.-btn.__active__.-unstyled-,
+.-btn._active_.-unstyled-,
 input[type="button"].-unstyled-:active,
-input[type="button"].__active__.-unstyled- {
+input[type="button"]._active_.-unstyled-, .-group.-unstyled- button:active, .-group.-unstyled- button._active_, .-group.-unstyled- input[type="button"]:active, .-group.-unstyled- input[type="button"]._active_, .-group.-unstyled- .-btn:active, .-group.-unstyled- .-btn._active_ {
   background-color: transparent; }
 
-.-form input[type="text"].-unstyled-:focus, .-form input[type="password"].-unstyled-:focus, .-form input[type="datetime"].-unstyled-:focus, .-form input[type="datetime-local"].-unstyled-:focus, .-form input[type="date"].-unstyled-:focus, .-form input[type="month"].-unstyled-:focus, .-form input[type="time"].-unstyled-:focus, .-form input[type="week"].-unstyled-:focus, .-form input[type="number"].-unstyled-:focus, .-form input[type="email"].-unstyled-:focus, .-form input[type="url"].-unstyled-:focus, .-form input[type="search"].-unstyled-:focus, .-form input[type="tel"].-unstyled-:focus, .-form input[type="color"].-unstyled-:focus, .-form textarea.-unstyled-:focus, .-form select.-unstyled-:focus, .-form .-form-field.-unstyled- > input[type="text"]:focus, .-form .-form-field.-unstyled- > input[type="password"]:focus, .-form .-form-field.-unstyled- > input[type="datetime"]:focus, .-form .-form-field.-unstyled- > input[type="datetime-local"]:focus, .-form .-form-field.-unstyled- > input[type="date"]:focus, .-form .-form-field.-unstyled- > input[type="month"]:focus, .-form .-form-field.-unstyled- > input[type="time"]:focus, .-form .-form-field.-unstyled- > input[type="week"]:focus, .-form .-form-field.-unstyled- > input[type="number"]:focus, .-form .-form-field.-unstyled- > input[type="email"]:focus, .-form .-form-field.-unstyled- > input[type="url"]:focus, .-form .-form-field.-unstyled- > input[type="search"]:focus, .-form .-form-field.-unstyled- > input[type="tel"]:focus, .-form .-form-field.-unstyled- > input[type="color"]:focus, .-form .-form-field.-unstyled- > textarea:focus, .-form .-form-field.-unstyled- > select:focus {
+.-form input[type="text"].-unstyled-:focus, .-form input[type="password"].-unstyled-:focus, .-form input[type="datetime"].-unstyled-:focus, .-form input[type="datetime-local"].-unstyled-:focus, .-form input[type="date"].-unstyled-:focus, .-form input[type="month"].-unstyled-:focus, .-form input[type="time"].-unstyled-:focus, .-form input[type="week"].-unstyled-:focus, .-form input[type="number"].-unstyled-:focus, .-form input[type="email"].-unstyled-:focus, .-form input[type="url"].-unstyled-:focus, .-form input[type="search"].-unstyled-:focus, .-form input[type="tel"].-unstyled-:focus, .-form input[type="color"].-unstyled-:focus, .-form textarea.-unstyled-:focus, .-form select.-unstyled-:focus, .-form .-form-field.-unstyled- > input[type="text"]:focus, .-form .-form-field.-unstyled- > input[type="password"]:focus, .-form .-form-field.-unstyled- > input[type="datetime"]:focus, .-form .-form-field.-unstyled- > input[type="datetime-local"]:focus, .-form .-form-field.-unstyled- > input[type="date"]:focus, .-form .-form-field.-unstyled- > input[type="month"]:focus, .-form .-form-field.-unstyled- > input[type="time"]:focus, .-form .-form-field.-unstyled- > input[type="week"]:focus, .-form .-form-field.-unstyled- > input[type="number"]:focus, .-form .-form-field.-unstyled- > input[type="email"]:focus, .-form .-form-field.-unstyled- > input[type="url"]:focus, .-form .-form-field.-unstyled- > input[type="search"]:focus, .-form .-form-field.-unstyled- > input[type="tel"]:focus, .-form .-form-field.-unstyled- > input[type="color"]:focus, .-form .-form-field.-unstyled- > textarea:focus, .-form .-form-field.-unstyled- > select:focus, .-group.-unstyled- input[type="text"]:focus, .-group.-unstyled- input[type="password"]:focus, .-group.-unstyled- input[type="datetime"]:focus, .-group.-unstyled- input[type="datetime-local"]:focus, .-group.-unstyled- input[type="date"]:focus, .-group.-unstyled- input[type="month"]:focus, .-group.-unstyled- input[type="time"]:focus, .-group.-unstyled- input[type="week"]:focus, .-group.-unstyled- input[type="number"]:focus, .-group.-unstyled- input[type="email"]:focus, .-group.-unstyled- input[type="url"]:focus, .-group.-unstyled- input[type="search"]:focus, .-group.-unstyled- input[type="tel"]:focus, .-group.-unstyled- input[type="color"]:focus, .-group.-unstyled- textarea:focus, .-group.-unstyled- select:focus {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -ms-box-shadow: none;
@@ -370,7 +375,7 @@ input[type="button"]._loading_.-warning-.-unstyled- {
 
 button._loading_.-unstyled-,
 .-btn._loading_.-unstyled-,
-input[type="button"]._loading_.-unstyled- {
+input[type="button"]._loading_.-unstyled-, .-group._loading_ button.-unstyled-, .-group._loading_ input[type="button"].-unstyled-, .-group._loading_ .-btn.-unstyled- {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.1, rgba(0, 0, 0, 0.1)), color-stop(0.1, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(0, 0, 0, 0.1)), color-stop(0.75, rgba(0, 0, 0, 0.1)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
@@ -383,25 +388,27 @@ input[type="button"]._loading_.-unstyled- {
   -o-animation: stripes-animation 2s linear infinite;
   -ms-animation: stripes-animation 2s linear infinite; }
 
-button.-unstyled-, button.-unstyled-:hover, button.-unstyled-:active, button.__active__.-unstyled-,
+button.-unstyled-, button.-unstyled-:hover, button.-unstyled-:active, button._active_.-unstyled-, button.-disabled-.-unstyled-,
 .-btn.-unstyled-,
 .-btn.-unstyled-:hover,
 .-btn.-unstyled-:active,
-.-btn.__active__.-unstyled-,
+.-btn._active_.-unstyled-,
+.-btn.-disabled-.-unstyled-,
 input[type="button"].-unstyled-,
 input[type="button"].-unstyled-:hover,
 input[type="button"].-unstyled-:active,
-input[type="button"].__active__.-unstyled- {
+input[type="button"]._active_.-unstyled-,
+input[type="button"].-disabled-.-unstyled- {
   color: #333333; }
 
 button,
 .-btn,
-input[type="button"] {
+input[type="button"], .-group .-group-appendix, .-group button, .-group input[type="button"], .-group .-btn {
   color: #333333; }
 
 button,
 .-btn,
-input[type="button"] {
+input[type="button"], .-group .-group-appendix, .-group button, .-group input[type="button"], .-group .-btn {
   -webkit-text-shadow: 0 1px 0 rgba(255,255,255,1);
   -moz-text-shadow: 0 1px 0 rgba(255,255,255,1);
   -ms-text-shadow: 0 1px 0 rgba(255,255,255,1);
@@ -425,10 +432,10 @@ input[type="button"] {
 .-form textarea,
 .-form select, .-form .-form-field > input[type="text"], .-form .-form-field > input[type="password"], .-form .-form-field > input[type="datetime"], .-form .-form-field > input[type="datetime-local"], .-form .-form-field > input[type="date"], .-form .-form-field > input[type="month"], .-form .-form-field > input[type="time"], .-form .-form-field > input[type="week"], .-form .-form-field > input[type="number"], .-form .-form-field > input[type="email"], .-form .-form-field > input[type="url"], .-form .-form-field > input[type="search"], .-form .-form-field > input[type="tel"], .-form .-form-field > input[type="color"], .-form .-form-field > textarea, .-form .-form-field > select, button,
 .-btn,
-input[type="button"] {
+input[type="button"], .-group .-group-appendix, .-group input[type="text"], .-group input[type="password"], .-group input[type="datetime"], .-group input[type="datetime-local"], .-group input[type="date"], .-group input[type="month"], .-group input[type="time"], .-group input[type="week"], .-group input[type="number"], .-group input[type="email"], .-group input[type="url"], .-group input[type="search"], .-group input[type="tel"], .-group input[type="color"], .-group textarea, .-group select, .-group button, .-group input[type="button"], .-group .-btn {
   border-color: #d9d9d9; }
 
-.-form input[type="text"]:hover, .-form input[type="password"]:hover, .-form input[type="datetime"]:hover, .-form input[type="datetime-local"]:hover, .-form input[type="date"]:hover, .-form input[type="month"]:hover, .-form input[type="time"]:hover, .-form input[type="week"]:hover, .-form input[type="number"]:hover, .-form input[type="email"]:hover, .-form input[type="url"]:hover, .-form input[type="search"]:hover, .-form input[type="tel"]:hover, .-form input[type="color"]:hover, .-form textarea:hover, .-form select:hover, .-form .-form-field:hover > input[type="text"], .-form .-form-field:hover > input[type="password"], .-form .-form-field:hover > input[type="datetime"], .-form .-form-field:hover > input[type="datetime-local"], .-form .-form-field:hover > input[type="date"], .-form .-form-field:hover > input[type="month"], .-form .-form-field:hover > input[type="time"], .-form .-form-field:hover > input[type="week"], .-form .-form-field:hover > input[type="number"], .-form .-form-field:hover > input[type="email"], .-form .-form-field:hover > input[type="url"], .-form .-form-field:hover > input[type="search"], .-form .-form-field:hover > input[type="tel"], .-form .-form-field:hover > input[type="color"], .-form .-form-field:hover > textarea, .-form .-form-field:hover > select {
+.-form input[type="text"]:hover, .-form input[type="password"]:hover, .-form input[type="datetime"]:hover, .-form input[type="datetime-local"]:hover, .-form input[type="date"]:hover, .-form input[type="month"]:hover, .-form input[type="time"]:hover, .-form input[type="week"]:hover, .-form input[type="number"]:hover, .-form input[type="email"]:hover, .-form input[type="url"]:hover, .-form input[type="search"]:hover, .-form input[type="tel"]:hover, .-form input[type="color"]:hover, .-form textarea:hover, .-form select:hover, .-form .-form-field:hover > input[type="text"], .-form .-form-field:hover > input[type="password"], .-form .-form-field:hover > input[type="datetime"], .-form .-form-field:hover > input[type="datetime-local"], .-form .-form-field:hover > input[type="date"], .-form .-form-field:hover > input[type="month"], .-form .-form-field:hover > input[type="time"], .-form .-form-field:hover > input[type="week"], .-form .-form-field:hover > input[type="number"], .-form .-form-field:hover > input[type="email"], .-form .-form-field:hover > input[type="url"], .-form .-form-field:hover > input[type="search"], .-form .-form-field:hover > input[type="tel"], .-form .-form-field:hover > input[type="color"], .-form .-form-field:hover > textarea, .-form .-form-field:hover > select, .-group input[type="text"]:hover, .-group input[type="password"]:hover, .-group input[type="datetime"]:hover, .-group input[type="datetime-local"]:hover, .-group input[type="date"]:hover, .-group input[type="month"]:hover, .-group input[type="time"]:hover, .-group input[type="week"]:hover, .-group input[type="number"]:hover, .-group input[type="email"]:hover, .-group input[type="url"]:hover, .-group input[type="search"]:hover, .-group input[type="tel"]:hover, .-group input[type="color"]:hover, .-group textarea:hover, .-group select:hover {
   border-color: silver; }
 
 .-form .-form-field {
@@ -436,22 +443,25 @@ input[type="button"] {
 
 button,
 .-btn,
-input[type="button"] {
+input[type="button"], .-group button, .-group input[type="button"], .-group .-btn {
+  background-color: #fbfbfb; }
+
+.-group .-group-appendix {
   background-color: #fbfbfb; }
 
 button:hover,
 .-btn:hover,
-input[type="button"]:hover {
+input[type="button"]:hover, .-group button:hover, .-group input[type="button"]:hover, .-group .-btn:hover {
   background-color: #eeeeee; }
 
-button:active, button.__active__,
+button:active, button._active_,
 .-btn:active,
-.-btn.__active__,
+.-btn._active_,
 input[type="button"]:active,
-input[type="button"].__active__ {
+input[type="button"]._active_, .-group button:active, .-group button._active_, .-group input[type="button"]:active, .-group input[type="button"]._active_, .-group .-btn:active, .-group .-btn._active_ {
   background-color: #e2e2e2; }
 
-.-form input[type="text"]:focus, .-form input[type="password"]:focus, .-form input[type="datetime"]:focus, .-form input[type="datetime-local"]:focus, .-form input[type="date"]:focus, .-form input[type="month"]:focus, .-form input[type="time"]:focus, .-form input[type="week"]:focus, .-form input[type="number"]:focus, .-form input[type="email"]:focus, .-form input[type="url"]:focus, .-form input[type="search"]:focus, .-form input[type="tel"]:focus, .-form input[type="color"]:focus, .-form textarea:focus, .-form select:focus, .-form .-form-field > input[type="text"]:focus, .-form .-form-field > input[type="password"]:focus, .-form .-form-field > input[type="datetime"]:focus, .-form .-form-field > input[type="datetime-local"]:focus, .-form .-form-field > input[type="date"]:focus, .-form .-form-field > input[type="month"]:focus, .-form .-form-field > input[type="time"]:focus, .-form .-form-field > input[type="week"]:focus, .-form .-form-field > input[type="number"]:focus, .-form .-form-field > input[type="email"]:focus, .-form .-form-field > input[type="url"]:focus, .-form .-form-field > input[type="search"]:focus, .-form .-form-field > input[type="tel"]:focus, .-form .-form-field > input[type="color"]:focus, .-form .-form-field > textarea:focus, .-form .-form-field > select:focus {
+.-form input[type="text"]:focus, .-form input[type="password"]:focus, .-form input[type="datetime"]:focus, .-form input[type="datetime-local"]:focus, .-form input[type="date"]:focus, .-form input[type="month"]:focus, .-form input[type="time"]:focus, .-form input[type="week"]:focus, .-form input[type="number"]:focus, .-form input[type="email"]:focus, .-form input[type="url"]:focus, .-form input[type="search"]:focus, .-form input[type="tel"]:focus, .-form input[type="color"]:focus, .-form textarea:focus, .-form select:focus, .-form .-form-field > input[type="text"]:focus, .-form .-form-field > input[type="password"]:focus, .-form .-form-field > input[type="datetime"]:focus, .-form .-form-field > input[type="datetime-local"]:focus, .-form .-form-field > input[type="date"]:focus, .-form .-form-field > input[type="month"]:focus, .-form .-form-field > input[type="time"]:focus, .-form .-form-field > input[type="week"]:focus, .-form .-form-field > input[type="number"]:focus, .-form .-form-field > input[type="email"]:focus, .-form .-form-field > input[type="url"]:focus, .-form .-form-field > input[type="search"]:focus, .-form .-form-field > input[type="tel"]:focus, .-form .-form-field > input[type="color"]:focus, .-form .-form-field > textarea:focus, .-form .-form-field > select:focus, .-group input[type="text"]:focus, .-group input[type="password"]:focus, .-group input[type="datetime"]:focus, .-group input[type="datetime-local"]:focus, .-group input[type="date"]:focus, .-group input[type="month"]:focus, .-group input[type="time"]:focus, .-group input[type="week"]:focus, .-group input[type="number"]:focus, .-group input[type="email"]:focus, .-group input[type="url"]:focus, .-group input[type="search"]:focus, .-group input[type="tel"]:focus, .-group input[type="color"]:focus, .-group textarea:focus, .-group select:focus {
   -webkit-box-shadow: 0 0 10px rgba(100,207,217,1);
   -moz-box-shadow: 0 0 10px rgba(100,207,217,1);
   -ms-box-shadow: 0 0 10px rgba(100,207,217,1);
@@ -483,7 +493,7 @@ input[type="button"]._loading_.-warning- {
 
 button._loading_,
 .-btn._loading_,
-input[type="button"]._loading_ {
+input[type="button"]._loading_, .-group._loading_ button, .-group._loading_ input[type="button"], .-group._loading_ .-btn {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.1, rgba(0, 0, 0, 0.1)), color-stop(0.1, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(0, 0, 0, 0.1)), color-stop(0.75, rgba(0, 0, 0, 0.1)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
@@ -496,25 +506,27 @@ input[type="button"]._loading_ {
   -o-animation: stripes-animation 2s linear infinite;
   -ms-animation: stripes-animation 2s linear infinite; }
 
-button.-unstyled-.-error-, button.-unstyled-.-error-:hover, button.-unstyled-.-error-:active, button.__active__.-unstyled-.-error-,
+button.-unstyled-.-error-, button.-unstyled-.-error-:hover, button.-unstyled-.-error-:active, button._active_.-unstyled-.-error-, button.-disabled-.-unstyled-.-error-,
 .-btn.-unstyled-.-error-,
 .-btn.-unstyled-.-error-:hover,
 .-btn.-unstyled-.-error-:active,
-.-btn.__active__.-unstyled-.-error-,
+.-btn._active_.-unstyled-.-error-,
+.-btn.-disabled-.-unstyled-.-error-,
 input[type="button"].-unstyled-.-error-,
 input[type="button"].-unstyled-.-error-:hover,
 input[type="button"].-unstyled-.-error-:active,
-input[type="button"].__active__.-unstyled-.-error- {
+input[type="button"]._active_.-unstyled-.-error-,
+input[type="button"].-disabled-.-unstyled-.-error- {
   color: red; }
 
 button.-error-,
 .-btn.-error-,
-input[type="button"].-error- {
+input[type="button"].-error-, .-group .-group-appendix.-error-, .-group.-error- .-group-appendix, .-group.-error- button, .-group.-error- input[type="button"], .-group.-error- .-btn {
   color: white; }
 
 button.-error-,
 .-btn.-error-,
-input[type="button"].-error- {
+input[type="button"].-error-, .-group .-group-appendix.-error-, .-group.-error- .-group-appendix, .-group.-error- button, .-group.-error- input[type="button"], .-group.-error- .-btn {
   -webkit-text-shadow: 0 -1px rgba(0,0,0,.3);
   -moz-text-shadow: 0 -1px rgba(0,0,0,.3);
   -ms-text-shadow: 0 -1px rgba(0,0,0,.3);
@@ -538,10 +550,10 @@ input[type="button"].-error- {
 .-form textarea.-error-,
 .-form select.-error-, .-form .-form-field.-error- > input[type="text"], .-form .-form-field.-error- > input[type="password"], .-form .-form-field.-error- > input[type="datetime"], .-form .-form-field.-error- > input[type="datetime-local"], .-form .-form-field.-error- > input[type="date"], .-form .-form-field.-error- > input[type="month"], .-form .-form-field.-error- > input[type="time"], .-form .-form-field.-error- > input[type="week"], .-form .-form-field.-error- > input[type="number"], .-form .-form-field.-error- > input[type="email"], .-form .-form-field.-error- > input[type="url"], .-form .-form-field.-error- > input[type="search"], .-form .-form-field.-error- > input[type="tel"], .-form .-form-field.-error- > input[type="color"], .-form .-form-field.-error- > textarea, .-form .-form-field.-error- > select, button.-error-,
 .-btn.-error-,
-input[type="button"].-error- {
+input[type="button"].-error-, .-group .-group-appendix.-error-, .-group.-error- input[type="text"], .-group.-error- input[type="password"], .-group.-error- input[type="datetime"], .-group.-error- input[type="datetime-local"], .-group.-error- input[type="date"], .-group.-error- input[type="month"], .-group.-error- input[type="time"], .-group.-error- input[type="week"], .-group.-error- input[type="number"], .-group.-error- input[type="email"], .-group.-error- input[type="url"], .-group.-error- input[type="search"], .-group.-error- input[type="tel"], .-group.-error- input[type="color"], .-group.-error- textarea, .-group.-error- select, .-group.-error- .-group-appendix, .-group.-error- button, .-group.-error- input[type="button"], .-group.-error- .-btn {
   border-color: #d96464; }
 
-.-form input[type="text"].-error-:hover, .-form input[type="password"].-error-:hover, .-form input[type="datetime"].-error-:hover, .-form input[type="datetime-local"].-error-:hover, .-form input[type="date"].-error-:hover, .-form input[type="month"].-error-:hover, .-form input[type="time"].-error-:hover, .-form input[type="week"].-error-:hover, .-form input[type="number"].-error-:hover, .-form input[type="email"].-error-:hover, .-form input[type="url"].-error-:hover, .-form input[type="search"].-error-:hover, .-form input[type="tel"].-error-:hover, .-form input[type="color"].-error-:hover, .-form textarea.-error-:hover, .-form select.-error-:hover, .-form .-form-field:hover.-error- > input[type="text"], .-form .-form-field:hover.-error- > input[type="password"], .-form .-form-field:hover.-error- > input[type="datetime"], .-form .-form-field:hover.-error- > input[type="datetime-local"], .-form .-form-field:hover.-error- > input[type="date"], .-form .-form-field:hover.-error- > input[type="month"], .-form .-form-field:hover.-error- > input[type="time"], .-form .-form-field:hover.-error- > input[type="week"], .-form .-form-field:hover.-error- > input[type="number"], .-form .-form-field:hover.-error- > input[type="email"], .-form .-form-field:hover.-error- > input[type="url"], .-form .-form-field:hover.-error- > input[type="search"], .-form .-form-field:hover.-error- > input[type="tel"], .-form .-form-field:hover.-error- > input[type="color"], .-form .-form-field:hover.-error- > textarea, .-form .-form-field:hover.-error- > select {
+.-form input[type="text"].-error-:hover, .-form input[type="password"].-error-:hover, .-form input[type="datetime"].-error-:hover, .-form input[type="datetime-local"].-error-:hover, .-form input[type="date"].-error-:hover, .-form input[type="month"].-error-:hover, .-form input[type="time"].-error-:hover, .-form input[type="week"].-error-:hover, .-form input[type="number"].-error-:hover, .-form input[type="email"].-error-:hover, .-form input[type="url"].-error-:hover, .-form input[type="search"].-error-:hover, .-form input[type="tel"].-error-:hover, .-form input[type="color"].-error-:hover, .-form textarea.-error-:hover, .-form select.-error-:hover, .-form .-form-field:hover.-error- > input[type="text"], .-form .-form-field:hover.-error- > input[type="password"], .-form .-form-field:hover.-error- > input[type="datetime"], .-form .-form-field:hover.-error- > input[type="datetime-local"], .-form .-form-field:hover.-error- > input[type="date"], .-form .-form-field:hover.-error- > input[type="month"], .-form .-form-field:hover.-error- > input[type="time"], .-form .-form-field:hover.-error- > input[type="week"], .-form .-form-field:hover.-error- > input[type="number"], .-form .-form-field:hover.-error- > input[type="email"], .-form .-form-field:hover.-error- > input[type="url"], .-form .-form-field:hover.-error- > input[type="search"], .-form .-form-field:hover.-error- > input[type="tel"], .-form .-form-field:hover.-error- > input[type="color"], .-form .-form-field:hover.-error- > textarea, .-form .-form-field:hover.-error- > select, .-group.-error- input[type="text"]:hover, .-group.-error- input[type="password"]:hover, .-group.-error- input[type="datetime"]:hover, .-group.-error- input[type="datetime-local"]:hover, .-group.-error- input[type="date"]:hover, .-group.-error- input[type="month"]:hover, .-group.-error- input[type="time"]:hover, .-group.-error- input[type="week"]:hover, .-group.-error- input[type="number"]:hover, .-group.-error- input[type="email"]:hover, .-group.-error- input[type="url"]:hover, .-group.-error- input[type="search"]:hover, .-group.-error- input[type="tel"]:hover, .-group.-error- input[type="color"]:hover, .-group.-error- textarea:hover, .-group.-error- select:hover {
   border-color: #cf3b3b; }
 
 .-form .-form-field.-error- {
@@ -549,22 +561,25 @@ input[type="button"].-error- {
 
 button.-error-,
 .-btn.-error-,
-input[type="button"].-error- {
+input[type="button"].-error-, .-group.-error- button, .-group.-error- input[type="button"], .-group.-error- .-btn {
   background-color: #da4a39; }
+
+.-group .-group-appendix.-error-, .-group.-error- .-group-appendix {
+  background-color: #ea998f; }
 
 button.-error-:hover,
 .-btn.-error-:hover,
-input[type="button"].-error-:hover {
+input[type="button"].-error-:hover, .-group.-error- button:hover, .-group.-error- input[type="button"]:hover, .-group.-error- .-btn:hover {
   background-color: #d23927; }
 
-button.-error-:active, button.__active__.-error-,
+button.-error-:active, button._active_.-error-,
 .-btn.-error-:active,
-.-btn.__active__.-error-,
+.-btn._active_.-error-,
 input[type="button"].-error-:active,
-input[type="button"].__active__.-error- {
+input[type="button"]._active_.-error-, .-group.-error- button:active, .-group.-error- button._active_, .-group.-error- input[type="button"]:active, .-group.-error- input[type="button"]._active_, .-group.-error- .-btn:active, .-group.-error- .-btn._active_ {
   background-color: #bd3323; }
 
-.-form input[type="text"].-error-:focus, .-form input[type="password"].-error-:focus, .-form input[type="datetime"].-error-:focus, .-form input[type="datetime-local"].-error-:focus, .-form input[type="date"].-error-:focus, .-form input[type="month"].-error-:focus, .-form input[type="time"].-error-:focus, .-form input[type="week"].-error-:focus, .-form input[type="number"].-error-:focus, .-form input[type="email"].-error-:focus, .-form input[type="url"].-error-:focus, .-form input[type="search"].-error-:focus, .-form input[type="tel"].-error-:focus, .-form input[type="color"].-error-:focus, .-form textarea.-error-:focus, .-form select.-error-:focus, .-form .-form-field.-error- > input[type="text"]:focus, .-form .-form-field.-error- > input[type="password"]:focus, .-form .-form-field.-error- > input[type="datetime"]:focus, .-form .-form-field.-error- > input[type="datetime-local"]:focus, .-form .-form-field.-error- > input[type="date"]:focus, .-form .-form-field.-error- > input[type="month"]:focus, .-form .-form-field.-error- > input[type="time"]:focus, .-form .-form-field.-error- > input[type="week"]:focus, .-form .-form-field.-error- > input[type="number"]:focus, .-form .-form-field.-error- > input[type="email"]:focus, .-form .-form-field.-error- > input[type="url"]:focus, .-form .-form-field.-error- > input[type="search"]:focus, .-form .-form-field.-error- > input[type="tel"]:focus, .-form .-form-field.-error- > input[type="color"]:focus, .-form .-form-field.-error- > textarea:focus, .-form .-form-field.-error- > select:focus {
+.-form input[type="text"].-error-:focus, .-form input[type="password"].-error-:focus, .-form input[type="datetime"].-error-:focus, .-form input[type="datetime-local"].-error-:focus, .-form input[type="date"].-error-:focus, .-form input[type="month"].-error-:focus, .-form input[type="time"].-error-:focus, .-form input[type="week"].-error-:focus, .-form input[type="number"].-error-:focus, .-form input[type="email"].-error-:focus, .-form input[type="url"].-error-:focus, .-form input[type="search"].-error-:focus, .-form input[type="tel"].-error-:focus, .-form input[type="color"].-error-:focus, .-form textarea.-error-:focus, .-form select.-error-:focus, .-form .-form-field.-error- > input[type="text"]:focus, .-form .-form-field.-error- > input[type="password"]:focus, .-form .-form-field.-error- > input[type="datetime"]:focus, .-form .-form-field.-error- > input[type="datetime-local"]:focus, .-form .-form-field.-error- > input[type="date"]:focus, .-form .-form-field.-error- > input[type="month"]:focus, .-form .-form-field.-error- > input[type="time"]:focus, .-form .-form-field.-error- > input[type="week"]:focus, .-form .-form-field.-error- > input[type="number"]:focus, .-form .-form-field.-error- > input[type="email"]:focus, .-form .-form-field.-error- > input[type="url"]:focus, .-form .-form-field.-error- > input[type="search"]:focus, .-form .-form-field.-error- > input[type="tel"]:focus, .-form .-form-field.-error- > input[type="color"]:focus, .-form .-form-field.-error- > textarea:focus, .-form .-form-field.-error- > select:focus, .-group.-error- input[type="text"]:focus, .-group.-error- input[type="password"]:focus, .-group.-error- input[type="datetime"]:focus, .-group.-error- input[type="datetime-local"]:focus, .-group.-error- input[type="date"]:focus, .-group.-error- input[type="month"]:focus, .-group.-error- input[type="time"]:focus, .-group.-error- input[type="week"]:focus, .-group.-error- input[type="number"]:focus, .-group.-error- input[type="email"]:focus, .-group.-error- input[type="url"]:focus, .-group.-error- input[type="search"]:focus, .-group.-error- input[type="tel"]:focus, .-group.-error- input[type="color"]:focus, .-group.-error- textarea:focus, .-group.-error- select:focus {
   -webkit-box-shadow: 0 0 10px rgba(217,100,100,1);
   -moz-box-shadow: 0 0 10px rgba(217,100,100,1);
   -ms-box-shadow: 0 0 10px rgba(217,100,100,1);
@@ -596,7 +611,7 @@ input[type="button"]._loading_.-warning-.-error- {
 
 button._loading_.-error-,
 .-btn._loading_.-error-,
-input[type="button"]._loading_.-error- {
+input[type="button"]._loading_.-error-, .-group._loading_ button.-error-, .-group._loading_ input[type="button"].-error-, .-group._loading_ .-btn.-error- {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.1, rgba(0, 0, 0, 0.1)), color-stop(0.1, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(0, 0, 0, 0.1)), color-stop(0.75, rgba(0, 0, 0, 0.1)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
@@ -609,25 +624,27 @@ input[type="button"]._loading_.-error- {
   -o-animation: stripes-animation 2s linear infinite;
   -ms-animation: stripes-animation 2s linear infinite; }
 
-button.-unstyled-.-success-, button.-unstyled-.-success-:hover, button.-unstyled-.-success-:active, button.__active__.-unstyled-.-success-,
+button.-unstyled-.-success-, button.-unstyled-.-success-:hover, button.-unstyled-.-success-:active, button._active_.-unstyled-.-success-, button.-disabled-.-unstyled-.-success-,
 .-btn.-unstyled-.-success-,
 .-btn.-unstyled-.-success-:hover,
 .-btn.-unstyled-.-success-:active,
-.-btn.__active__.-unstyled-.-success-,
+.-btn._active_.-unstyled-.-success-,
+.-btn.-disabled-.-unstyled-.-success-,
 input[type="button"].-unstyled-.-success-,
 input[type="button"].-unstyled-.-success-:hover,
 input[type="button"].-unstyled-.-success-:active,
-input[type="button"].__active__.-unstyled-.-success- {
+input[type="button"]._active_.-unstyled-.-success-,
+input[type="button"].-disabled-.-unstyled-.-success- {
   color: #62c462; }
 
 button.-success-,
 .-btn.-success-,
-input[type="button"].-success- {
+input[type="button"].-success-, .-group .-group-appendix.-success-, .-group.-success- .-group-appendix, .-group.-success- button, .-group.-success- input[type="button"], .-group.-success- .-btn {
   color: white; }
 
 button.-success-,
 .-btn.-success-,
-input[type="button"].-success- {
+input[type="button"].-success-, .-group .-group-appendix.-success-, .-group.-success- .-group-appendix, .-group.-success- button, .-group.-success- input[type="button"], .-group.-success- .-btn {
   -webkit-text-shadow: 0 -1px rgba(0,0,0,.3);
   -moz-text-shadow: 0 -1px rgba(0,0,0,.3);
   -ms-text-shadow: 0 -1px rgba(0,0,0,.3);
@@ -651,10 +668,10 @@ input[type="button"].-success- {
 .-form textarea.-success-,
 .-form select.-success-, .-form .-form-field.-success- > input[type="text"], .-form .-form-field.-success- > input[type="password"], .-form .-form-field.-success- > input[type="datetime"], .-form .-form-field.-success- > input[type="datetime-local"], .-form .-form-field.-success- > input[type="date"], .-form .-form-field.-success- > input[type="month"], .-form .-form-field.-success- > input[type="time"], .-form .-form-field.-success- > input[type="week"], .-form .-form-field.-success- > input[type="number"], .-form .-form-field.-success- > input[type="email"], .-form .-form-field.-success- > input[type="url"], .-form .-form-field.-success- > input[type="search"], .-form .-form-field.-success- > input[type="tel"], .-form .-form-field.-success- > input[type="color"], .-form .-form-field.-success- > textarea, .-form .-form-field.-success- > select, button.-success-,
 .-btn.-success-,
-input[type="button"].-success- {
+input[type="button"].-success-, .-group .-group-appendix.-success-, .-group.-success- input[type="text"], .-group.-success- input[type="password"], .-group.-success- input[type="datetime"], .-group.-success- input[type="datetime-local"], .-group.-success- input[type="date"], .-group.-success- input[type="month"], .-group.-success- input[type="time"], .-group.-success- input[type="week"], .-group.-success- input[type="number"], .-group.-success- input[type="email"], .-group.-success- input[type="url"], .-group.-success- input[type="search"], .-group.-success- input[type="tel"], .-group.-success- input[type="color"], .-group.-success- textarea, .-group.-success- select, .-group.-success- .-group-appendix, .-group.-success- button, .-group.-success- input[type="button"], .-group.-success- .-btn {
   border-color: #64d986; }
 
-.-form input[type="text"].-success-:hover, .-form input[type="password"].-success-:hover, .-form input[type="datetime"].-success-:hover, .-form input[type="datetime-local"].-success-:hover, .-form input[type="date"].-success-:hover, .-form input[type="month"].-success-:hover, .-form input[type="time"].-success-:hover, .-form input[type="week"].-success-:hover, .-form input[type="number"].-success-:hover, .-form input[type="email"].-success-:hover, .-form input[type="url"].-success-:hover, .-form input[type="search"].-success-:hover, .-form input[type="tel"].-success-:hover, .-form input[type="color"].-success-:hover, .-form textarea.-success-:hover, .-form select.-success-:hover, .-form .-form-field:hover.-success- > input[type="text"], .-form .-form-field:hover.-success- > input[type="password"], .-form .-form-field:hover.-success- > input[type="datetime"], .-form .-form-field:hover.-success- > input[type="datetime-local"], .-form .-form-field:hover.-success- > input[type="date"], .-form .-form-field:hover.-success- > input[type="month"], .-form .-form-field:hover.-success- > input[type="time"], .-form .-form-field:hover.-success- > input[type="week"], .-form .-form-field:hover.-success- > input[type="number"], .-form .-form-field:hover.-success- > input[type="email"], .-form .-form-field:hover.-success- > input[type="url"], .-form .-form-field:hover.-success- > input[type="search"], .-form .-form-field:hover.-success- > input[type="tel"], .-form .-form-field:hover.-success- > input[type="color"], .-form .-form-field:hover.-success- > textarea, .-form .-form-field:hover.-success- > select {
+.-form input[type="text"].-success-:hover, .-form input[type="password"].-success-:hover, .-form input[type="datetime"].-success-:hover, .-form input[type="datetime-local"].-success-:hover, .-form input[type="date"].-success-:hover, .-form input[type="month"].-success-:hover, .-form input[type="time"].-success-:hover, .-form input[type="week"].-success-:hover, .-form input[type="number"].-success-:hover, .-form input[type="email"].-success-:hover, .-form input[type="url"].-success-:hover, .-form input[type="search"].-success-:hover, .-form input[type="tel"].-success-:hover, .-form input[type="color"].-success-:hover, .-form textarea.-success-:hover, .-form select.-success-:hover, .-form .-form-field:hover.-success- > input[type="text"], .-form .-form-field:hover.-success- > input[type="password"], .-form .-form-field:hover.-success- > input[type="datetime"], .-form .-form-field:hover.-success- > input[type="datetime-local"], .-form .-form-field:hover.-success- > input[type="date"], .-form .-form-field:hover.-success- > input[type="month"], .-form .-form-field:hover.-success- > input[type="time"], .-form .-form-field:hover.-success- > input[type="week"], .-form .-form-field:hover.-success- > input[type="number"], .-form .-form-field:hover.-success- > input[type="email"], .-form .-form-field:hover.-success- > input[type="url"], .-form .-form-field:hover.-success- > input[type="search"], .-form .-form-field:hover.-success- > input[type="tel"], .-form .-form-field:hover.-success- > input[type="color"], .-form .-form-field:hover.-success- > textarea, .-form .-form-field:hover.-success- > select, .-group.-success- input[type="text"]:hover, .-group.-success- input[type="password"]:hover, .-group.-success- input[type="datetime"]:hover, .-group.-success- input[type="datetime-local"]:hover, .-group.-success- input[type="date"]:hover, .-group.-success- input[type="month"]:hover, .-group.-success- input[type="time"]:hover, .-group.-success- input[type="week"]:hover, .-group.-success- input[type="number"]:hover, .-group.-success- input[type="email"]:hover, .-group.-success- input[type="url"]:hover, .-group.-success- input[type="search"]:hover, .-group.-success- input[type="tel"]:hover, .-group.-success- input[type="color"]:hover, .-group.-success- textarea:hover, .-group.-success- select:hover {
   border-color: #3bcf66; }
 
 .-form .-form-field.-success- {
@@ -662,22 +679,25 @@ input[type="button"].-success- {
 
 button.-success-,
 .-btn.-success-,
-input[type="button"].-success- {
+input[type="button"].-success-, .-group.-success- button, .-group.-success- input[type="button"], .-group.-success- .-btn {
   background-color: #62c462; }
+
+.-group .-group-appendix.-success-, .-group.-success- .-group-appendix {
+  background-color: #ace0ac; }
 
 button.-success-:hover,
 .-btn.-success-:hover,
-input[type="button"].-success-:hover {
+input[type="button"].-success-:hover, .-group.-success- button:hover, .-group.-success- input[type="button"]:hover, .-group.-success- .-btn:hover {
   background-color: #4fbd4f; }
 
-button.-success-:active, button.__active__.-success-,
+button.-success-:active, button._active_.-success-,
 .-btn.-success-:active,
-.-btn.__active__.-success-,
+.-btn._active_.-success-,
 input[type="button"].-success-:active,
-input[type="button"].__active__.-success- {
+input[type="button"]._active_.-success-, .-group.-success- button:active, .-group.-success- button._active_, .-group.-success- input[type="button"]:active, .-group.-success- input[type="button"]._active_, .-group.-success- .-btn:active, .-group.-success- .-btn._active_ {
   background-color: #42b142; }
 
-.-form input[type="text"].-success-:focus, .-form input[type="password"].-success-:focus, .-form input[type="datetime"].-success-:focus, .-form input[type="datetime-local"].-success-:focus, .-form input[type="date"].-success-:focus, .-form input[type="month"].-success-:focus, .-form input[type="time"].-success-:focus, .-form input[type="week"].-success-:focus, .-form input[type="number"].-success-:focus, .-form input[type="email"].-success-:focus, .-form input[type="url"].-success-:focus, .-form input[type="search"].-success-:focus, .-form input[type="tel"].-success-:focus, .-form input[type="color"].-success-:focus, .-form textarea.-success-:focus, .-form select.-success-:focus, .-form .-form-field.-success- > input[type="text"]:focus, .-form .-form-field.-success- > input[type="password"]:focus, .-form .-form-field.-success- > input[type="datetime"]:focus, .-form .-form-field.-success- > input[type="datetime-local"]:focus, .-form .-form-field.-success- > input[type="date"]:focus, .-form .-form-field.-success- > input[type="month"]:focus, .-form .-form-field.-success- > input[type="time"]:focus, .-form .-form-field.-success- > input[type="week"]:focus, .-form .-form-field.-success- > input[type="number"]:focus, .-form .-form-field.-success- > input[type="email"]:focus, .-form .-form-field.-success- > input[type="url"]:focus, .-form .-form-field.-success- > input[type="search"]:focus, .-form .-form-field.-success- > input[type="tel"]:focus, .-form .-form-field.-success- > input[type="color"]:focus, .-form .-form-field.-success- > textarea:focus, .-form .-form-field.-success- > select:focus {
+.-form input[type="text"].-success-:focus, .-form input[type="password"].-success-:focus, .-form input[type="datetime"].-success-:focus, .-form input[type="datetime-local"].-success-:focus, .-form input[type="date"].-success-:focus, .-form input[type="month"].-success-:focus, .-form input[type="time"].-success-:focus, .-form input[type="week"].-success-:focus, .-form input[type="number"].-success-:focus, .-form input[type="email"].-success-:focus, .-form input[type="url"].-success-:focus, .-form input[type="search"].-success-:focus, .-form input[type="tel"].-success-:focus, .-form input[type="color"].-success-:focus, .-form textarea.-success-:focus, .-form select.-success-:focus, .-form .-form-field.-success- > input[type="text"]:focus, .-form .-form-field.-success- > input[type="password"]:focus, .-form .-form-field.-success- > input[type="datetime"]:focus, .-form .-form-field.-success- > input[type="datetime-local"]:focus, .-form .-form-field.-success- > input[type="date"]:focus, .-form .-form-field.-success- > input[type="month"]:focus, .-form .-form-field.-success- > input[type="time"]:focus, .-form .-form-field.-success- > input[type="week"]:focus, .-form .-form-field.-success- > input[type="number"]:focus, .-form .-form-field.-success- > input[type="email"]:focus, .-form .-form-field.-success- > input[type="url"]:focus, .-form .-form-field.-success- > input[type="search"]:focus, .-form .-form-field.-success- > input[type="tel"]:focus, .-form .-form-field.-success- > input[type="color"]:focus, .-form .-form-field.-success- > textarea:focus, .-form .-form-field.-success- > select:focus, .-group.-success- input[type="text"]:focus, .-group.-success- input[type="password"]:focus, .-group.-success- input[type="datetime"]:focus, .-group.-success- input[type="datetime-local"]:focus, .-group.-success- input[type="date"]:focus, .-group.-success- input[type="month"]:focus, .-group.-success- input[type="time"]:focus, .-group.-success- input[type="week"]:focus, .-group.-success- input[type="number"]:focus, .-group.-success- input[type="email"]:focus, .-group.-success- input[type="url"]:focus, .-group.-success- input[type="search"]:focus, .-group.-success- input[type="tel"]:focus, .-group.-success- input[type="color"]:focus, .-group.-success- textarea:focus, .-group.-success- select:focus {
   -webkit-box-shadow: 0 0 10px rgba(100,217,134,1);
   -moz-box-shadow: 0 0 10px rgba(100,217,134,1);
   -ms-box-shadow: 0 0 10px rgba(100,217,134,1);
@@ -709,7 +729,7 @@ input[type="button"]._loading_.-warning-.-success- {
 
 button._loading_.-success-,
 .-btn._loading_.-success-,
-input[type="button"]._loading_.-success- {
+input[type="button"]._loading_.-success-, .-group._loading_ button.-success-, .-group._loading_ input[type="button"].-success-, .-group._loading_ .-btn.-success- {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.1, rgba(0, 0, 0, 0.1)), color-stop(0.1, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(0, 0, 0, 0.1)), color-stop(0.75, rgba(0, 0, 0, 0.1)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
@@ -722,25 +742,27 @@ input[type="button"]._loading_.-success- {
   -o-animation: stripes-animation 2s linear infinite;
   -ms-animation: stripes-animation 2s linear infinite; }
 
-button.-unstyled-.-info-, button.-unstyled-.-info-:hover, button.-unstyled-.-info-:active, button.__active__.-unstyled-.-info-,
+button.-unstyled-.-info-, button.-unstyled-.-info-:hover, button.-unstyled-.-info-:active, button._active_.-unstyled-.-info-, button.-disabled-.-unstyled-.-info-,
 .-btn.-unstyled-.-info-,
 .-btn.-unstyled-.-info-:hover,
 .-btn.-unstyled-.-info-:active,
-.-btn.__active__.-unstyled-.-info-,
+.-btn._active_.-unstyled-.-info-,
+.-btn.-disabled-.-unstyled-.-info-,
 input[type="button"].-unstyled-.-info-,
 input[type="button"].-unstyled-.-info-:hover,
 input[type="button"].-unstyled-.-info-:active,
-input[type="button"].__active__.-unstyled-.-info- {
+input[type="button"]._active_.-unstyled-.-info-,
+input[type="button"].-disabled-.-unstyled-.-info- {
   color: #64cfd9; }
 
 button.-info-,
 .-btn.-info-,
-input[type="button"].-info- {
+input[type="button"].-info-, .-group .-group-appendix.-info-, .-group.-info- .-group-appendix, .-group.-info- button, .-group.-info- input[type="button"], .-group.-info- .-btn {
   color: white; }
 
 button.-info-,
 .-btn.-info-,
-input[type="button"].-info- {
+input[type="button"].-info-, .-group .-group-appendix.-info-, .-group.-info- .-group-appendix, .-group.-info- button, .-group.-info- input[type="button"], .-group.-info- .-btn {
   -webkit-text-shadow: 0 -1px rgba(0,0,0,.3);
   -moz-text-shadow: 0 -1px rgba(0,0,0,.3);
   -ms-text-shadow: 0 -1px rgba(0,0,0,.3);
@@ -764,10 +786,10 @@ input[type="button"].-info- {
 .-form textarea.-info-,
 .-form select.-info-, .-form .-form-field.-info- > input[type="text"], .-form .-form-field.-info- > input[type="password"], .-form .-form-field.-info- > input[type="datetime"], .-form .-form-field.-info- > input[type="datetime-local"], .-form .-form-field.-info- > input[type="date"], .-form .-form-field.-info- > input[type="month"], .-form .-form-field.-info- > input[type="time"], .-form .-form-field.-info- > input[type="week"], .-form .-form-field.-info- > input[type="number"], .-form .-form-field.-info- > input[type="email"], .-form .-form-field.-info- > input[type="url"], .-form .-form-field.-info- > input[type="search"], .-form .-form-field.-info- > input[type="tel"], .-form .-form-field.-info- > input[type="color"], .-form .-form-field.-info- > textarea, .-form .-form-field.-info- > select, button.-info-,
 .-btn.-info-,
-input[type="button"].-info- {
+input[type="button"].-info-, .-group .-group-appendix.-info-, .-group.-info- input[type="text"], .-group.-info- input[type="password"], .-group.-info- input[type="datetime"], .-group.-info- input[type="datetime-local"], .-group.-info- input[type="date"], .-group.-info- input[type="month"], .-group.-info- input[type="time"], .-group.-info- input[type="week"], .-group.-info- input[type="number"], .-group.-info- input[type="email"], .-group.-info- input[type="url"], .-group.-info- input[type="search"], .-group.-info- input[type="tel"], .-group.-info- input[type="color"], .-group.-info- textarea, .-group.-info- select, .-group.-info- .-group-appendix, .-group.-info- button, .-group.-info- input[type="button"], .-group.-info- .-btn {
   border-color: #64cfd9; }
 
-.-form input[type="text"].-info-:hover, .-form input[type="password"].-info-:hover, .-form input[type="datetime"].-info-:hover, .-form input[type="datetime-local"].-info-:hover, .-form input[type="date"].-info-:hover, .-form input[type="month"].-info-:hover, .-form input[type="time"].-info-:hover, .-form input[type="week"].-info-:hover, .-form input[type="number"].-info-:hover, .-form input[type="email"].-info-:hover, .-form input[type="url"].-info-:hover, .-form input[type="search"].-info-:hover, .-form input[type="tel"].-info-:hover, .-form input[type="color"].-info-:hover, .-form textarea.-info-:hover, .-form select.-info-:hover, .-form .-form-field:hover.-info- > input[type="text"], .-form .-form-field:hover.-info- > input[type="password"], .-form .-form-field:hover.-info- > input[type="datetime"], .-form .-form-field:hover.-info- > input[type="datetime-local"], .-form .-form-field:hover.-info- > input[type="date"], .-form .-form-field:hover.-info- > input[type="month"], .-form .-form-field:hover.-info- > input[type="time"], .-form .-form-field:hover.-info- > input[type="week"], .-form .-form-field:hover.-info- > input[type="number"], .-form .-form-field:hover.-info- > input[type="email"], .-form .-form-field:hover.-info- > input[type="url"], .-form .-form-field:hover.-info- > input[type="search"], .-form .-form-field:hover.-info- > input[type="tel"], .-form .-form-field:hover.-info- > input[type="color"], .-form .-form-field:hover.-info- > textarea, .-form .-form-field:hover.-info- > select {
+.-form input[type="text"].-info-:hover, .-form input[type="password"].-info-:hover, .-form input[type="datetime"].-info-:hover, .-form input[type="datetime-local"].-info-:hover, .-form input[type="date"].-info-:hover, .-form input[type="month"].-info-:hover, .-form input[type="time"].-info-:hover, .-form input[type="week"].-info-:hover, .-form input[type="number"].-info-:hover, .-form input[type="email"].-info-:hover, .-form input[type="url"].-info-:hover, .-form input[type="search"].-info-:hover, .-form input[type="tel"].-info-:hover, .-form input[type="color"].-info-:hover, .-form textarea.-info-:hover, .-form select.-info-:hover, .-form .-form-field:hover.-info- > input[type="text"], .-form .-form-field:hover.-info- > input[type="password"], .-form .-form-field:hover.-info- > input[type="datetime"], .-form .-form-field:hover.-info- > input[type="datetime-local"], .-form .-form-field:hover.-info- > input[type="date"], .-form .-form-field:hover.-info- > input[type="month"], .-form .-form-field:hover.-info- > input[type="time"], .-form .-form-field:hover.-info- > input[type="week"], .-form .-form-field:hover.-info- > input[type="number"], .-form .-form-field:hover.-info- > input[type="email"], .-form .-form-field:hover.-info- > input[type="url"], .-form .-form-field:hover.-info- > input[type="search"], .-form .-form-field:hover.-info- > input[type="tel"], .-form .-form-field:hover.-info- > input[type="color"], .-form .-form-field:hover.-info- > textarea, .-form .-form-field:hover.-info- > select, .-group.-info- input[type="text"]:hover, .-group.-info- input[type="password"]:hover, .-group.-info- input[type="datetime"]:hover, .-group.-info- input[type="datetime-local"]:hover, .-group.-info- input[type="date"]:hover, .-group.-info- input[type="month"]:hover, .-group.-info- input[type="time"]:hover, .-group.-info- input[type="week"]:hover, .-group.-info- input[type="number"]:hover, .-group.-info- input[type="email"]:hover, .-group.-info- input[type="url"]:hover, .-group.-info- input[type="search"]:hover, .-group.-info- input[type="tel"]:hover, .-group.-info- input[type="color"]:hover, .-group.-info- textarea:hover, .-group.-info- select:hover {
   border-color: #3bc2cf; }
 
 .-form .-form-field.-info- {
@@ -775,22 +797,25 @@ input[type="button"].-info- {
 
 button.-info-,
 .-btn.-info-,
-input[type="button"].-info- {
+input[type="button"].-info-, .-group.-info- button, .-group.-info- input[type="button"], .-group.-info- .-btn {
   background-color: #64cfd9; }
+
+.-group .-group-appendix.-info-, .-group.-info- .-group-appendix {
+  background-color: #b6e8ed; }
 
 button.-info-:hover,
 .-btn.-info-:hover,
-input[type="button"].-info-:hover {
+input[type="button"].-info-:hover, .-group.-info- button:hover, .-group.-info- input[type="button"]:hover, .-group.-info- .-btn:hover {
   background-color: #50c9d4; }
 
-button.-info-:active, button.__active__.-info-,
+button.-info-:active, button._active_.-info-,
 .-btn.-info-:active,
-.-btn.__active__.-info-,
+.-btn._active_.-info-,
 input[type="button"].-info-:active,
-input[type="button"].__active__.-info- {
+input[type="button"]._active_.-info-, .-group.-info- button:active, .-group.-info- button._active_, .-group.-info- input[type="button"]:active, .-group.-info- input[type="button"]._active_, .-group.-info- .-btn:active, .-group.-info- .-btn._active_ {
   background-color: #3bc2cf; }
 
-.-form input[type="text"].-info-:focus, .-form input[type="password"].-info-:focus, .-form input[type="datetime"].-info-:focus, .-form input[type="datetime-local"].-info-:focus, .-form input[type="date"].-info-:focus, .-form input[type="month"].-info-:focus, .-form input[type="time"].-info-:focus, .-form input[type="week"].-info-:focus, .-form input[type="number"].-info-:focus, .-form input[type="email"].-info-:focus, .-form input[type="url"].-info-:focus, .-form input[type="search"].-info-:focus, .-form input[type="tel"].-info-:focus, .-form input[type="color"].-info-:focus, .-form textarea.-info-:focus, .-form select.-info-:focus, .-form .-form-field.-info- > input[type="text"]:focus, .-form .-form-field.-info- > input[type="password"]:focus, .-form .-form-field.-info- > input[type="datetime"]:focus, .-form .-form-field.-info- > input[type="datetime-local"]:focus, .-form .-form-field.-info- > input[type="date"]:focus, .-form .-form-field.-info- > input[type="month"]:focus, .-form .-form-field.-info- > input[type="time"]:focus, .-form .-form-field.-info- > input[type="week"]:focus, .-form .-form-field.-info- > input[type="number"]:focus, .-form .-form-field.-info- > input[type="email"]:focus, .-form .-form-field.-info- > input[type="url"]:focus, .-form .-form-field.-info- > input[type="search"]:focus, .-form .-form-field.-info- > input[type="tel"]:focus, .-form .-form-field.-info- > input[type="color"]:focus, .-form .-form-field.-info- > textarea:focus, .-form .-form-field.-info- > select:focus {
+.-form input[type="text"].-info-:focus, .-form input[type="password"].-info-:focus, .-form input[type="datetime"].-info-:focus, .-form input[type="datetime-local"].-info-:focus, .-form input[type="date"].-info-:focus, .-form input[type="month"].-info-:focus, .-form input[type="time"].-info-:focus, .-form input[type="week"].-info-:focus, .-form input[type="number"].-info-:focus, .-form input[type="email"].-info-:focus, .-form input[type="url"].-info-:focus, .-form input[type="search"].-info-:focus, .-form input[type="tel"].-info-:focus, .-form input[type="color"].-info-:focus, .-form textarea.-info-:focus, .-form select.-info-:focus, .-form .-form-field.-info- > input[type="text"]:focus, .-form .-form-field.-info- > input[type="password"]:focus, .-form .-form-field.-info- > input[type="datetime"]:focus, .-form .-form-field.-info- > input[type="datetime-local"]:focus, .-form .-form-field.-info- > input[type="date"]:focus, .-form .-form-field.-info- > input[type="month"]:focus, .-form .-form-field.-info- > input[type="time"]:focus, .-form .-form-field.-info- > input[type="week"]:focus, .-form .-form-field.-info- > input[type="number"]:focus, .-form .-form-field.-info- > input[type="email"]:focus, .-form .-form-field.-info- > input[type="url"]:focus, .-form .-form-field.-info- > input[type="search"]:focus, .-form .-form-field.-info- > input[type="tel"]:focus, .-form .-form-field.-info- > input[type="color"]:focus, .-form .-form-field.-info- > textarea:focus, .-form .-form-field.-info- > select:focus, .-group.-info- input[type="text"]:focus, .-group.-info- input[type="password"]:focus, .-group.-info- input[type="datetime"]:focus, .-group.-info- input[type="datetime-local"]:focus, .-group.-info- input[type="date"]:focus, .-group.-info- input[type="month"]:focus, .-group.-info- input[type="time"]:focus, .-group.-info- input[type="week"]:focus, .-group.-info- input[type="number"]:focus, .-group.-info- input[type="email"]:focus, .-group.-info- input[type="url"]:focus, .-group.-info- input[type="search"]:focus, .-group.-info- input[type="tel"]:focus, .-group.-info- input[type="color"]:focus, .-group.-info- textarea:focus, .-group.-info- select:focus {
   -webkit-box-shadow: 0 0 10px rgba(100,207,217,1);
   -moz-box-shadow: 0 0 10px rgba(100,207,217,1);
   -ms-box-shadow: 0 0 10px rgba(100,207,217,1);
@@ -822,7 +847,7 @@ input[type="button"]._loading_.-warning-.-info- {
 
 button._loading_.-info-,
 .-btn._loading_.-info-,
-input[type="button"]._loading_.-info- {
+input[type="button"]._loading_.-info-, .-group._loading_ button.-info-, .-group._loading_ input[type="button"].-info-, .-group._loading_ .-btn.-info- {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.1, rgba(0, 0, 0, 0.1)), color-stop(0.1, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(0, 0, 0, 0.1)), color-stop(0.75, rgba(0, 0, 0, 0.1)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
@@ -835,25 +860,27 @@ input[type="button"]._loading_.-info- {
   -o-animation: stripes-animation 2s linear infinite;
   -ms-animation: stripes-animation 2s linear infinite; }
 
-button.-unstyled-.-warning-, button.-unstyled-.-warning-:hover, button.-unstyled-.-warning-:active, button.__active__.-unstyled-.-warning-,
+button.-unstyled-.-warning-, button.-unstyled-.-warning-:hover, button.-unstyled-.-warning-:active, button._active_.-unstyled-.-warning-, button.-disabled-.-unstyled-.-warning-,
 .-btn.-unstyled-.-warning-,
 .-btn.-unstyled-.-warning-:hover,
 .-btn.-unstyled-.-warning-:active,
-.-btn.__active__.-unstyled-.-warning-,
+.-btn._active_.-unstyled-.-warning-,
+.-btn.-disabled-.-unstyled-.-warning-,
 input[type="button"].-unstyled-.-warning-,
 input[type="button"].-unstyled-.-warning-:hover,
 input[type="button"].-unstyled-.-warning-:active,
-input[type="button"].__active__.-unstyled-.-warning- {
+input[type="button"]._active_.-unstyled-.-warning-,
+input[type="button"].-disabled-.-unstyled-.-warning- {
   color: #edb723; }
 
 button.-warning-,
 .-btn.-warning-,
-input[type="button"].-warning- {
+input[type="button"].-warning-, .-group .-group-appendix.-warning-, .-group.-warning- .-group-appendix, .-group.-warning- button, .-group.-warning- input[type="button"], .-group.-warning- .-btn {
   color: white; }
 
 button.-warning-,
 .-btn.-warning-,
-input[type="button"].-warning- {
+input[type="button"].-warning-, .-group .-group-appendix.-warning-, .-group.-warning- .-group-appendix, .-group.-warning- button, .-group.-warning- input[type="button"], .-group.-warning- .-btn {
   -webkit-text-shadow: 0 -1px rgba(0,0,0,.3);
   -moz-text-shadow: 0 -1px rgba(0,0,0,.3);
   -ms-text-shadow: 0 -1px rgba(0,0,0,.3);
@@ -877,10 +904,10 @@ input[type="button"].-warning- {
 .-form textarea.-warning-,
 .-form select.-warning-, .-form .-form-field.-warning- > input[type="text"], .-form .-form-field.-warning- > input[type="password"], .-form .-form-field.-warning- > input[type="datetime"], .-form .-form-field.-warning- > input[type="datetime-local"], .-form .-form-field.-warning- > input[type="date"], .-form .-form-field.-warning- > input[type="month"], .-form .-form-field.-warning- > input[type="time"], .-form .-form-field.-warning- > input[type="week"], .-form .-form-field.-warning- > input[type="number"], .-form .-form-field.-warning- > input[type="email"], .-form .-form-field.-warning- > input[type="url"], .-form .-form-field.-warning- > input[type="search"], .-form .-form-field.-warning- > input[type="tel"], .-form .-form-field.-warning- > input[type="color"], .-form .-form-field.-warning- > textarea, .-form .-form-field.-warning- > select, button.-warning-,
 .-btn.-warning-,
-input[type="button"].-warning- {
+input[type="button"].-warning-, .-group .-group-appendix.-warning-, .-group.-warning- input[type="text"], .-group.-warning- input[type="password"], .-group.-warning- input[type="datetime"], .-group.-warning- input[type="datetime-local"], .-group.-warning- input[type="date"], .-group.-warning- input[type="month"], .-group.-warning- input[type="time"], .-group.-warning- input[type="week"], .-group.-warning- input[type="number"], .-group.-warning- input[type="email"], .-group.-warning- input[type="url"], .-group.-warning- input[type="search"], .-group.-warning- input[type="tel"], .-group.-warning- input[type="color"], .-group.-warning- textarea, .-group.-warning- select, .-group.-warning- .-group-appendix, .-group.-warning- button, .-group.-warning- input[type="button"], .-group.-warning- .-btn {
   border-color: #d9ab64; }
 
-.-form input[type="text"].-warning-:hover, .-form input[type="password"].-warning-:hover, .-form input[type="datetime"].-warning-:hover, .-form input[type="datetime-local"].-warning-:hover, .-form input[type="date"].-warning-:hover, .-form input[type="month"].-warning-:hover, .-form input[type="time"].-warning-:hover, .-form input[type="week"].-warning-:hover, .-form input[type="number"].-warning-:hover, .-form input[type="email"].-warning-:hover, .-form input[type="url"].-warning-:hover, .-form input[type="search"].-warning-:hover, .-form input[type="tel"].-warning-:hover, .-form input[type="color"].-warning-:hover, .-form textarea.-warning-:hover, .-form select.-warning-:hover, .-form .-form-field:hover.-warning- > input[type="text"], .-form .-form-field:hover.-warning- > input[type="password"], .-form .-form-field:hover.-warning- > input[type="datetime"], .-form .-form-field:hover.-warning- > input[type="datetime-local"], .-form .-form-field:hover.-warning- > input[type="date"], .-form .-form-field:hover.-warning- > input[type="month"], .-form .-form-field:hover.-warning- > input[type="time"], .-form .-form-field:hover.-warning- > input[type="week"], .-form .-form-field:hover.-warning- > input[type="number"], .-form .-form-field:hover.-warning- > input[type="email"], .-form .-form-field:hover.-warning- > input[type="url"], .-form .-form-field:hover.-warning- > input[type="search"], .-form .-form-field:hover.-warning- > input[type="tel"], .-form .-form-field:hover.-warning- > input[type="color"], .-form .-form-field:hover.-warning- > textarea, .-form .-form-field:hover.-warning- > select {
+.-form input[type="text"].-warning-:hover, .-form input[type="password"].-warning-:hover, .-form input[type="datetime"].-warning-:hover, .-form input[type="datetime-local"].-warning-:hover, .-form input[type="date"].-warning-:hover, .-form input[type="month"].-warning-:hover, .-form input[type="time"].-warning-:hover, .-form input[type="week"].-warning-:hover, .-form input[type="number"].-warning-:hover, .-form input[type="email"].-warning-:hover, .-form input[type="url"].-warning-:hover, .-form input[type="search"].-warning-:hover, .-form input[type="tel"].-warning-:hover, .-form input[type="color"].-warning-:hover, .-form textarea.-warning-:hover, .-form select.-warning-:hover, .-form .-form-field:hover.-warning- > input[type="text"], .-form .-form-field:hover.-warning- > input[type="password"], .-form .-form-field:hover.-warning- > input[type="datetime"], .-form .-form-field:hover.-warning- > input[type="datetime-local"], .-form .-form-field:hover.-warning- > input[type="date"], .-form .-form-field:hover.-warning- > input[type="month"], .-form .-form-field:hover.-warning- > input[type="time"], .-form .-form-field:hover.-warning- > input[type="week"], .-form .-form-field:hover.-warning- > input[type="number"], .-form .-form-field:hover.-warning- > input[type="email"], .-form .-form-field:hover.-warning- > input[type="url"], .-form .-form-field:hover.-warning- > input[type="search"], .-form .-form-field:hover.-warning- > input[type="tel"], .-form .-form-field:hover.-warning- > input[type="color"], .-form .-form-field:hover.-warning- > textarea, .-form .-form-field:hover.-warning- > select, .-group.-warning- input[type="text"]:hover, .-group.-warning- input[type="password"]:hover, .-group.-warning- input[type="datetime"]:hover, .-group.-warning- input[type="datetime-local"]:hover, .-group.-warning- input[type="date"]:hover, .-group.-warning- input[type="month"]:hover, .-group.-warning- input[type="time"]:hover, .-group.-warning- input[type="week"]:hover, .-group.-warning- input[type="number"]:hover, .-group.-warning- input[type="email"]:hover, .-group.-warning- input[type="url"]:hover, .-group.-warning- input[type="search"]:hover, .-group.-warning- input[type="tel"]:hover, .-group.-warning- input[type="color"]:hover, .-group.-warning- textarea:hover, .-group.-warning- select:hover {
   border-color: #cf953b; }
 
 .-form .-form-field.-warning- {
@@ -888,22 +915,25 @@ input[type="button"].-warning- {
 
 button.-warning-,
 .-btn.-warning-,
-input[type="button"].-warning- {
+input[type="button"].-warning-, .-group.-warning- button, .-group.-warning- input[type="button"], .-group.-warning- .-btn {
   background-color: #edb723; }
+
+.-group .-group-appendix.-warning-, .-group.-warning- .-group-appendix {
+  background-color: #f5d681; }
 
 button.-warning-:hover,
 .-btn.-warning-:hover,
-input[type="button"].-warning-:hover {
+input[type="button"].-warning-:hover, .-group.-warning- button:hover, .-group.-warning- input[type="button"]:hover, .-group.-warning- .-btn:hover {
   background-color: #e4ac13; }
 
-button.-warning-:active, button.__active__.-warning-,
+button.-warning-:active, button._active_.-warning-,
 .-btn.-warning-:active,
-.-btn.__active__.-warning-,
+.-btn._active_.-warning-,
 input[type="button"].-warning-:active,
-input[type="button"].__active__.-warning- {
+input[type="button"]._active_.-warning-, .-group.-warning- button:active, .-group.-warning- button._active_, .-group.-warning- input[type="button"]:active, .-group.-warning- input[type="button"]._active_, .-group.-warning- .-btn:active, .-group.-warning- .-btn._active_ {
   background-color: #cc9a11; }
 
-.-form input[type="text"].-warning-:focus, .-form input[type="password"].-warning-:focus, .-form input[type="datetime"].-warning-:focus, .-form input[type="datetime-local"].-warning-:focus, .-form input[type="date"].-warning-:focus, .-form input[type="month"].-warning-:focus, .-form input[type="time"].-warning-:focus, .-form input[type="week"].-warning-:focus, .-form input[type="number"].-warning-:focus, .-form input[type="email"].-warning-:focus, .-form input[type="url"].-warning-:focus, .-form input[type="search"].-warning-:focus, .-form input[type="tel"].-warning-:focus, .-form input[type="color"].-warning-:focus, .-form textarea.-warning-:focus, .-form select.-warning-:focus, .-form .-form-field.-warning- > input[type="text"]:focus, .-form .-form-field.-warning- > input[type="password"]:focus, .-form .-form-field.-warning- > input[type="datetime"]:focus, .-form .-form-field.-warning- > input[type="datetime-local"]:focus, .-form .-form-field.-warning- > input[type="date"]:focus, .-form .-form-field.-warning- > input[type="month"]:focus, .-form .-form-field.-warning- > input[type="time"]:focus, .-form .-form-field.-warning- > input[type="week"]:focus, .-form .-form-field.-warning- > input[type="number"]:focus, .-form .-form-field.-warning- > input[type="email"]:focus, .-form .-form-field.-warning- > input[type="url"]:focus, .-form .-form-field.-warning- > input[type="search"]:focus, .-form .-form-field.-warning- > input[type="tel"]:focus, .-form .-form-field.-warning- > input[type="color"]:focus, .-form .-form-field.-warning- > textarea:focus, .-form .-form-field.-warning- > select:focus {
+.-form input[type="text"].-warning-:focus, .-form input[type="password"].-warning-:focus, .-form input[type="datetime"].-warning-:focus, .-form input[type="datetime-local"].-warning-:focus, .-form input[type="date"].-warning-:focus, .-form input[type="month"].-warning-:focus, .-form input[type="time"].-warning-:focus, .-form input[type="week"].-warning-:focus, .-form input[type="number"].-warning-:focus, .-form input[type="email"].-warning-:focus, .-form input[type="url"].-warning-:focus, .-form input[type="search"].-warning-:focus, .-form input[type="tel"].-warning-:focus, .-form input[type="color"].-warning-:focus, .-form textarea.-warning-:focus, .-form select.-warning-:focus, .-form .-form-field.-warning- > input[type="text"]:focus, .-form .-form-field.-warning- > input[type="password"]:focus, .-form .-form-field.-warning- > input[type="datetime"]:focus, .-form .-form-field.-warning- > input[type="datetime-local"]:focus, .-form .-form-field.-warning- > input[type="date"]:focus, .-form .-form-field.-warning- > input[type="month"]:focus, .-form .-form-field.-warning- > input[type="time"]:focus, .-form .-form-field.-warning- > input[type="week"]:focus, .-form .-form-field.-warning- > input[type="number"]:focus, .-form .-form-field.-warning- > input[type="email"]:focus, .-form .-form-field.-warning- > input[type="url"]:focus, .-form .-form-field.-warning- > input[type="search"]:focus, .-form .-form-field.-warning- > input[type="tel"]:focus, .-form .-form-field.-warning- > input[type="color"]:focus, .-form .-form-field.-warning- > textarea:focus, .-form .-form-field.-warning- > select:focus, .-group.-warning- input[type="text"]:focus, .-group.-warning- input[type="password"]:focus, .-group.-warning- input[type="datetime"]:focus, .-group.-warning- input[type="datetime-local"]:focus, .-group.-warning- input[type="date"]:focus, .-group.-warning- input[type="month"]:focus, .-group.-warning- input[type="time"]:focus, .-group.-warning- input[type="week"]:focus, .-group.-warning- input[type="number"]:focus, .-group.-warning- input[type="email"]:focus, .-group.-warning- input[type="url"]:focus, .-group.-warning- input[type="search"]:focus, .-group.-warning- input[type="tel"]:focus, .-group.-warning- input[type="color"]:focus, .-group.-warning- textarea:focus, .-group.-warning- select:focus {
   -webkit-box-shadow: 0 0 10px rgba(217,171,100,1);
   -moz-box-shadow: 0 0 10px rgba(217,171,100,1);
   -ms-box-shadow: 0 0 10px rgba(217,171,100,1);
@@ -935,7 +965,7 @@ input[type="button"]._loading_.-warning- {
 
 button._loading_.-warning-,
 .-btn._loading_.-warning-,
-input[type="button"]._loading_.-warning- {
+input[type="button"]._loading_.-warning-, .-group._loading_ button.-warning-, .-group._loading_ input[type="button"].-warning-, .-group._loading_ .-btn.-warning- {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.1, rgba(0, 0, 0, 0.1)), color-stop(0.1, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(0, 0, 0, 0.1)), color-stop(0.75, rgba(0, 0, 0, 0.1)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
@@ -963,25 +993,25 @@ input[type="button"]._loading_.-warning- {
 .-form input[type="tel"][disabled="disabled"].-disabled-,
 .-form input[type="color"][disabled="disabled"].-disabled-,
 .-form textarea[disabled="disabled"].-disabled-,
-.-form select[disabled="disabled"].-disabled-, .-form .-form-field.-disabled- > input[type="text"], .-form .-form-field.-disabled- > input[type="password"], .-form .-form-field.-disabled- > input[type="datetime"], .-form .-form-field.-disabled- > input[type="datetime-local"], .-form .-form-field.-disabled- > input[type="date"], .-form .-form-field.-disabled- > input[type="month"], .-form .-form-field.-disabled- > input[type="time"], .-form .-form-field.-disabled- > input[type="week"], .-form .-form-field.-disabled- > input[type="number"], .-form .-form-field.-disabled- > input[type="email"], .-form .-form-field.-disabled- > input[type="url"], .-form .-form-field.-disabled- > input[type="search"], .-form .-form-field.-disabled- > input[type="tel"], .-form .-form-field.-disabled- > input[type="color"], .-form .-form-field.-disabled- > textarea, .-form .-form-field.-disabled- > select, button.-unstyled-.-disabled-, button.-unstyled-.-disabled-:hover, button.-unstyled-.-disabled-:active, button.__active__.-unstyled-.-disabled-,
+.-form select[disabled="disabled"].-disabled-, .-form .-form-field.-disabled- > input[type="text"], .-form .-form-field.-disabled- > input[type="password"], .-form .-form-field.-disabled- > input[type="datetime"], .-form .-form-field.-disabled- > input[type="datetime-local"], .-form .-form-field.-disabled- > input[type="date"], .-form .-form-field.-disabled- > input[type="month"], .-form .-form-field.-disabled- > input[type="time"], .-form .-form-field.-disabled- > input[type="week"], .-form .-form-field.-disabled- > input[type="number"], .-form .-form-field.-disabled- > input[type="email"], .-form .-form-field.-disabled- > input[type="url"], .-form .-form-field.-disabled- > input[type="search"], .-form .-form-field.-disabled- > input[type="tel"], .-form .-form-field.-disabled- > input[type="color"], .-form .-form-field.-disabled- > textarea, .-form .-form-field.-disabled- > select, button.-unstyled-.-disabled-, button.-unstyled-.-disabled-:hover, button.-unstyled-.-disabled-:active, button._active_.-unstyled-.-disabled-,
 .-btn.-unstyled-.-disabled-,
 .-btn.-unstyled-.-disabled-:hover,
 .-btn.-unstyled-.-disabled-:active,
-.-btn.__active__.-unstyled-.-disabled-,
+.-btn._active_.-unstyled-.-disabled-,
 input[type="button"].-unstyled-.-disabled-,
 input[type="button"].-unstyled-.-disabled-:hover,
 input[type="button"].-unstyled-.-disabled-:active,
-input[type="button"].__active__.-unstyled-.-disabled- {
+input[type="button"]._active_.-unstyled-.-disabled- {
   color: #cccccc!important; }
 
 button.-disabled-,
 .-btn.-disabled-,
-input[type="button"].-disabled- {
+input[type="button"].-disabled-, .-group .-group-appendix.-disabled-, .-group.-disabled- .-group-appendix, .-group.-disabled- button, .-group.-disabled- input[type="button"], .-group.-disabled- .-btn {
   color: #cccccc!important; }
 
 button.-disabled-,
 .-btn.-disabled-,
-input[type="button"].-disabled- {
+input[type="button"].-disabled-, .-group .-group-appendix.-disabled-, .-group.-disabled- .-group-appendix, .-group.-disabled- button, .-group.-disabled- input[type="button"], .-group.-disabled- .-btn {
   -webkit-text-shadow: none!important;
   -moz-text-shadow: none!important;
   -ms-text-shadow: none!important;
@@ -1005,7 +1035,7 @@ input[type="button"].-disabled- {
 .-form textarea.-disabled-,
 .-form select.-disabled-, .-form .-form-field.-disabled- > input[type="text"], .-form .-form-field.-disabled- > input[type="password"], .-form .-form-field.-disabled- > input[type="datetime"], .-form .-form-field.-disabled- > input[type="datetime-local"], .-form .-form-field.-disabled- > input[type="date"], .-form .-form-field.-disabled- > input[type="month"], .-form .-form-field.-disabled- > input[type="time"], .-form .-form-field.-disabled- > input[type="week"], .-form .-form-field.-disabled- > input[type="number"], .-form .-form-field.-disabled- > input[type="email"], .-form .-form-field.-disabled- > input[type="url"], .-form .-form-field.-disabled- > input[type="search"], .-form .-form-field.-disabled- > input[type="tel"], .-form .-form-field.-disabled- > input[type="color"], .-form .-form-field.-disabled- > textarea, .-form .-form-field.-disabled- > select, button.-disabled-,
 .-btn.-disabled-,
-input[type="button"].-disabled- {
+input[type="button"].-disabled-, .-group .-group-appendix.-disabled-, .-group.-disabled- input[type="text"], .-group.-disabled- input[type="password"], .-group.-disabled- input[type="datetime"], .-group.-disabled- input[type="datetime-local"], .-group.-disabled- input[type="date"], .-group.-disabled- input[type="month"], .-group.-disabled- input[type="time"], .-group.-disabled- input[type="week"], .-group.-disabled- input[type="number"], .-group.-disabled- input[type="email"], .-group.-disabled- input[type="url"], .-group.-disabled- input[type="search"], .-group.-disabled- input[type="tel"], .-group.-disabled- input[type="color"], .-group.-disabled- textarea, .-group.-disabled- select, .-group.-disabled- .-group-appendix, .-group.-disabled- button, .-group.-disabled- input[type="button"], .-group.-disabled- .-btn {
   border-color: #d9d9d9!important; }
 
 .-form .-form-field.-disabled- {
@@ -1028,7 +1058,13 @@ input[type="button"].-disabled- {
 .-form textarea[disabled="disabled"].-disabled-,
 .-form select[disabled="disabled"].-disabled-, .-form .-form-field.-disabled- > input[type="text"], .-form .-form-field.-disabled- > input[type="password"], .-form .-form-field.-disabled- > input[type="datetime"], .-form .-form-field.-disabled- > input[type="datetime-local"], .-form .-form-field.-disabled- > input[type="date"], .-form .-form-field.-disabled- > input[type="month"], .-form .-form-field.-disabled- > input[type="time"], .-form .-form-field.-disabled- > input[type="week"], .-form .-form-field.-disabled- > input[type="number"], .-form .-form-field.-disabled- > input[type="email"], .-form .-form-field.-disabled- > input[type="url"], .-form .-form-field.-disabled- > input[type="search"], .-form .-form-field.-disabled- > input[type="tel"], .-form .-form-field.-disabled- > input[type="color"], .-form .-form-field.-disabled- > textarea, .-form .-form-field.-disabled- > select, button.-disabled-,
 .-btn.-disabled-,
-input[type="button"].-disabled- {
+input[type="button"].-disabled-, .-group.-disabled- button, .-group.-disabled- input[type="button"], .-group.-disabled- .-btn {
+  background-color: #f3f3f3!important; }
+
+.-group .-group-appendix.-disabled-, .-group.-disabled- .-group-appendix {
+  background-color: #f3f3f3!important; }
+
+.-group.-disabled- button:hover, .-group.-disabled- input[type="button"]:hover, .-group.-disabled- .-btn:hover {
   background-color: #f3f3f3!important; }
 
 .-form input[type="text"].-disabled-:focus, .-form input[type="password"].-disabled-:focus, .-form input[type="datetime"].-disabled-:focus, .-form input[type="datetime-local"].-disabled-:focus, .-form input[type="date"].-disabled-:focus, .-form input[type="month"].-disabled-:focus, .-form input[type="time"].-disabled-:focus, .-form input[type="week"].-disabled-:focus, .-form input[type="number"].-disabled-:focus, .-form input[type="email"].-disabled-:focus, .-form input[type="url"].-disabled-:focus, .-form input[type="search"].-disabled-:focus, .-form input[type="tel"].-disabled-:focus, .-form input[type="color"].-disabled-:focus, .-form textarea.-disabled-:focus, .-form select.-disabled-:focus, .-form .-form-field.-disabled- > input[type="text"]:focus, .-form .-form-field.-disabled- > input[type="password"]:focus, .-form .-form-field.-disabled- > input[type="datetime"]:focus, .-form .-form-field.-disabled- > input[type="datetime-local"]:focus, .-form .-form-field.-disabled- > input[type="date"]:focus, .-form .-form-field.-disabled- > input[type="month"]:focus, .-form .-form-field.-disabled- > input[type="time"]:focus, .-form .-form-field.-disabled- > input[type="week"]:focus, .-form .-form-field.-disabled- > input[type="number"]:focus, .-form .-form-field.-disabled- > input[type="email"]:focus, .-form .-form-field.-disabled- > input[type="url"]:focus, .-form .-form-field.-disabled- > input[type="search"]:focus, .-form .-form-field.-disabled- > input[type="tel"]:focus, .-form .-form-field.-disabled- > input[type="color"]:focus, .-form .-form-field.-disabled- > textarea:focus, .-form .-form-field.-disabled- > select:focus {
@@ -1063,7 +1099,7 @@ input[type="button"]._loading_.-warning-.-disabled- {
 
 button._loading_.-disabled-,
 .-btn._loading_.-disabled-,
-input[type="button"]._loading_.-disabled- {
+input[type="button"]._loading_.-disabled-, .-group._loading_ button.-disabled-, .-group._loading_ input[type="button"].-disabled-, .-group._loading_ .-btn.-disabled- {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.1, rgba(0, 0, 0, 0.1)), color-stop(0.1, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(0, 0, 0, 0.1)), color-stop(0.75, rgba(0, 0, 0, 0.1)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
@@ -1093,7 +1129,7 @@ input[type="button"]._loading_.-disabled- {
 .-form textarea._tiny,
 .-form select._tiny, .-form .-form-field._tiny, .-form .-form-field._tiny > .-form-field-placeholder, .-form .-form-field._tiny input[type="text"], .-form .-form-field._tiny input[type="password"], .-form .-form-field._tiny input[type="datetime"], .-form .-form-field._tiny input[type="datetime-local"], .-form .-form-field._tiny input[type="date"], .-form .-form-field._tiny input[type="month"], .-form .-form-field._tiny input[type="time"], .-form .-form-field._tiny input[type="week"], .-form .-form-field._tiny input[type="number"], .-form .-form-field._tiny input[type="email"], .-form .-form-field._tiny input[type="url"], .-form .-form-field._tiny input[type="search"], .-form .-form-field._tiny input[type="tel"], .-form .-form-field._tiny input[type="color"], .-form .-form-field._tiny textarea, .-form .-form-field._tiny select, button._tiny,
 .-btn._tiny,
-input[type="button"]._tiny {
+input[type="button"]._tiny, .-group .-group-appendix._tiny {
   line-height: 12px; }
 
 .-form input[type="text"]._tiny,
@@ -1113,7 +1149,7 @@ input[type="button"]._tiny {
 .-form textarea._tiny,
 .-form select._tiny, .-form .-form-field._tiny > .-form-field-placeholder, .-form .-form-field._tiny input[type="text"], .-form .-form-field._tiny input[type="password"], .-form .-form-field._tiny input[type="datetime"], .-form .-form-field._tiny input[type="datetime-local"], .-form .-form-field._tiny input[type="date"], .-form .-form-field._tiny input[type="month"], .-form .-form-field._tiny input[type="time"], .-form .-form-field._tiny input[type="week"], .-form .-form-field._tiny input[type="number"], .-form .-form-field._tiny input[type="email"], .-form .-form-field._tiny input[type="url"], .-form .-form-field._tiny input[type="search"], .-form .-form-field._tiny input[type="tel"], .-form .-form-field._tiny input[type="color"], .-form .-form-field._tiny textarea, .-form .-form-field._tiny select, button._tiny,
 .-btn._tiny,
-input[type="button"]._tiny {
+input[type="button"]._tiny, .-group .-group-appendix._tiny {
   font-size: 10px; }
 
 .-form input[type="text"]._tiny,
@@ -1136,7 +1172,7 @@ input[type="button"]._tiny {
 
 button._tiny,
 .-btn._tiny,
-input[type="button"]._tiny {
+input[type="button"]._tiny, .-group .-group-appendix._tiny {
   padding: 3px 4px; }
 
 .-form input[type="text"]._small,
@@ -1156,7 +1192,7 @@ input[type="button"]._tiny {
 .-form textarea._small,
 .-form select._small, .-form .-form-field._small, .-form .-form-field._small > .-form-field-placeholder, .-form .-form-field._small input[type="text"], .-form .-form-field._small input[type="password"], .-form .-form-field._small input[type="datetime"], .-form .-form-field._small input[type="datetime-local"], .-form .-form-field._small input[type="date"], .-form .-form-field._small input[type="month"], .-form .-form-field._small input[type="time"], .-form .-form-field._small input[type="week"], .-form .-form-field._small input[type="number"], .-form .-form-field._small input[type="email"], .-form .-form-field._small input[type="url"], .-form .-form-field._small input[type="search"], .-form .-form-field._small input[type="tel"], .-form .-form-field._small input[type="color"], .-form .-form-field._small textarea, .-form .-form-field._small select, button._small,
 .-btn._small,
-input[type="button"]._small {
+input[type="button"]._small, .-group .-group-appendix._small {
   line-height: 14px; }
 
 .-form input[type="text"]._small,
@@ -1176,7 +1212,7 @@ input[type="button"]._small {
 .-form textarea._small,
 .-form select._small, .-form .-form-field._small > .-form-field-placeholder, .-form .-form-field._small input[type="text"], .-form .-form-field._small input[type="password"], .-form .-form-field._small input[type="datetime"], .-form .-form-field._small input[type="datetime-local"], .-form .-form-field._small input[type="date"], .-form .-form-field._small input[type="month"], .-form .-form-field._small input[type="time"], .-form .-form-field._small input[type="week"], .-form .-form-field._small input[type="number"], .-form .-form-field._small input[type="email"], .-form .-form-field._small input[type="url"], .-form .-form-field._small input[type="search"], .-form .-form-field._small input[type="tel"], .-form .-form-field._small input[type="color"], .-form .-form-field._small textarea, .-form .-form-field._small select, button._small,
 .-btn._small,
-input[type="button"]._small {
+input[type="button"]._small, .-group .-group-appendix._small {
   font-size: 12px; }
 
 .-form input[type="text"]._small,
@@ -1199,7 +1235,7 @@ input[type="button"]._small {
 
 button._small,
 .-btn._small,
-input[type="button"]._small {
+input[type="button"]._small, .-group .-group-appendix._small {
   padding: 3px 5px; }
 
 .-form input[type="text"],
@@ -1219,7 +1255,7 @@ input[type="button"]._small {
 .-form textarea,
 .-form select, .-form .-form-field, .-form .-form-field > .-form-field-placeholder, .-form .-form-field input[type="text"], .-form .-form-field input[type="password"], .-form .-form-field input[type="datetime"], .-form .-form-field input[type="datetime-local"], .-form .-form-field input[type="date"], .-form .-form-field input[type="month"], .-form .-form-field input[type="time"], .-form .-form-field input[type="week"], .-form .-form-field input[type="number"], .-form .-form-field input[type="email"], .-form .-form-field input[type="url"], .-form .-form-field input[type="search"], .-form .-form-field input[type="tel"], .-form .-form-field input[type="color"], .-form .-form-field textarea, .-form .-form-field select, button,
 .-btn,
-input[type="button"] {
+input[type="button"], .-group .-group-appendix {
   line-height: 18px; }
 
 .-form input[type="text"],
@@ -1239,8 +1275,8 @@ input[type="button"] {
 .-form textarea,
 .-form select, .-form .-form-field > .-form-field-placeholder, .-form .-form-field input[type="text"], .-form .-form-field input[type="password"], .-form .-form-field input[type="datetime"], .-form .-form-field input[type="datetime-local"], .-form .-form-field input[type="date"], .-form .-form-field input[type="month"], .-form .-form-field input[type="time"], .-form .-form-field input[type="week"], .-form .-form-field input[type="number"], .-form .-form-field input[type="email"], .-form .-form-field input[type="url"], .-form .-form-field input[type="search"], .-form .-form-field input[type="tel"], .-form .-form-field input[type="color"], .-form .-form-field textarea, .-form .-form-field select, button,
 .-btn,
-input[type="button"] {
-  font-size: 16px; }
+input[type="button"], .-group .-group-appendix {
+  font-size: 14px; }
 
 .-form input[type="text"],
 .-form input[type="password"],
@@ -1262,7 +1298,7 @@ input[type="button"] {
 
 button,
 .-btn,
-input[type="button"] {
+input[type="button"], .-group .-group-appendix {
   padding: 4px 9px; }
 
 .-form input[type="text"]._big,
@@ -1282,7 +1318,7 @@ input[type="button"] {
 .-form textarea._big,
 .-form select._big, .-form .-form-field._big, .-form .-form-field._big > .-form-field-placeholder, .-form .-form-field._big input[type="text"], .-form .-form-field._big input[type="password"], .-form .-form-field._big input[type="datetime"], .-form .-form-field._big input[type="datetime-local"], .-form .-form-field._big input[type="date"], .-form .-form-field._big input[type="month"], .-form .-form-field._big input[type="time"], .-form .-form-field._big input[type="week"], .-form .-form-field._big input[type="number"], .-form .-form-field._big input[type="email"], .-form .-form-field._big input[type="url"], .-form .-form-field._big input[type="search"], .-form .-form-field._big input[type="tel"], .-form .-form-field._big input[type="color"], .-form .-form-field._big textarea, .-form .-form-field._big select, button._big,
 .-btn._big,
-input[type="button"]._big {
+input[type="button"]._big, .-group .-group-appendix._big {
   line-height: 20px; }
 
 .-form input[type="text"]._big,
@@ -1302,7 +1338,7 @@ input[type="button"]._big {
 .-form textarea._big,
 .-form select._big, .-form .-form-field._big > .-form-field-placeholder, .-form .-form-field._big input[type="text"], .-form .-form-field._big input[type="password"], .-form .-form-field._big input[type="datetime"], .-form .-form-field._big input[type="datetime-local"], .-form .-form-field._big input[type="date"], .-form .-form-field._big input[type="month"], .-form .-form-field._big input[type="time"], .-form .-form-field._big input[type="week"], .-form .-form-field._big input[type="number"], .-form .-form-field._big input[type="email"], .-form .-form-field._big input[type="url"], .-form .-form-field._big input[type="search"], .-form .-form-field._big input[type="tel"], .-form .-form-field._big input[type="color"], .-form .-form-field._big textarea, .-form .-form-field._big select, button._big,
 .-btn._big,
-input[type="button"]._big {
+input[type="button"]._big, .-group .-group-appendix._big {
   font-size: 18px; }
 
 .-form input[type="text"]._big,
@@ -1325,7 +1361,7 @@ input[type="button"]._big {
 
 button._big,
 .-btn._big,
-input[type="button"]._big {
+input[type="button"]._big, .-group .-group-appendix._big {
   padding: 6px 11px; }
 
 .-form input[type="text"]._huge,
@@ -1345,7 +1381,7 @@ input[type="button"]._big {
 .-form textarea._huge,
 .-form select._huge, .-form .-form-field._huge, .-form .-form-field._huge > .-form-field-placeholder, .-form .-form-field._huge input[type="text"], .-form .-form-field._huge input[type="password"], .-form .-form-field._huge input[type="datetime"], .-form .-form-field._huge input[type="datetime-local"], .-form .-form-field._huge input[type="date"], .-form .-form-field._huge input[type="month"], .-form .-form-field._huge input[type="time"], .-form .-form-field._huge input[type="week"], .-form .-form-field._huge input[type="number"], .-form .-form-field._huge input[type="email"], .-form .-form-field._huge input[type="url"], .-form .-form-field._huge input[type="search"], .-form .-form-field._huge input[type="tel"], .-form .-form-field._huge input[type="color"], .-form .-form-field._huge textarea, .-form .-form-field._huge select, button._huge,
 .-btn._huge,
-input[type="button"]._huge {
+input[type="button"]._huge, .-group .-group-appendix._huge {
   line-height: 22px; }
 
 .-form input[type="text"]._huge,
@@ -1365,7 +1401,7 @@ input[type="button"]._huge {
 .-form textarea._huge,
 .-form select._huge, .-form .-form-field._huge > .-form-field-placeholder, .-form .-form-field._huge input[type="text"], .-form .-form-field._huge input[type="password"], .-form .-form-field._huge input[type="datetime"], .-form .-form-field._huge input[type="datetime-local"], .-form .-form-field._huge input[type="date"], .-form .-form-field._huge input[type="month"], .-form .-form-field._huge input[type="time"], .-form .-form-field._huge input[type="week"], .-form .-form-field._huge input[type="number"], .-form .-form-field._huge input[type="email"], .-form .-form-field._huge input[type="url"], .-form .-form-field._huge input[type="search"], .-form .-form-field._huge input[type="tel"], .-form .-form-field._huge input[type="color"], .-form .-form-field._huge textarea, .-form .-form-field._huge select, button._huge,
 .-btn._huge,
-input[type="button"]._huge {
+input[type="button"]._huge, .-group .-group-appendix._huge {
   font-size: 20px; }
 
 .-form input[type="text"]._huge,
@@ -1388,7 +1424,7 @@ input[type="button"]._huge {
 
 button._huge,
 .-btn._huge,
-input[type="button"]._huge {
+input[type="button"]._huge, .-group .-group-appendix._huge {
   padding: 8px 13px; }
 
 .-form .-form-field, .-form .-form-field .-form-field-placeholder, .-form input[type="text"],
@@ -1408,7 +1444,7 @@ input[type="button"]._huge {
 .-form textarea,
 .-form select, button,
 .-btn,
-input[type="button"] {
+input[type="button"], .-group .-group-appendix {
   display: inline-block;
   vertical-align: middle;
   outline: none;
@@ -2157,46 +2193,49 @@ input[type="button"]:hover {
   -ms-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), -1px 1px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
   -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), -1px 1px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), -1px 1px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1); }
-button:active, button.__active__,
+button:active, button._active_,
 .-btn:active,
-.-btn.__active__,
+.-btn._active_,
 input[type="button"]:active,
-input[type="button"].__active__ {
+input[type="button"]._active_ {
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 -15px 15px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 -15px 15px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 -15px 15px rgba(0, 0, 0, 0.1);
   -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 -15px 15px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 -15px 15px rgba(0, 0, 0, 0.1); }
-button.-disabled-, button:hover.-disabled-, button:active.-disabled-, button.__active__.-disabled-,
+button.-disabled-, button:hover.-disabled-, button:active.-disabled-, button._active_.-disabled-,
 .-btn.-disabled-,
 .-btn:hover.-disabled-,
 .-btn:active.-disabled-,
-.-btn.__active__.-disabled-,
+.-btn._active_.-disabled-,
 input[type="button"].-disabled-,
 input[type="button"]:hover.-disabled-,
 input[type="button"]:active.-disabled-,
-input[type="button"].__active__.-disabled- {
+input[type="button"]._active_.-disabled- {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -ms-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
+  text-decoration: none!important;
   cursor: default; }
-button.-unstyled-, button:hover.-unstyled-, button:active.-unstyled-, button.__active__.-unstyled-,
+button.-unstyled-, button:hover.-unstyled-, button:active.-unstyled-, button._active_.-unstyled-, button.-disabled-.-unstyled-,
 .-btn.-unstyled-,
 .-btn:hover.-unstyled-,
 .-btn:active.-unstyled-,
-.-btn.__active__.-unstyled-,
+.-btn._active_.-unstyled-,
+.-btn.-disabled-.-unstyled-,
 input[type="button"].-unstyled-,
 input[type="button"]:hover.-unstyled-,
 input[type="button"]:active.-unstyled-,
-input[type="button"].__active__.-unstyled- {
+input[type="button"]._active_.-unstyled-,
+input[type="button"].-disabled-.-unstyled- {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -ms-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  background-color: transparent;
+  background-color: transparent!important;
   -webkit-text-shadow: none;
   -moz-text-shadow: none;
   -ms-text-shadow: none;
@@ -2206,14 +2245,50 @@ button.-unstyled-,
 .-btn.-unstyled-,
 input[type="button"].-unstyled- {
   text-decoration: underline; }
-button:hover.-unstyled-, button:active.-unstyled-, button.__active__.-unstyled-,
+button:hover.-unstyled-, button:active.-unstyled-, button._active_.-unstyled-,
 .-btn:hover.-unstyled-,
 .-btn:active.-unstyled-,
-.-btn.__active__.-unstyled-,
+.-btn._active_.-unstyled-,
 input[type="button"]:hover.-unstyled-,
 input[type="button"]:active.-unstyled-,
-input[type="button"].__active__.-unstyled- {
+input[type="button"]._active_.-unstyled- {
   text-decoration: none; }
 
+.-group {
+  display: inline-block; }
+  .-group .-group-appendix {
+    border-width: 1px;
+    border-style: solid; }
+  .-group > * {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px; }
+  .-group > button + button, .-group > button + .-btn, .-group > button + input[type="button"], .-group > button + .-group-appendix, .-group > button + input, .-group > .-btn + button, .-group > .-btn + .-btn, .-group > .-btn + input[type="button"], .-group > .-btn + .-group-appendix, .-group > .-btn + input, .-group > input[type="button"] + button, .-group > input[type="button"] + .-btn, .-group > input[type="button"] + input[type="button"], .-group > input[type="button"] + .-group-appendix, .-group > input[type="button"] + input, .-group > .-group-appendix + button, .-group > .-group-appendix + .-btn, .-group > .-group-appendix + input[type="button"], .-group > .-group-appendix + .-group-appendix, .-group > .-group-appendix + input, .-group > input + button, .-group > input + .-btn, .-group > input + input[type="button"], .-group > input + .-group-appendix, .-group > input + input {
+    margin-left: 0; }
+  .-group > button + input, .-group > .-btn + input, .-group > input[type="button"] + input, .-group > .-group-appendix + input, .-group > input + input {
+    margin-left: -1px; }
+  .-group > button:first-child, .-group > .-btn:first-child, .-group > input[type="button"]:first-child, .-group > .-group-appendix:first-child, .-group > input:first-child {
+    -webkit-border-radius: 3px 0 0 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    -ms-border-radius: 3px 0 0 3px;
+    -o-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px; }
+  .-group > button:last-child, .-group > .-btn:last-child, .-group > input[type="button"]:last-child, .-group > .-group-appendix:last-child, .-group > input:last-child {
+    -webkit-border-radius: 0 3px 3px 0;
+    -moz-border-radius: 0 3px 3px 0;
+    -ms-border-radius: 0 3px 3px 0;
+    -o-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0; }
+  .-group.-disabled- > * {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -ms-box-shadow: none !important;
+    -o-box-shadow: none !important;
+    box-shadow: none !important;
+    cursor: default; }
+
+@-moz-document url-prefix() {}
 body {
   padding-bottom: 400px; }

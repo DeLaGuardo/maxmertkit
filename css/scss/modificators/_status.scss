@@ -61,6 +61,14 @@
 			background-color: nth($mod__status-background-color, $num)#{$important};
 		}
 
+		%#{$__inheritance}-status-#{$status}-background-color-lighten {
+			background-color: nth($mod__status-background-color-lighten, $num)#{$important};
+		}
+
+		%#{$__inheritance}-status-#{$status}-background-color-lightener {
+			background-color: nth($mod__status-background-color-lightener, $num)#{$important};
+		}
+
 		%#{$__inheritance}-status-#{$status}-background-color-darken {
 			background-color: nth($mod__status-background-color-darken, $num)#{$important};
 		}

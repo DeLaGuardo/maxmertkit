@@ -10,7 +10,12 @@
 		%#{$__inheritance}-size-#{$size}-font-size {
 			$_font-size: 10px;
 			@if ($theme__font-size + nth($mod__size-delta, $num)) > 10 {
-				$_font-size: $theme__font-size + nth($mod__size-delta, $num);
+				@if $size == default {
+					$_font-size: $theme__font-size + nth($mod__size-delta, $num) - 2;
+				}
+				@else {
+					$_font-size: $theme__font-size + nth($mod__size-delta, $num);
+				}
 			}
 			font-size: $_font-size;
 		}
@@ -28,6 +33,25 @@
 			}
 
 			padding: $_vertical $_horizontal;
+		}
+
+		%#{$__inheritance}-size-#{$size}-input-padding {
+			$_vertical: 3px;
+			$_horizontal: 4px;
+			
+			@if (2px + nth($mod__size-delta, $num)) > 0 {
+				$_vertical: 2px + nth($mod__size-delta, $num);
+			}
+
+			@if (4px + nth($mod__size-delta, $num)) > 0 {
+				$_horizontal: 4px + nth($mod__size-delta, $num);
+			}
+
+			padding: $_vertical $_horizontal;
+
+			// @-moz-document url-prefix() {
+			// 	padding: $_vertical + 1 $_horizontal $_vertical;
+			// }
 		}
 
 		%#{$__inheritance}-size-#{$size}-padding-object {

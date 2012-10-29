@@ -105,6 +105,11 @@ $object__button-shadow: 0px 1px 2px rgba(0,0,0,.2), 0px 1px 2px rgba(0,0,0,.2), 
 $object__button-hover-shadow: 1px 1px 2px rgba(0,0,0,.2), -1px 1px 2px rgba(0,0,0,.2), 0 4px 4px rgba(0,0,0,.05), 0 6px 6px rgba(0,0,0,.1);
 $object__button-active-shadow: 0 1px 2px rgba(0,0,0,.4), inset 0 -15px 15px rgba(0,0,0,.1);
 
+// ------------ Group
+$object__group: -group;
+$object__group__appendix: #{$object__group}-appendix;
+$object__group__appendix-border-width: 1px;
+
 
 
 
@@ -141,6 +146,8 @@ $mod__status-border-color-lighten:		transparent						lighten(#d9d9d9, 5%)			ligh
 $mod__status-border-color-darken:		transparent						darken(#d9d9d9, 10%)			darken(#d96464, 10%)			darken(#64d986, 10%)			darken(#64cfd9, 10%)			darken(#d9ab64, 10%)			darken(#d9d9d9, 10%);
 $mod__status-outline:					none							'0 0 10px rgba(100,207,217,1)'	'0 0 10px rgba(217,100,100,1)' 	'0 0 10px rgba(100,217,134,1)'	'0 0 10px rgba(100,207,217,1)'	'0 0 10px rgba(217,171,100,1)' 	none;
 $mod__status-background-color:			transparent						#fbfbfb		 					#da4a39							#62c462							#64cfd9							#EDB723							lighten(#d9d9d9, 10%);
+$mod__status-background-color-lighten:	transparent						lighten(#fbfbfb, 0%)			lighten(#da4a39, 10%)			lighten(#62c462, 10%)			lighten(#64cfd9, 10%)			lighten(#EDB723, 10%)				lighten(#d9d9d9, 10%);
+$mod__status-background-color-lightener:transparent						lighten(#fbfbfb, 0%)			lighten(#da4a39, 20%)			lighten(#62c462, 20%)			lighten(#64cfd9, 20%)			lighten(#EDB723, 20%)				lighten(#d9d9d9, 10%);
 $mod__status-background-color-darken:	transparent						darken(#fbfbfb, 5%)				darken(#da4a39, 5%)				darken(#62c462, 5%)				darken(#64cfd9, 5%)				darken(#EDB723, 5%)				lighten(#d9d9d9, 10%);
 $mod__status-background-color-darkener:	transparent						darken(#fbfbfb, 10%)			darken(#da4a39, 10%)			darken(#62c462, 10%)			darken(#64cfd9, 10%)			darken(#EDB723, 10%)			lighten(#d9d9d9, 10%);
 $mod__status-text-shadow:				none							'0 1px 0 rgba(255,255,255,1)'	'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			none;

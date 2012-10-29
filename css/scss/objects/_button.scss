@@ -39,7 +39,7 @@ input[type="button"] {
 
 
 	&:active,
-	&._#{$mod__active}_ {
+	&.#{$mod__active} {
 		$__inheritance: object;
 		$__before-object: '';
 		$__object: this;
@@ -51,8 +51,9 @@ input[type="button"] {
 	&.-#{$mod__status__disabled}-,
 	&:hover.-#{$mod__status__disabled}-,
 	&:active.-#{$mod__status__disabled}-,
-	&._#{$mod__active}_.-#{$mod__status__disabled}- {
+	&.#{$mod__active}.-#{$mod__status__disabled}- {
 		@include box-shadow(none);
+		text-decoration: none!important;
 		cursor: default;
 	}
 
@@ -68,9 +69,10 @@ input[type="button"] {
 	&.-#{$mod__status__unstyled}-,
 	&:hover.-#{$mod__status__unstyled}-,
 	&:active.-#{$mod__status__unstyled}-,
-	&._#{$mod__active}_.-#{$mod__status__unstyled}- {
+	&.#{$mod__active}.-#{$mod__status__unstyled}-,
+	&.-#{$mod__status__disabled}-.-#{$mod__status__unstyled}- {
 		@include box-shadow(none);
-		background-color: transparent;
+		background-color: transparent!important;
 		@include text-shadow( none );
 		@include set_modificator($mod__status, color);
 	}
@@ -81,7 +83,7 @@ input[type="button"] {
 
 	&:hover.-#{$mod__status__unstyled}-,
 	&:active.-#{$mod__status__unstyled}-,
-	&._#{$mod__active}_.-#{$mod__status__unstyled}- {
+	&.#{$mod__active}.-#{$mod__status__unstyled}- {
 		text-decoration: none;
 	}
 
