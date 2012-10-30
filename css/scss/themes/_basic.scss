@@ -95,6 +95,10 @@ $object__form__field__row: #{$object__form__field}-row;
 $object__form__input-border-width: 1px;
 $object__form__input-shadow: 0 0 ;
 
+// ------------ Table
+$object__table: -table;
+$object__table-border-width: 1px;
+
 // ------------ Button
 $object__button: -btn;
 // $object__button-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -110,6 +114,33 @@ $object__group: -group;
 $object__group__appendix: #{$object__group}-appendix;
 $object__group__appendix-border-width: 1px;
 
+// ------------ Icon
+$object__icon: -icon;
+$object__icon-width: 14px;
+$object__icon-height: 14px;
+
+$object__icon-colors: 		default									light;
+$object__icon-colors-paths: '../img/icons/glyphicons_halflings.png' '../img/icons/glyphicons_halflings_white.png';
+
+$object__icon-cols: 20;
+$object__icon-cols-delta: 24px;
+$object__icon-rows: 7;
+$object__icon-rows-delta: 24px;
+$object__icon-list: 		glass 				music 		search 		envelope	heart 			star 		star-empty		user			film 			th-large 		th 						th-list 				ok 					remove 				zoom-in 		zoom-out 		off 			signal 			cog 				trash
+							home 				file 		time 		road 		download-alt	download 	upload			inbox			play-cycle		repeat 			refresh					list-alt 				lock 				flag 				headphones		volume-off 		volume-down		volume-up		qr-code				barcode
+							tag 				tags 		book		bookmark	print 			camera		font 			bold			italic 			text-height		text-width				align-left				align-center 		align-right			align-justify	list 			indent-left		indent-right	facetime-video		picture
+							pencil				map-maker	adjust		tint 		edit 			share		check			move 			step-backward	fast-backward	backward 				play 					pause				stop 				foward 			fast-foward		step-foward		eject			chevron-left 		chevron-right
+							plus-sign			minus-sign	remove-sign	ok-sign		question-sign	info-sign	screenshot		remove-circle	ok-circle		ban-circle		arrow-left				arrow-right				arrow-up			arrow-down 			share-alt		resize-full		resize-small	plus 			minus 				asterisk
+							exclamation-sign	gift 		leaf 		fire 		eye-open 		eye-close 	warning-sign	plane 			calendar		random 			comment 				magnet 					chevron-up 			chevron-down 		retweet 		shopping-cart 	folder-close 	folder-open 	resize-vertical 	resize-horizontal
+							hdd 				bullhorn 	bell 		certificate thumbs-up		thumbs-down hand-right		hand-left 		hand-up 		hand-down 		circle-arrow-right		circle-arrow-left		circle-arrow-up		circle-arrow-down 	globe			wrench 			tasks 			filter 			briefcase 			fullscreen;
+
+// ------------ Caret
+$object__caret: -caret;
+
+// ------------ Tabs
+$object__tabs: -tabs;
+$object__tabs-border-width: 0;
+$object__tabs-border-radius: 3px;
 
 
 
@@ -128,6 +159,11 @@ $mixin__float-right: mx-pull-right;
 
 
 
+
+
+
+
+
 // ======================================================================================================== \\
 //
 // ----------------------------------------------- %MODIFICATORS% ---------------------------------------------- \\
@@ -138,19 +174,20 @@ $mixin__float-right: mx-pull-right;
 $mod__status__disabled: disabled; // Use it in a list below
 $mod__status__unstyled: unstyled;
 
-$mod__status:							$mod__status__unstyled			default							error							success							info							warning							$mod__status__disabled;
-$mod__status-color:						$theme__color 					$theme__color 					red 							#62c462 						#64cfd9 						#EDB723 						#ccc;
-$mod__status-color-invert:				$theme__color 					$theme__color 					#fff 							#fff 							#fff 							#fff 							#ccc;
-$mod__status-border-color:				transparent						#d9d9d9							#d96464 						#64d986							#64cfd9							#d9ab64							#d9d9d9;
-$mod__status-border-color-lighten:		transparent						lighten(#d9d9d9, 5%)			lighten(#d96464, 20%)			lighten(#64d986, 10%)			lighten(#64cfd9, 10%)			lighten(#d9ab64, 10%)			lighten(#d9d9d9, 10%);
-$mod__status-border-color-darken:		transparent						darken(#d9d9d9, 10%)			darken(#d96464, 10%)			darken(#64d986, 10%)			darken(#64cfd9, 10%)			darken(#d9ab64, 10%)			darken(#d9d9d9, 10%);
-$mod__status-outline:					none							'0 0 10px rgba(100,207,217,1)'	'0 0 10px rgba(217,100,100,1)' 	'0 0 10px rgba(100,217,134,1)'	'0 0 10px rgba(100,207,217,1)'	'0 0 10px rgba(217,171,100,1)' 	none;
-$mod__status-background-color:			transparent						#fbfbfb		 					#da4a39							#62c462							#64cfd9							#EDB723							lighten(#d9d9d9, 10%);
-$mod__status-background-color-lighten:	transparent						lighten(#fbfbfb, 0%)			lighten(#da4a39, 10%)			lighten(#62c462, 10%)			lighten(#64cfd9, 10%)			lighten(#EDB723, 10%)				lighten(#d9d9d9, 10%);
-$mod__status-background-color-lightener:transparent						lighten(#fbfbfb, 0%)			lighten(#da4a39, 20%)			lighten(#62c462, 20%)			lighten(#64cfd9, 20%)			lighten(#EDB723, 20%)				lighten(#d9d9d9, 10%);
-$mod__status-background-color-darken:	transparent						darken(#fbfbfb, 5%)				darken(#da4a39, 5%)				darken(#62c462, 5%)				darken(#64cfd9, 5%)				darken(#EDB723, 5%)				lighten(#d9d9d9, 10%);
-$mod__status-background-color-darkener:	transparent						darken(#fbfbfb, 10%)			darken(#da4a39, 10%)			darken(#62c462, 10%)			darken(#64cfd9, 10%)			darken(#EDB723, 10%)			lighten(#d9d9d9, 10%);
-$mod__status-text-shadow:				none							'0 1px 0 rgba(255,255,255,1)'	'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			none;
+$mod__status:							$mod__status__unstyled			default							error							success							info							warning							primary							$mod__status__disabled;
+$mod__status-color:						$theme__color 					$theme__color 					red 							#3ec84c 						#64cfd9 						#EDB723 						#1b88d6							#ccc;
+$mod__status-color-invert:				$theme__color 					$theme__color 					#fff 							#fff 							#fff 							#fff 							#fff							#ccc;
+$mod__status-border-color:				transparent						#d9d9d9							#d96464 						#3ec84c							#64cfd9							#d9ab64							darken(#1b88d6, 5%)				#d9d9d9;
+$mod__status-border-color-lighten:		transparent						lighten(#d9d9d9, 5%)			lighten(#d96464, 20%)			lighten(#3ec84c, 10%)			lighten(#64cfd9, 10%)			lighten(#d9ab64, 10%)			lighten(#1b88d6, 10%)			lighten(#d9d9d9, 10%);
+$mod__status-border-color-darken:		transparent						darken(#d9d9d9, 10%)			darken(#d96464, 10%)			darken(#3ec84c, 10%)			darken(#64cfd9, 10%)			darken(#d9ab64, 10%)			darken(#1b88d6, 10%)			darken(#d9d9d9, 10%);
+$mod__status-border-color-darkener:		transparent						darken(#d9d9d9, 25%)			darken(#d96464, 25%)			darken(#3ec84c, 25%)			darken(#64cfd9, 25%)			darken(#d9ab64, 25%)			darken(#1b88d6, 25%)			darken(#d9d9d9, 25%);
+$mod__status-outline:					none							'0 0 10px rgba(100,207,217,1)'	'0 0 10px rgba(217,100,100,1)' 	'0 0 10px rgba(100,217,134,1)'	'0 0 10px rgba(100,207,217,1)'	'0 0 10px rgba(217,171,100,1)' 	'0 0 10px rgba(26,120,217,1)'	none;
+$mod__status-background-color:			transparent						#fbfbfb		 					#da4a39							#3ec84c							#64cfd9							#EDB723							#1b88d6							lighten(#d9d9d9, 10%);
+$mod__status-background-color-lighten:	transparent						lighten(#fbfbfb, 2%)			lighten(#da4a39, 10%)			lighten(#3ec84c, 10%)			lighten(#64cfd9, 10%)			lighten(#EDB723, 10%)			lighten(#1b88d6, 10%)			lighten(#d9d9d9, 10%);
+$mod__status-background-color-lightener:transparent						lighten(#fbfbfb, 4%)			lighten(#da4a39, 20%)			lighten(#3ec84c, 20%)			lighten(#64cfd9, 20%)			lighten(#EDB723, 20%)			lighten(#1b88d6, 20%)			lighten(#d9d9d9, 10%);
+$mod__status-background-color-darken:	transparent						darken(#fbfbfb, 5%)				darken(#da4a39, 5%)				darken(#3ec84c, 5%)				darken(#64cfd9, 5%)				darken(#EDB723, 5%)				darken(#1b88d6, 5%)				lighten(#d9d9d9, 10%);
+$mod__status-background-color-darkener:	transparent						darken(#fbfbfb, 10%)			darken(#da4a39, 10%)			darken(#3ec84c, 10%)			darken(#64cfd9, 10%)			darken(#EDB723, 10%)			darken(#1b88d6, 10%)			lighten(#d9d9d9, 10%);
+$mod__status-text-shadow:				none							'0 1px 0 rgba(255,255,255,1)'	'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			none;
 
 
 // $mod__status-shadow:					none							'0 2px 2px rgba(0,0,0,.1)'		none							none							none							none							none;
@@ -167,6 +204,12 @@ $mod__active: _active_;
 $mod__loading: _loading_;
 $mod__vertical: _vertical_;
 $mod__horizontal: _horizontal_;
+$mod__striped: _striped_;
+$mod__hovered: _hovered_;
+$mod__bordered: _bordered_;
+$mod__unclickable: _unclickable_;
+
+$mod__side-up: _up_;
 
 
 

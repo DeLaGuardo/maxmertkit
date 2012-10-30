@@ -1,0 +1,88 @@
+@include init_modificator-status($object__tabs);
+
+$__inheritance: object;
+$__before-object: '';
+$__object: this;
+$__after-object: '';
+
+.#{$object__tabs} {
+	margin: 0;
+	list-style: none;
+
+	li {
+		display: inline-block;
+
+		a{
+			@extend %__object;
+
+			display: inline-block;
+			vertical-align: bottom;
+
+			@include border-radius( $object__tabs-border-radius $object__tabs-border-radius 0 0 );
+			border-width: $object__tabs-border-width;
+			border-style: solid;
+			border-bottom-style: none;
+			border-color: transparent;
+
+			cursor: pointer;
+		}
+
+		&.-#{$mod__status__disabled}- {
+			a {
+				border-color: transparent!important;
+				cursor: default!important;
+				background-color: transparent!important;
+			}
+		}
+
+	}
+
+	&.-#{$mod__status__disabled}- {
+		li a {
+			border-color: transparent!important;
+			background-color: transparent!important;
+			cursor: default!important;
+		}
+	}
+}
+
+$__inheritance: object;
+$__before-object: '.#{$object__tabs}';
+$__object: 'li';
+$__after-object: 'a';
+@include set_modificator($mod__size, padding-object, font-size, line-height);
+@include set_modificator($mod__status, color);
+
+$__inheritance: object;
+$__before-object: '.#{$object__tabs}';
+$__object: 'li:active' 'li.#{$mod__active}';
+$__after-object: 'a';
+@include set_modificator($mod__status, color-invert, border-color-darken, background-color-darkener, text-shadow);
+
+
+$__inheritance: $object__tabs;
+$__before-object: '.#{$object__tabs}';
+$__object: 'li';
+$__after-object: '> a:hover';
+@include set_modificator(exclude-items($mod__status, $mod__status__disabled), background-color-darken, border-color-darken, color-invert);
+
+
+
+
+$__inheritance: object;
+$__before-object: '';
+$__object: '.#{$object__tabs}';
+$__after-object: 'li a';
+@include set_modificator($mod__status, color);
+
+$__inheritance: object;
+$__before-object: '';
+$__object: '.#{$object__tabs}';
+$__after-object: 'li a:hover';
+@include set_modificator(exclude-items($mod__status, $mod__status__disabled), background-color-darken, border-color-darken, color-invert, text-shadow);
+
+$__inheritance: object;
+$__before-object: '';
+$__object: '.#{$object__tabs}';
+$__after-object: 'li:active a' 'li.#{$mod__active} a';
+@include set_modificator($mod__status, color-invert, border-color-darken, background-color-darkener, text-shadow);

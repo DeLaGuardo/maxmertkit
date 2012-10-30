@@ -1,4 +1,5 @@
-$_input-list: 'input[type="text"]' 'input[type="password"]' 'input[type="datetime"]' 'input[type="datetime-local"]' 'input[type="date"]' 'input[type="month"]' 'input[type="time"]' 'input[type="week"]' 'input[type="number"]' 'input[type="email"]' 'input[type="url"]' 'input[type="search"]' 'input[type="tel"]' 'input[type="color"]' 'textarea' 'select';
+// $_input-list: 'input[type="text"]' 'input[type="password"]' 'input[type="datetime"]' 'input[type="datetime-local"]' 'input[type="date"]' 'input[type="month"]' 'input[type="time"]' 'input[type="week"]' 'input[type="number"]' 'input[type="email"]' 'input[type="url"]' 'input[type="search"]' 'input[type="tel"]' 'input[type="color"]' 'textarea' 'select';
+$_input-list: 'input' 'textarea' 'select';
 
 .#{$object__form} {
 	.#{$object__form__field} {
@@ -7,6 +8,7 @@ $_input-list: 'input[type="text"]' 'input[type="password"]' 'input[type="datetim
 		position: relative;
 		border-width: $object__form__field-border-width;
 		border-style: solid;
+		line-height: 0;
 		@include border-radius( 3px );
 
 		@include set_modificator($mod__status, border-color-lighten);
@@ -49,7 +51,7 @@ $_input-list: 'input[type="text"]' 'input[type="password"]' 'input[type="datetim
 		border-style: solid;
 
 		@include set_modificator($mod__status, border-color);
-		@include set_modificator($mod__size, line-height, font-size, input-padding);
+		@include set_modificator($mod__size, input-line-height, font-size, input-padding);
 
 		&[disabled="disabled"] {
 			@include set_modificator($mod__status__disabled, background-color, color);
@@ -91,7 +93,7 @@ $_input-list: 'input[type="text"]' 'input[type="password"]' 'input[type="datetim
 				width: 160px;
 				text-align: right;
 				position: absolute;
-				top: 10px;
+				top: 8px;
 			}
 
 			& > .#{$object__form__field},
@@ -110,13 +112,13 @@ $_input-list: 'input[type="text"]' 'input[type="password"]' 'input[type="datetim
 }
 
 // Create	 .-form-field.-modificatorSize-
-.#{$object__form} {
-	$__inheritance: object;
-	$__before-object: '';
-	$__object: '.#{$object__form__field}';
-	$__after-object: '';
-	@include set_modificator($mod__size, line-height);
-}
+// .#{$object__form} {
+// 	$__inheritance: object;
+// 	$__before-object: '';
+// 	$__object: '.#{$object__form__field}';
+// 	$__after-object: '';
+// 	@include set_modificator($mod__size, line-height);
+// }
 
 // Create	 .-form-field.-modificatorSize- .placeholder
 .#{$object__form} {
@@ -133,7 +135,7 @@ $_input-list: 'input[type="text"]' 'input[type="password"]' 'input[type="datetim
 	$__before-object: '';
 	$__object: '.#{$object__form__field}';
 	$__after-object: $_input-list;
-	@include set_modificator($mod__size, line-height, font-size, input-padding);
+	@include set_modificator($mod__size, font-size, input-padding);
 }
 
 // Create	 .-form-field input.-modificator-:hover
@@ -311,4 +313,14 @@ $_input-list: 'input[type="text"]' 'input[type="password"]' 'input[type="datetim
 	}
 
 	
+}
+
+.#{$object__form} {
+	input[type='checkbox'],
+	input[type='checkbox']:active,
+	input[type='checkbox']:hover,
+	input[type='checkbox']:focus {
+		border:inherit;
+		background: inherit;
+	}
 }

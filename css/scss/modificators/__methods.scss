@@ -3,11 +3,23 @@
 
 	@each $mod in $mods {
 
-		@if index( $mod__status, nth($type-list, 1) ) !=false {
+		$__is-status: true;
+		@each $__type-list-item in $type-list {
+			@if index( $mod__status, $__type-list-item ) == false {
+				$__is-status: false;
+			}
+		}
+		@if $__is-status !=false {
 			@include __set_modificator-type(status, $type-list, $mod )
 		}
 
-		@if index( $mod__size, nth($type-list, 1) ) != false {
+		$__is-size: true;
+		@each $__type-list-item in $type-list {
+			@if index( $mod__size, $__type-list-item ) == false {
+				$__is-size: false;
+			}
+		}
+		@if $__is-size != false {
 			@include __set_modificator-type(size, $type-list, $mod )
 		}
 			
@@ -77,6 +89,17 @@
 	$_result: ();
 	@each $item in $list {
 		@if index($items, $item) == false {
+			$_result: append($_result, $item, space);
+		}
+	}
+
+	@return $_result;
+}
+
+@function only-items ( $list, $items... ) {
+	$_result: ();
+	@each $item in $list {
+		@if index($items, $item) != false {
 			$_result: append($_result, $item, space);
 		}
 	}
