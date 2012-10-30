@@ -1,10 +1,14 @@
-@mixin init_modificator-size{
+@mixin init_modificator-size( $__inheritance: object ){
 	
 	@each $size in $mod__size {
 		$num: index( $mod__size, $size );
 
 		%#{$__inheritance}-size-#{$size}-line-height {
 			line-height: $theme__line-height + nth($mod__size-delta, $num);
+		}
+
+		%#{$__inheritance}-size-#{$size}-input-line-height {
+			line-height: $theme__line-height + nth($mod__size-delta, $num) - 2;
 		}
 
 		%#{$__inheritance}-size-#{$size}-font-size {
@@ -37,9 +41,13 @@
 
 		%#{$__inheritance}-size-#{$size}-input-padding {
 			$_vertical: 3px;
+			$_vertical_ie: 3px;
+			$_vertical_fox: 2px;
 			$_horizontal: 4px;
 			
 			@if (2px + nth($mod__size-delta, $num)) > 0 {
+				$_vertical_ie: 3px + nth($mod__size-delta, $num)#{'\9'};
+				$_vertical_fox: 2px + nth($mod__size-delta, $num);
 				$_vertical: 2px + nth($mod__size-delta, $num);
 			}
 
@@ -47,8 +55,16 @@
 				$_horizontal: 4px + nth($mod__size-delta, $num);
 			}
 
-			padding: $_vertical $_horizontal;
-
+			padding: $_vertical $_horizontal $_vertical + 1;
+			padding-top: $_vertical_ie;
+			padding-bottom: $_vertical_ie;
+			@-moz-document url-prefix() {
+				padding-top: $_vertical_fox;
+				padding-bottom: $_vertical_fox;
+			}
+			@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+				padding: $_vertical + 2 $_horizontal;
+			}
 			// @-moz-document url-prefix() {
 			// 	padding: $_vertical + 1 $_horizontal $_vertical;
 			// }
@@ -67,6 +83,15 @@
 			}
 
 			padding: $_vertical $_horizontal;
+		}
+
+		%#{$__inheritance}-size-#{$size}-border-width {
+			$_width: 3px;
+			@if (nth($mod__size-delta, $num) > 0 ) {
+				$_width: $_width + nth($mod__size-delta, $num) / 2 ;
+			}
+
+			border-width: $_width;
 		}
 	}
 

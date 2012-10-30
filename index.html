@@ -140,6 +140,138 @@
 				</div>
 			</div>
 
+			<article class="-row">
+				<section class="-col6">
+					<h2>Striped and hovered</h2>
+					<table class="-table _striped_ _hovered_">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>First name</th>
+								<th>Last name</th>
+								<th>User name</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Maxim</td>
+								<td>Vetrenko</td>
+								<td>maxmert</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Andrew</td>
+								<td>Yarmolov</td>
+								<td>andrew</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Maxim</td>
+								<td>Vetrenko</td>
+								<td>maxmert</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Andrew</td>
+								<td>Yarmolov</td>
+								<td>andrew</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section class="-col6">
+					<h2>Vertical Hovered</h2>
+					<table class="-table _vertical_ _hovered_">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>First name</th>
+								<th>Last name</th>
+								<th>User name</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Maxim</td>
+								<td>Vetrenko</td>
+								<td>maxmert</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Andrew</td>
+								<td>Yarmolov</td>
+								<td>andrew</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Maxim</td>
+								<td>Vetrenko</td>
+								<td>maxmert</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Andrew</td>
+								<td>Yarmolov</td>
+								<td>andrew</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<div class="-col12">
+					<h2>Vertical</h2>
+					<table class="-table _vertical_">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>First name</th>
+								<th>Last name</th>
+								<th>User name</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Maxim</td>
+								<td>Vetrenko</td>
+								<td>maxmert</td>
+							</tr>
+							<tr class="-error-">
+								<td>2</td>
+								<td>Andrew</td>
+								<td>Yarmolov</td>
+								<td>andrew</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Maxim</td>
+								<td>Vetrenko</td>
+								<td>maxmert</td>
+							</tr>
+							<tr class="_loading_">
+								<td>2</td>
+								<td>Andrew</td>
+								<td class="-info-">Yarmolov</td>
+								<td>andrew</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Maxim</td>
+								<td>Vetrenko</td>
+								<td>maxmert</td>
+							</tr>
+							<tr class="_loading_ -disabled-">
+								<td>2</td>
+								<td>Andrew</td>
+								<td>Yarmolov</td>
+								<td>andrew</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</article>
+
 			<h1>Forms</h1>
 			<article class="-row">
 				<article class="-col12">
@@ -320,25 +452,135 @@
 			<h1>Buttons</h1>
 			<article class="-row">
 				<section class="-col12">
-					<a class="-btn -disabled- _tiny">Tiny disabled</a>
-					<a class="-btn _small _loading_">Normal small</a>
-					<a class="-btn -error-">Error normal</a>
-					<a class="-btn -warning- _big">Warning big</a>
-					<a class="-btn -info- _huge">Info huge</a>
-					<a class="-btn -success- _huge">Success huge</a>
+					<a class="-btn -disabled-">Disabled</a>
+					<a class="-btn _loading_">Normal loading</a>
+					<a class="-btn -error-">Error</a>
+					<a class="-btn -warning-">Warning</a>
+					<a class="-btn -info- _loading_">Info loading</a>
+					<a class="-btn -success-">Success</a>
+					<a class="-btn -primary-">Primary</a>
+					<a class="-btn -error- -unstyled-">Error unstyled</a>
+				</section>
+				<section class="-col12">
+					<a class="-btn _tiny">Tiny button</a>
+					<a class="-btn _small">Small button</a>
+					<a class="-btn">Normal</a>
+					<a class="-btn _big">Big button</a>
+					<a class="-btn _huge">Huge</a>
 				</section>
 			</article>
 
 			<h1>Groups</h1>
 			<article class="-row">
 				<section class="-col12">
-					<div class="-group -form">
-						<a class="-btn">Normal small</a><a class="-btn">Normal small</a><a class="-btn">Normal small</a><span class="-group-appendix">123</span><input type="text"><a class="-btn">Normal small</a>
-					</div>
-					<div class="-group -form">
-						<span class="-group-appendix">123</span><input type="text">
-					</div>
+					<table class="-table -unstyled-">
+						<tbody>
+							<tr>
+								<td>
+									Groups with different elements
+								</td>
+								<td>
+									<div class="-group -form">
+										<a class="-btn">Normal small</a><a class="-btn">Normal small</a><a class="-btn">Normal small</a><span class="-group-appendix">123</span><input type="text"><a class="-btn">Normal small</a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Input groups
+								</td>
+								<td>
+									<div class="-group -form">
+										<span class="-group-appendix">123</span><input type="text">
+									</div>
+									<div class="-group -form">
+										<span class="-group-appendix"><i class="-icon-star"></i></span><input type="text">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Groups with unclickable buttons
+								</td>
+								<td>
+									<div class="-group">
+										<a class="-btn _unclickable_"><i class="-icon-thumbs-up"></i></a><a class="-btn">I like it</a>
+									</div>
+									<div class="-group">
+										<a class="-btn -warning- _unclickable_"><i class="-icon-star"></i></a><a class="-btn">Favourite</a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Vertical group
+								</td>
+								<td>
+									<div class="-group _vertical_">
+										<a class="-btn"><i class="-icon-thumbs-up"></i></a><a class="-btn -disabled-"><i class="-icon-star"></i></a><a class="-btn"><i class="-icon-thumbs-down"></i></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Buttons with caret
+								</td>
+								<td>
+										<a class="-btn _tiny">Dropdown <i class="-caret"></i></a>
+										<a class="-btn _small">Dropdown <i class="-caret"></i></a>
+										<a class="-btn">Dropdown <i class="-caret"></i></a>
+										<a class="-btn _big">Dropdown <i class="-caret"></i></a>
+										<a class="-btn _huge">Dropdown <i class="-caret"></i></a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Groups with caret
+								</td>
+								<td>
+									<div class="-group _tiny">
+										<a class="-btn">Dropdown</a><a class="-btn"><i class="-caret"></i></a>
+									</div>
+									<div class="-group _small">
+										<a class="-btn">Dropdown</a><a class="-btn"><i class="-caret"></i></a>
+									</div>
+									<div class="-group">
+										<a class="-btn">Dropdown</a><a class="-btn"><i class="-caret"></i></a>
+									</div>
+									<div class="-group _big">
+										<a class="-btn">Dropdown</a><a class="-btn"><i class="-caret"></i></a>
+									</div>
+									<div class="-group _huge">
+										<a class="-btn">Dropdown</a><a class="-btn"><i class="-caret _up_"></i></a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</section>
+			</article>
+
+			<h1>Tabs</h1>
+			<article class="-row">
+				<div class="-col6">
+					<ul class="-tabs">
+						<li class="_active_">
+							<a>Hello</a>
+						</li>
+						<li>
+							<a>Hello</a>
+						</li>
+						<li>
+							<a>Hello</a>
+						</li>
+						<li>
+							<a>Hello</a>
+						</li>
+						<li>
+							<a>Hello</a>
+						</li>
+					</ul>
+				</div>
 			</article>
 		</div>
 	</body>

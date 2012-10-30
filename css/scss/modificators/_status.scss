@@ -23,7 +23,7 @@
   to    { background-position: 0 0; }
 }
 
-@mixin init_modificator-status{
+@mixin init_modificator-status( $__inheritance: object ){
 	
 	@each $status in $mod__status {
 		$num: index( $mod__status, $status );
@@ -45,6 +45,8 @@
 			@include text-shadow( #{nth($mod__status-text-shadow, $num)}#{$important} );
 		}
 
+
+
 		%#{$__inheritance}-status-#{$status}-border-color {
 			border-color: nth($mod__status-border-color, $num)#{$important};
 		}
@@ -53,9 +55,15 @@
 			border-color: nth($mod__status-border-color-darken, $num)#{$important};
 		}
 
+		%#{$__inheritance}-status-#{$status}-border-color-darkener {
+			border-color: nth($mod__status-border-color-darkener, $num)#{$important};
+		}
+
 		%#{$__inheritance}-status-#{$status}-border-color-lighten {
 			border-color: nth($mod__status-border-color-lighten, $num)#{$important};
 		}
+
+
 
 		%#{$__inheritance}-status-#{$status}-background-color {
 			background-color: nth($mod__status-background-color, $num)#{$important};
@@ -75,6 +83,28 @@
 
 		%#{$__inheritance}-status-#{$status}-background-color-darkener {
 			background-color: nth($mod__status-background-color-darkener, $num)#{$important};
+		}
+
+
+
+		%#{$__inheritance}-status-#{$status}-gradient-vertical {
+			@if nth($mod__status-background-color, $num) != transparent and $status != disabled and $status != default {
+				@include gradient-vertical( lighten(nth($mod__status-background-color, $num), 15%), nth($mod__status-background-color, $num) );
+			}
+			@else {
+				background-color: nth($mod__status-background-color, $num)#{$important};
+			}
+			// background-color: nth($mod__status-background-color, $num)#{$important};
+		}
+
+		%#{$__inheritance}-status-#{$status}-gradient-vertical-darken {
+			@if nth($mod__status-background-color, $num) != transparent and $status != disabled and $status != default {
+				@include gradient-vertical( lighten(nth($mod__status-background-color, $num),5%), darken(nth($mod__status-background-color, $num), 5%) );
+			}
+			@else {
+				background-color: nth($mod__status-background-color, $num)#{$important};
+			}
+			// background-color: nth($mod__status-background-color, $num)#{$important};
 		}
 
 		// %#{$__inheritance}-status-#{$status}-shadow {

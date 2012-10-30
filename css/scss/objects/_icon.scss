@@ -1,0 +1,39 @@
+
+	
+[class*="#{$object__icon}"],
+[class^="#{$object__icon}"],
+.#{$object__icon} {
+	display: inline-block;
+	width: $object__icon-width;
+	height: $object__icon-height;
+	vertical-align: middle;
+	margin-top: -2px;
+
+	@each $color in $object__icon-colors {
+		$i: index($object__icon-colors, $color);
+
+		@if $color == default {
+			background-image: url(nth($object__icon-colors-paths, $i));
+		}
+		@else {
+			&.#{$object__icon}-#{$color}- {
+				background-image: url(nth($object__icon-colors-paths, $i));
+			}
+		}
+	}
+}
+
+@for $i from 1 through $object__icon-rows {
+	@for $j from 1 through $object__icon-cols {
+		.#{$object__icon}-#{nth($object__icon-list, ( ($i - 1) * $object__icon-cols + $j ) )} {
+			background-position: ($j - 1) * -$object__icon-cols-delta ($i - 1) * -$object__icon-rows-delta;
+		}
+	}
+}
+
+.-#{$mod__status__disabled}- {
+	[class*="#{$object__icon}"],
+	.#{$object__icon} {
+		opacity: .4;
+	}
+}

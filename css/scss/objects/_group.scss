@@ -1,3 +1,5 @@
+@include init_modificator-size($object__group);
+
 $__inheritance: object;
 $__before-object: '';
 $__object: this;
@@ -52,6 +54,32 @@ $__after-object: '';
 		cursor: default;
 	}
 
+	&.#{$mod__vertical} {
+		button,
+		.#{$object__button}, 
+		input[type="button"],
+		.#{$object__group__appendix},
+		input {
+			display: block;
+			margin-left:0;
+
+			&:first-child {
+				@include border-radius( $object__button-border-radius $object__button-border-radius 0 0 );
+			}
+
+			&:last-child {
+				@include border-radius( 0 0 $object__button-border-radius $object__button-border-radius );
+			}
+		}
+	}
+
+	.-#{$mod__status__disabled}-,
+	.#{$mod__active},
+	:active {
+		position: relative;
+		z-index: -1;
+	}
+
 }
 
 
@@ -89,7 +117,7 @@ $__inheritance: object;
 $__before-object: '';
 $__object: '.#{$object__group}';
 $__after-object: 'button' 'input[type="button"]' '.#{$object__button}';
-@include set_modificator($mod__status, color-invert, border-color, background-color, text-shadow);
+@include set_modificator($mod__status, color-invert, border-color, gradient-vertical, text-shadow);
 
 $__inheritance: object;
 $__before-object: '';
@@ -105,6 +133,14 @@ $__after-object: 'button:active' 'button.#{$mod__active}' 'input[type="button"]:
 @include set_modificator(exclude-items($mod__status,$mod__status__disabled), background-color-darkener);
 
 
-@-moz-document url-prefix() {
+$__inheritance: object;
+$__before-object: '';
+$__object: '.#{$object__group}';
+$__after-object: 'button' 'input[type="button"]' '.#{$object__button}' '.#{$object__group__appendix}';
+@include set_modificator($mod__size, padding-object, font-size, line-height);
 
-}
+$__inheritance: $object__group;
+$__before-object: '';
+$__object: '.#{$object__group}';
+$__after-object: $_input-list;
+@include set_modificator($mod__size, input-line-height, font-size, input-padding);
