@@ -7,6 +7,10 @@
 			line-height: $theme__line-height + nth($mod__size-delta, $num);
 		}
 
+		%#{$__inheritance}-size-#{$size}-line-height-small {
+			line-height: 12px + nth($mod__size-delta, $num) - 2;
+		}
+
 		%#{$__inheritance}-size-#{$size}-input-line-height {
 			line-height: $theme__line-height + nth($mod__size-delta, $num) - 2;
 		}
@@ -24,6 +28,19 @@
 			font-size: $_font-size;
 		}
 
+		%#{$__inheritance}-size-#{$size}-font-size-small {
+			$_font-size: 12px;
+			@if ($theme__font-size + nth($mod__size-delta, $num)) > $_font-size {
+				@if $size == default {
+					$_font-size: $_font-size + nth($mod__size-delta, $num) - 2;
+				}
+				@else {
+					$_font-size: $_font-size + nth($mod__size-delta, $num);
+				}
+			}
+			font-size: $_font-size;
+		}
+
 		%#{$__inheritance}-size-#{$size}-padding {
 			$_vertical: 3px;
 			$_horizontal: 4px;
@@ -34,6 +51,51 @@
 
 			@if (4px + nth($mod__size-delta, $num)) > 0 {
 				$_horizontal: 4px + nth($mod__size-delta, $num);
+			}
+
+			padding: $_vertical $_horizontal;
+		}
+
+		%#{$__inheritance}-size-#{$size}-padding-small {
+			$_vertical: 1px;
+			$_horizontal: 3px;
+			
+			@if ($_vertical + nth($mod__size-delta, $num)) > 0 {
+				$_vertical: $_vertical + nth($mod__size-delta, $num);
+			}
+
+			@if ($_horizontal + nth($mod__size-delta, $num)) > 0 {
+				$_horizontal: $_horizontal + nth($mod__size-delta, $num);
+			}
+
+			padding: $_vertical $_horizontal;
+		}
+
+		%#{$__inheritance}-size-#{$size}-padding-big {
+			$_vertical: 6px;
+			$_horizontal: 8px;
+			
+			@if ($_vertical + nth($mod__size-delta, $num)) > 0 {
+				$_vertical: $_vertical + nth($mod__size-delta, $num);
+			}
+
+			@if ($_horizontal + nth($mod__size-delta, $num)) > 0 {
+				$_horizontal: $_horizontal + nth($mod__size-delta, $num);
+			}
+
+			padding: $_vertical $_horizontal;
+		}
+
+		%#{$__inheritance}-size-#{$size}-padding-huge {
+			$_vertical: 10px;
+			$_horizontal: 13px;
+			
+			@if ($_vertical + nth($mod__size-delta, $num)) > 0 {
+				$_vertical: $_vertical + nth($mod__size-delta, $num);
+			}
+
+			@if ($_horizontal + nth($mod__size-delta, $num)) > 0 {
+				$_horizontal: $_horizontal + nth($mod__size-delta, $num);
 			}
 
 			padding: $_vertical $_horizontal;
@@ -87,6 +149,15 @@
 
 		%#{$__inheritance}-size-#{$size}-border-width {
 			$_width: 3px;
+			@if (nth($mod__size-delta, $num) > 0 ) {
+				$_width: $_width + nth($mod__size-delta, $num) / 2 ;
+			}
+
+			border-width: $_width;
+		}
+
+		%#{$__inheritance}-size-#{$size}-border-width-big {
+			$_width: 5px;
 			@if (nth($mod__size-delta, $num) > 0 ) {
 				$_width: $_width + nth($mod__size-delta, $num) / 2 ;
 			}
