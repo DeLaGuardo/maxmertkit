@@ -481,7 +481,7 @@
 								</td>
 								<td>
 									<div class="-group -form">
-										<a class="-btn">Normal small</a><a class="-btn">Normal small</a><a class="-btn">Normal small</a><span class="-group-appendix">123</span><input type="text"><a class="-btn">Normal small</a>
+										<input type="button" value="Go"><a class="-btn">Normal small</a><a class="-btn">Normal small</a><a class="-btn">Normal small</a><span class="-group-appendix">123</span><input type="text"><a class="-btn">Normal small</a>
 									</div>
 								</td>
 							</tr>
@@ -508,6 +508,9 @@
 									</div>
 									<div class="-group">
 										<a class="-btn -warning- _unclickable_"><i class="-icon-star"></i></a><a class="-btn">Favourite</a>
+									</div>
+									<div class="-group">
+										<a class="-btn _unclickable_ -dark-"><i class="-icon-repeat -icon-light-"></i></a><a class="-btn">Repeat</a>
 									</div>
 								</td>
 							</tr>
@@ -551,7 +554,7 @@
 										<a class="-btn">Dropdown</a><a class="-btn"><i class="-caret"></i></a>
 									</div>
 									<div class="-group _huge">
-										<a class="-btn">Dropdown</a><a class="-btn"><i class="-caret _up_"></i></a>
+										<a class="-btn">Dropdown</a><a class="-btn"><i class="-caret _top_"></i></a>
 									</div>
 								</td>
 							</tr>
@@ -560,27 +563,327 @@
 				</section>
 			</article>
 
-			<h1>Tabs</h1>
 			<article class="-row">
 				<div class="-col6">
-					<ul class="-tabs">
+					<h2>Tabs by global size</h2>
+					<ul class="-tabs _huge -section">
 						<li class="_active_">
-							<a>Hello</a>
+							<a>Active</a>
+						</li>
+						<li>
+							<a>Normal <i class="-caret"></i></a>
+						</li>
+						<li>
+							<a>Normal <i class="-icon-thumbs-up"></i></a>
+						</li>
+						<li class="_loading_">
+							<a>Not active, loading</a>
+						</li>
+					</ul>
+
+					<ul class="-tabs _big -section">
+						<li class="_active_">
+							<a>Active</a>
+						</li>
+						<li>
+							<a>Normal <i class="-caret"></i></a>
+						</li>
+						<li>
+							<a>Normal <i class="-icon-thumbs-up"></i></a>
+						</li>
+						<li class="_loading_">
+							<a>Not active, but loading</a>
+						</li>
+					</ul>
+
+					<ul class="-tabs -section">
+						<li class="_active_">
+							<a>Active</a>
+						</li>
+						<li>
+							<a>Normal <i class="-caret"></i></a>
+						</li>
+						<li>
+							<a>Normal <i class="-icon-thumbs-up"></i></a>
+						</li>
+						<li class="_loading_">
+							<a>Not active, but loading</a>
 						</li>
 						<li>
 							<a>Hello</a>
 						</li>
+					</ul>
+					
+					<ul class="-tabs _small -section">
+						<li class="_active_">
+							<a>Active</a>
+						</li>
 						<li>
-							<a>Hello</a>
+							<a>Normal <i class="-caret"></i></a>
+						</li>
+						<li>
+							<a>Normal <i class="-icon-thumbs-up"></i></a>
+						</li>
+						<li class="_loading_">
+							<a>Not active, but loading</a>
 						</li>
 						<li>
 							<a>Hello</a>
+						</li>
+					</ul>
+
+					<ul class="-tabs _tiny -section">
+						<li class="_active_">
+							<a>Active</a>
+						</li>
+						<li>
+							<a>Normal <i class="-caret"></i></a>
+						</li>
+						<li>
+							<a>Normal <i class="-icon-thumbs-up"></i></a>
+						</li>
+						<li class="_loading_">
+							<a>Not active, but loading</a>
 						</li>
 						<li>
 							<a>Hello</a>
 						</li>
 					</ul>
 				</div>
+				<div class="-col6">
+					<h2>Tabs with local modificators</h2>
+					<ul class="-tabs -section">
+						<li class="_active_ -primary-">
+							<a>Active</a>
+						</li>
+						<li class="-disabled-">
+							<a>Disabled</a>
+						</li>
+						<li class="_loading_ -warning-">
+							<a>Warning, not active, but loading</a>
+						</li>
+						<li class="_big">
+							<a>Big</a>
+						</li>
+					</ul>
+
+					<ul class="-tabs _bottom_ -section -disabled-">
+						<li class="_active_">
+							<a>Disabled tabs</a>
+						</li>
+						<li>
+							<a>Normal</a>
+						</li>
+						<li>
+							<a>Normal</a>
+						</li>
+						<li class="_loading_">
+							<a>Not active, but loading</a>
+						</li>
+						<li>
+							<a>Hello</a>
+						</li>
+					</ul>
+
+					<h2>Vertical</h2>
+					<ul class="-tabs _vertical_">
+						<li class="_active_">
+							<a>Active</a>
+						</li>
+						<li>
+							<a>Normal</a>
+						</li>
+						<li>
+							<a>Normal</a>
+						</li>
+						<li class="_loading_">
+							<a>Not active, but loading</a>
+						</li>
+						<li>
+							<a>Hello</a>
+						</li>
+					</ul>
+
+					<ul class="-tabs _vertical_ _right_">
+						<li class="_active_">
+							<a>Active</a>
+						</li>
+						<li>
+							<a>Normal</a>
+						</li>
+						<li>
+							<a>Normal</a>
+						</li>
+						<li class="_loading_">
+							<a>Not active, but loading</a>
+						</li>
+						<li>
+							<a>Hello</a>
+						</li>
+					</ul>
+
+				</div>
+			</article>
+
+			<article class="-row">
+				<section class="-col6">
+					<h2>Badges</h2>
+					<div class="-section">
+						<span class="-badge">default</span>
+						<span class="-badge -primary-">primary</span>
+						<span class="-badge -error-">error</span>
+						<span class="-badge -success-">info</span>
+						<span class="-badge -info-">info</span>
+						<span class="-badge -warning-">warning</span>
+						<span class="-badge -disabled-">disabled</span>
+					</div>
+					<span class="-badge -primary-">badge <i class="-icon-thumbs-up -icon-light-"></i></span>
+					<span class="-badge _big -primary-">badge <i class="-icon-thumbs-up -icon-light-"></i></span>
+					<span class="-badge _huge -primary-">badge <i class="-icon-thumbs-up -icon-light-"></i></span>
+				</section>
+				<section class="-col6">
+					<h2>Labels</h2>
+					<div class="-section">
+						<span class="-label">default</span>
+						<span class="-label -primary-">primary</span>
+						<span class="-label -error-">error</span>
+						<span class="-label -success-">info</span>
+						<span class="-label -info-">info</span>
+						<span class="-label -warning-">warning</span>
+						<span class="-label -disabled-">disabled</span>
+					</div>
+					<span class="-label -primary-">label <i class="-icon-star -icon-light-"></i></span>
+					<span class="-label _big -primary-">label <i class="-icon-star -icon-light-"></i></span>
+					<span class="-label _huge -primary-">label <i class="-icon-star -icon-light-"></i></span>
+				</section>
+			</article>
+
+			<article class="-row">
+				<section class="-col12">
+					<div class="-section">
+						<h2>Dropdowns</h2>
+						<div class="-dropdown">
+							<div class="-dropdown-header">default dropdown</div>
+							<div class="-dropdown-content">Content of dropdown</div>
+						</div>
+						<div class="-dropdown -primary-">
+							<div class="-dropdown-header">Primary dropdown</div>
+							<div class="-dropdown-content">Content of dropdown</div>
+						</div>
+						<div class="-dropdown -error-">
+							<div class="-dropdown-header">Error dropdown</div>
+							<div class="-dropdown-content">Content of dropdown</div>
+						</div>
+						<div class="-dropdown -info-">
+							<div class="-dropdown-header">Info dropdown</div>
+							<div class="-dropdown-content">Content of dropdown</div>
+						</div>
+						<div class="-dropdown -warning-">
+							<div class="-dropdown-header">Info dropdown</div>
+							<div class="-dropdown-content">Content of dropdown</div>
+						</div>
+						<div class="-dropdown -success-">
+							<div class="-dropdown-header">Error dropdown</div>
+							<div class="-dropdown-content">Content of dropdown</div>
+						</div>
+					</div>
+
+					<div class="-section">
+						<h4>Dropdowns with arrows</h4>
+						<div class="-dropdown _top_ -dark-">
+							<i class="-arrow"></i>
+							<div class="-dropdown-header">Dark dropdown</div>
+							<div class="-dropdown-content">Content of dropdown</div>
+						</div>
+						<div class="-dropdown -primary- _top_">
+							<i class="-arrow"></i>
+							<div class="-dropdown-header">Primary dropdown</div>
+							<div class="-dropdown-content">Content of dropdown</div>
+						</div>
+						<div class="-dropdown -error- _top_">
+							<i class="-arrow"></i>
+							<div class="-dropdown-header">Error dropdown</div>
+							<div class="-dropdown-content">Content of dropdown</div>
+						</div>
+						<div class="-dropdown -info- _top_">
+							<i class="-arrow"></i>
+							<div class="-dropdown-header">Info dropdown</div>
+							<div class="-dropdown-content">Content of dropdown</div>
+						</div>
+						<div class="-dropdown -warning- _top_">
+							<i class="-arrow"></i>
+							<div class="-dropdown-header">Info dropdown</div>
+							<div class="-dropdown-content">Content of dropdown</div>
+						</div>
+						<div class="-dropdown -success- _top_">
+							<i class="-arrow"></i>
+							<div class="-dropdown-header">Error dropdown</div>
+							<div class="-dropdown-content">Content of dropdown</div>
+						</div>
+					</div>
+
+					<h4>Set arrow position</h4>
+					<div class="-dropdown _right_ -primary-">
+						<div class="-arrow"></div>
+						<div class="-dropdown-header">Right position</div>
+						<div class="-dropdown-content"></div>
+					</div>
+					<div class="-dropdown _top_ -primary-">
+						<div class="-arrow"></div>
+						<div class="-dropdown-header">Top position</div>
+						<div class="-dropdown-content"></div>
+					</div>
+					<div class="-dropdown _bottom_ -primary-">
+						<div class="-arrow"></div>
+						<div class="-dropdown-header">Bottom position</div>
+						<div class="-dropdown-content"></div>
+					</div>
+					<div class="-dropdown _left_ -primary-">
+						<div class="-arrow"></div>
+						<div class="-dropdown-header">Left position</div>
+						<div class="-dropdown-content"></div>
+					</div>
+
+				</section>
+			</article>
+
+			<article class="-row">
+				<section class="-col6">
+					<h2>Menu in dropdown</h2>
+					<div class="-dropdown">
+						<ul class="-menu -primary-">
+							<li><a>Menu one</a></li>
+							<li class="-error-"><a>Menu one</a></li>
+						</ul>
+					</div>
+				</section>
+			</article>
+
+			<article class="-row">
+				<section class="-col6">
+					<h2>Tooltips</h2>
+					<div class="-tooltip _top_ -dark-"><i class="-arrow"></i>Dark</div>
+					<div class="-tooltip _top_ -primary-"><i class="-arrow"></i>Primary</div>
+					<div class="-tooltip _top_ -error-"><i class="-arrow"></i>Error</div>
+					<div class="-tooltip _top_ -success-"><i class="-arrow"></i>Success</div>
+					<div class="-tooltip _top_ -info-"><i class="-arrow"></i>Info</div>
+					<div class="-tooltip _top_ -warning-"><i class="-arrow"></i>Warning</div>
+					<div class="-tooltip _top_ -disabled-"><i class="-arrow"></i>Disabled</div>
+				</section>
+				<section class="-col6">
+					<h2>Tooltip size</h2>
+					<div class="-section">
+						<div class="-tooltip _top_"><i class="-arrow"></i>Normal</div>
+						<div class="-tooltip _top_ _big"><i class="-arrow"></i>Big tooltip</div>
+						<div class="-tooltip _top_ _huge"><i class="-arrow"></i>Huge tooltip</div>
+					</div>
+
+					<h4>Tooltip arrow postition</h4>
+					<div class="-tooltip _right_ -dark-"><i class="-arrow"></i>Normal</div>
+					<div class="-tooltip _top_ -dark-"><i class="-arrow"></i>Normal</div>
+					<div class="-tooltip _bottom_ -dark-"><i class="-arrow"></i>Normal</div>
+					<div class="-tooltip _left_ -dark-"><i class="-arrow"></i>Normal</div>
+				</section>
 			</article>
 		</div>
 	</body>

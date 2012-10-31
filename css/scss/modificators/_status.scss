@@ -45,6 +45,14 @@
 			@include text-shadow( #{nth($mod__status-text-shadow, $num)}#{$important} );
 		}
 
+		%#{$__inheritance}-status-#{$status}-color-important {
+			color: nth($mod__status-color, $num)!important;
+		}
+
+		%#{$__inheritance}-status-#{$status}-color-invert-important {
+			color: nth($mod__status-color-invert, $num)!important;
+		}
+
 
 
 		%#{$__inheritance}-status-#{$status}-border-color {
@@ -61,6 +69,14 @@
 
 		%#{$__inheritance}-status-#{$status}-border-color-lighten {
 			border-color: nth($mod__status-border-color-lighten, $num)#{$important};
+		}
+
+		%#{$__inheritance}-status-#{$status}-border-color-lightener {
+			border-color: nth($mod__status-border-color-lightener, $num)#{$important};
+		}
+
+		%#{$__inheritance}-status-#{$status}-border-color-important {
+			border-color: nth($mod__status-border-color, $num)#{'!important'};
 		}
 
 
@@ -104,6 +120,34 @@
 			@else {
 				background-color: nth($mod__status-background-color, $num)#{$important};
 			}
+		}
+
+		%#{$__inheritance}-status-#{$status}-gradient-vertical-darkener {
+			@if nth($mod__status-background-color, $num) != transparent and $status != disabled {
+				@include gradient-vertical( darken(nth($mod__status-background-color, $num),5%), darken(nth($mod__status-background-color, $num), 15%) );
+			}
+			@else {
+				background-color: nth($mod__status-background-color, $num)#{$important};
+			}
+		}
+
+		%#{$__inheritance}-status-#{$status}-gradient-vertical-three {
+			@if nth($mod__status-background-color, $num) != transparent {
+				@include gradient-vertical-three-colors( rgba(nth($mod__status-background-color, $num), 0), nth($mod__status-background-color, $num), 50%, rgba(nth($mod__status-background-color, $num),0) );
+			}
+			@else {
+				background-color: nth($mod__status-background-color, $num)#{$important};
+			}
+			// background-color: nth($mod__status-background-color, $num)#{$important};
+		}
+
+		%#{$__inheritance}-status-#{$status}-gradient-horizontal-three {
+			@if nth($mod__status-background-color, $num) != transparent {
+				@include gradient-horizontal-three-colors( rgba(nth($mod__status-background-color, $num),0), nth($mod__status-background-color, $num), 50%, rgba(nth($mod__status-background-color, $num),0) );
+			}
+			@else {
+				background-color: nth($mod__status-background-color, $num)#{$important};
+			}
 			// background-color: nth($mod__status-background-color, $num)#{$important};
 		}
 
@@ -114,6 +158,10 @@
 		// %#{$__inheritance}-status-#{$status}-shadow-long {
 		// 	@include box-shadow(#{nth($mod__status-shadow-long, $num)});
 		// }
+
+		%#{$__inheritance}-status-#{$status}-shadow {
+			@include box-shadow( #{nth($mod__status-shadow, $num)}#{$important} );
+		}
 
 		%#{$__inheritance}-status-#{$status}-outline {
 			@include box-shadow(#{nth($mod__status-outline, $num)}#{$important});

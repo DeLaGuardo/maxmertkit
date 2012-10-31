@@ -142,6 +142,41 @@ $object__tabs: -tabs;
 $object__tabs-border-width: 0;
 $object__tabs-border-radius: 3px;
 
+// ------------ Badges
+$object__badge: -badge;
+$object__badge-border-radius: 15px;
+
+// ------------ Label < Badges
+$object__label: -label;
+$object__label-border-radius: 3px;
+
+// ------------ Dropdown
+$object__dropdown: -dropdown;
+$object__dropdown-border-width: 0;
+$object__dropdown-border-radius: 5px;
+$object__dropdown-background-color: #fff;
+$object__dropdown-min-width: 150px;
+$object__dropdown-min-height: 100px;
+$object__dropdown-max-width: 300px;
+$object__dropdown-max-height: 1000px;
+$object__dropdown-shadow: 0 4px 10px rgba(0,0,0,.2);
+$object__dropdown__header: #{$object__dropdown}-header;
+$object__dropdown__header-padding: 10px;
+$object__dropdown__content: #{$object__dropdown}-content;
+$object__dropdown__content-padding: 10px;
+
+// ------------ Arrow
+$object__arrow: -arrow;
+$object__arrow-size: 8px;
+
+// ------------ Tooltip
+$object__tooltip: -tooltip;
+$object__tooltip-border-radius: 3px;
+$object__tooltip__arrow-size: 4px;
+$object__tooltip-shadow: 0 0 6px rgba(0,0,0,.2);
+
+// ------------ Dropdown
+$object__menu: -menu;
 
 
 
@@ -174,20 +209,22 @@ $mixin__float-right: mx-pull-right;
 $mod__status__disabled: disabled; // Use it in a list below
 $mod__status__unstyled: unstyled;
 
-$mod__status:							$mod__status__unstyled			default							error							success							info							warning							primary							$mod__status__disabled;
-$mod__status-color:						$theme__color 					$theme__color 					red 							#3ec84c 						#64cfd9 						#EDB723 						#1b88d6							#ccc;
-$mod__status-color-invert:				$theme__color 					$theme__color 					#fff 							#fff 							#fff 							#fff 							#fff							#ccc;
-$mod__status-border-color:				transparent						#d9d9d9							#d96464 						#3ec84c							#64cfd9							#d9ab64							darken(#1b88d6, 5%)				#d9d9d9;
-$mod__status-border-color-lighten:		transparent						lighten(#d9d9d9, 5%)			lighten(#d96464, 20%)			lighten(#3ec84c, 10%)			lighten(#64cfd9, 10%)			lighten(#d9ab64, 10%)			lighten(#1b88d6, 10%)			lighten(#d9d9d9, 10%);
-$mod__status-border-color-darken:		transparent						darken(#d9d9d9, 10%)			darken(#d96464, 10%)			darken(#3ec84c, 10%)			darken(#64cfd9, 10%)			darken(#d9ab64, 10%)			darken(#1b88d6, 10%)			darken(#d9d9d9, 10%);
-$mod__status-border-color-darkener:		transparent						darken(#d9d9d9, 25%)			darken(#d96464, 25%)			darken(#3ec84c, 25%)			darken(#64cfd9, 25%)			darken(#d9ab64, 25%)			darken(#1b88d6, 25%)			darken(#d9d9d9, 25%);
-$mod__status-outline:					none							'0 0 10px rgba(100,207,217,1)'	'0 0 10px rgba(217,100,100,1)' 	'0 0 10px rgba(100,217,134,1)'	'0 0 10px rgba(100,207,217,1)'	'0 0 10px rgba(217,171,100,1)' 	'0 0 10px rgba(26,120,217,1)'	none;
-$mod__status-background-color:			transparent						#fbfbfb		 					#da4a39							#3ec84c							#64cfd9							#EDB723							#1b88d6							lighten(#d9d9d9, 10%);
-$mod__status-background-color-lighten:	transparent						lighten(#fbfbfb, 2%)			lighten(#da4a39, 10%)			lighten(#3ec84c, 10%)			lighten(#64cfd9, 10%)			lighten(#EDB723, 10%)			lighten(#1b88d6, 10%)			lighten(#d9d9d9, 10%);
-$mod__status-background-color-lightener:transparent						lighten(#fbfbfb, 4%)			lighten(#da4a39, 20%)			lighten(#3ec84c, 20%)			lighten(#64cfd9, 20%)			lighten(#EDB723, 20%)			lighten(#1b88d6, 20%)			lighten(#d9d9d9, 10%);
-$mod__status-background-color-darken:	transparent						darken(#fbfbfb, 5%)				darken(#da4a39, 5%)				darken(#3ec84c, 5%)				darken(#64cfd9, 5%)				darken(#EDB723, 5%)				darken(#1b88d6, 5%)				lighten(#d9d9d9, 10%);
-$mod__status-background-color-darkener:	transparent						darken(#fbfbfb, 10%)			darken(#da4a39, 10%)			darken(#3ec84c, 10%)			darken(#64cfd9, 10%)			darken(#EDB723, 10%)			darken(#1b88d6, 10%)			lighten(#d9d9d9, 10%);
-$mod__status-text-shadow:				none							'0 1px 0 rgba(255,255,255,1)'	'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			none;
+$mod__status:							$mod__status__unstyled			default							error							success							info							warning							primary							dark						$mod__status__disabled;
+$mod__status-color:						$theme__color 					$theme__color 					red 							#3ec84c 						#64cfd9 						#EDB723 						#1b88d6							#6b6b6b						#ccc;						//color
+$mod__status-color-invert:				$theme__color 					$theme__color 					#fff 							#fff 							#fff 							#fff 							#fff							#fff						#ccc;						//color-invert
+$mod__status-border-color:				transparent						#d9d9d9							#d96464 						#3ec84c							#64cfd9							#d9ab64							darken(#1b88d6, 5%)				#6b6b6b						#d9d9d9; 					//border-color
+$mod__status-border-color-lighten:		transparent						#fbfbfb							lighten(#d96464, 20%)			lighten(#3ec84c, 10%)			lighten(#64cfd9, 10%)			lighten(#d9ab64, 10%)			lighten(#1b88d6, 10%)			lighten(#6b6b6b, 20%)		lighten(#d9d9d9, 10%);		//border-color-lighten
+$mod__status-border-color-lightener:	transparent						lighten(#d9d9d9, 13%)			lighten(#d96464, 30%)			lighten(#3ec84c, 20%)			lighten(#64cfd9, 20%)			lighten(#d9ab64, 20%)			lighten(#1b88d6, 20%)			lighten(#6b6b6b, 40%)		lighten(#d9d9d9, 20%);		//border-color-lightener
+$mod__status-border-color-darken:		transparent						darken(#d9d9d9, 10%)			darken(#d96464, 10%)			darken(#3ec84c, 10%)			darken(#64cfd9, 10%)			darken(#d9ab64, 10%)			darken(#1b88d6, 10%)			darken(#6b6b6b, 5%)			darken(#d9d9d9, 10%);		//border-color-darken
+$mod__status-border-color-darkener:		transparent						darken(#d9d9d9, 25%)			darken(#d96464, 25%)			darken(#3ec84c, 25%)			darken(#64cfd9, 25%)			darken(#d9ab64, 25%)			darken(#1b88d6, 25%)			darken(#6b6b6b, 10%)		darken(#d9d9d9, 25%);		//border-color-darkener
+$mod__status-outline:					none							'0 0 10px rgba(100,207,217,1)'	'0 0 10px rgba(217,100,100,1)' 	'0 0 10px rgba(100,217,134,1)'	'0 0 10px rgba(100,207,217,1)'	'0 0 10px rgba(217,171,100,1)' 	'0 0 10px rgba(26,120,217,1)'	0 0 10px rgba(0,0,0,1)		none;						//outline
+$mod__status-background-color:			transparent						#fbfbfb		 					#da4a39							#3ec84c							#64cfd9							#EDB723							#1b88d6							#6b6b6b						lighten(#d9d9d9, 10%);		//background-color
+$mod__status-background-color-lighten:	transparent						lighten(#fbfbfb, 2%)			lighten(#da4a39, 10%)			lighten(#3ec84c, 10%)			lighten(#64cfd9, 10%)			lighten(#EDB723, 10%)			lighten(#1b88d6, 10%)			lighten(#6b6b6b, 10%)		lighten(#d9d9d9, 10%);		//background-color-lighten
+$mod__status-background-color-lightener:transparent						lighten(#fbfbfb, 4%)			lighten(#da4a39, 20%)			lighten(#3ec84c, 20%)			lighten(#64cfd9, 20%)			lighten(#EDB723, 20%)			lighten(#1b88d6, 20%)			lighten(#6b6b6b, 20%)		lighten(#d9d9d9, 10%);		//background-color-lightener
+$mod__status-background-color-darken:	transparent						darken(#fbfbfb, 5%)				darken(#da4a39, 5%)				darken(#3ec84c, 5%)				darken(#64cfd9, 5%)				darken(#EDB723, 5%)				darken(#1b88d6, 5%)				darken(#6b6b6b, 5%)			lighten(#d9d9d9, 10%);		//background-color-darken
+$mod__status-background-color-darkener:	transparent						darken(#fbfbfb, 10%)			darken(#da4a39, 10%)			darken(#3ec84c, 10%)			darken(#64cfd9, 10%)			darken(#EDB723, 10%)			darken(#1b88d6, 10%)			darken(#6b6b6b, 10%)		lighten(#d9d9d9, 10%);		//background-color-darkener
+$mod__status-text-shadow:				none							'0 1px 0 rgba(255,255,255,1)'	'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			'0 -1px rgba(0,0,0,.3)'			'0 1px rgba(255,255,255,.1)'none;						//text-shadow
+$mod__status-shadow:					none							'0 4px 10px rgba(0,0,0,.3)'		'0 4px 10px rgba(0,0,0,.3)'		'0 4px 10px rgba(0,0,0,.3)'		'0 4px 10px rgba(0,0,0,.3)' 	'0 4px 10px rgba(0,0,0,.3)' 	'0 4px 10px rgba(0,0,0,.3)' 	'0 4px 10px rgba(0,0,0,.3)'	none;						//shadow
 
 
 // $mod__status-shadow:					none							'0 2px 2px rgba(0,0,0,.1)'		none							none							none							none							none;
@@ -209,7 +246,10 @@ $mod__hovered: _hovered_;
 $mod__bordered: _bordered_;
 $mod__unclickable: _unclickable_;
 
-$mod__side-up: _up_;
+$mod__side-top: _top_;
+$mod__side-bottom: _bottom_;
+$mod__side-left: _left_;
+$mod__side-right: _right_;
 
 
 
