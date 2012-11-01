@@ -8,6 +8,8 @@
 	height: $object__icon-height;
 	vertical-align: middle;
 	margin-top: -2px;
+	background-repeat: no-repeat;
+	background-position: $object__icon-width $object__icon-height;
 
 	@each $color in $object__icon-colors {
 		$i: index($object__icon-colors, $color);

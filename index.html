@@ -3,8 +3,30 @@
 	<head>
 		<title>MOSKVA.FM</title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/maxmertkit.css">
+		<link rel="stylesheet" type="text/css" href="css/maxmertkit-components.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script type="text/javascript" src="js/libs/html5shiv.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.js"></script>
+		<script type="text/javascript" src="js/libs/modernizr.js"></script>
+
+		<script type="text/javascript" src="js/plugins/maxmertkit-tooltip.js"></script>
+
+		<script type="text/javascript">
+			(function($){
+				$(document).ready(function(){
+
+					$('.js-tooltip').tooltip({
+						trigger: 'hover,adf'
+					});
+
+					$('.js-tooltip').tooltip({trigger: 'click', beforeOpen: function(){alert('before'); return true;}, ifThenOpen: function(){alert('if'); return false;}});
+
+					console.log($('.js-tooltip').data('plugin_tooltip'));
+
+				});
+			})(jQuery);
+		</script>
 	</head>
 	<body>
 		<div class="-container">
@@ -844,42 +866,85 @@
 
 			<article class="-row">
 				<section class="-col6">
-					<h4>Menu in dropdown</h4>
-					<div class="-dropdown">
-						<ul class="-menu -primary-">
-							<li><a>Menu default</a></li>
-							<li class="-error-"><a>Error item</a></li>
-							<li><a>Default item</a></li>
-							<li class="-menu-sub"><a>Item with submenu</a>
+					<div class="-section">
+						<h4>Menu in dropdown</h4>
+						<div class="-dropdown">
+							<ul class="-menu -primary-">
+								<li><a>Menu default</a></li>
+								<li class="-error-"><a>Error item</a></li>
+								<li><a>Default item</a></li>
+								<li class="-menu-sub"><a>Item with submenu</a>
 
+									<div class="-dropdown">
+										<ul class="-menu">
+											<li><a>Menu default</a></li>
+											<li class="-success-"><a>Success item</a></li>
+											<li><a>Default item</a></li>
+											<li class="-menu-sub _left_ _top_"><a>Item with submenu, _left_ and _top_ class</a>
+												<div class="-dropdown">
+													<ul class="-menu">
+														<li><a>Menu default</a></li>
+														<li class="-error- -disabled-"><a>Disabled error item</a></li>
+														<li><a>Default item</a></li>
+														<li><a>Default item</a></li>
+														<li><a>Default item</a></li>
+														<li><a><span class="-menu-help">⌘⌥2</span>Default item with help information</a></li>
+													</ul>
+												</div>
+
+											</li>
+											<li><a>Default item</a></li>
+											<li><a><span class="-menu-help">⌘⌥2</span>Default item with help information</a></li>
+										</ul>
+									</div>
+
+								</li>
+								<li class="_loading_"><a>Default loading item</a></li>
+								<li><a><span class="-menu-help">⌘⌥2</span>Default item with help information</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<h4>Combine with dropdown classes</h4>
+					<div class="-dropdown -primary- _right_">
+						<i class="-arrow"></i>
+						<ul class="-menu -primary-">
+							<li><a><i class="-icon-thumbs-up"></i> I like it</a></li>
+							<li><a><i class="-icon-star"></i> Favourite</a></li>
+							<li><a><i class="-icon-thumbs-down"></i> I hate it</a></li>
+							<li class="-menu-sub"><a><i class="-icon"></i> Share</a>
 								<div class="-dropdown">
 									<ul class="-menu">
-										<li><a>Menu default</a></li>
-										<li class="-success-"><a>Success item</a></li>
-										<li><a>Default item</a></li>
-										<li class="-menu-sub _left_ _top_"><a>Item with submenu, _left_ and _top_ class</a>
-											<div class="-dropdown">
-												<ul class="-menu">
-													<li><a>Menu default</a></li>
-													<li class="-error- -disabled-"><a>Disabled error item</a></li>
-													<li><a>Default item</a></li>
-													<li><a>Default item</a></li>
-													<li><a>Default item</a></li>
-													<li><a><span class="-menu-help">⌘⌥2</span>Default item with help information</a></li>
-												</ul>
-											</div>
-
-										</li>
-										<li><a>Default item</a></li>
-										<li><a><span class="-menu-help">⌘⌥2</span>Default item with help information</a></li>
+										<li><a><i class="-icon"></i> Facebook</a></li>
+										<li class="-success-"><a><i class="-icon-ok-circle"></i> Twitter</a></li>
+										<li><a><i class="-icon"></i> My space</a></li>
 									</ul>
 								</div>
-
 							</li>
-							<li class="_loading_"><a>Default loading item</a></li>
-							<li><a><span class="-menu-help">⌘⌥2</span>Default item with help information</a></li>
+							<li class="-menu-separator"></li>
+							<li class="-error-"><a><i class="-icon-remove"></i> Don't show me this</a></li>
 						</ul>
 					</div>
+					<div class="-dropdown -primary- _top_">
+						<i class="-arrow"></i>
+						<ul class="-menu -primary-">
+							<li><a><i class="-icon-thumbs-up"></i> I like it</a></li>
+							<li><a><i class="-icon-star"></i> Favourite</a></li>
+							<li><a><i class="-icon-thumbs-down"></i> I hate it</a></li>
+							<li class="-menu-sub"><a><i class="-icon"></i> Share</a>
+								<div class="-dropdown">
+									<ul class="-menu">
+										<li><a><i class="-icon"></i> Facebook</a></li>
+										<li class="-success-"><a><i class="-icon-ok-circle"></i> Twitter</a></li>
+										<li><a><i class="-icon"></i> My space</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="-menu-separator"></li>
+							<li class="-error-"><a><i class="-icon-remove"></i> Don't show me this</a></li>
+						</ul>
+					</div>
+
 				</section>
 				<section class="-col6">
 					<h4>Just menu</h4>
@@ -941,6 +1006,22 @@
 					<div class="-tooltip _bottom_ -dark-"><i class="-arrow"></i>Normal</div>
 					<div class="-tooltip _left_ -dark-"><i class="-arrow"></i>Normal</div>
 				</section>
+			</article>
+		</div>
+
+
+
+
+
+		<div class="-container">
+			<h1>Javascript</h1>
+			
+			<article class="-row">
+				<div class="-col6">
+					<h4>Tooltip</h4>
+					<span class="js-tooltip">Show tooltip</span>
+				</div>
+				<div class="-col6"></div>
 			</article>
 		</div>
 	</body>
