@@ -155,7 +155,7 @@ $object__dropdown: -dropdown;
 $object__dropdown-border-width: 0;
 $object__dropdown-border-radius: 5px;
 $object__dropdown-background-color: #fff;
-$object__dropdown-min-width: 150px;
+$object__dropdown-min-width: 200px;
 $object__dropdown-min-height: 100px;
 $object__dropdown-max-width: 300px;
 $object__dropdown-max-height: 1000px;
@@ -177,6 +177,8 @@ $object__tooltip-shadow: 0 0 6px rgba(0,0,0,.2);
 
 // ------------ Dropdown
 $object__menu: -menu;
+$object__menu__submenu: #{$object__menu}-sub;
+$object__menu__help: #{$object__menu}-help;
 
 
 
