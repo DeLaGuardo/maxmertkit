@@ -16,13 +16,33 @@
 			(function($){
 				$(document).ready(function(){
 
+					// $('.js-tooltip').tooltip({
+					// 	trigger: 'hover,adf'
+					// });
+
 					$('.js-tooltip').tooltip({
-						trigger: 'hover,adf'
+						trigger: 'click',
+						beforeOpen: function(){
+							var d = $.Deferred();
+							setTimeout(function() { d.resolve(); }, 2000);
+							return d.promise();
+						},
+						ifNotOpened: function(){
+							// alert('Could not open');
+						},
+						open: function(){
+							// alert('open');
+							return true;
+						},
+						close: function(){
+							// alert('close');
+							return true;
+						}
 					});
 
-					$('.js-tooltip').tooltip({trigger: 'click', beforeOpen: function(){alert('before'); return true;}, ifThenOpen: function(){alert('if'); return false;}});
-
-					console.log($('.js-tooltip').data('plugin_tooltip'));
+					$('.js-tooltip1').tooltip({content: 'tooltip1'});
+					$('.js-tooltip2').tooltip({content: 'tooltip2'});
+					// console.log($('.js-tooltip').data('plugin_tooltip'));
 
 				});
 			})(jQuery);
@@ -1019,7 +1039,8 @@
 			<article class="-row">
 				<div class="-col6">
 					<h4>Tooltip</h4>
-					<span class="js-tooltip">Show tooltip</span>
+					<span class="js-tooltip js-tooltip1">Show tooltip</span>
+					<span class="js-tooltip js-tooltip2">Show tooltip 2</span>
 				</div>
 				<div class="-col6"></div>
 			</article>

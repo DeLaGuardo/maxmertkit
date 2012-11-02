@@ -2,13 +2,15 @@
 
 	var tooltip = 'tooltip',
 	defaults = {
-		animation: true
+		enabled: true
+	,	onlyOneOpen: true
+	,	animation: true
 	,   placement: 'top'
-	,   template: '<div class="-tooltip"><i class="-arrow"></i><div class="-tooltip-content"></div></div>'
+	,   template: '<div class="-tooltip" style="display:none"><i class="-arrow"></i><div class="-tooltip-content"></div></div>'
+	,	content: null
 	,   theme: 'dark'
 	,   trigger: 'hover'
 	,   delay: 0
-	,   debug: true
 	};
 
 	// Plugin constructor
@@ -20,35 +22,102 @@
 		me._defaults = defaults;
 		me._name = tooltip;
 
-		me._set( defaults, options );
+		me.options = $.extend({}, me._defaults, options);
+
+		me.tooltipElement = $(me.options.template);
+		$('body').append( me.tooltipElement );
+
+		me._setOptions( me._defaults );
+		me._setOptions( options );
+
+		if( $.tooltip === undefined )
+			$.tooltip = [];
+		
+		$.tooltip.push(me.element);
+
 		me.init();
 	}
 
-	Plugin.prototype._set = function( __oldOptions, __options ) {
+	Plugin.prototype._setOptions = function( _options ) {
+		var me = this;
+		var $me = $(me.element);
+
+		$.each( _options, function( key, value ) {
+			me._setOption( key, value );
+
+			var currentOption = {};
+				currentOption[key] = value;
+
+			if( $.isFunction( value ) ) {
+				me._on( $me, currentOption);
+			}
+
+		});
+	}
+
+	Plugin.prototype._setOption = function( _key, _value ) {
+		var me  = this;
+		var $me = $(me.element);
+
+		switch ( _key ) {
+			case 'theme':
+				me.tooltipElement.addClass('-' + _value + '-')
+			break;
+
+			case 'trigger':
+				var _events = _value.split(/[ ,]+/);
+					
+				if( me.options[_key].in !== undefined )
+					$me.off( me.options[_key].in + '.' + me._name );
+
+				if( me.options[_key].out !== undefined )
+					$me.off( me.options[_key].out + '.' + me._name );
+
+				me.options[_key] = {
+					in: _events[0] 
+				,   out: (_events[1] == undefined || _events[1] == '') ? _events[0] : _events[1]
+				};
+				
+
+				$me.on( me.options[_key].in + '.' + me._name, function() {
+					me.open();
+				});
+				$me.on( me.options[_key].out + '.' + me._name, function() {
+					me.close();
+				});
+			break;
+
+			case 'content':
+				me.tooltipElement.find('.-tooltip-content').html(_value);
+			break;
+
+			case 'placement':
+				me.tooltipElement.addClass('_' + _value + '_')
+			break;
+
+			default:
+				me.options[_key] = _value;
+		}
+	}
+
+	Plugin.prototype._on = function( _element, _handlers ) {
 		var me = this;
 
-		me.options = $.extend( {}, __oldOptions, __options) ;
+		$.each( _handlers, function( event, handler ) {
+			_element.bind( event + '.' + me._name, handler );
+		});
+	}
 
-		if( typeof __options == 'object' )
-		{
-			for( var param in __options ){
-				if( __options.hasOwnProperty(param) ) {
-					
-					// This is options setter, and if you want to do something, when property changing, do it here.
-					switch( param ) {
+	Plugin.prototype.enable = function() {
+		var me = this;
 
-						case 'trigger':
-							var _events = me.options.trigger.split(/[ ,]+/);
-							me.options.trigger = {
-								in: _events[0] 
-							,   out: (_events[1] == undefined || _events[1] == '') ? _events[0] : _events[1]
-							};
-						break; // -trigger
+		me._setOption( enabled, true )
+	}
 
-					}
-				}
-			}
-		}
+	Plugin.prototype.disable = function() {
+		var me = this;
+
+		me._setOption( enabled, false )
 	}
 
 	Plugin.prototype.init = function () {
@@ -59,13 +128,117 @@
 
 	}
 
+
+
+
+
+
+	Plugin.prototype.open = function() {
+		var me  = this;
+		var $me = $(me.element);
+		
+		if( me.options.enabled === true && me.state !== 'open' )
+
+			me.state = 'in';
+
+			if( me.options.beforeOpen != undefined && (typeof me.options.beforeOpen === 'object' || typeof me.options.beforeOpen === 'function' ))
+			{
+				
+				try {
+					me.options.beforeOpen()
+						.done(function(){
+							me._open();
+						})
+						.fail(function(){
+							me.state = 'close';
+							$me.trigger('ifNotOpened.' + me._name);
+						})
+				} catch( e ) {
+					me._open();
+				}
+				
+			}
+			else {
+				me._open();
+			}
+	}
+
+	Plugin.prototype._open = function() {
+		var me  = this;
+		var $me = $(me.element);
+
+		if( me.options.onlyOneOpen )
+			$.each(me._getOtherInstanses(), function() {
+				if( $.data(this, 'plugin_' + tooltip).getState() === 'open' )
+					$.data(this, 'plugin_' + tooltip).close();
+			});
+
+		me.tooltipElement.show();
+		me.state = 'open';
+
+		$me.trigger('open.' + me._name);
+	}
+
+	Plugin.prototype.close = function() {
+		var me  = this;
+		var $me = $(me.element);
+		
+		if( me.options.enabled === true && me.state !== 'close' )
+
+			me.state = 'out';
+
+			if( me.options.beforeClose != undefined && (typeof me.options.beforeClose === 'object' || typeof me.options.beforeClose === 'function' ))
+			{
+				
+				try {
+					me.options.beforeClose()
+						.done(function(){
+							me._close();
+						})
+						.fail(function(){
+							$me.trigger('ifNotClosed');
+							me.state = 'open';
+						})
+				} catch( e ) {
+					me._close();
+				}
+				
+			}
+			else {
+				me._close();
+			}
+	}
+
+	Plugin.prototype._close = function() {
+		var me  = this;
+		var $me = $(me.element);
+
+		me.tooltipElement.hide();
+		me.state = 'close';
+
+		$me.trigger('close');
+	}
+
+	Plugin.prototype.getState = function() {
+		return this.state;
+	}
+
+	Plugin.prototype._getOtherInstanses = function() {
+		var me = this;
+		
+		return $.grep( $.tooltip , function( el ) {
+			return $.data(el, 'plugin_' + tooltip) !== me;
+		})
+		
+	}
+
 	$.fn[tooltip] = function ( options ) {
 		return this.each(function () {
 			if (!$.data(this, 'plugin_' + tooltip)) {
 				$.data(this, 'plugin_' + tooltip, new Plugin( this, options ));
 			}
 			else {
-				$.data(this, 'plugin_' + tooltip)._set( $.data(this, 'plugin_' + tooltip).options, options );
+				$.data(this, 'plugin_' + tooltip)._setOptions( options );
 			}
 		});
 	}
