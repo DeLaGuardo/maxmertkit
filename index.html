@@ -21,10 +21,10 @@
 					// });
 
 					$('.js-tooltip').tooltip({
-						trigger: 'click',
+						trigger: 'hover',
 						beforeOpen: function(){
 							var d = $.Deferred();
-							setTimeout(function() { d.resolve(); }, 2000);
+							setTimeout(function() { d.resolve(); }, 0);
 							return d.promise();
 						},
 						ifNotOpened: function(){
