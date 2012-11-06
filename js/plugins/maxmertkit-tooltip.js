@@ -2,17 +2,18 @@
 
 	var tooltip = 'tooltip',
 	defaults = {
-		enabled: true
-	,	onlyOneOpen: true
-	,	animation: 'easeOutElastic'
-	,	duration: 400
-	,   placement: 'top'
-	,	offset: [0, 0]
+		enabled: true 		// On all events if true
+	,	autoOpen: false		// Open after initialize if true
+	,	onlyOneOpen: true 	// Close other instanses of plugin if true
+	,	animation: null 	// 'easeOutElastic'
+	,	duration: 400		// In ms, time of animation
+	,   placement: 'top' 	// top, bottom, left, right, Position of tooltip
+	,	offset: [0, 0]		// In px [x, y]
 	,   template: '<div class="-tooltip" style="display:none"><i class="-arrow"></i><div class="-tooltip-content"></div></div>'
-	,	content: null
-	,   theme: 'dark'
-	,   trigger: 'hover'
-	,   delay: 0
+	,	content: null		// Set any content of tooltip here
+	,   theme: 'dark' 		// All statuses of maxmertkit framework
+	,   trigger: 'hover' 	// event-to-show, event-to-close ( 'hover, click' )
+	,   delay: 0			// Delay before show
 	};
 
 	// Plugin constructor
@@ -26,24 +27,30 @@
 
 		me.options = $.extend({}, me._defaults, options);
 
+		// Append tooltip element to the body
 		me.tooltipElement = $(me.options.template);
 		$('body').append( me.tooltipElement );
 
+		// CSS manupulations just in case
 		me.tooltipElement.css({position: 'absolute'});
 		me.tooltipElement.find('.-arrow').css({opacity: 0});
 
-		// me._setOptions( me._defaults );
+		// We already have all options, but we need to react on the values
 		me._setOptions( me.options );
 
 		if( $.tooltip === undefined )
 			$.tooltip = [];
 		
+		// Store all instanses in $.tooltip
 		$.tooltip.push(me.element);
 
+		// Timer before open
 		me.timeout = null;
+		
 		me.init();
 	}
 
+	// Go through all _options and react on them (save or set events)
 	Plugin.prototype._setOptions = function( _options ) {
 		var me = this;
 		var $me = $(me.element);
@@ -65,8 +72,10 @@
 		var me  = this;
 		var $me = $(me.element);
 
+		// React on setting options
 		switch ( _key ) {
 			case 'theme':
+				me.tooltipElement.removeClass('-' + me.options.theme + '-');
 				me.tooltipElement.addClass('-' + _value + '-')
 			break;
 
@@ -106,10 +115,6 @@
 						});
 					break;
 
-					// case 'timer':
-					// 	setTimeout(me.close(), me.options.timer);
-					// break;
-					
 					default:
 						$me.on( me.options[_key].out + '.' + me._name, function() {
 							if( me.state == 'open' )
@@ -126,14 +131,15 @@
 			break;
 
 			case 'placement':
+				me.tooltipElement.removeClass('_' + me.options.placement + '_')
 				me.tooltipElement.addClass('_' + _value + '_')
 			break;
-
-			default:
-				me.options[_key] = _value;
 		}
+
+		me.options[_key] = _value;
 	}
 
+	// Set all callbacks here
 	Plugin.prototype._on = function( _element, _handlers ) {
 		var me = this;
 
@@ -159,11 +165,10 @@
 		var $me = $(me.element);
 
 		me.state = 'close'; // close | in | open | out
-
+		if( me.options.autoOpen ) {
+			me.open();
+		}
 	}
-
-
-
 
 
 
@@ -187,6 +192,7 @@
 						.fail(function(){
 							me.state = 'close';
 							$me.trigger('ifNotOpened.' + me._name);
+							$me.trigger('ifOpenedOrNot.' + me._name);
 						})
 				} catch( e ) {
 					me._open();
@@ -211,7 +217,7 @@
 
 		me._setPosition();
 		
-		if( me.options.animation !== null )
+		if( me.options.animation !== null && me.options.animation !== false )
 		{	
 			me.tooltipElement.slideDown({
 				duration: me.options.duration,
@@ -226,9 +232,10 @@
 			me.tooltipElement.find('.-arrow').css({opacity: 1});
 			me.tooltipElement.show();
 		}
+		
 		me.state = 'open';
-
 		$me.trigger('open.' + me._name);
+		$me.trigger('ifOpenedOrNot.' + me._name);
 	}
 
 	Plugin.prototype.close = function() {
@@ -250,7 +257,8 @@
 							me._close();
 						})
 						.fail(function(){
-							$me.trigger('ifNotClosed');
+							$me.trigger('ifNotClosed.' + me._name);
+							$me.trigger('ifClosedOrNot.' + me._name);
 							me.state = 'open';
 						})
 				} catch( e ) {
@@ -272,6 +280,7 @@
 		me.state = 'close';
 
 		$me.trigger('close');
+		$me.trigger('ifClosedOrNot.' + me._name);
 	}
 
 	Plugin.prototype._setPosition = function() {
@@ -318,13 +327,24 @@
 		
 	}
 
+	Plugin.prototype.destroy = function() {
+		var me  = this;
+		var $me = $(me.element);
+
+		$me.off('.' + me._name);
+		me.tooltipElement.remove();
+		$me.removeData( 'plugin_' + tooltip );
+	}
+
 	$.fn[tooltip] = function ( options ) {
 		return this.each(function () {
 			if (!$.data(this, 'plugin_' + tooltip)) {
 				$.data(this, 'plugin_' + tooltip, new Plugin( this, options ));
 			}
 			else {
-				$.data(this, 'plugin_' + tooltip)._setOptions( options );
+				if( typeof options === 'object' ) {
+					$.data(this, 'plugin_' + tooltip)._setOptions( options );
+				}
 			}
 		});
 	}
