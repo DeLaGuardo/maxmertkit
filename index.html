@@ -11,39 +11,16 @@
 		<script type="text/javascript" src="js/libs/easing.js"></script>
 		<script type="text/javascript" src="js/libs/modernizr.js"></script>
 
-		<script type="text/javascript" src="js/plugins/maxmertkit-tooltip.js"></script>
+		<script type="text/javascript" src="js/plugins/maxmertkit.js"></script>
+		<script type="text/javascript" src="js/plugins/maxmertkit.popup.js"></script>
+
 
 		<script type="text/javascript">
 			(function($){
 				$(document).ready(function(){
 
-					// $('.js-tooltip').tooltip({
-					// 	trigger: 'hover,adf'
-					// });
+					$('.js-tooltip').popup();
 
-					$('.js-tooltip').tooltip({
-						trigger: 'hover',
-						theme: 'dark',
-						// placement: 'right',
-						beforeOpen: function(){
-							var d = $.Deferred();
-							setTimeout(function() { d.resolve(); }, 100);
-							return d.promise();
-						},
-						ifNotOpened: function(){
-							// alert('Could not open');
-						},
-						open: function(){
-							// alert('open');
-							return true;
-						},
-						close: function(){
-							// alert('close');
-							return true;
-						}
-					});
-
-					$('.js-tooltip1').tooltip({theme: 'info'});
 					// $('.js-tooltip2').tooltip({content: 'tooltip2'});
 
 				});
