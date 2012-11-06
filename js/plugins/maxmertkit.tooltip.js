@@ -35,10 +35,7 @@
 		me.tooltipElement.css({position: 'absolute'});
 		me.tooltipElement.find('.-arrow').css({opacity: 0});
 
-<<<<<<< HEAD
-=======
 		// We already have all options, but we need to react on the values
->>>>>>> f7c5105d1d56cde3d7341752dce0a716e8bdb11b
 		me._setOptions( me.options );
 
 		if( $.tooltip === undefined )
@@ -244,7 +241,7 @@
 	Plugin.prototype.close = function() {
 		var me  = this;
 		var $me = $(me.element);
-		
+		console.log('close');
 		clearTimeout( me.timeout );
 
 		if( me.options.enabled === true && me.state !== 'close' )
@@ -330,10 +327,27 @@
 		
 	}
 
+	Plugin.prototype._removeInstanse = function() {
+		var me = this;
+		
+		var what, a= arguments, L= a.length, ax;
+
+		while(L && $.tooltip.length){
+			what= a[--L];
+			while((ax= $.tooltip.indexOf(what))!= -1){
+				$.tooltip.splice(ax, 1);
+			}
+		}
+
+		return this;
+		
+	}
+
 	Plugin.prototype.destroy = function() {
 		var me  = this;
 		var $me = $(me.element);
 
+		me._removeInstanse(me.element);
 		$me.off('.' + me._name);
 		me.tooltipElement.remove();
 		$me.removeData( 'plugin_' + tooltip );
@@ -348,6 +362,10 @@
 				if( typeof options === 'object' ) {
 					$.data(this, 'plugin_' + tooltip)._setOptions( options );
 				}
+				// debugger;
+				// if( typeof options === 'string' && options[0] !== '_' ) {
+				// 	$.data(this, 'plugin_' + tooltip)[options];
+				// }
 			}
 		});
 	}
