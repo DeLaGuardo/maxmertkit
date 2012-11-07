@@ -12,15 +12,51 @@
 		<script type="text/javascript" src="js/libs/modernizr.js"></script>
 
 		<script type="text/javascript" src="js/plugins/maxmertkit.js"></script>
+		<script type="text/javascript" src="js/plugins/maxmertkit.tooltip.js"></script>
 		<script type="text/javascript" src="js/plugins/maxmertkit.popup.js"></script>
 
 
 		<script type="text/javascript">
 			(function($){
 				$(document).ready(function(){
-					$('.js-tooltip').popup();
+					$('.js-tooltip').tooltip({trigger: 'hover, click', animation: 'easeOutElastic', animationDuration: 400});
+					
+					$('.js-tooltip2').tooltip({
+						content: 'tooltip2', 
+						animation: 'scaleIn', 
+						animationDuration: 500,
 
-					// $('.js-tooltip2').tooltip({content: 'tooltip2'});
+						beforeOpen: function() {
+							var d = $.Deferred();
+							setTimeout(function(){ d.resolve() },1000);
+							return d.promise();
+						},
+						open: function() {
+							console.log('Opened');
+						},
+						ifNotOpened: function() {
+							console.log('Not opened')
+						},
+						ifOpenedOrNot: function() {
+							console.log('Opened or not')
+						},
+						beforeClose: function() {
+							var d = $.Deferred();
+							setTimeout(function(){ d.resolve() },1000);
+							return d.promise();
+						},
+						close: function() {
+							console.log('Closed')
+						},
+						ifClosedOrNot: function() {
+							console.log('Closed or not')
+						}
+					});
+
+					$('.js-dropdown').dropdown({
+						trigger: 'click',
+						placement: 'bottom'
+					});
 
 				});
 			})(jQuery);
@@ -1017,11 +1053,15 @@
 			<article class="-row">
 				<div class="-col6">
 					<h4>Tooltip</h4>
-					<span class="js-tooltip js-tooltip1" data-tooltip-content="TOOLTIP1">Show tooltip</span>
-					<span class="js-tooltip js-tooltip2" data-tooltip-content="TOOLTIP2">Show tooltip 2</span>
+					<span class="js-tooltip js-tooltip1" data-content="TOOLTIP1">Show tooltip</span>
+					<span class="js-tooltip js-tooltip2" data-content="TOOLTIP2">Show tooltip 2</span>
 				</div>
-				<div class="-col6"></div>
+				<div class="-col6">
+					<h4>Dropdown</h4>
+					<span class="js-dropdown js-dropdown1" data-content="Dropdown1">Show dropdown</span>
+					<span class="js-dropdown js-dropdown2" data-content="Dropdown2">Show dropdown 2</span>
+				</div>
 			</article>
 		</div>
 	</body>
-</html>
+<!-- </html> -->
