@@ -42,7 +42,7 @@
 
 
 
-	[class*="-mx-"] {
+	[class*="-mx-"]:not(.-mx-rotateIn) {
 		&.#{$mod__side-bottom} {
 			@include transform-origin( center top 0 );
 		}

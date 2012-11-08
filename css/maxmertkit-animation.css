@@ -6682,25 +6682,25 @@
     transform: rotateY(-540deg);
     opacity: 0; } }
 
-.cssanimations.csstransforms.csstransitions [class*="-mx-"]._bottom_ {
+.cssanimations.csstransforms.csstransitions [class*="-mx-"]:not(.-mx-rotateIn)._bottom_ {
   transform-origin: center top 0;
   -webkit-transform-origin: center top 0;
   -moz-transform-origin: center top 0;
   -ms-transform-origin: center top 0;
   -o-transform-origin: center top 0; }
-.cssanimations.csstransforms.csstransitions [class*="-mx-"]._top_ {
+.cssanimations.csstransforms.csstransitions [class*="-mx-"]:not(.-mx-rotateIn)._top_ {
   transform-origin: center bottom 0;
   -webkit-transform-origin: center bottom 0;
   -moz-transform-origin: center bottom 0;
   -ms-transform-origin: center bottom 0;
   -o-transform-origin: center bottom 0; }
-.cssanimations.csstransforms.csstransitions [class*="-mx-"]._left_ {
+.cssanimations.csstransforms.csstransitions [class*="-mx-"]:not(.-mx-rotateIn)._left_ {
   transform-origin: right center 0;
   -webkit-transform-origin: right center 0;
   -moz-transform-origin: right center 0;
   -ms-transform-origin: right center 0;
   -o-transform-origin: right center 0; }
-.cssanimations.csstransforms.csstransitions [class*="-mx-"]._right_ {
+.cssanimations.csstransforms.csstransitions [class*="-mx-"]:not(.-mx-rotateIn)._right_ {
   transform-origin: left center 0;
   -webkit-transform-origin: left center 0;
   -moz-transform-origin: left center 0;

@@ -306,27 +306,29 @@
 		var me  = this;
 		var $me = $(me.element);
 
-		var actualWidth = $me.width();
-		var actualHeight = $me.height();
+		var actualWidth = $me.outerWidth() ;
+		var actualHeight = $me.outerHeight() ;
 		var actualPosition = $me.offset();
+		var arrowSize = 8;
+// console.log(actualPosition, $me.height(), actualHeight, parseInt($me.css('paddingTop')), parseInt($me.css('paddingBottom')));
 		
 		var pos = {}
 
 		switch( me.options.placement ) {
 			case 'top':
-				pos = { top: actualPosition.top - me.El.height() - 10 + me.options.offset[0], left: actualPosition.left + actualWidth / 2 - me.El.width() / 2 + me.options.offset[1] }
+				pos = { top: actualPosition.top - me.El.outerHeight() - arrowSize + me.options.offset[0], left: actualPosition.left + actualWidth / 2 - me.El.outerWidth() / 2 + me.options.offset[1] }
 			break;
 
 			case 'bottom':
-				pos = { top: actualPosition.top + actualHeight + 5 + me.options.offset[0], left: actualPosition.left + actualWidth / 2 - me.El.width() / 2 + me.options.offset[1] };
+				pos = { top: actualPosition.top + actualHeight + arrowSize + me.options.offset[0], left: actualPosition.left + actualWidth / 2 - me.El.outerWidth() / 2 + me.options.offset[1] };
 			break;
 
 			case 'left':
-				pos = { top: actualPosition.top + actualHeight / 2 - me.El.height() / 2, left: actualPosition.left - me.El.width() - 15 + me.options.offset[1] }
+				pos = { top: actualPosition.top + actualHeight / 2 - me.El.outerHeight() / 2, left: actualPosition.left - me.El.outerWidth() - arrowSize + me.options.offset[1] }
 			break;
 
 			case 'right':
-				pos = { top: actualPosition.top + actualHeight / 2 - me.El.height() / 2, left: actualPosition.left + actualWidth + me.options.offset[1] + 5 }
+				pos = { top: actualPosition.top + actualHeight / 2 - me.El.outerHeight() / 2, left: actualPosition.left + actualWidth + arrowSize + me.options.offset[1]}
 			break;
 		}
 

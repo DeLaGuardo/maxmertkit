@@ -24,6 +24,7 @@
 						animation: 'easeOutElastic',
 						animationDuration: 400,
 						template: '<div class="-tooltip"><i class="-arrow"></i><div class="js-content"></div></div>',
+						placement: 'top'
 					});
 					
 					$('.js-tooltip2').popup({
@@ -33,17 +34,21 @@
 						onlyOne: true,
 
 						beforeOpen: function() {
+							console.log('Before open', this);
+							$(this).addClass('_loading_');
 							var d = $.Deferred();
 							setTimeout(function(){ d.resolve() },1000);
 							return d.promise();
 						},
 						open: function() {
+							$(this).addClass('_active_')
 							console.log('Opened');
 						},
 						ifNotOpened: function() {
 							console.log('Not opened')
 						},
 						ifOpenedOrNot: function() {
+							$(this).removeClass('_loading_')
 							console.log('Opened or not')
 						},
 						beforeClose: function() {
@@ -52,6 +57,7 @@
 							return d.promise();
 						},
 						close: function() {
+							$(this).removeClass('_active_')
 							console.log('Closed')
 						},
 						ifClosedOrNot: function() {
@@ -65,7 +71,13 @@
 						placement: 'bottom',
 						animation: 'growUp',
 						theme: 'primary',
-						onlyOne: true
+						onlyOne: true,
+						open: function() {
+							$(this).addClass('_active_')
+						},
+						close: function() {
+							$(this).removeClass('_active_')
+						}
 					});
 
 				});
@@ -89,7 +101,7 @@
 						</div>
 					</li>
 					<li class="-menu-separator"></li>
-					<li class="-error-"><a><i class="-icon-remove"></i> Don't show me this</a></li>
+					<li class="-error-"><a><i class="-icon-remove"></i> Dont show me this</a></li>
 				</ul>
 			</div>
 		</script>
@@ -1085,13 +1097,13 @@
 			<article class="-row">
 				<div class="-col6">
 					<h4>Tooltip</h4>
-					<span class="js-tooltip js-tooltip1" data-content="TOOLTIP1">Show tooltip</span>
-					<span class="js-tooltip js-tooltip2" data-content="TOOLTIP2">Show tooltip 2</span>
+					<span class="js-tooltip js-tooltip1 -btn" data-content="TOOLTIP1">Show tooltip</span>
+					<span class="js-tooltip js-tooltip2 -btn" data-content="TOOLTIP2">Show tooltip 2</span>
 				</div>
 				<div class="-col6">
 					<h4>Dropdown</h4>
-					<span class="js-dropdown js-dropdown1" data-content="Dropdown1" data-header="Header">Show dropdown</span>
-					<span class="js-dropdown js-dropdown2" data-content="Dropdown2" data-header="Header">Show dropdown 2</span>
+					<span class="js-dropdown js-dropdown1 -btn" data-content="Dropdown1" data-header="Header">Show dropdown</span>
+					<span class="js-dropdown js-dropdown2 -btn" data-content="Dropdown2" data-header="Header">Show dropdown 2</span>
 				</div>
 			</article>
 		</div>
