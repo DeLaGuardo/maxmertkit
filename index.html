@@ -18,10 +18,12 @@
 		<script type="text/javascript">
 			(function($){
 				$(document).ready(function(){
-					$('.js-tooltip').popup();
+					$('.js-tooltip').popup({
+						trigger: 'click'
+					});
 
 					// $('.js-tooltip2').tooltip({content: 'tooltip2'});
-
+					console.log( $('.js-tooltip2').data('kit-popup') )
 				});
 			})(jQuery);
 		</script>

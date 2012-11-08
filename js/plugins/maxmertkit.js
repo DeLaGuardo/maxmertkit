@@ -1,12 +1,135 @@
 ;(function ( $, window, document, undefined ) {
 	
+	var _defaults = {
+		enabled: true
+	,	autoOpen: false
+	,	onlyOneOpen: true 	// Close other instanses of plugin if true
+	,	animation: null 	// 'easeOutElastic'
+	,	duration: 400		// In ms, time of animation
+	,   template: ''
+	,   theme: 'dark' 		// All statuses of maxmertkit framework
+	,   trigger: 'hover' 	// event-to-show, event-to-close ( 'hover, click' )
+	,   delay: 0			// Delay before show
+	}
+
 	$.kit = function( name_, element_, options_ ) {
 		this.name = name_;
+
+		this.options = $.extend({}, _defaults, options_);
+		this.element = element_;
+
+		this._setOptions( this.options );
+
 		this.init();
+	}
+
+	$.kit.prototype._setOptions = function( options_ ) {
+		var me  = this;
+		var $me = $(me.element);
+
+		$.each( options_, function( key_, value_ ) {
+			me._setOption( key_, value_ );
+
+			var currentOption = {};
+				currentOption[ key_ ] = value_;
+
+			if( $.isFunction( value_ ) ) {
+				me._on( $me, currentOption);
+			}
+
+		});
+	}
+
+	$.kit.prototype._setOption = function( key_, value_ ) {
+		var me  = this;
+		var $me = $(me.element);
+
+		// React on setting options
+		switch ( key_ ) {
+			// case 'theme':
+			// 	me.tooltipElement.removeClass('-' + me.options.theme + '-');
+			// 	me.tooltipElement.addClass('-' + value_ + '-')
+			// break;
+
+			case 'trigger':
+				var events = value_.split(/[ ,]+/);
+					
+				if( me.options[key_].in !== undefined )
+					$me.off( 'mouseenter.' + me.name, 'click.' + me.name );
+
+				if( me.options[key_].out !== undefined )
+					$me.off( 'mouseleave.' + me.name, 'click.' + me.name );
+
+				me.options[key_] = {
+					in: events[0] 
+				,   out: (events[1] == undefined || events[1] == '') ? events[0] : events[1]
+				};
+				
+				switch( me.options[key_].in ) {
+					case 'hover':
+						$me.on('mouseenter.' + me.name, function( event ) {
+							if( me.state == 'close' )
+								me.open();
+						});
+					break;
+					
+					default:
+						$me.on( me.options[key_].in + '.' + me.name, function() {
+							if( me.state == 'close' )
+								me.open();
+						});
+				}
+
+				switch( me.options[key_].out ) {
+					case 'hover':
+						$me.on('mouseleave.' + me.name, function( event ) {
+							me.close();
+						});
+					break;
+
+					default:
+						$me.on( me.options[key_].out + '.' + me.name, function() {
+							if( me.state == 'open' )
+								me.close();
+						});
+				}
+			break;
+
+			case 'placement':
+				me.tooltipElement.removeClass('_' + me.options.placement + '_')
+				me.tooltipElement.addClass('_' + value_ + '_')
+			break;
+
+			default:
+				me.options[key_] = value_;
+		}
+	}
+
+	$.kit.prototype._on = function( element_, handlers_ ) {
+		var me = this;
+
+		$.each( handlers_, function( event, handler ) {
+			element_.bind( event + '.' + me.name, handler );
+		});
 	}
 
 	$.kit.prototype.init = function() {
 		// console.log( 'init' );
+	}
+
+	$.fn[ $.kit.prototype.name ] = function( options_ ) {
+		var name = $.kit.prototype.name;
+		console.log( name );
+		return this.each(function() {
+			if( ! $.data( this, 'kit-' + name ) ) {
+				$.data( this, 'kit-' + name, new $.kit( name, this, options_ ) )
+			}
+			else {
+				if( typeof options_ === 'object' ) {
+					$.data(this, 'kit-' + name)._setOptions( options_ );
+				}
+			}
+		});
 	}
 
 })( jQuery, window, document );
