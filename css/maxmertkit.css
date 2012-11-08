@@ -270,53 +270,6 @@ dl {
   .-row-fluid > .-col-offset12 {
     margin-left: 102.5%; }
 
-.cssanimations.csstransforms.csstransitions .-mx-scaleIn {
-  transform: scale(0);
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  -o-transform: scale(0);
-  opacity: 0;
-  -webkit-opacity: 0;
-  -moz-opacity: 0;
-  -ms-opacity: 0;
-  -o-opacity: 0;
-  transition: 0.3s transform cubic-bezier(1, -0.53, 0.405, 1.425), 0.3s opacity cubic-bezier(1, -0.53, 0.405, 1.425);
-  -webkit-transition: 0.3s -webkit-transform cubic-bezier(1, -0.53, 0.405, 1.425), 0.3s -webkit-opacity cubic-bezier(1, -0.53, 0.405, 1.425);
-  -moz-transition: 0.3s -moz-transform cubic-bezier(1, -0.53, 0.405, 1.425), 0.3s -moz-opacity cubic-bezier(1, -0.53, 0.405, 1.425);
-  -o-transition: 0.3s -o-transform cubic-bezier(1, -0.53, 0.405, 1.425), 0.3s -o-opacity cubic-bezier(1, -0.53, 0.405, 1.425);
-  -ms-transition: 0.3s -ms-transform cubic-bezier(1, -0.53, 0.405, 1.425), 0.3s -ms-opacity cubic-bezier(1, -0.53, 0.405, 1.425); }
-  .cssanimations.csstransforms.csstransitions .-mx-scaleIn.-mx-start {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    opacity: 1 !important;
-    -webkit-opacity: 1 !important;
-    -moz-opacity: 1 !important;
-    -ms-opacity: 1 !important;
-    -o-opacity: 1 !important; }
-
-.no-cssanimations .-mx-scaleIn,
-.no-csstransforms .-mx-scaleIn,
-.no-csstransitions .-mx-scaleIn {
-  display: none;
-  opacity: 0;
-  -webkit-opacity: 0;
-  -moz-opacity: 0;
-  -ms-opacity: 0;
-  -o-opacity: 0; }
-  .no-cssanimations .-mx-scaleIn.-mx-start,
-  .no-csstransforms .-mx-scaleIn.-mx-start,
-  .no-csstransitions .-mx-scaleIn.-mx-start {
-    display: block!important;
-    opacity: 1;
-    -webkit-opacity: 1;
-    -moz-opacity: 1;
-    -ms-opacity: 1;
-    -o-opacity: 1; }
-
 .-table tr td.-unstyled-, .-table tr.-unstyled- td, .-table._striped_ tr:nth-child(odd).-unstyled- td, .-table._hovered_ tr:hover.-unstyled- td, .-caret.-unstyled-, .-btn.-unstyled- .-caret, button.-unstyled- .-caret, input[type="button"].-unstyled- .-caret, .-group.-unstyled- .-caret, .-tabs.-unstyled- .-caret {
   color: #333333; }
 

@@ -1,13 +1,14 @@
 ;(function ( $, window, document, undefined ) {
-	
+
 	var _name = 'kit'
 	,	_defaults = {
 			enabled: true
-		,	onlyOne: true
+		,	onlyOne: false
 		,	animation: null
 		,	animationDuration: 0
 		,	template: '<div>'
 		,	content: null
+		,	header: null
 		,	theme: 'dark'
 		,	trigger: 'hover'
 		,	delay: 0
@@ -30,6 +31,7 @@
 
 		$.each( options_, function( key_, value_ ) {
 			me._setOption( key_, value_ );
+			me.__setOption( key_, value_ );
 
 			var currentOption = { };
 				currentOption[ key_ ] = value_;
@@ -55,8 +57,10 @@
 				value_ === true ? me.El.removeClass( '-disabled-' ) : me.El.addClass( '-disabled-' );
 			break;
 		}
+	}
 
-		me.options[ key_ ] = value_;
+	$.kit.prototype.__setOption = function ( key_, value_ ) {
+		this.options[ key_ ] = value_;
 	}
 
 	$.kit.prototype._on = function( element_, handlers_ ) {

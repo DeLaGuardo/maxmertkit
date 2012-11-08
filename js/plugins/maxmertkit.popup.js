@@ -1,57 +1,56 @@
 ;(function ( $, window, document, undefined ) {
 
-	var _name = 'dropdown'
+	var _name = 'popup'
 	,	_defaults = {
 			placement: 'top'
 		,	offset: [0, 0]
 		,	autoOpen: false
-		,	template: '<div class="-dropdown" style="display:none"><i class="-arrow"></i><div class="-dropdown-content js-content"></div></div>'
+		,	template: '<div class="js-content"></div>'
 		}
 
-	$.dropdown = function( element_, options_ ) {
-		$.kit.apply( this, element_, options_ );
+	Popup = function( element_, options_ ) {
+		// Don't need this string, if this constructor will do the same and more, than $.kit constructor.
+		// $.kit.apply( this, element_, options_ );
 
 		this.element = element_;
 		this.name = _name;
 
-		this.options = $.extend( {}, this.options, _defaults );
-		this.options = $.extend( {}, this.options, options_ );
+		this.options = $.extend( {}, this.options, _defaults, options_ );
 		
-		this.El = $(this.options.template);
+		// Creating popup element by template
+		this.options.template.charAt(0) !== '.' && this.options.template.charAt(0) !== '#' ?
+				this.El = $(this.options.template) :
+				this.El = $( $(this.options.template).html() );
+			
 		$('body').append( this.El );
-		// CSS manupulations just in case
-		this.El.css({position: 'absolute'});
-		this.El.find('.-arrow').css({opacity: 0});
+			// CSS manupulations just in case
+			this.El
+				.css({position: 'absolute', display: 'none'})
+				.find('.-arrow')
+					.css({opacity: 0});
 
 		this._setOptions( this.options );
 
-		if( typeof $.dropdown.instanses === 'undefined' )
-			$.dropdown.instanses = []
-		
+		// Create collection for other instances
+		if( typeof $.popup === 'undefined' )
+			$.popup = []
+		// Put this instance to the collection
 		if( this.element !== undefined )
-			$.dropdown.instanses.push( this.element );
+			$.popup.push( this.element );
 		
+		// For delay before open
 		this.timeout = null;
 
 		this.init();
 	}
 
-	$.dropdown.prototype = new $.kit();
-	$.dropdown.prototype.constructor = $.dropdown;
+	Popup.prototype = new $.kit();
+	Popup.prototype.constructor = Popup;
 
-	$.dropdown.prototype._setOption = function( key_, value_ ) {
+	Popup.prototype.__setOption = function ( key_, value_ ) {
 		var me  = this;
 		var $me = $(me.element);
-
 		switch( key_ ) {
-			case 'theme':
-				me.El.removeClass( '-' + me.options.theme + '-' );
-				me.El.addClass( '-' + value_ + '-' )
-			break;
-
-			case 'enabled':
-				value_ === true ? me.El.removeClass( '-disabled-' ) : me.El.addClass( '-disabled-' );
-			break;
 
 			case 'trigger':
 				var _events = value_.split(/[ ,]+/);
@@ -104,9 +103,34 @@
 					me.El.find('.js-content').html( $me.data('content') );
 			break;
 
+			case 'header':
+				if( value_ !== null )
+					me.El.find('.js-header').html(value_);
+				else
+					me.El.find('.js-header').html( $me.data('header') );
+			break;
+
 			case 'placement':
 				me.El.removeClass('_' + me.options.placement + '_')
 				me.El.addClass('_' + value_ + '_')
+			break;
+
+			case 'animation':
+				if( $.easing === undefined || !(value_ in $.easing) )
+					switch( value_ ) {
+						case 'scaleIn':
+							me.El.addClass('-mx-scaleIn');
+						break;
+
+						case 'growUp':
+							me.El.addClass('-mx-growUp');
+						break;
+
+						case 'rotateIn':
+							me.El.addClass('-mx-rotateIn');
+						break;
+					}
+
 			break;
 				
 		}
@@ -115,14 +139,14 @@
 			me.options[ key_ ] = value_;
 	}
 
-	$.dropdown.prototype.init = function() {
+	Popup.prototype.init = function() {
 		var me  = this;
 
 		if( me.options.autoOpen )
 			me.open()
 	}
 
-	$.dropdown.prototype.open = function() {
+	Popup.prototype.open = function() {
 		var me  = this;
 		var $me = $(me.element);
 		
@@ -155,7 +179,7 @@
 		}, me.options.delay)
 	}
 
-	$.dropdown.prototype._open = function() {
+	Popup.prototype._open = function() {
 		var me  = this;
 		var $me = $(me.element);
 
@@ -163,7 +187,7 @@
 			
 			if( me.options.onlyOne )
 				
-				$.each( me._getOtherInstanses( $.dropdown.instanses ), function() {
+				$.each( me._getOtherInstanses( $.popup ), function() {
 					if( $.data( this, 'kit-' + me.name ).getState() === 'opened' )
 						$.data( this, 'kit-' + me.name ).close();
 				});
@@ -172,13 +196,7 @@
 			
 			if( me.options.animation !== null && me.options.animation !== false )
 			{	
-				me.El.slideDown({
-					duration: me.options.animationDuration,
-					easing: me.options.animation,
-					complete: function(){
-						me.El.find('.-arrow').animate({opacity: 1});
-					}
-				});
+				me._openAnimation();
 			}
 			else
 			{
@@ -193,7 +211,27 @@
 		$me.trigger('ifOpenedOrNot.' + me.name);
 	}
 
-	$.dropdown.prototype.close = function() {
+	Popup.prototype._openAnimation = function() {
+		var me  = this;
+		var $me = $(me.element);
+
+		if( $.easing !== undefined && (me.options.animation.split(/[ ,]+/)[1] in $.easing || me.options.animation.split(/[ ,]+/)[0] in $.easing) ) {
+			me.El.slideDown({
+				duration: me.options.animationDuration,
+				easing: me.options.animation.split(/[ ,]+/)[0],
+				complete: function(){
+					me.El.find('.-arrow').animate({opacity: 1});
+				}
+			});
+		}
+		else {
+			me.El.show();
+			this.El.find('.-arrow').css({opacity: 1});
+			me.El.addClass('-mx-start');
+		}
+	}
+
+	Popup.prototype.close = function() {
 		var me  = this;
 		var $me = $(me.element);
 		
@@ -227,13 +265,17 @@
 		}
 	}
 
-	$.dropdown.prototype._close = function() {
+	Popup.prototype._close = function() {
 		var me  = this;
 		var $me = $(me.element);
 
 		if( me.state === 'out' ) {
-			me.El.find('.-arrow').css({opacity: 0});
-			me.El.hide();
+			
+			if( me.options.animation === null )
+				me.El.hide();
+			else {
+				me._closeAnimation();
+			}
 			me.state = 'closed';
 
 			$me.trigger('close');	
@@ -242,7 +284,25 @@
 		$me.trigger('ifClosedOrNot.' + me.name);
 	}
 
-	$.dropdown.prototype._setPosition = function() {
+	Popup.prototype._closeAnimation = function() {
+		var me  = this;
+		var $me = $(me.element);
+
+		if( $.easing !== undefined && (me.options.animation.split(/[ ,]+/)[1] in $.easing || me.options.animation.split(/[ ,]+/)[0] in $.easing) ) {
+			me.El.slideUp({
+				duration: me.options.animationDuration,
+				easing: me.options.animation.split(/[ ,]+/)[1] !== undefined ? me.options.animation.split(/[ ,]+/)[1] : me.options.animation,
+				complete: function(){
+					me.El.find('.-arrow').animate({opacity: 0});
+				}
+			});
+		}
+		else {
+			me.El.removeClass('-mx-start');
+		}
+	}
+
+	Popup.prototype._setPosition = function() {
 		var me  = this;
 		var $me = $(me.element);
 
@@ -262,11 +322,11 @@
 			break;
 
 			case 'left':
-				pos = { top: actualPosition.top + actualHeight / 2 - me.El.height(), left: actualPosition.left - me.El.width() - 15 + me.options.offset[1] }
+				pos = { top: actualPosition.top + actualHeight / 2 - me.El.height() / 2, left: actualPosition.left - me.El.width() - 15 + me.options.offset[1] }
 			break;
 
 			case 'right':
-				pos = { top: actualPosition.top + actualHeight / 2 - me.El.height(), left: actualPosition.left + actualWidth + me.options.offset[1] + 5 }
+				pos = { top: actualPosition.top + actualHeight / 2 - me.El.height() / 2, left: actualPosition.left + actualWidth + me.options.offset[1] + 5 }
 			break;
 		}
 
@@ -276,7 +336,7 @@
 	$.fn[_name] = function( options_ ) {
 		return this.each(function() {
 			if( ! $.data( this, 'kit-' + _name ) ) {
-				$.data( this, 'kit-' + _name, new $.dropdown( this, options_ ) );
+				$.data( this, 'kit-' + _name, new Popup( this, options_ ) );
 			}
 			else {
 				typeof options_ === 'object' ? $.data( this, 'kit-' + _name )._setOptions( options_ ) :

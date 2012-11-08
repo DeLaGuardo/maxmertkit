@@ -1,0 +1,116 @@
+@import "mixins";
+@import "themes/basic";
+@import "animations/keyframes";
+
+
+
+
+
+.cssanimations.csstransforms.csstransitions {
+
+	@mixin transition( $transition ) {
+		$_types: '', '-webkit-', '-moz-', '-o-', '-ms-';
+
+		@each $type in $_types {
+			#{$type}transition: _generate-transitions-fields( $type, $transition... ) ;
+		}
+	}
+
+	@mixin transition( $transition... ) {
+		$_types: '', '-webkit-', '-moz-', '-o-', '-ms-';
+
+		@each $type in $_types {
+			#{$type}transition: _generate-transitions-fields( $type, $transition... ) ;
+		}
+	}
+
+	@function _generate-transitions-fields( $type, $transition... ) {
+		$_return: '';
+		@each $tr in $transition {
+			@if $_return != '' {
+				$_return: $_return + ', ';
+			}
+			$_return: $_return + _generate-transitions( $tr, $type );
+		}
+
+		@return #{$_return};
+	}
+
+	@function _generate-transitions( $transition, $type ) {
+		@return nth($transition, 1) #{$type}nth($transition, 2) nth($transition, 3);
+	}
+
+
+
+	[class*="-mx-"] {
+		&.#{$mod__side-bottom} {
+			@include transform-origin( center top 0 );
+		}
+		
+		&.#{$mod__side-top} {
+			@include transform-origin( center bottom 0 );
+		}
+
+		&.#{$mod__side-left} {
+			@include transform-origin( right center 0 );
+		}
+
+		&.#{$mod__side-right} {
+			@include transform-origin( left center 0 );
+		}
+	}
+
+	.-mx-scaleIn {
+		@include animation( .2s scaleOutKeyframes );
+		@include transform( scale(0) );
+		@include opacity( 0 );
+
+		&.-mx-start {
+			@include animation( 1s scaleInKeyframes );
+			@include transform( scale(1) );
+			@include opacity( 1 );
+		}
+	}
+
+	.-mx-growUp {
+		@include animation( 0.2s growDownKeyframes );
+		@include transform( rotateX(-90deg) );
+
+		&.-mx-start {
+			@include animation( 1.5s growUpKeyframes );
+			@include transform( rotateX(0deg) rotateY(0deg)  );
+		}
+	}
+
+	.-mx-rotateIn {
+		@include animation( .3s rotateOutKeyframes );
+		@include transform( rotateY(-540deg)  );
+		@include opacity( 0 );
+
+		&.-mx-start {
+			@include animation( 1.5s rotateInKeyframes );
+			@include transform( rotateY(0deg)  );
+			@include opacity( 1 );
+		}
+	}
+
+	.-mx-fadeIn {
+		@include transition( 1s opacity linear);
+	}
+
+
+}
+
+.no-cssanimations,
+.no-csstransforms,
+.no-csstransitions {
+	.-mx-scaleIn {
+		display: none;
+		@include opacity( 0 );
+
+		&.-mx-start {
+			display: block!important;
+			@include opacity( 1 );
+		}
+	}
+}
