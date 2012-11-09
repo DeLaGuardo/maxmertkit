@@ -10,8 +10,17 @@
 		,	content: null
 		,	header: null
 		,	theme: 'dark'
-		,	trigger: 'hover'
+		,	trigger: 'click'
 		,	delay: 0
+
+		,	beforeOpen: $.noop()
+		,	open: $.noop()
+		,	ifOpenedOrNot: $.noop()
+		,	ifNotOpened: $.noop()
+		,	beforeClose: $.noop()
+		,	close: $.noop()
+		,	ifClosedOrNot: $.noop()
+		,	ifNotClosed: $.noop()
 		}
 
 	$.kit = function(element, options) {

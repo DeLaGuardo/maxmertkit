@@ -14,13 +14,14 @@
 
 		<script type="text/javascript" src="js/plugins/maxmertkit.js"></script>
 		<script type="text/javascript" src="js/plugins/maxmertkit.popup.js"></script>
+		<script type="text/javascript" src="js/plugins/maxmertkit.tabs.js"></script>
 
 
 		<script type="text/javascript">
 			(function($){
 				$(document).ready(function(){
 					$('.js-tooltip').popup({
-						trigger: 'hover, click',
+						trigger: 'click',
 						animation: 'easeOutElastic',
 						animationDuration: 400,
 						template: '<div class="-tooltip"><i class="-arrow"></i><div class="js-content"></div></div>',
@@ -34,34 +35,32 @@
 						onlyOne: true,
 
 						beforeOpen: function() {
-							console.log('Before open', this);
-							$(this).addClass('_loading_');
+							$(this).addClass('_loading_ _active_');
+							
 							var d = $.Deferred();
 							setTimeout(function(){ d.resolve() },1000);
 							return d.promise();
 						},
 						open: function() {
 							$(this).addClass('_active_')
-							console.log('Opened');
 						},
 						ifNotOpened: function() {
-							console.log('Not opened')
+							
 						},
 						ifOpenedOrNot: function() {
 							$(this).removeClass('_loading_')
-							console.log('Opened or not')
 						},
 						beforeClose: function() {
+							$(this).addClass('_loading_');
 							var d = $.Deferred();
 							setTimeout(function(){ d.resolve() },1000);
 							return d.promise();
 						},
 						close: function() {
 							$(this).removeClass('_active_')
-							console.log('Closed')
 						},
 						ifClosedOrNot: function() {
-							console.log('Closed or not')
+							$(this).removeClass('_loading_');
 						}
 					});
 
@@ -78,6 +77,11 @@
 						close: function() {
 							$(this).removeClass('_active_')
 						}
+					});
+
+
+					$('.js-tabs').tabs({
+						itemsSelector: 'li'
 					});
 
 				});
@@ -1104,6 +1108,33 @@
 					<h4>Dropdown</h4>
 					<span class="js-dropdown js-dropdown1 -btn" data-content="Dropdown1" data-header="Header">Show dropdown</span>
 					<span class="js-dropdown js-dropdown2 -btn" data-content="Dropdown2" data-header="Header">Show dropdown 2</span>
+				</div>
+			</article>
+
+			<article class="-row">
+				<div class="-col6">
+					<h4>Tabs</h4>
+					<ul class="-tabs _huge -section js-tabs">
+						<li data-tabs-target="#tab-first" class="_active_">
+							<a>First tab</a>
+						</li>
+						<li data-tabs-data="http://www.ru" data-tabs-target="#tab-second">
+							<a>Second tab <i class="-caret"></i></a>
+						</li>
+						<li data-tabs-target="#tab-third">
+							<a>Third tab <i class="-icon-thumbs-up"></i></a>
+						</li>
+						<li data-tabs-target="#tab-forth">
+							<a>Forth tab</a>
+						</li>
+					</ul>
+					<div id="tab-first">First tab content</div>
+					<div id="tab-second" style="display: none;">second tab content</div>
+					<div id="tab-third" style="display: none;">third tab content</div>
+					<div id="tab-forth" style="display: none;">forth tab content</div>
+				</div>
+				<div class="-col6">
+					
 				</div>
 			</article>
 		</div>
