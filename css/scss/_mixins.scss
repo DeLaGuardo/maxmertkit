@@ -112,3 +112,43 @@
 	-o-animation: $animation;
 	-ms-animation: $animation;
 }
+
+@mixin transition( $transition... ) {
+	transition: $transition;
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-ms-transition: $transition;
+	-o-transition: $transition;
+}
+
+@mixin transform( $transform... ) {
+	transform: $transform;
+	-webkit-transform: $transform;
+	-moz-transform: $transform;
+	-ms-transform: $transform;
+	-o-transform: $transform;
+}
+
+@mixin transform-origin( $transform-origin... ) {
+	transform-origin: $transform-origin;
+	-webkit-transform-origin: $transform-origin;
+	-moz-transform-origin: $transform-origin;
+	-ms-transform-origin: $transform-origin;
+	-o-transform-origin: $transform-origin;
+}
+
+@mixin filter( $filter... ) {
+	filter: $filter;
+	-webkit-filter: $filter;
+	-moz-filter: $filter;
+	-ms-filter: $filter;
+	-o-filter: $filter;
+}
+
+@mixin opacity( $opacity... ) {
+	opacity: $opacity;
+	-webkit-opacity: $opacity;
+	-moz-opacity: $opacity;
+	-ms-opacity: $opacity;
+	-o-opacity: $opacity;
+}

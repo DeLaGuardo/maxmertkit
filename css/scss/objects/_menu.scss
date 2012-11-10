@@ -92,6 +92,7 @@ $__after-object: '';
 				z-index: 1;
 				min-height: auto;
 				left: 100%;
+				@include opacity( 0 );
 				top: -$object__dropdown-border-radius;
 			}
 
@@ -110,6 +111,7 @@ $__after-object: '';
 			&:hover {
 				& > .#{$object__dropdown} {
 					display: block;
+					@include opacity( 1 );
 				}
 			}
 		}

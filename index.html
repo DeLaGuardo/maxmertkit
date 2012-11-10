@@ -4,6 +4,7 @@
 		<title>MOSKVA.FM</title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/maxmertkit.css">
+		<link rel="stylesheet" type="text/css" href="css/maxmertkit-animation.css">
 		<link rel="stylesheet" type="text/css" href="css/maxmertkit-components.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script type="text/javascript" src="js/libs/html5shiv.js"></script>
@@ -19,13 +20,90 @@
 			(function($){
 				$(document).ready(function(){
 					$('.js-tooltip').popup({
-						trigger: 'click'
+						trigger: 'hover, click',
+						animation: 'easeOutElastic',
+						animationDuration: 400,
+						template: '<div class="-tooltip"><i class="-arrow"></i><div class="js-content"></div></div>',
+						placement: 'top'
+					});
+					
+					$('.js-tooltip2').popup({
+						content: 'tooltip2', 
+						animation: 'rotateIn', 
+						animationDuration: 500,
+						onlyOne: true,
+
+						beforeOpen: function() {
+							console.log('Before open', this);
+							$(this).addClass('_loading_');
+							var d = $.Deferred();
+							setTimeout(function(){ d.resolve() },1000);
+							return d.promise();
+						},
+						open: function() {
+							$(this).addClass('_active_')
+							console.log('Opened');
+						},
+						ifNotOpened: function() {
+							console.log('Not opened')
+						},
+						ifOpenedOrNot: function() {
+							$(this).removeClass('_loading_')
+							console.log('Opened or not')
+						},
+						beforeClose: function() {
+							var d = $.Deferred();
+							setTimeout(function(){ d.resolve() },1000);
+							return d.promise();
+						},
+						close: function() {
+							$(this).removeClass('_active_')
+							console.log('Closed')
+						},
+						ifClosedOrNot: function() {
+							console.log('Closed or not')
+						}
 					});
 
-					// $('.js-tooltip2').tooltip({content: 'tooltip2'});
-					console.log( $('.js-tooltip2').data('kit-popup') )
+					$('.js-dropdown').popup({
+						template: '.dropdown-template',
+						trigger: 'click',
+						placement: 'bottom',
+						animation: 'growUp',
+						theme: 'primary',
+						onlyOne: true,
+						open: function() {
+							$(this).addClass('_active_')
+						},
+						close: function() {
+							$(this).removeClass('_active_')
+						}
+					});
+
 				});
 			})(jQuery);
+		</script>
+
+		<script type="javascript/template" class="dropdown-template">
+			<div class="-dropdown">
+				<i class="-arrow"></i>
+				<ul class="-menu -primary-">
+					<li><a><i class="-icon-thumbs-up"></i> I like it</a></li>
+					<li><a><i class="-icon-star"></i> Favourite</a></li>
+					<li><a><i class="-icon-thumbs-down"></i> I hate it</a></li>
+					<li class="-menu-sub"><a><i class="-icon"></i> Share</a>
+						<div class="-dropdown">
+							<ul class="-menu">
+								<li><a><i class="-icon"></i> Facebook</a></li>
+								<li class="-success-"><a><i class="-icon-ok-circle"></i> Twitter</a></li>
+								<li><a><i class="-icon"></i> My space</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="-menu-separator"></li>
+					<li class="-error-"><a><i class="-icon-remove"></i> Dont show me this</a></li>
+				</ul>
+			</div>
 		</script>
 	</head>
 	<body>
@@ -888,19 +966,19 @@
 														<li><a>Default item</a></li>
 														<li><a>Default item</a></li>
 														<li><a>Default item</a></li>
-														<li><a><span class="-menu-help">⌘⌥2</span>Default item with help information</a></li>
+														<li><a><span class="-menu-help">âŒ˜âŒ¥2</span>Default item with help information</a></li>
 													</ul>
 												</div>
 
 											</li>
 											<li><a>Default item</a></li>
-											<li><a><span class="-menu-help">⌘⌥2</span>Default item with help information</a></li>
+											<li><a><span class="-menu-help">âŒ˜âŒ¥2</span>Default item with help information</a></li>
 										</ul>
 									</div>
 
 								</li>
 								<li class="_loading_"><a>Default loading item</a></li>
-								<li><a><span class="-menu-help">⌘⌥2</span>Default item with help information</a></li>
+								<li><a><span class="-menu-help">âŒ˜âŒ¥2</span>Default item with help information</a></li>
 							</ul>
 						</div>
 					</div>
@@ -966,13 +1044,13 @@
 												<li><a>Default item</a></li>
 												<li><a>Default item</a></li>
 												<li><a>Default item</a></li>
-												<li><a><span class="-menu-help">⌘⌥2</span>Default item with help information</a></li>
+												<li><a><span class="-menu-help">âŒ˜âŒ¥2</span>Default item with help information</a></li>
 											</ul>
 										</div>
 
 									</li>
 									<li><a>Default item</a></li>
-									<li><a><span class="-menu-help">⌘⌥2</span>Default item with help information</a></li>
+									<li><a><span class="-menu-help">âŒ˜âŒ¥2</span>Default item with help information</a></li>
 								</ul>
 							</div>
 						</li>
@@ -1019,11 +1097,15 @@
 			<article class="-row">
 				<div class="-col6">
 					<h4>Tooltip</h4>
-					<span class="js-tooltip js-tooltip1" data-tooltip-content="TOOLTIP1">Show tooltip</span>
-					<span class="js-tooltip js-tooltip2" data-tooltip-content="TOOLTIP2">Show tooltip 2</span>
+					<span class="js-tooltip js-tooltip1 -btn" data-content="TOOLTIP1">Show tooltip</span>
+					<span class="js-tooltip js-tooltip2 -btn" data-content="TOOLTIP2">Show tooltip 2</span>
 				</div>
-				<div class="-col6"></div>
+				<div class="-col6">
+					<h4>Dropdown</h4>
+					<span class="js-dropdown js-dropdown1 -btn" data-content="Dropdown1" data-header="Header">Show dropdown</span>
+					<span class="js-dropdown js-dropdown2 -btn" data-content="Dropdown2" data-header="Header">Show dropdown 2</span>
+				</div>
 			</article>
 		</div>
 	</body>
-</html>
+<!-- </html> -->
