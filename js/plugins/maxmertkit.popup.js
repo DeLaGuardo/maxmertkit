@@ -69,14 +69,14 @@
 				switch( me.options[key_].in ) {
 					case 'hover':
 						$me.on('mouseenter.' + me.name, function( event ) {
-							if( me.state == 'closed' )
+							if( me.state === 'closed' )
 								me.open();
 						});
 					break;
 					
 					default:
 						$me.on( me.options[key_].in + '.' + me.name, function() {
-							if( me.state == 'closed' )
+							if( me.state === 'closed' )
 								me.open();
 						});
 				}
@@ -158,7 +158,8 @@
 				if( me.options.beforeOpen !== undefined && (typeof me.options.beforeOpen === 'object' || typeof me.options.beforeOpen === 'function' )) {
 					
 					try {
-						me.options.beforeOpen()
+						var deferred = me.options.beforeOpen.call( $me );
+						deferred
 							.done(function(){
 								me._open();
 							})
@@ -245,7 +246,8 @@
 			{
 				
 				try {
-					me.options.beforeClose()
+					var deferred = me.options.beforeClose.call( $me );
+					deferred
 						.done(function(){
 							me._close();
 						})
