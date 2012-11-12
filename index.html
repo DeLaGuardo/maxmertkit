@@ -4,8 +4,8 @@
 		<title>MOSKVA.FM</title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/maxmertkit.css">
-		<link rel="stylesheet" type="text/css" href="css/maxmertkit-animation.css">
 		<link rel="stylesheet" type="text/css" href="css/maxmertkit-components.css">
+		<link rel="stylesheet" type="text/css" href="css/maxmertkit-animation.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script type="text/javascript" src="js/libs/html5shiv.js"></script>
 		<script type="text/javascript" src="js/libs/jquery.js"></script>
@@ -86,7 +86,9 @@
 						animation: true
 					});
 
-					$('.js-modal').modal();
+					$('.js-modal').modal({
+						animation: 'dropIn'
+					});
 
 					$('.js-modal-show').on('click', function() {
 						$('.js-modal').data('kit-modal').open();
@@ -1150,12 +1152,14 @@
 				<div class="-col6">
 					<h4>Modals</h4>
 					<a class="-btn js-modal-show">Show modal</a>
-					<div class="-modal js-modal">
-						<div class="-modal-header">Header</div>
-						<div class="-modal-content">Header</div>
-					</div>
 				</div>
 			</article>
+		</div>
+
+
+		<div class="-modal js-modal">
+			<div class="-modal-header">Header <i class="-closer">&times;</i></div>
+			<div class="-modal-content"><span class="js-dropdown js-dropdown1 -btn" data-content="Dropdown1" data-header="Header">Show dropdown</span></div>
 		</div>
 	</body>
 </html>

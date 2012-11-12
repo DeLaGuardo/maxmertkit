@@ -129,6 +129,10 @@
 						case 'rotateIn':
 							me.El.addClass('-mx-rotateIn');
 						break;
+
+						case 'dropIn':
+							me.El.addClass('-mx-dropIn');
+						break;
 					}
 
 			break;

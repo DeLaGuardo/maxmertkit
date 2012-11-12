@@ -176,6 +176,12 @@ $object__modal__header: #{$object__modal}-header;
 $object__modal__header-padding: 10px;
 $object__modal__content: #{$object__modal}-content;
 $object__modal__content-padding: 10px;
+// ------------ Shader
+$object__shader: -shader;
+$object__shader-background: rgba(0,0,0,.7);
+// ------------ Closer
+$object__closer: -closer;
+$object__closer-background: rgba(255,255,255,1);
 
 // ------------ Arrow
 $object__arrow: -arrow;

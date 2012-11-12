@@ -98,6 +98,27 @@
 		@include transition( 1s opacity linear);
 	}
 
+	.-mx-dropIn {
+		@include transform( scale(2) );
+		@include opacity( 0 );
+
+		&.-mx-start {
+			@include animation( .5s dropInKeyframes );
+			@include transform( scale( 1 ) );
+			@include opacity( 1 );
+		}
+	}
+
+	&.-mx-shader {
+		.-container
+		{
+			// @include filter( blur(1px) );
+		}
+		.-shader,.-modal {
+			// @include filter( blur(0) );
+		}
+	}
+
 
 }
 

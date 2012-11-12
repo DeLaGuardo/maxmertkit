@@ -3253,6 +3253,7 @@ input[type="button"]._unclickable_:active {
 
 .-modal {
   position: relative;
+  z-index: 1001;
   display: inline-block;
   border-width: 0;
   border-style: solid;
@@ -3269,6 +3270,7 @@ input[type="button"]._unclickable_:active {
   -o-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
   .-modal .-modal-header {
+    position: relative;
     padding: 10px;
     -webkit-border-radius: 3px 3px 0 0;
     -moz-border-radius: 3px 3px 0 0;
@@ -3276,5 +3278,33 @@ input[type="button"]._unclickable_:active {
     -o-border-radius: 3px 3px 0 0;
     border-radius: 3px 3px 0 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+    .-modal .-modal-header .-closer {
+      font-size: 24px;
+      font-weight: bold;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      margin-top: -12px;
+      cursor: pointer;
+      opacity: 0.3;
+      -webkit-opacity: 0.3;
+      -moz-opacity: 0.3;
+      -ms-opacity: 0.3;
+      -o-opacity: 0.3; }
+      .-modal .-modal-header .-closer:hover {
+        opacity: 1;
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        -ms-opacity: 1;
+        -o-opacity: 1; }
   .-modal .-modal-content {
     padding: 10px; }
+
+.-shader {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000; }
