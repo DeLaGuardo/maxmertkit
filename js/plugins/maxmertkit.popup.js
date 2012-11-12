@@ -318,6 +318,19 @@
 		var arrowSize = 8;
 // console.log(actualPosition, $me.height(), actualHeight, parseInt($me.css('paddingTop')), parseInt($me.css('paddingBottom')));
 		
+		var _zIndex = 1
+		,	_position = 'absolute';
+		$.each( $me.parents(), function( index_, item_ ) {
+			if( $(item_).css('z-index') !== 'auto' && parseInt( $(item_).css('z-index')) > _zIndex )
+				_zIndex = $(item_).css('z-index') + 1;
+			if( $(item_).css('position') === 'fixed' )
+				_position = 'fixed';
+		});
+		if( _position === 'fixed' ) {
+			actualPosition.top = actualPosition.top - $(document).scrollTop();
+		}
+		me.El.css({'z-index': _zIndex, 'position': _position});
+
 		var pos = {}
 
 		switch( me.options.placement ) {
