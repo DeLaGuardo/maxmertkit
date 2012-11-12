@@ -58,9 +58,6 @@
 		_target = $(event_.target);
 		
 		if( _target.closest(me.options.itemsSelector).length > 0 ) _el = $(_target.closest(me.options.itemsSelector));
-		// if( _target.get(0).tagName === me.options.itemsSelector ) _el = $(_target);
-		// if( _target.hasClass(me.options.itemsSelector) ) _el = $(_target);
-		// if( _target.data('tabs') === me.options.itemsData ) _el = $(_target);
 		if( _target.closest('[data-tabs="'+me.options.itemsData+'"]').length > 0 ) _el = $(_target.closest('[data-tabs="'+me.options.itemsData+'"]').get(0));
 		if( _target.hasClass(me.options.itemsSelector) ) _el = $(_target);
 
@@ -143,10 +140,11 @@
 			
 			if( item_.data('tabs-data') !== undefined ) {
 				try {
-					get( item_.data('tabs-data') )
-						.done( function( answer_ ) {
+					$.get( item_.data('tabs-data') )
+						.done( function( document_, result_, answer_ ) {
+							debugger;
 							if( me.close() ) {
-								_target.html( answer_ );
+								_target.html( answer_.responseText );
 								me._openAnimation( item_, _target );
 								$me.trigger('ifOpenedOrNot.' + me.name);
 							}
@@ -172,7 +170,13 @@
 		,	$me = $(me.element);
 
 			item_.addClass('_active_');
-			target_.show();
+			
+			if( me.options.animation ) {
+				target_.fadeIn();
+			}
+			else {
+				target_.show();
+			}
 	}
 
 	Tabs.prototype.close = function() {

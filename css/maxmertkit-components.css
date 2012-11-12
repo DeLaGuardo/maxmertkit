@@ -54,7 +54,7 @@ input[type="button"].-unstyled-, button._unclickable_.-unstyled-, button._unclic
 .-btn._unclickable_.-unstyled-:active,
 input[type="button"]._unclickable_.-unstyled-,
 input[type="button"]._unclickable_.-unstyled-:hover,
-input[type="button"]._unclickable_.-unstyled-:active, .-group .-group-appendix.-unstyled-, .-group.-unstyled- .-group-appendix, .-group.-unstyled- button, .-group.-unstyled- input[type="button"], .-group.-unstyled- .-btn, .-tabs.-unstyled- li a:hover, .-tabs.-unstyled- li:active a, .-tabs.-unstyled- li._active_ a, .-dropdown.-unstyled-, .-menu.-unstyled- li:hover > a, .-menu.-unstyled- > li._active_ > a, .-menu.-unstyled- > li > a:active {
+input[type="button"]._unclickable_.-unstyled-:active, .-group .-group-appendix.-unstyled-, .-group.-unstyled- .-group-appendix, .-group.-unstyled- button, .-group.-unstyled- input[type="button"], .-group.-unstyled- .-btn, .-tabs.-unstyled- li a:hover, .-tabs.-unstyled- li:active a, .-tabs.-unstyled- li._active_ a, .-dropdown.-unstyled-, .-menu.-unstyled- li:hover > a, .-menu.-unstyled- > li._active_ > a, .-menu.-unstyled- > li > a:active, .-modal.-unstyled- {
   color: #333333; }
 
 button.-unstyled-,
@@ -65,14 +65,14 @@ input[type="button"].-unstyled-, button._unclickable_.-unstyled-, button._unclic
 .-btn._unclickable_.-unstyled-:active,
 input[type="button"]._unclickable_.-unstyled-,
 input[type="button"]._unclickable_.-unstyled-:hover,
-input[type="button"]._unclickable_.-unstyled-:active, .-group .-group-appendix.-unstyled-, .-group.-unstyled- .-group-appendix, .-group.-unstyled- button, .-group.-unstyled- input[type="button"], .-group.-unstyled- .-btn, .-tabs.-unstyled- li a:hover, .-tabs.-unstyled- li:active a, .-tabs.-unstyled- li._active_ a, .-dropdown.-unstyled- > .-dropdown-header, .-tooltip.-unstyled-, .-menu.-unstyled- li:hover > a, .-menu.-unstyled- > li._active_ > a, .-menu.-unstyled- > li > a:active {
+input[type="button"]._unclickable_.-unstyled-:active, .-group .-group-appendix.-unstyled-, .-group.-unstyled- .-group-appendix, .-group.-unstyled- button, .-group.-unstyled- input[type="button"], .-group.-unstyled- .-btn, .-tabs.-unstyled- li a:hover, .-tabs.-unstyled- li:active a, .-tabs.-unstyled- li._active_ a, .-dropdown.-unstyled- > .-dropdown-header, .-tooltip.-unstyled-, .-menu.-unstyled- li:hover > a, .-menu.-unstyled- > li._active_ > a, .-menu.-unstyled- > li > a:active, .-modal.-unstyled- > .-modal-header {
   -webkit-text-shadow: none;
   -moz-text-shadow: none;
   -ms-text-shadow: none;
   -o-text-shadow: none;
   text-shadow: none; }
 
-.-dropdown.-unstyled- > .-dropdown-header, .-tooltip.-unstyled- {
+.-dropdown.-unstyled- > .-dropdown-header, .-tooltip.-unstyled-, .-modal.-unstyled- > .-modal-header {
   color: #333333 !important; }
 
 button.-unstyled-,
@@ -83,7 +83,7 @@ input[type="button"].-unstyled-, button._unclickable_.-unstyled-, button._unclic
 .-btn._unclickable_.-unstyled-:active,
 input[type="button"]._unclickable_.-unstyled-,
 input[type="button"]._unclickable_.-unstyled-:hover,
-input[type="button"]._unclickable_.-unstyled-:active, .-group .-group-appendix.-unstyled-, .-group.-unstyled- input, .-group.-unstyled- textarea, .-group.-unstyled- select, .-group.-unstyled- .-group-appendix, .-group.-unstyled- button, .-group.-unstyled- input[type="button"], .-group.-unstyled- .-btn, .-tabs.-unstyled-, .-dropdown.-unstyled-, .-dropdown.-unstyled- .-arrow {
+input[type="button"]._unclickable_.-unstyled-:active, .-group .-group-appendix.-unstyled-, .-group.-unstyled- input, .-group.-unstyled- textarea, .-group.-unstyled- select, .-group.-unstyled- .-group-appendix, .-group.-unstyled- button, .-group.-unstyled- input[type="button"], .-group.-unstyled- .-btn, .-tabs.-unstyled-, .-dropdown.-unstyled-, .-dropdown.-unstyled- .-arrow, .-modal.-unstyled- {
   border-color: transparent; }
 
 .-group.-unstyled- input:hover, .-group.-unstyled- textarea:hover, .-group.-unstyled- select:hover, .-tabs.-unstyled- li a:hover, .-tabs.-unstyled- li:active a, .-tabs.-unstyled- li._active_ a {
@@ -92,13 +92,13 @@ input[type="button"]._unclickable_.-unstyled-:active, .-group .-group-appendix.-
 .-tooltip.-unstyled- .-arrow {
   border-color: transparent; }
 
-.-dropdown.-unstyled- {
+.-dropdown.-unstyled-, .-modal.-unstyled- {
   background-color: transparent; }
 
 .-group .-group-appendix.-unstyled-, .-group.-unstyled- .-group-appendix {
   background-color: transparent; }
 
-.-group.-unstyled- button:hover, .-group.-unstyled- input[type="button"]:hover, .-group.-unstyled- .-btn:hover, .-tabs.-unstyled- li a:hover, .-dropdown.-unstyled- > .-dropdown-header, .-menu.-unstyled- li:hover > a {
+.-group.-unstyled- button:hover, .-group.-unstyled- input[type="button"]:hover, .-group.-unstyled- .-btn:hover, .-tabs.-unstyled- li a:hover, .-dropdown.-unstyled- > .-dropdown-header, .-menu.-unstyled- li:hover > a, .-modal.-unstyled- > .-modal-header {
   background-color: transparent; }
 
 button.-unstyled-:active, button._active_.-unstyled-,
@@ -210,7 +210,7 @@ input[type="button"], button._unclickable_, button._unclickable_:hover, button._
 .-btn._unclickable_:active,
 input[type="button"]._unclickable_,
 input[type="button"]._unclickable_:hover,
-input[type="button"]._unclickable_:active, .-group .-group-appendix, .-group button, .-group input[type="button"], .-group .-btn, .-tabs li a:hover, .-tabs li:active a, .-tabs li._active_ a, .-dropdown, .-menu li:hover > a, .-menu > li._active_ > a, .-menu > li > a:active {
+input[type="button"]._unclickable_:active, .-group .-group-appendix, .-group button, .-group input[type="button"], .-group .-btn, .-tabs li a:hover, .-tabs li:active a, .-tabs li._active_ a, .-dropdown, .-menu li:hover > a, .-menu > li._active_ > a, .-menu > li > a:active, .-modal {
   color: #333333; }
 
 button,
@@ -221,14 +221,14 @@ input[type="button"], button._unclickable_, button._unclickable_:hover, button._
 .-btn._unclickable_:active,
 input[type="button"]._unclickable_,
 input[type="button"]._unclickable_:hover,
-input[type="button"]._unclickable_:active, .-group .-group-appendix, .-group button, .-group input[type="button"], .-group .-btn, .-tabs li a:hover, .-tabs li:active a, .-tabs li._active_ a, .-dropdown > .-dropdown-header, .-tooltip, .-menu li:hover > a, .-menu > li._active_ > a, .-menu > li > a:active {
+input[type="button"]._unclickable_:active, .-group .-group-appendix, .-group button, .-group input[type="button"], .-group .-btn, .-tabs li a:hover, .-tabs li:active a, .-tabs li._active_ a, .-dropdown > .-dropdown-header, .-tooltip, .-menu li:hover > a, .-menu > li._active_ > a, .-menu > li > a:active, .-modal > .-modal-header {
   -webkit-text-shadow: 0 1px 0 rgba(255,255,255,1);
   -moz-text-shadow: 0 1px 0 rgba(255,255,255,1);
   -ms-text-shadow: 0 1px 0 rgba(255,255,255,1);
   -o-text-shadow: 0 1px 0 rgba(255,255,255,1);
   text-shadow: 0 1px 0 rgba(255,255,255,1); }
 
-.-dropdown > .-dropdown-header, .-tooltip {
+.-dropdown > .-dropdown-header, .-tooltip, .-modal > .-modal-header {
   color: #333333 !important; }
 
 button,
@@ -239,7 +239,7 @@ input[type="button"], button._unclickable_, button._unclickable_:hover, button._
 .-btn._unclickable_:active,
 input[type="button"]._unclickable_,
 input[type="button"]._unclickable_:hover,
-input[type="button"]._unclickable_:active, .-group .-group-appendix, .-group input, .-group textarea, .-group select, .-group button, .-group input[type="button"], .-group .-btn, .-tabs, .-tabs.-unstyled-, .-dropdown, .-dropdown .-arrow {
+input[type="button"]._unclickable_:active, .-group .-group-appendix, .-group input, .-group textarea, .-group select, .-group button, .-group input[type="button"], .-group .-btn, .-tabs, .-tabs.-unstyled-, .-dropdown, .-dropdown .-arrow, .-modal {
   border-color: #d9d9d9; }
 
 .-group input:hover, .-group textarea:hover, .-group select:hover, .-tabs li a:hover, .-tabs li:active a, .-tabs li._active_ a {
@@ -248,7 +248,7 @@ input[type="button"]._unclickable_:active, .-group .-group-appendix, .-group inp
 .-tooltip .-arrow {
   border-color: #999999; }
 
-.-dropdown {
+.-dropdown, .-modal {
   background-color: #fbfbfb; }
 
 .-group .-group-appendix {
@@ -256,7 +256,7 @@ input[type="button"]._unclickable_:active, .-group .-group-appendix, .-group inp
 
 button:hover,
 .-btn:hover,
-input[type="button"]:hover, .-group button:hover, .-group input[type="button"]:hover, .-group .-btn:hover, .-tabs li a:hover, .-dropdown > .-dropdown-header, .-menu li:hover > a {
+input[type="button"]:hover, .-group button:hover, .-group input[type="button"]:hover, .-group .-btn:hover, .-tabs li a:hover, .-dropdown > .-dropdown-header, .-menu li:hover > a, .-modal > .-modal-header {
   background-color: #eeeeee; }
 
 button:active, button._active_,
@@ -393,14 +393,14 @@ input[type="button"].-error-, button._unclickable_.-error-, button._unclickable_
 .-btn._unclickable_.-error-:active,
 input[type="button"]._unclickable_.-error-,
 input[type="button"]._unclickable_.-error-:hover,
-input[type="button"]._unclickable_.-error-:active, .-group .-group-appendix.-error-, .-group.-error- .-group-appendix, .-group.-error- button, .-group.-error- input[type="button"], .-group.-error- .-btn, .-tabs.-error- li a:hover, .-tabs.-error- li:active a, .-tabs.-error- li._active_ a, .-dropdown.-error- > .-dropdown-header, .-tooltip.-error-, .-menu.-error- li:hover > a, .-menu.-error- > li._active_ > a, .-menu.-error- > li > a:active {
+input[type="button"]._unclickable_.-error-:active, .-group .-group-appendix.-error-, .-group.-error- .-group-appendix, .-group.-error- button, .-group.-error- input[type="button"], .-group.-error- .-btn, .-tabs.-error- li a:hover, .-tabs.-error- li:active a, .-tabs.-error- li._active_ a, .-dropdown.-error- > .-dropdown-header, .-tooltip.-error-, .-menu.-error- li:hover > a, .-menu.-error- > li._active_ > a, .-menu.-error- > li > a:active, .-modal.-error- > .-modal-header {
   -webkit-text-shadow: 0 -1px rgba(0,0,0,.3);
   -moz-text-shadow: 0 -1px rgba(0,0,0,.3);
   -ms-text-shadow: 0 -1px rgba(0,0,0,.3);
   -o-text-shadow: 0 -1px rgba(0,0,0,.3);
   text-shadow: 0 -1px rgba(0,0,0,.3); }
 
-.-dropdown.-error- > .-dropdown-header, .-tooltip.-error- {
+.-dropdown.-error- > .-dropdown-header, .-tooltip.-error-, .-modal.-error- > .-modal-header {
   color: white !important; }
 
 button.-error-,
@@ -411,7 +411,7 @@ input[type="button"].-error-, button._unclickable_.-error-, button._unclickable_
 .-btn._unclickable_.-error-:active,
 input[type="button"]._unclickable_.-error-,
 input[type="button"]._unclickable_.-error-:hover,
-input[type="button"]._unclickable_.-error-:active, .-group .-group-appendix.-error-, .-group.-error- input, .-group.-error- textarea, .-group.-error- select, .-group.-error- .-group-appendix, .-group.-error- button, .-group.-error- input[type="button"], .-group.-error- .-btn, .-tabs.-error-, .-tabs.-unstyled-.-error-, .-dropdown.-error-, .-dropdown.-error- .-arrow {
+input[type="button"]._unclickable_.-error-:active, .-group .-group-appendix.-error-, .-group.-error- input, .-group.-error- textarea, .-group.-error- select, .-group.-error- .-group-appendix, .-group.-error- button, .-group.-error- input[type="button"], .-group.-error- .-btn, .-tabs.-error-, .-tabs.-unstyled-.-error-, .-dropdown.-error-, .-dropdown.-error- .-arrow, .-modal.-error- {
   border-color: #d96464; }
 
 .-group.-error- input:hover, .-group.-error- textarea:hover, .-group.-error- select:hover, .-tabs.-error- li a:hover, .-tabs.-error- li:active a, .-tabs.-error- li._active_ a {
@@ -423,7 +423,7 @@ input[type="button"]._unclickable_.-error-:active, .-group .-group-appendix.-err
 .-group .-group-appendix.-error-, .-group.-error- .-group-appendix {
   background-color: #ea998f; }
 
-.-group.-error- button:hover, .-group.-error- input[type="button"]:hover, .-group.-error- .-btn:hover, .-tabs.-error- li a:hover, .-dropdown.-error- > .-dropdown-header, .-menu.-error- li:hover > a {
+.-group.-error- button:hover, .-group.-error- input[type="button"]:hover, .-group.-error- .-btn:hover, .-tabs.-error- li a:hover, .-dropdown.-error- > .-dropdown-header, .-menu.-error- li:hover > a, .-modal.-error- > .-modal-header {
   background-color: #d23927; }
 
 button.-error-:active, button._active_.-error-,
@@ -579,14 +579,14 @@ input[type="button"].-success-, button._unclickable_.-success-, button._unclicka
 .-btn._unclickable_.-success-:active,
 input[type="button"]._unclickable_.-success-,
 input[type="button"]._unclickable_.-success-:hover,
-input[type="button"]._unclickable_.-success-:active, .-group .-group-appendix.-success-, .-group.-success- .-group-appendix, .-group.-success- button, .-group.-success- input[type="button"], .-group.-success- .-btn, .-tabs.-success- li a:hover, .-tabs.-success- li:active a, .-tabs.-success- li._active_ a, .-dropdown.-success- > .-dropdown-header, .-tooltip.-success-, .-menu.-success- li:hover > a, .-menu.-success- > li._active_ > a, .-menu.-success- > li > a:active {
+input[type="button"]._unclickable_.-success-:active, .-group .-group-appendix.-success-, .-group.-success- .-group-appendix, .-group.-success- button, .-group.-success- input[type="button"], .-group.-success- .-btn, .-tabs.-success- li a:hover, .-tabs.-success- li:active a, .-tabs.-success- li._active_ a, .-dropdown.-success- > .-dropdown-header, .-tooltip.-success-, .-menu.-success- li:hover > a, .-menu.-success- > li._active_ > a, .-menu.-success- > li > a:active, .-modal.-success- > .-modal-header {
   -webkit-text-shadow: 0 -1px rgba(0,0,0,.3);
   -moz-text-shadow: 0 -1px rgba(0,0,0,.3);
   -ms-text-shadow: 0 -1px rgba(0,0,0,.3);
   -o-text-shadow: 0 -1px rgba(0,0,0,.3);
   text-shadow: 0 -1px rgba(0,0,0,.3); }
 
-.-dropdown.-success- > .-dropdown-header, .-tooltip.-success- {
+.-dropdown.-success- > .-dropdown-header, .-tooltip.-success-, .-modal.-success- > .-modal-header {
   color: white !important; }
 
 button.-success-,
@@ -597,7 +597,7 @@ input[type="button"].-success-, button._unclickable_.-success-, button._unclicka
 .-btn._unclickable_.-success-:active,
 input[type="button"]._unclickable_.-success-,
 input[type="button"]._unclickable_.-success-:hover,
-input[type="button"]._unclickable_.-success-:active, .-group .-group-appendix.-success-, .-group.-success- input, .-group.-success- textarea, .-group.-success- select, .-group.-success- .-group-appendix, .-group.-success- button, .-group.-success- input[type="button"], .-group.-success- .-btn, .-tabs.-success-, .-tabs.-unstyled-.-success-, .-dropdown.-success-, .-dropdown.-success- .-arrow {
+input[type="button"]._unclickable_.-success-:active, .-group .-group-appendix.-success-, .-group.-success- input, .-group.-success- textarea, .-group.-success- select, .-group.-success- .-group-appendix, .-group.-success- button, .-group.-success- input[type="button"], .-group.-success- .-btn, .-tabs.-success-, .-tabs.-unstyled-.-success-, .-dropdown.-success-, .-dropdown.-success- .-arrow, .-modal.-success- {
   border-color: #3ec84c; }
 
 .-group.-success- input:hover, .-group.-success- textarea:hover, .-group.-success- select:hover, .-tabs.-success- li a:hover, .-tabs.-success- li:active a, .-tabs.-success- li._active_ a {
@@ -609,7 +609,7 @@ input[type="button"]._unclickable_.-success-:active, .-group .-group-appendix.-s
 .-group .-group-appendix.-success-, .-group.-success- .-group-appendix {
   background-color: #8ddf96; }
 
-.-group.-success- button:hover, .-group.-success- input[type="button"]:hover, .-group.-success- .-btn:hover, .-tabs.-success- li a:hover, .-dropdown.-success- > .-dropdown-header, .-menu.-success- li:hover > a {
+.-group.-success- button:hover, .-group.-success- input[type="button"]:hover, .-group.-success- .-btn:hover, .-tabs.-success- li a:hover, .-dropdown.-success- > .-dropdown-header, .-menu.-success- li:hover > a, .-modal.-success- > .-modal-header {
   background-color: #34b842; }
 
 button.-success-:active, button._active_.-success-,
@@ -765,14 +765,14 @@ input[type="button"].-info-, button._unclickable_.-info-, button._unclickable_.-
 .-btn._unclickable_.-info-:active,
 input[type="button"]._unclickable_.-info-,
 input[type="button"]._unclickable_.-info-:hover,
-input[type="button"]._unclickable_.-info-:active, .-group .-group-appendix.-info-, .-group.-info- .-group-appendix, .-group.-info- button, .-group.-info- input[type="button"], .-group.-info- .-btn, .-tabs.-info- li a:hover, .-tabs.-info- li:active a, .-tabs.-info- li._active_ a, .-dropdown.-info- > .-dropdown-header, .-tooltip.-info-, .-menu.-info- li:hover > a, .-menu.-info- > li._active_ > a, .-menu.-info- > li > a:active {
+input[type="button"]._unclickable_.-info-:active, .-group .-group-appendix.-info-, .-group.-info- .-group-appendix, .-group.-info- button, .-group.-info- input[type="button"], .-group.-info- .-btn, .-tabs.-info- li a:hover, .-tabs.-info- li:active a, .-tabs.-info- li._active_ a, .-dropdown.-info- > .-dropdown-header, .-tooltip.-info-, .-menu.-info- li:hover > a, .-menu.-info- > li._active_ > a, .-menu.-info- > li > a:active, .-modal.-info- > .-modal-header {
   -webkit-text-shadow: 0 -1px rgba(0,0,0,.3);
   -moz-text-shadow: 0 -1px rgba(0,0,0,.3);
   -ms-text-shadow: 0 -1px rgba(0,0,0,.3);
   -o-text-shadow: 0 -1px rgba(0,0,0,.3);
   text-shadow: 0 -1px rgba(0,0,0,.3); }
 
-.-dropdown.-info- > .-dropdown-header, .-tooltip.-info- {
+.-dropdown.-info- > .-dropdown-header, .-tooltip.-info-, .-modal.-info- > .-modal-header {
   color: white !important; }
 
 button.-info-,
@@ -783,7 +783,7 @@ input[type="button"].-info-, button._unclickable_.-info-, button._unclickable_.-
 .-btn._unclickable_.-info-:active,
 input[type="button"]._unclickable_.-info-,
 input[type="button"]._unclickable_.-info-:hover,
-input[type="button"]._unclickable_.-info-:active, .-group .-group-appendix.-info-, .-group.-info- input, .-group.-info- textarea, .-group.-info- select, .-group.-info- .-group-appendix, .-group.-info- button, .-group.-info- input[type="button"], .-group.-info- .-btn, .-tabs.-info-, .-tabs.-unstyled-.-info-, .-dropdown.-info-, .-dropdown.-info- .-arrow {
+input[type="button"]._unclickable_.-info-:active, .-group .-group-appendix.-info-, .-group.-info- input, .-group.-info- textarea, .-group.-info- select, .-group.-info- .-group-appendix, .-group.-info- button, .-group.-info- input[type="button"], .-group.-info- .-btn, .-tabs.-info-, .-tabs.-unstyled-.-info-, .-dropdown.-info-, .-dropdown.-info- .-arrow, .-modal.-info- {
   border-color: #64cfd9; }
 
 .-group.-info- input:hover, .-group.-info- textarea:hover, .-group.-info- select:hover, .-tabs.-info- li a:hover, .-tabs.-info- li:active a, .-tabs.-info- li._active_ a {
@@ -795,7 +795,7 @@ input[type="button"]._unclickable_.-info-:active, .-group .-group-appendix.-info
 .-group .-group-appendix.-info-, .-group.-info- .-group-appendix {
   background-color: #b6e8ed; }
 
-.-group.-info- button:hover, .-group.-info- input[type="button"]:hover, .-group.-info- .-btn:hover, .-tabs.-info- li a:hover, .-dropdown.-info- > .-dropdown-header, .-menu.-info- li:hover > a {
+.-group.-info- button:hover, .-group.-info- input[type="button"]:hover, .-group.-info- .-btn:hover, .-tabs.-info- li a:hover, .-dropdown.-info- > .-dropdown-header, .-menu.-info- li:hover > a, .-modal.-info- > .-modal-header {
   background-color: #50c9d4; }
 
 button.-info-:active, button._active_.-info-,
@@ -951,14 +951,14 @@ input[type="button"].-warning-, button._unclickable_.-warning-, button._unclicka
 .-btn._unclickable_.-warning-:active,
 input[type="button"]._unclickable_.-warning-,
 input[type="button"]._unclickable_.-warning-:hover,
-input[type="button"]._unclickable_.-warning-:active, .-group .-group-appendix.-warning-, .-group.-warning- .-group-appendix, .-group.-warning- button, .-group.-warning- input[type="button"], .-group.-warning- .-btn, .-tabs.-warning- li a:hover, .-tabs.-warning- li:active a, .-tabs.-warning- li._active_ a, .-dropdown.-warning- > .-dropdown-header, .-tooltip.-warning-, .-menu.-warning- li:hover > a, .-menu.-warning- > li._active_ > a, .-menu.-warning- > li > a:active {
+input[type="button"]._unclickable_.-warning-:active, .-group .-group-appendix.-warning-, .-group.-warning- .-group-appendix, .-group.-warning- button, .-group.-warning- input[type="button"], .-group.-warning- .-btn, .-tabs.-warning- li a:hover, .-tabs.-warning- li:active a, .-tabs.-warning- li._active_ a, .-dropdown.-warning- > .-dropdown-header, .-tooltip.-warning-, .-menu.-warning- li:hover > a, .-menu.-warning- > li._active_ > a, .-menu.-warning- > li > a:active, .-modal.-warning- > .-modal-header {
   -webkit-text-shadow: 0 -1px rgba(0,0,0,.3);
   -moz-text-shadow: 0 -1px rgba(0,0,0,.3);
   -ms-text-shadow: 0 -1px rgba(0,0,0,.3);
   -o-text-shadow: 0 -1px rgba(0,0,0,.3);
   text-shadow: 0 -1px rgba(0,0,0,.3); }
 
-.-dropdown.-warning- > .-dropdown-header, .-tooltip.-warning- {
+.-dropdown.-warning- > .-dropdown-header, .-tooltip.-warning-, .-modal.-warning- > .-modal-header {
   color: white !important; }
 
 button.-warning-,
@@ -969,7 +969,7 @@ input[type="button"].-warning-, button._unclickable_.-warning-, button._unclicka
 .-btn._unclickable_.-warning-:active,
 input[type="button"]._unclickable_.-warning-,
 input[type="button"]._unclickable_.-warning-:hover,
-input[type="button"]._unclickable_.-warning-:active, .-group .-group-appendix.-warning-, .-group.-warning- input, .-group.-warning- textarea, .-group.-warning- select, .-group.-warning- .-group-appendix, .-group.-warning- button, .-group.-warning- input[type="button"], .-group.-warning- .-btn, .-tabs.-warning-, .-tabs.-unstyled-.-warning-, .-dropdown.-warning-, .-dropdown.-warning- .-arrow {
+input[type="button"]._unclickable_.-warning-:active, .-group .-group-appendix.-warning-, .-group.-warning- input, .-group.-warning- textarea, .-group.-warning- select, .-group.-warning- .-group-appendix, .-group.-warning- button, .-group.-warning- input[type="button"], .-group.-warning- .-btn, .-tabs.-warning-, .-tabs.-unstyled-.-warning-, .-dropdown.-warning-, .-dropdown.-warning- .-arrow, .-modal.-warning- {
   border-color: #d9ab64; }
 
 .-group.-warning- input:hover, .-group.-warning- textarea:hover, .-group.-warning- select:hover, .-tabs.-warning- li a:hover, .-tabs.-warning- li:active a, .-tabs.-warning- li._active_ a {
@@ -981,7 +981,7 @@ input[type="button"]._unclickable_.-warning-:active, .-group .-group-appendix.-w
 .-group .-group-appendix.-warning-, .-group.-warning- .-group-appendix {
   background-color: #f5d681; }
 
-.-group.-warning- button:hover, .-group.-warning- input[type="button"]:hover, .-group.-warning- .-btn:hover, .-tabs.-warning- li a:hover, .-dropdown.-warning- > .-dropdown-header, .-menu.-warning- li:hover > a {
+.-group.-warning- button:hover, .-group.-warning- input[type="button"]:hover, .-group.-warning- .-btn:hover, .-tabs.-warning- li a:hover, .-dropdown.-warning- > .-dropdown-header, .-menu.-warning- li:hover > a, .-modal.-warning- > .-modal-header {
   background-color: #e4ac13; }
 
 button.-warning-:active, button._active_.-warning-,
@@ -1137,14 +1137,14 @@ input[type="button"].-primary-, button._unclickable_.-primary-, button._unclicka
 .-btn._unclickable_.-primary-:active,
 input[type="button"]._unclickable_.-primary-,
 input[type="button"]._unclickable_.-primary-:hover,
-input[type="button"]._unclickable_.-primary-:active, .-group .-group-appendix.-primary-, .-group.-primary- .-group-appendix, .-group.-primary- button, .-group.-primary- input[type="button"], .-group.-primary- .-btn, .-tabs.-primary- li a:hover, .-tabs.-primary- li:active a, .-tabs.-primary- li._active_ a, .-dropdown.-primary- > .-dropdown-header, .-tooltip.-primary-, .-menu.-primary- li:hover > a, .-menu.-primary- > li._active_ > a, .-menu.-primary- > li > a:active {
+input[type="button"]._unclickable_.-primary-:active, .-group .-group-appendix.-primary-, .-group.-primary- .-group-appendix, .-group.-primary- button, .-group.-primary- input[type="button"], .-group.-primary- .-btn, .-tabs.-primary- li a:hover, .-tabs.-primary- li:active a, .-tabs.-primary- li._active_ a, .-dropdown.-primary- > .-dropdown-header, .-tooltip.-primary-, .-menu.-primary- li:hover > a, .-menu.-primary- > li._active_ > a, .-menu.-primary- > li > a:active, .-modal.-primary- > .-modal-header {
   -webkit-text-shadow: 0 -1px rgba(0,0,0,.3);
   -moz-text-shadow: 0 -1px rgba(0,0,0,.3);
   -ms-text-shadow: 0 -1px rgba(0,0,0,.3);
   -o-text-shadow: 0 -1px rgba(0,0,0,.3);
   text-shadow: 0 -1px rgba(0,0,0,.3); }
 
-.-dropdown.-primary- > .-dropdown-header, .-tooltip.-primary- {
+.-dropdown.-primary- > .-dropdown-header, .-tooltip.-primary-, .-modal.-primary- > .-modal-header {
   color: white !important; }
 
 button.-primary-,
@@ -1155,7 +1155,7 @@ input[type="button"].-primary-, button._unclickable_.-primary-, button._unclicka
 .-btn._unclickable_.-primary-:active,
 input[type="button"]._unclickable_.-primary-,
 input[type="button"]._unclickable_.-primary-:hover,
-input[type="button"]._unclickable_.-primary-:active, .-group .-group-appendix.-primary-, .-group.-primary- input, .-group.-primary- textarea, .-group.-primary- select, .-group.-primary- .-group-appendix, .-group.-primary- button, .-group.-primary- input[type="button"], .-group.-primary- .-btn, .-tabs.-primary-, .-tabs.-unstyled-.-primary-, .-dropdown.-primary-, .-dropdown.-primary- .-arrow {
+input[type="button"]._unclickable_.-primary-:active, .-group .-group-appendix.-primary-, .-group.-primary- input, .-group.-primary- textarea, .-group.-primary- select, .-group.-primary- .-group-appendix, .-group.-primary- button, .-group.-primary- input[type="button"], .-group.-primary- .-btn, .-tabs.-primary-, .-tabs.-unstyled-.-primary-, .-dropdown.-primary-, .-dropdown.-primary- .-arrow, .-modal.-primary- {
   border-color: #187abf; }
 
 .-group.-primary- input:hover, .-group.-primary- textarea:hover, .-group.-primary- select:hover, .-tabs.-primary- li a:hover, .-tabs.-primary- li:active a, .-tabs.-primary- li._active_ a {
@@ -1167,7 +1167,7 @@ input[type="button"]._unclickable_.-primary-:active, .-group .-group-appendix.-p
 .-group .-group-appendix.-primary-, .-group.-primary- .-group-appendix {
   background-color: #6bb6ec; }
 
-.-group.-primary- button:hover, .-group.-primary- input[type="button"]:hover, .-group.-primary- .-btn:hover, .-tabs.-primary- li a:hover, .-dropdown.-primary- > .-dropdown-header, .-menu.-primary- li:hover > a {
+.-group.-primary- button:hover, .-group.-primary- input[type="button"]:hover, .-group.-primary- .-btn:hover, .-tabs.-primary- li a:hover, .-dropdown.-primary- > .-dropdown-header, .-menu.-primary- li:hover > a, .-modal.-primary- > .-modal-header {
   background-color: #187abf; }
 
 button.-primary-:active, button._active_.-primary-,
@@ -1323,14 +1323,14 @@ input[type="button"].-dark-, button._unclickable_.-dark-, button._unclickable_.-
 .-btn._unclickable_.-dark-:active,
 input[type="button"]._unclickable_.-dark-,
 input[type="button"]._unclickable_.-dark-:hover,
-input[type="button"]._unclickable_.-dark-:active, .-group .-group-appendix.-dark-, .-group.-dark- .-group-appendix, .-group.-dark- button, .-group.-dark- input[type="button"], .-group.-dark- .-btn, .-tabs.-dark- li a:hover, .-tabs.-dark- li:active a, .-tabs.-dark- li._active_ a, .-dropdown.-dark- > .-dropdown-header, .-tooltip.-dark-, .-menu.-dark- li:hover > a, .-menu.-dark- > li._active_ > a, .-menu.-dark- > li > a:active {
+input[type="button"]._unclickable_.-dark-:active, .-group .-group-appendix.-dark-, .-group.-dark- .-group-appendix, .-group.-dark- button, .-group.-dark- input[type="button"], .-group.-dark- .-btn, .-tabs.-dark- li a:hover, .-tabs.-dark- li:active a, .-tabs.-dark- li._active_ a, .-dropdown.-dark- > .-dropdown-header, .-tooltip.-dark-, .-menu.-dark- li:hover > a, .-menu.-dark- > li._active_ > a, .-menu.-dark- > li > a:active, .-modal.-dark- > .-modal-header {
   -webkit-text-shadow: 0 1px rgba(255,255,255,.1);
   -moz-text-shadow: 0 1px rgba(255,255,255,.1);
   -ms-text-shadow: 0 1px rgba(255,255,255,.1);
   -o-text-shadow: 0 1px rgba(255,255,255,.1);
   text-shadow: 0 1px rgba(255,255,255,.1); }
 
-.-dropdown.-dark- > .-dropdown-header, .-tooltip.-dark- {
+.-dropdown.-dark- > .-dropdown-header, .-tooltip.-dark-, .-modal.-dark- > .-modal-header {
   color: white !important; }
 
 button.-dark-,
@@ -1341,7 +1341,7 @@ input[type="button"].-dark-, button._unclickable_.-dark-, button._unclickable_.-
 .-btn._unclickable_.-dark-:active,
 input[type="button"]._unclickable_.-dark-,
 input[type="button"]._unclickable_.-dark-:hover,
-input[type="button"]._unclickable_.-dark-:active, .-group .-group-appendix.-dark-, .-group.-dark- input, .-group.-dark- textarea, .-group.-dark- select, .-group.-dark- .-group-appendix, .-group.-dark- button, .-group.-dark- input[type="button"], .-group.-dark- .-btn, .-tabs.-dark-, .-tabs.-unstyled-.-dark-, .-dropdown.-dark-, .-dropdown.-dark- .-arrow {
+input[type="button"]._unclickable_.-dark-:active, .-group .-group-appendix.-dark-, .-group.-dark- input, .-group.-dark- textarea, .-group.-dark- select, .-group.-dark- .-group-appendix, .-group.-dark- button, .-group.-dark- input[type="button"], .-group.-dark- .-btn, .-tabs.-dark-, .-tabs.-unstyled-.-dark-, .-dropdown.-dark-, .-dropdown.-dark- .-arrow, .-modal.-dark- {
   border-color: #6b6b6b; }
 
 .-group.-dark- input:hover, .-group.-dark- textarea:hover, .-group.-dark- select:hover, .-tabs.-dark- li a:hover, .-tabs.-dark- li:active a, .-tabs.-dark- li._active_ a {
@@ -1353,7 +1353,7 @@ input[type="button"]._unclickable_.-dark-:active, .-group .-group-appendix.-dark
 .-group .-group-appendix.-dark-, .-group.-dark- .-group-appendix {
   background-color: #9e9e9e; }
 
-.-group.-dark- button:hover, .-group.-dark- input[type="button"]:hover, .-group.-dark- .-btn:hover, .-tabs.-dark- li a:hover, .-dropdown.-dark- > .-dropdown-header, .-menu.-dark- li:hover > a {
+.-group.-dark- button:hover, .-group.-dark- input[type="button"]:hover, .-group.-dark- .-btn:hover, .-tabs.-dark- li a:hover, .-dropdown.-dark- > .-dropdown-header, .-menu.-dark- li:hover > a, .-modal.-dark- > .-modal-header {
   background-color: #5e5e5e; }
 
 button.-dark-:active, button._active_.-dark-,
@@ -1507,14 +1507,14 @@ input[type="button"].-disabled-, button._unclickable_.-disabled-, button._unclic
 .-btn._unclickable_.-disabled-:active,
 input[type="button"]._unclickable_.-disabled-,
 input[type="button"]._unclickable_.-disabled-:hover,
-input[type="button"]._unclickable_.-disabled-:active, .-group .-group-appendix.-disabled-, .-group.-disabled- .-group-appendix, .-group.-disabled- button, .-group.-disabled- input[type="button"], .-group.-disabled- .-btn, .-tabs.-disabled- li:active a, .-tabs.-disabled- li._active_ a, .-dropdown.-disabled- > .-dropdown-header, .-tooltip.-disabled- {
+input[type="button"]._unclickable_.-disabled-:active, .-group .-group-appendix.-disabled-, .-group.-disabled- .-group-appendix, .-group.-disabled- button, .-group.-disabled- input[type="button"], .-group.-disabled- .-btn, .-tabs.-disabled- li:active a, .-tabs.-disabled- li._active_ a, .-dropdown.-disabled- > .-dropdown-header, .-tooltip.-disabled-, .-modal.-disabled- > .-modal-header {
   -webkit-text-shadow: none!important;
   -moz-text-shadow: none!important;
   -ms-text-shadow: none!important;
   -o-text-shadow: none!important;
   text-shadow: none!important; }
 
-.-dropdown.-disabled- > .-dropdown-header, .-tooltip.-disabled- {
+.-dropdown.-disabled- > .-dropdown-header, .-tooltip.-disabled-, .-modal.-disabled- > .-modal-header {
   color: #cccccc !important; }
 
 button.-disabled-,
@@ -1525,7 +1525,7 @@ input[type="button"].-disabled-, button._unclickable_.-disabled-, button._unclic
 .-btn._unclickable_.-disabled-:active,
 input[type="button"]._unclickable_.-disabled-,
 input[type="button"]._unclickable_.-disabled-:hover,
-input[type="button"]._unclickable_.-disabled-:active, .-group .-group-appendix.-disabled-, .-group.-disabled- input, .-group.-disabled- textarea, .-group.-disabled- select, .-group.-disabled- .-group-appendix, .-group.-disabled- button, .-group.-disabled- input[type="button"], .-group.-disabled- .-btn, .-tabs.-disabled-, .-tabs.-unstyled-.-disabled-, .-dropdown.-disabled- {
+input[type="button"]._unclickable_.-disabled-:active, .-group .-group-appendix.-disabled-, .-group.-disabled- input, .-group.-disabled- textarea, .-group.-disabled- select, .-group.-disabled- .-group-appendix, .-group.-disabled- button, .-group.-disabled- input[type="button"], .-group.-disabled- .-btn, .-tabs.-disabled-, .-tabs.-unstyled-.-disabled-, .-dropdown.-disabled-, .-modal.-disabled- {
   border-color: #d9d9d9!important; }
 
 .-tabs.-disabled- li:active a, .-tabs.-disabled- li._active_ a {
@@ -1536,7 +1536,7 @@ input[type="button"]._unclickable_.-disabled-:active, .-group .-group-appendix.-
 
 button.-disabled-:hover,
 .-btn.-disabled-:hover,
-input[type="button"].-disabled-:hover, .-group.-disabled- button:hover, .-group.-disabled- input[type="button"]:hover, .-group.-disabled- .-btn:hover, .-dropdown.-disabled- > .-dropdown-header {
+input[type="button"].-disabled-:hover, .-group.-disabled- button:hover, .-group.-disabled- input[type="button"]:hover, .-group.-disabled- .-btn:hover, .-dropdown.-disabled- > .-dropdown-header, .-modal.-disabled- > .-modal-header {
   background-color: #f3f3f3!important; }
 
 .-tabs.-disabled- li:active a, .-tabs.-disabled- li._active_ a {
@@ -1742,7 +1742,7 @@ input[type="button"]._huge, .-group .-group-appendix._huge, .-group._huge button
 
 button,
 .-btn,
-input[type="button"], .-group .-group-appendix, .-tabs li a, .-badge, .-label, .-dropdown, .-arrow, .-tooltip, .-menu li a, .-dropdown .-menu li.-menu-sub > a:after {
+input[type="button"], .-group .-group-appendix, .-tabs li a, .-badge, .-label, .-dropdown, .-arrow, .-tooltip, .-menu li a, .-dropdown .-menu li.-menu-sub > a:after, .-modal {
   display: inline-block;
   vertical-align: middle;
   outline: none;
@@ -3250,3 +3250,31 @@ input[type="button"]._unclickable_:active {
   .-dropdown .-menu + .-menu {
     margin-top: -5px;
     min-height: auto; }
+
+.-modal {
+  position: relative;
+  display: inline-block;
+  border-width: 0;
+  border-style: solid;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  min-width: 300px;
+  min-height: 300px;
+  -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+  .-modal .-modal-header {
+    padding: 10px;
+    -webkit-border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    -ms-border-radius: 3px 3px 0 0;
+    -o-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  .-modal .-modal-content {
+    padding: 10px; }

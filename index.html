@@ -15,6 +15,7 @@
 		<script type="text/javascript" src="js/plugins/maxmertkit.js"></script>
 		<script type="text/javascript" src="js/plugins/maxmertkit.popup.js"></script>
 		<script type="text/javascript" src="js/plugins/maxmertkit.tabs.js"></script>
+		<script type="text/javascript" src="js/plugins/maxmertkit.modal.js"></script>
 
 
 		<script type="text/javascript">
@@ -81,7 +82,14 @@
 
 
 					$('.js-tabs').tabs({
-						itemsSelector: 'li'
+						itemsSelector: 'li',
+						animation: true
+					});
+
+					$('.js-modal').modal();
+
+					$('.js-modal-show').on('click', function() {
+						$('.js-modal').data('kit-modal').open();
 					});
 
 				});
@@ -1118,7 +1126,7 @@
 						<li data-tabs-target="#tab-first" class="_active_">
 							<a>First tab</a>
 						</li>
-						<li data-tabs-data="http://www.ru" data-tabs-target="#tab-second">
+						<li data-tabs-data="README.md" data-tabs-target="#tab-second">
 							<a>Second tab <i class="-caret"></i></a>
 						</li>
 						<li data-tabs-target="#tab-third">
@@ -1137,6 +1145,17 @@
 					
 				</div>
 			</article>
+
+			<article class="-row">
+				<div class="-col6">
+					<h4>Modals</h4>
+					<a class="-btn js-modal-show">Show modal</a>
+					<div class="-modal js-modal">
+						<div class="-modal-header">Header</div>
+						<div class="-modal-content">Header</div>
+					</div>
+				</div>
+			</article>
 		</div>
 	</body>
-<!-- </html> -->
+</html>
