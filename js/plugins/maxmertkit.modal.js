@@ -4,6 +4,7 @@
 			autoOpen: false
 		,	onlyOne: true
 		,	shaderClass: '-shader'
+		,	closerClass: '-closer'
 		// ,	template: '<div class="-modal"><div class="-modal-header"></div><div class="-modal-content"></div></div>'
 	}
 
@@ -26,6 +27,11 @@
 		,	left: '50%'
 		,	top: '50%'
 		,	position: 'fixed'
+		});
+
+		var me = this;
+		$(this.element).find( '.' + me.options.closerClass ).on( 'click', function() {
+			me.close();
 		})
 
 		this.init();
@@ -228,13 +234,13 @@
 		$('html').removeClass( '-mx-shader' );
 
 		if( $.easing !== 'undefined' && (me.options.animation.split(/[ ,]+/)[1] in $.easing || me.options.animation.split(/[ ,]+/)[0] in $.easing) ) {
-			me.element.slideUp({
+			$me.slideUp({
 				duration: me.options.animationDuration,
 				easing: me.options.animation.split(/[ ,]+/)[1] !== 'undefined' ? me.options.animation.split(/[ ,]+/)[1] : me.options.animation,
 			});
 		}
 		else {
-			me.element.removeClass('-mx-start');
+			$me.removeClass('-mx-start');
 		}
 	}
 
