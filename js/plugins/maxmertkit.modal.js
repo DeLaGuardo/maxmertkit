@@ -235,7 +235,7 @@
 		if( $.easing !== 'undefined' && (me.options.animation.split(/[ ,]+/)[1] in $.easing || me.options.animation.split(/[ ,]+/)[0] in $.easing) ) {
 			$me.slideUp({
 				duration: me.options.animationDuration,
-				easing: me.options.animation.split(/[ ,]+/)[1] !== 'undefined' ? me.options.animation.split(/[ ,]+/)[1] : me.options.animation,
+				easing: me.options.animation.split(/[ ,]+/)[1] !== 'undefined' ? me.options.animation.split(/[ ,]+/)[1] : me.options.animation
 			});
 		}
 		else {

@@ -2,10 +2,10 @@
 
 	var _name = 'popup'
 	,	_defaults = {
-			placement: 'top'
-		,	offset: [0, 0]
-		,	autoOpen: false
-		,	template: '<div class="js-content"></div>'
+			'placement': 'top'
+		,	'offset': [0, 0]
+		,	'autoOpen': false
+		,	'template': '<div class="js-content"></div>'
 		}
 
 	Popup = function( element_, options_ ) {
@@ -55,18 +55,20 @@
 			case 'trigger':
 				var _events = value_.split(/[ ,]+/);
 					
-				if( me.options[key_].in !== undefined )
+				
+				// me.options[key_]['in'] – for IE < 8
+				if( typeof me.options[key_]['in'] !== undefined )
 					$me.off( 'mouseenter.' + me.name, 'click.' + me.name );
 
-				if( me.options[key_].out !== undefined )
+				if( typeof me.options[key_]['out'] !== undefined )
 					$me.off( 'mouseleave.' + me.name, 'click.' + me.name );
 
 				me.options[key_] = {
-					in: _events[0] 
-				,   out: (_events[1] == undefined || _events[1] == '') ? _events[0] : _events[1]
+					'in': _events[0] 
+				,   'out': (_events[1] == undefined || _events[1] == '') ? _events[0] : _events[1]
 				};
 				
-				switch( me.options[key_].in ) {
+				switch( me.options[key_]['in'] ) {
 					case 'hover':
 						$me.on('mouseenter.' + me.name, function( event ) {
 							if( me.state === 'closed' )
@@ -75,7 +77,7 @@
 					break;
 					
 					default:
-						$me.on( me.options[key_].in + '.' + me.name, function() {
+						$me.on( me.options[key_]['in'] + '.' + me.name, function() {
 							if( me.state === 'closed' )
 								me.open();
 						});
@@ -232,7 +234,8 @@
 		else {
 			me.El.show();
 			this.El.find('.-arrow').css({opacity: 1});
-			me.El.addClass('-mx-start');
+			if( Modernizr && Modernizr.csstransitions && Modernizr.csstransforms3d && Modernizr.cssanimations )
+				me.El.addClass('-mx-start');
 		}
 	}
 
@@ -304,7 +307,10 @@
 			});
 		}
 		else {
-			me.El.removeClass('-mx-start');
+			if( Modernizr && Modernizr.csstransitions && Modernizr.csstransforms3d && Modernizr.cssanimations )
+				me.El.removeClass('-mx-start');
+			else
+				me.El.hide();
 		}
 	}
 
