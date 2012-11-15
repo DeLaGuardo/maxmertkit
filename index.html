@@ -14,6 +14,7 @@
 
 		<script type="text/javascript" src="js/plugins/maxmertkit.js"></script>
 		<script type="text/javascript" src="js/plugins/maxmertkit.affix.js"></script>
+		<script type="text/javascript" src="js/plugins/maxmertkit.scrollspy.js"></script>
 		<script type="text/javascript" src="js/plugins/maxmertkit.popup.js"></script>
 		<script type="text/javascript" src="js/plugins/maxmertkit.tabs.js"></script>
 		<script type="text/javascript" src="js/plugins/maxmertkit.modal.js"></script>
@@ -96,6 +97,8 @@
 					});
 
 					$('.js-affix').affix();
+
+					$('.js-scrollspy').scrollspy();
 
 				});
 			})(jQuery);
@@ -1076,7 +1079,7 @@
 					</ul>
 				</section>
 			</article>
-			<span class="js-affix -label -primary-" style="">This is affix plugin <i class="-icon-star -icon-light-"></i></span>
+			<span class="js-affix -label -primary-">This is affix plugin <i class="-icon-star -icon-light-"></i></span>
 
 </div>
 			<article class="-row">
@@ -1160,8 +1163,45 @@
 					<h4>Modals</h4>
 					<a class="-btn js-modal-show">Show modal</a>
 				</div>
+				<div class="-col6">
+
+				</div>
 			</article>
 		</div>
+
+		<ul class="-menu -primary- _vertical_ js-affix js-scrollspy" style="right: 0; width: 200px">
+			<li><a>Menu default</a></li>
+			<li class="-error-"><a>Error item</a></li>
+			<li><a>Default item</a></li>
+			<li class="-menu-sub"><a>Item with submenu</a>
+
+				<div class="-dropdown">
+					<ul class="-menu">
+						<li><a>Menu default</a></li>
+						<li class="-success-"><a>Success item</a></li>
+						<li><a>Default item</a></li>
+						<li class="-menu-sub _left_ _top_"><a>Item with submenu, _left_ and _top_ class</a>
+							<div class="-dropdown">
+								<ul class="-menu">
+									<li><a>Menu default</a></li>
+									<li class="-error- -disabled-"><a>Disabled error item</a></li>
+									<li><a>Default item</a></li>
+									<li><a>Default item</a></li>
+									<li><a>Default item</a></li>
+									<li><a><span class="-menu-help">âŒ˜âŒ¥2</span>Default item with help information</a></li>
+								</ul>
+							</div>
+
+						</li>
+						<li><a>Default item</a></li>
+						<li><a><span class="-menu-help">âŒ˜âŒ¥2</span>Default item with help information</a></li>
+					</ul>
+				</div>
+
+			</li>
+			<li class="_loading_"><a>Default loading item</a></li>
+			<li><a><span class="-menu-help">âŒ˜âŒ¥2</span>Default item with help information</a></li>
+		</ul>
 
 		<div class="-modal js-modal">
 			<div class="-modal-header">Header <i class="-closer">&times;</i></div>

@@ -1742,7 +1742,8 @@ input[type="button"]._huge, .-group .-group-appendix._huge, .-group._huge button
 
 button,
 .-btn,
-input[type="button"], .-group .-group-appendix, .-tabs li a, .-badge, .-label, .-dropdown, .-arrow, .-tooltip, .-menu li a, .-dropdown .-menu li.-menu-sub > a:after, .-modal {
+input[type="button"], .-group .-group-appendix, .-tabs li a, .-badge, .-label, .-dropdown, .-arrow, .-tooltip, .-menu li a, .-dropdown .-menu li.-menu-sub > a:after,
+.-menu._vertical_ li.-menu-sub > a:after, .-modal {
   display: inline-block;
   vertical-align: middle;
   outline: none;
@@ -1766,14 +1767,23 @@ input[type="button"], .-group .-group-appendix, .-tabs li a, .-badge, .-label, .
   [class*="-icon"].-icon-light-, .-dropdown .-menu li a:hover [class*="-icon"][class*='-icon'],
   .-dropdown .-menu li a:hover [class*="-icon"][class^='-icon'],
   .-dropdown .-menu li a:hover [class*="-icon"].-icon,
+  .-menu._vertical_ li a:hover [class*="-icon"][class*='-icon'],
+  .-menu._vertical_ li a:hover [class*="-icon"][class^='-icon'],
+  .-menu._vertical_ li a:hover [class*="-icon"].-icon,
   [class^="-icon"].-icon-light-,
   .-dropdown .-menu li a:hover [class^="-icon"][class*='-icon'],
   .-dropdown .-menu li a:hover [class^="-icon"][class^='-icon'],
   .-dropdown .-menu li a:hover [class^="-icon"].-icon,
+  .-menu._vertical_ li a:hover [class^="-icon"][class*='-icon'],
+  .-menu._vertical_ li a:hover [class^="-icon"][class^='-icon'],
+  .-menu._vertical_ li a:hover [class^="-icon"].-icon,
   .-icon.-icon-light-,
   .-dropdown .-menu li a:hover .-icon[class*='-icon'],
   .-dropdown .-menu li a:hover .-icon[class^='-icon'],
-  .-dropdown .-menu li a:hover .-icon {
+  .-dropdown .-menu li a:hover .-icon,
+  .-menu._vertical_ li a:hover .-icon[class*='-icon'],
+  .-menu._vertical_ li a:hover .-icon[class^='-icon'],
+  .-menu._vertical_ li a:hover .-icon {
     background-image: url("../img/icons/glyphicons_halflings_white.png"); }
 
 .-icon-glass {
@@ -3190,22 +3200,28 @@ input[type="button"]._unclickable_:active {
   .-menu li.-disabled- .-dropdown {
     display: none!important; }
 
-.-dropdown .-menu {
+.-dropdown .-menu,
+.-menu._vertical_ {
   width: 100%;
   margin: 5px 0; }
-  .-dropdown .-menu li {
+  .-dropdown .-menu li,
+  .-menu._vertical_ li {
     display: block; }
-    .-dropdown .-menu li a {
+    .-dropdown .-menu li a,
+    .-menu._vertical_ li a {
       display: block; }
-    .-dropdown .-menu li.-menu-separator {
+    .-dropdown .-menu li.-menu-separator,
+    .-menu._vertical_ li.-menu-separator {
       height: 0;
       width: 100%;
       border-bottom: 1px solid white;
       border-top: 1px solid rgba(0, 0, 0, 0.1);
       margin: 4px 0; }
-    .-dropdown .-menu li.-menu-sub > a {
+    .-dropdown .-menu li.-menu-sub > a,
+    .-menu._vertical_ li.-menu-sub > a {
       padding-right: 10px; }
-      .-dropdown .-menu li.-menu-sub > a:after {
+      .-dropdown .-menu li.-menu-sub > a:after,
+      .-menu._vertical_ li.-menu-sub > a:after {
         display: inline-block;
         float: right;
         content: ' ';
@@ -3218,7 +3234,8 @@ input[type="button"]._unclickable_:active {
         right: 5px;
         top: 50%;
         margin-top: -5px; }
-    .-dropdown .-menu li.-menu-sub > .-dropdown {
+    .-dropdown .-menu li.-menu-sub > .-dropdown,
+    .-menu._vertical_ li.-menu-sub > .-dropdown {
       z-index: 1;
       min-height: auto;
       left: 100%;
@@ -3228,27 +3245,33 @@ input[type="button"]._unclickable_:active {
       -ms-opacity: 0;
       -o-opacity: 0;
       top: -5px; }
-    .-dropdown .-menu li.-menu-sub._top_ > .-dropdown {
+    .-dropdown .-menu li.-menu-sub._top_ > .-dropdown,
+    .-menu._vertical_ li.-menu-sub._top_ > .-dropdown {
       top: auto;
       bottom: -5px; }
-    .-dropdown .-menu li.-menu-sub._left_ > .-dropdown {
+    .-dropdown .-menu li.-menu-sub._left_ > .-dropdown,
+    .-menu._vertical_ li.-menu-sub._left_ > .-dropdown {
       left: auto;
       right: 100%; }
-    .-dropdown .-menu li.-menu-sub:hover > .-dropdown {
+    .-dropdown .-menu li.-menu-sub:hover > .-dropdown,
+    .-menu._vertical_ li.-menu-sub:hover > .-dropdown {
       display: block;
       opacity: 1;
       -webkit-opacity: 1;
       -moz-opacity: 1;
       -ms-opacity: 1;
       -o-opacity: 1; }
-    .-dropdown .-menu li a .-menu-help {
+    .-dropdown .-menu li a .-menu-help,
+    .-menu._vertical_ li a .-menu-help {
       float: right;
       margin: 0 0 0 13px;
       font-weight: 200;
       opacity: .3; }
-    .-dropdown .-menu li a:hover .-menu-help {
+    .-dropdown .-menu li a:hover .-menu-help,
+    .-menu._vertical_ li a:hover .-menu-help {
       opacity: .7; }
-  .-dropdown .-menu + .-menu {
+  .-dropdown .-menu + .-menu,
+  .-menu._vertical_ + .-menu {
     margin-top: -5px;
     min-height: auto; }
 

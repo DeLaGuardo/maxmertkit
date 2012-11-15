@@ -48,7 +48,8 @@ $__after-object: '';
 	}
 }
 
-.#{$object__dropdown} .#{$object__menu} {
+.#{$object__dropdown} .#{$object__menu},
+.#{$object__menu}.#{$mod__vertical} {
 	width: 100%;
 	margin: $object__dropdown-border-radius 0;
 
