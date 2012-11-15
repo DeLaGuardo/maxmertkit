@@ -13,6 +13,7 @@
 		<script type="text/javascript" src="js/libs/modernizr.js"></script>
 
 		<script type="text/javascript" src="js/plugins/maxmertkit.js"></script>
+		<script type="text/javascript" src="js/plugins/maxmertkit.affix.js"></script>
 		<script type="text/javascript" src="js/plugins/maxmertkit.popup.js"></script>
 		<script type="text/javascript" src="js/plugins/maxmertkit.tabs.js"></script>
 		<script type="text/javascript" src="js/plugins/maxmertkit.modal.js"></script>
@@ -93,6 +94,8 @@
 					$('.js-modal-show').on('click', function() {
 						$('.js-modal').data('kit-modal').open();
 					});
+
+					$('.js-affix').affix();
 
 				});
 			})(jQuery);
@@ -956,6 +959,8 @@
 				</section>
 			</article>
 
+			<div class=".js-affix-container">
+
 			<article class="-row">
 				<section class="-col6">
 					<div class="-section">
@@ -1071,7 +1076,9 @@
 					</ul>
 				</section>
 			</article>
+			<span class="js-affix -label -primary-" style="">This is affix plugin <i class="-icon-star -icon-light-"></i></span>
 
+</div>
 			<article class="-row">
 				<section class="-col6">
 					<h2>Tooltips</h2>
@@ -1099,7 +1106,7 @@
 					<div class="-tooltip _left_ -dark-"><i class="-arrow"></i>Normal</div>
 				</section>
 			</article>
-		</div>
+		
 
 
 
@@ -1155,7 +1162,6 @@
 				</div>
 			</article>
 		</div>
-
 
 		<div class="-modal js-modal">
 			<div class="-modal-header">Header <i class="-closer">&times;</i></div>
