@@ -2,10 +2,24 @@
 
 	var _name = 'popup'
 	,	_defaults = {
-			'placement': 'top'
-		,	'offset': [0, 0]
-		,	'autoOpen': false
-		,	'template': '<div class="js-content"></div>'
+			placement: 'top'
+		,	offset: [0, 0]
+		,	autoOpen: false
+		,	template: '<div class="js-content"></div>'
+		,	onlyOne: false
+		,	content: null
+		,	header: null
+		,	trigger: 'click'
+		,	delay: 0
+
+		,	beforeOpen: $.noop()
+		,	open: $.noop()
+		,	ifOpenedOrNot: $.noop()
+		,	ifNotOpened: $.noop()
+		,	beforeClose: $.noop()
+		,	close: $.noop()
+		,	ifClosedOrNot: $.noop()
+		,	ifNotClosed: $.noop()
 		}
 
 	Popup = function( element_, options_ ) {
@@ -14,7 +28,7 @@
 
 		this.element = element_;
 		this.name = _name;
-
+		this.state = 'closed';
 		this.options = $.extend( {}, this.options, _defaults, options_ );
 		
 		// Creating popup element by template

@@ -3,29 +3,29 @@
 	var _name = 'kit'
 	,	_defaults = {
 			enabled: true
-		,	onlyOne: false
+		// ,	onlyOne: false
 		,	animation: null
 		,	animationDuration: 0
-		,	template: '<div>'
-		,	content: null
-		,	header: null
+		// ,	template: '<div>'
+		// ,	content: null
+		// ,	header: null
 		,	theme: 'dark'
-		,	trigger: 'click'
-		,	delay: 0
+		// ,	trigger: 'click'
+		// ,	delay: 0
 
-		,	beforeOpen: $.noop()
-		,	open: $.noop()
-		,	ifOpenedOrNot: $.noop()
-		,	ifNotOpened: $.noop()
-		,	beforeClose: $.noop()
-		,	close: $.noop()
-		,	ifClosedOrNot: $.noop()
-		,	ifNotClosed: $.noop()
+		// ,	beforeOpen: $.noop()
+		// ,	open: $.noop()
+		// ,	ifOpenedOrNot: $.noop()
+		// ,	ifNotOpened: $.noop()
+		// ,	beforeClose: $.noop()
+		// ,	close: $.noop()
+		// ,	ifClosedOrNot: $.noop()
+		// ,	ifNotClosed: $.noop()
 		}
 
 	$.kit = function(element, options) {
 		this.name = _name;
-		this.state = 'closed'; // closed in opened out
+		this.state = 'uninitialized'; // closed in opened out
 		
 		this.element = element;
 		this.options = $.extend({}, _defaults, options);
