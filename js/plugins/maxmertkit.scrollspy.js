@@ -121,6 +121,8 @@
 		,	i;
 
 		for( i = 0; i < me.offsets.length - 1; i++ ) {
+			if( scrollTop < me.offsets[0] )
+				me.activate( me.targets[0] );
 			if( me.offsets[i] < scrollTop && scrollTop <= me.offsets[i+1] )
 				me.activate( me.targets[i] );
 			if( scrollTop > me.offsets[i+1] )
