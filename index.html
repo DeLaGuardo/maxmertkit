@@ -153,7 +153,7 @@
 				<div class="-col1" style="background: #ccc">1</div>
 				<div></div>
 			</div>
-			<h1>Text</h1>
+			<h1 id="text">Text</h1>
 			<div class="-row">
 				<div class="-col4">
 					<h1>h1. Heading 1</h1> <h2>h2. Heading 2</h2> <h3>h3. Heading 3</h3> <h4>h4. Heading 4</h4> <h5>h5. Heading 5</h5> <h6>h6. Heading 6</h6>
@@ -194,7 +194,7 @@
 				</div>
 			</div>
 			
-			<h1>Lists</h1>
+			<h1 id="lists">Lists</h1>
 			<div class="-row">
 				 <div class="-col4">
 					<h2>Marked lists</h2>
@@ -260,7 +260,7 @@
 				</div>
 			</div>
 
-			<article class="-row">
+			<article id="tables" class="-row">
 				<section class="-col6">
 					<h2>Striped and hovered</h2>
 					<table class="-table _striped_ _hovered_">
@@ -392,7 +392,7 @@
 				</div>
 			</article>
 
-			<h1>Forms</h1>
+			<h1 id="forms">Forms</h1>
 			<article class="-row">
 				<article class="-col12">
 					<form class="-form">
@@ -569,7 +569,7 @@
 				</div>
 			</article>
 
-			<h1>Buttons</h1>
+			<h1 id="buttons">Buttons</h1>
 			<article class="-row">
 				<section class="-col12">
 					<a class="-btn -disabled-">Disabled</a>
@@ -591,7 +591,7 @@
 				</section>
 			</article>
 
-			<h1>Groups</h1>
+			<h1 id="groups">Groups</h1>
 			<article class="-row">
 				<section class="-col12">
 					<table class="-table -unstyled-">
@@ -684,7 +684,7 @@
 				</section>
 			</article>
 
-			<article class="-row">
+			<article id="tabs" class="-row">
 				<div class="-col6">
 					<h2>Tabs by global size</h2>
 					<ul class="-tabs _huge -section">
@@ -846,7 +846,7 @@
 				</div>
 			</article>
 
-			<article class="-row">
+			<article id="badges" class="-row">
 				<section class="-col6">
 					<h2>Badges</h2>
 					<div class="-section">
@@ -879,7 +879,7 @@
 				</section>
 			</article>
 
-			<article class="-row">
+			<article id="dropdowns" class="-row">
 				<section class="-col12">
 					<div class="-section">
 						<h2>Dropdowns</h2>
@@ -964,7 +964,7 @@
 
 			<div class=".js-affix-container">
 
-			<article class="-row">
+			<article id="menus" class="-row">
 				<section class="-col6">
 					<div class="-section">
 						<h4>Menu in dropdown</h4>
@@ -1082,7 +1082,7 @@
 			<span class="js-affix -label -primary-">This is affix plugin <i class="-icon-star -icon-light-"></i></span>
 
 </div>
-			<article class="-row">
+			<article id="tooltips" class="-row">
 				<section class="-col6">
 					<h2>Tooltips</h2>
 					<div class="-tooltip _top_"><i class="-arrow"></i>Default</div>
@@ -1115,7 +1115,7 @@
 
 
 
-		<div class="-container">
+		<div id="javascript" class="-container">
 			<h1>Javascript</h1>
 			
 			<article class="-row">
@@ -1169,38 +1169,19 @@
 			</article>
 		</div>
 
-		<ul class="-menu -primary- _vertical_ js-affix js-scrollspy" style="right: 0; width: 200px">
-			<li><a>Menu default</a></li>
-			<li class="-error-"><a>Error item</a></li>
-			<li><a>Default item</a></li>
-			<li class="-menu-sub"><a>Item with submenu</a>
-
-				<div class="-dropdown">
-					<ul class="-menu">
-						<li><a>Menu default</a></li>
-						<li class="-success-"><a>Success item</a></li>
-						<li><a>Default item</a></li>
-						<li class="-menu-sub _left_ _top_"><a>Item with submenu, _left_ and _top_ class</a>
-							<div class="-dropdown">
-								<ul class="-menu">
-									<li><a>Menu default</a></li>
-									<li class="-error- -disabled-"><a>Disabled error item</a></li>
-									<li><a>Default item</a></li>
-									<li><a>Default item</a></li>
-									<li><a>Default item</a></li>
-									<li><a><span class="-menu-help">âŒ˜âŒ¥2</span>Default item with help information</a></li>
-								</ul>
-							</div>
-
-						</li>
-						<li><a>Default item</a></li>
-						<li><a><span class="-menu-help">âŒ˜âŒ¥2</span>Default item with help information</a></li>
-					</ul>
-				</div>
-
-			</li>
-			<li class="_loading_"><a>Default loading item</a></li>
-			<li><a><span class="-menu-help">âŒ˜âŒ¥2</span>Default item with help information</a></li>
+		<ul class="-menu -primary- _vertical_ js-affix js-scrollspy -mx-affix-scrollspy _right_" style="right: 0; width: 200px">
+			<li data-target="#text"><a href="#text">Text</a></li>
+			<li data-target="#lists"><a href="#lists">Lists</a></li>
+			<li data-target="#tables"><a href="#tables">Tables</a></li>
+			<li data-target="#forms"><a href="#forms">Forms</a></li>
+			<li data-target="#buttons"><a href="#buttons">Buttons</a></li>
+			<li data-target="#groups"><a href="#groups">Groups</a></li>
+			<li data-target="#tabs"><a href="#tabs">Tabs</a></li>
+			<li data-target="#badges"><a href="#badges">Badges</a></li>
+			<li data-target="#dropdowns"><a href="#dropdowns">Dropdowns</a></li>
+			<li data-target="#menus"><a href="#menus">Menus</a></li>
+			<li data-target="#tooltips"><a href="#tooltips">Tooltips</a></li>
+			<li data-target="#javascript"><a href="#javascript">Javascript</a></li>
 		</ul>
 
 		<div class="-modal js-modal">

@@ -2,7 +2,9 @@
 
 	var _name = 'scrollspy'
 	,	_defaults = {
-			itemSelector: 'li'
+			itemSelector: 'li',
+			offset: 2,
+			animation: true
 		}
 
 	Scrollspy = function(element, options) {
@@ -11,10 +13,12 @@
 		this.element = element;
 		this.options = $.extend({}, _defaults, options);
 
+		var process = $.proxy( this.process, this );
 		this.$scrollable = $(this.element).is('body') ? $(window) : $(this.element);
-		this.$scrollable.on( 'scroll.' + this.name, this.process );
+		$(window).on( 'scroll.' + this.name, process );
 
 		this.init();
+		process();
 	}
 
 	Scrollspy.prototype._setOptions = function( options_ ) {
@@ -79,7 +83,7 @@
 		var me = this,
 			$me = $(me.element);
 		
-		
+		me.refresh();
 	}
 
 	Scrollspy.prototype.refresh = function() {
@@ -106,13 +110,45 @@
 				me.offsets.push(this[0]);
 				me.targets.push(this[1]);
 			});
+
+			console.log(me.offsets, me.targets);
 	}
 
 	Scrollspy.prototype.process = function() {
-		var me = this,
-			$me = $(me.element);
+		var me = this
+		,	$me = $(me.element)
+		,	scrollTop = $(window).scrollTop() + me.options.offset
+		,	i;
 
-		console.log( 'process' );
+		for( i = 0; i < me.offsets.length - 1; i++ ) {
+			if( me.offsets[i] < scrollTop && scrollTop <= me.offsets[i+1] )
+				me.activate( me.targets[i] );
+			if( scrollTop > me.offsets[i+1] )
+				me.activate( me.targets[i+1] );
+		}
+	}
+
+	Scrollspy.prototype.activate = function( target_ ) {
+		var me = this
+		,	$me = $(me.element)
+		,	selector
+		,	active,
+			classes = me.options.animation ? '_active_ -mx-start' : '_active_';
+
+		me.active = target_;
+		
+		$me
+			.find( '._active_' )
+				.removeClass( classes );
+		
+		
+		
+		// selector = $(target_).data('target') || $(target_).attr('href');
+
+		$( '[data-target="'+ target_ +'"]' )
+					.addClass( classes );
+		
+		active = $('body').find( target_ ).trigger( 'activate' );
 	}
 
 	Scrollspy.prototype._getOtherInstanses = function( instanses_ ) {

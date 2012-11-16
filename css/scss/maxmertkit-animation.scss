@@ -120,6 +120,22 @@
 	}
 
 
+
+	// For affix scrollspy (jus if .-menu inside)
+	.-mx-affix-scrollspy  {
+		// @include perspective( 1000 );
+
+		li {
+			// @include transition( 1s transform linear);
+			@include transform-origin( right center 0 );
+
+			&.-mx-start {
+				// @include transform( rotateY(-45deg)  );
+				@include animation( .5s bubbleInKeyframes );
+			}
+		}
+	}
+
 }
 
 .no-cssanimations,
