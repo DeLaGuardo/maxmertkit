@@ -3,24 +3,9 @@
 	var _name = 'kit'
 	,	_defaults = {
 			enabled: true
-		,	onlyOne: false
 		,	animation: null
 		,	animationDuration: 0
-		,	template: '<div>'
-		,	content: null
-		,	header: null
 		,	theme: 'dark'
-		,	trigger: 'click'
-		,	delay: 0
-
-		,	beforeOpen: $.noop()
-		,	open: $.noop()
-		,	ifOpenedOrNot: $.noop()
-		,	ifNotOpened: $.noop()
-		,	beforeClose: $.noop()
-		,	close: $.noop()
-		,	ifClosedOrNot: $.noop()
-		,	ifNotClosed: $.noop()
 		}
 
 	$.kit = function(element, options) {

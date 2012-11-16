@@ -6,6 +6,15 @@
 		,	shaderClass: '-shader'
 		,	closerClass: '-closer'
 		// ,	template: '<div class="-modal"><div class="-modal-header"></div><div class="-modal-content"></div></div>'
+
+		,	beforeOpen: $.noop()
+		,	open: $.noop()
+		,	ifOpenedOrNot: $.noop()
+		,	ifNotOpened: $.noop()
+		,	beforeClose: $.noop()
+		,	close: $.noop()
+		,	ifClosedOrNot: $.noop()
+		,	ifNotClosed: $.noop()
 	}
 
 	Modal = function( element_, options_ ) {
