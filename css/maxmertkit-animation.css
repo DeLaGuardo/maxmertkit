@@ -8953,11 +8953,11 @@
     -ms-opacity: 1;
     -o-opacity: 1; }
 .cssanimations.csstransforms.csstransitions .-mx-blurIn {
-  transition: 1s filter ease, 1s opacity ease;
-  -webkit-transition: 1s -webkit-filter ease, 1s -webkit-opacity ease;
-  -moz-transition: 1s -moz-filter ease, 1s -moz-opacity ease;
-  -o-transition: 1s -o-filter ease, 1s -o-opacity ease;
-  -ms-transition: 1s -ms-filter ease, 1s -ms-opacity ease;
+  transition: 1s opacity ease, 1s filter ease;
+  -webkit-transition: 1s -webkit-opacity ease, 1s -webkit-filter ease;
+  -moz-transition: 1s -moz-opacity ease, 1s -moz-filter ease;
+  -o-transition: 1s -o-opacity ease, 1s -o-filter ease;
+  -ms-transition: 1s -ms-opacity ease, 1s -ms-filter ease;
   filter: blur(10px);
   -webkit-filter: blur(10px);
   -moz-filter: blur(10px);

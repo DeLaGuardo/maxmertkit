@@ -72,7 +72,7 @@
 	}
 
 	.-mx-blurIn {
-		@include transitions( 1s filter ease, 1s opacity ease );
+		@include transitions( 1s opacity ease, 1s filter ease );
 		@include filter( blur(10px) );
 		@include opacity( 0 );
 
