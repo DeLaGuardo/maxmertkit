@@ -55,8 +55,6 @@
 				me.offsets.push(this[0]);
 				me.targets.push(this[1]);
 			});
-
-			console.log(me.offsets, me.targets);
 	}
 
 	Scrollspy.prototype.process = function() {

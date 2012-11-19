@@ -5,6 +5,16 @@
 			itemsSelector: undefined 	// Priority!!! (if not set, then will search be data-<temsData>) You can use "data-<selector name>" to find elements everywhere in the document, or ".<class name>" and "#<id name>" to look for items inside tabs container.
 		,	itemsData: undefined			// All items are with data-tabs="<itemsData>"
 		,	dataTarget: 'tabs-target'		// Inside $item.data(<dataTarget>) we will find selector of the container with tab content.
+		,	trigger: 'click'
+
+		,	beforeOpen: $.noop()
+		,	open: $.noop()
+		,	ifOpenedOrNot: $.noop()
+		,	ifNotOpened: $.noop()
+		,	beforeClose: $.noop()
+		,	close: $.noop()
+		,	ifClosedOrNot: $.noop()
+		,	ifNotClosed: $.noop()
 		}
 
 	Tabs = function( element_, options_ ) {

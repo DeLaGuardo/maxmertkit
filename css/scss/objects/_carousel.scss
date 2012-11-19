@@ -1,0 +1,47 @@
+.#{$object__carousel} {
+	display: block;
+	overflow: hidden;
+	position: relative;
+	white-space: nowrap;
+	// height: 100px;
+
+	.#{$object__carousel__item} {
+		display: inline-block;
+		vertical-align: center;
+		text-align: center;
+		position: relative;
+		width: 100%;
+	}
+
+	.#{$object__carousel__arrow-left},
+	.#{$object__carousel__arrow-right} {
+		$height: 20px;
+		position: absolute;
+		top: 50%;
+		margin-top:-$height/2;
+		background-color: rgba(0,0,0,.3);
+		padding: $height 7px;
+		@include border-radius( 3px );
+		opacity: .4 ;
+		transition: opacity .3s linear;
+	}
+
+	.#{$object__carousel__arrow-left} {
+		left: 10px;
+	}
+
+	.#{$object__carousel__arrow-right} {
+		right: 10px;
+	}
+}
+
+.cssanimations.csstransforms.csstransitions {
+	.#{$object__carousel} {
+		.#{$object__carousel__arrow-left},
+		.#{$object__carousel__arrow-right} {
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}

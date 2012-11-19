@@ -3332,3 +3332,37 @@ input[type="button"]._unclickable_:active {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000; }
+
+.-carousel {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap; }
+  .-carousel .-carousel-item {
+    display: inline-block;
+    vertical-align: center;
+    text-align: center;
+    position: relative;
+    width: 100%; }
+  .-carousel .-carousel-arrow-left,
+  .-carousel .-carousel-arrow-right {
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px 7px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    opacity: .4;
+    transition: opacity .3s linear; }
+  .-carousel .-carousel-arrow-left {
+    left: 10px; }
+  .-carousel .-carousel-arrow-right {
+    right: 10px; }
+
+.cssanimations.csstransforms.csstransitions .-carousel .-carousel-arrow-left:hover,
+.cssanimations.csstransforms.csstransitions .-carousel .-carousel-arrow-right:hover {
+  opacity: 1; }
