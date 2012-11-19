@@ -201,9 +201,15 @@ $object__menu__separator: #{$object__menu}-separator;
 
 // ------------ Carousel
 $object__carousel: -carousel;
+$object__carousel-shadow: 0 2px 4px rgba(0,0,0,.3);
 $object__carousel__item: #{$object__carousel}-item;
 $object__carousel__arrow-left: #{$object__carousel}-arrow-left;
 $object__carousel__arrow-right: #{$object__carousel}-arrow-right;
+$object__carousel__caption: #{$object__carousel}-caption;
+$object__carousel__caption__title: #{$object__carousel__caption}-title;
+$object__carousel__caption__text: #{$object__carousel__caption}-text;
+$object__carousel__navigation: #{$object__carousel}-nav;
+$object__carousel__navigation-size: 7px;
 
 
 

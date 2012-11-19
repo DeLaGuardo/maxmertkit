@@ -50,7 +50,6 @@ sub {
   bottom: -0.25em;
 }
 img {
-  max-width: 100%;
   height: auto;
   vertical-align: middle;
   border: 0;

@@ -3,14 +3,18 @@
 	overflow: hidden;
 	position: relative;
 	white-space: nowrap;
-	// height: 100px;
+	height: 600px;
+	opacity: 0;
+	@include box-shadow($object__carousel-shadow);
 
 	.#{$object__carousel__item} {
 		display: inline-block;
-		vertical-align: center;
 		text-align: center;
 		position: relative;
+		top:0; left:0;
+		overflow: hidden;
 		width: 100%;
+		@include transition( .3s margin-left ease-out );
 	}
 
 	.#{$object__carousel__arrow-left},
@@ -22,8 +26,6 @@
 		background-color: rgba(0,0,0,.3);
 		padding: $height 7px;
 		@include border-radius( 3px );
-		opacity: .4 ;
-		transition: opacity .3s linear;
 	}
 
 	.#{$object__carousel__arrow-left} {
@@ -33,15 +35,60 @@
 	.#{$object__carousel__arrow-right} {
 		right: 10px;
 	}
-}
 
-.cssanimations.csstransforms.csstransitions {
-	.#{$object__carousel} {
-		.#{$object__carousel__arrow-left},
-		.#{$object__carousel__arrow-right} {
-			&:hover {
-				opacity: 1;
-			}
+	.#{$object__carousel__caption} {
+		position: absolute;
+		left: 0; right: 0;
+		bottom: 0;
+		padding: 15px;
+		text-align: left;
+		color: white;
+
+		h1, h2, h3, h4, h5, h6 {
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: white;
+		}
+
+		& > * {
+			opacity: 0;
 		}
 	}
+
+	.#{$object__carousel__navigation} {
+		position: absolute;
+		left: 0; right: 0;
+		bottom: 0;
+		text-align: center;
+		padding: 5px;
+
+		i {
+			margin: 0 2px;
+			display: inline-block;
+			width: $object__carousel__navigation-size;
+			height: $object__carousel__navigation-size;
+			@include border-radius( $object__carousel__navigation-size / 2 );
+			@include box-shadow( inset 0 2px 1px rgba(0,0,0,.2) );
+			cursor: pointer;
+		}
+	}
+
+	&.#{$mod__side-top} .#{$object__carousel__navigation} {
+		bottom: inherit;
+		top: 0;
+	}
 }
+
+$__inheritance: object;
+$__before-object: '';
+$__object: '.#{$object__carousel}';
+$__after-object: '.#{$object__carousel__navigation} i';
+@include set_modificator(only-items($mod__status, $mod__status__disabled, default), background-color);
+
+$__inheritance: object;
+$__before-object: '';
+$__object: '.#{$object__carousel}';
+$__after-object: '.#{$object__carousel__navigation} i.#{$mod__active}';
+@include set_modificator(exclude-items($mod__status, $mod__status__disabled, default), background-color);

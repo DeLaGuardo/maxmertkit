@@ -92,7 +92,7 @@ input[type="button"]._unclickable_.-unstyled-:active, .-group .-group-appendix.-
 .-tooltip.-unstyled- .-arrow {
   border-color: transparent; }
 
-.-dropdown.-unstyled-, .-modal.-unstyled- {
+.-dropdown.-unstyled-, .-modal.-unstyled-, .-carousel.-unstyled- .-carousel-nav i._active_ {
   background-color: transparent; }
 
 .-group .-group-appendix.-unstyled-, .-group.-unstyled- .-group-appendix {
@@ -248,7 +248,7 @@ input[type="button"]._unclickable_:active, .-group .-group-appendix, .-group inp
 .-tooltip .-arrow {
   border-color: #999999; }
 
-.-dropdown, .-modal {
+.-dropdown, .-modal, .-carousel .-carousel-nav i {
   background-color: #fbfbfb; }
 
 .-group .-group-appendix {
@@ -419,6 +419,9 @@ input[type="button"]._unclickable_.-error-:active, .-group .-group-appendix.-err
 
 .-tooltip.-error- .-arrow {
   border-color: #982525; }
+
+.-carousel.-error- .-carousel-nav i._active_ {
+  background-color: #da4a39; }
 
 .-group .-group-appendix.-error-, .-group.-error- .-group-appendix {
   background-color: #ea998f; }
@@ -606,6 +609,9 @@ input[type="button"]._unclickable_.-success-:active, .-group .-group-appendix.-s
 .-tooltip.-success- .-arrow {
   border-color: #1e6925; }
 
+.-carousel.-success- .-carousel-nav i._active_ {
+  background-color: #3ec84c; }
+
 .-group .-group-appendix.-success-, .-group.-success- .-group-appendix {
   background-color: #8ddf96; }
 
@@ -791,6 +797,9 @@ input[type="button"]._unclickable_.-info-:active, .-group .-group-appendix.-info
 
 .-tooltip.-info- .-arrow {
   border-color: #258e98; }
+
+.-carousel.-info- .-carousel-nav i._active_ {
+  background-color: #64cfd9; }
 
 .-group .-group-appendix.-info-, .-group.-info- .-group-appendix {
   background-color: #b6e8ed; }
@@ -978,6 +987,9 @@ input[type="button"]._unclickable_.-warning-:active, .-group .-group-appendix.-w
 .-tooltip.-warning- .-arrow {
   border-color: #986b25; }
 
+.-carousel.-warning- .-carousel-nav i._active_ {
+  background-color: #edb723; }
+
 .-group .-group-appendix.-warning-, .-group.-warning- .-group-appendix {
   background-color: #f5d681; }
 
@@ -1163,6 +1175,9 @@ input[type="button"]._unclickable_.-primary-:active, .-group .-group-appendix.-p
 
 .-tooltip.-primary- .-arrow {
   border-color: #0d4065; }
+
+.-carousel.-primary- .-carousel-nav i._active_ {
+  background-color: #1b88d6; }
 
 .-group .-group-appendix.-primary-, .-group.-primary- .-group-appendix {
   background-color: #6bb6ec; }
@@ -1350,6 +1365,9 @@ input[type="button"]._unclickable_.-dark-:active, .-group .-group-appendix.-dark
 .-tooltip.-dark- .-arrow {
   border-color: #525252; }
 
+.-carousel.-dark- .-carousel-nav i._active_ {
+  background-color: #6b6b6b; }
+
 .-group .-group-appendix.-dark-, .-group.-dark- .-group-appendix {
   background-color: #9e9e9e; }
 
@@ -1530,6 +1548,9 @@ input[type="button"]._unclickable_.-disabled-:active, .-group .-group-appendix.-
 
 .-tabs.-disabled- li:active a, .-tabs.-disabled- li._active_ a {
   border-color: silver!important; }
+
+.-carousel.-disabled- .-carousel-nav i {
+  background-color: #f3f3f3!important; }
 
 .-group .-group-appendix.-disabled-, .-group.-disabled- .-group-appendix {
   background-color: #f3f3f3!important; }
@@ -3337,13 +3358,27 @@ input[type="button"]._unclickable_:active {
   display: block;
   overflow: hidden;
   position: relative;
-  white-space: nowrap; }
+  white-space: nowrap;
+  height: 600px;
+  opacity: 0;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
   .-carousel .-carousel-item {
     display: inline-block;
-    vertical-align: center;
     text-align: center;
     position: relative;
-    width: 100%; }
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    transition: 0.3s margin-left ease-out;
+    -webkit-transition: 0.3s margin-left ease-out;
+    -moz-transition: 0.3s margin-left ease-out;
+    -ms-transition: 0.3s margin-left ease-out;
+    -o-transition: 0.3s margin-left ease-out; }
   .-carousel .-carousel-arrow-left,
   .-carousel .-carousel-arrow-right {
     position: absolute;
@@ -3355,14 +3390,48 @@ input[type="button"]._unclickable_:active {
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
-    border-radius: 3px;
-    opacity: .4;
-    transition: opacity .3s linear; }
+    border-radius: 3px; }
   .-carousel .-carousel-arrow-left {
     left: 10px; }
   .-carousel .-carousel-arrow-right {
     right: 10px; }
-
-.cssanimations.csstransforms.csstransitions .-carousel .-carousel-arrow-left:hover,
-.cssanimations.csstransforms.csstransitions .-carousel .-carousel-arrow-right:hover {
-  opacity: 1; }
+  .-carousel .-carousel-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 15px;
+    text-align: left;
+    color: white; }
+    .-carousel .-carousel-caption h1, .-carousel .-carousel-caption h2, .-carousel .-carousel-caption h3, .-carousel .-carousel-caption h4, .-carousel .-carousel-caption h5, .-carousel .-carousel-caption h6 {
+      margin-bottom: 5px; }
+    .-carousel .-carousel-caption a {
+      color: white; }
+    .-carousel .-carousel-caption > * {
+      opacity: 0; }
+  .-carousel .-carousel-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    padding: 5px; }
+    .-carousel .-carousel-nav i {
+      margin: 0 2px;
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      -webkit-border-radius: 3.5px;
+      -moz-border-radius: 3.5px;
+      -ms-border-radius: 3.5px;
+      -o-border-radius: 3.5px;
+      border-radius: 3.5px;
+      -webkit-box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+      -ms-box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+      -o-box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+      cursor: pointer; }
+  .-carousel._top_ .-carousel-nav {
+    bottom: inherit;
+    top: 0; }
