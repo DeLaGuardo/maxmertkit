@@ -2,24 +2,25 @@
 
 	var _name = 'carousel'
 	,	_defaults = {
-			interval: 5000
-		,	pauseOn: 'hover click'
+			navigation: false
+		,	navigationPlacement: undefined
+		,	theme: 'info'
+
 		,	itemSelector: '.js-carousel-item'
 		,	controlSelector: '.js-carousel-control'
 		,	hideControls: true
 		,	hideControlsDistance: 200
 		,	animation: true
+
+		,	slideshow: true
+		,	interval: 15000
 		
-		,	imageFill: true
+		,	imageFill: false
 		,	imageShowAnimation: true
 		,	imageShowInterval: 20000
 
 		,	captionAnimation: 'blurIn'
 		,	captionAnimationDelay: 1000
-
-		,	navigation: true
-		,	navigationPlacement: undefined
-		,	theme: 'info'
 		}
 
 	Carousel = function(element, options) {
@@ -29,17 +30,6 @@
 		
 		this.element = element;
 		this.controls = $([]);
-		
-		this.navigation = $('<div class="-carousel-nav"></div>');
-		this.navigation.hide();
-		$(this.element).append( this.navigation );
-		this.navigation.on( 'click.' + this.name, function( event_ ) {
-			if( $(event_.target).is('i') ) {
-				var _oldActive = me.active;
-				me.active = $(event_.target).index();
-				me.slideAnimate( _oldActive );
-			}
-		});
 		
 		this.active = 0;
 		this.options = $.extend({}, _defaults, options);
@@ -65,10 +55,11 @@
 					});
 				me.controls = $([]);
 				_controls.each( function( index_, item_ ) {
-					$(document).find( $(item_).attr( 'href' ) )[0] === $(me.element)[0] &&  me.controls.push( $(item_) ) ;
+					$(document).find( $(item_).attr( 'href' ) )[0] === $(me.element)[0] && me.controls.push( $(item_) ) ;
 				});
 				me.controls.each( function( index_, control_ ) {
-					control_.on( 'click.' + me.name,  function( event_ ) { $.proxy( me.slide( control_ ), me ); event_.preventDefault() });
+					control_.fadeOut();
+					control_.on( 'click.' + me.name,  function( event_ ) { event_.preventDefault() });
 				});
 			break;
 
@@ -88,6 +79,8 @@
 					if( value_ && me.images ) {
 						var carouselHeight = $me.innerHeight()
 						,	carouselWidth = $me.innerWidth();
+
+						$me.addClass( '-carousel-imageFill' );
 
 						$.each( me.items, function( index_, item_ ) {
 							$(item_).css({height: '100%'});
@@ -123,7 +116,8 @@
 
 			case 'theme':
 				$me.removeClass( '-' + me.options.theme + '-' );
-				$me.addClass( '-' + value_ + '-' )
+				$me.addClass( '-' + value_ + '-' );
+				me.navigation.addClass( '-' + value_ + '-' )
 			break;
 
 			case 'enabled':
@@ -131,11 +125,38 @@
 			break;
 
 			case 'navigation':
-				me.options.navigation && me.navigation.fadeIn();
+				if( typeof value_ === 'boolean' ) {
+					me.navigation = $('<div class="-carousel-nav"></div>');
+					me.navigation.hide();
+					$(me.element).append( me.navigation );
+				}
+
+				if( typeof value_ === 'string' ) {
+					me.navigation = $( value_ );
+					me.navigation.hide();
+				}
+
+				me.navigation.on( 'click.' + this.name, function( event_ ) {
+					if( $(event_.target).is('i') ) {
+						var _oldActive = me.active;
+						me.active = $(event_.target).index();
+						me.slideAnimate( _oldActive );
+					}
+				});
+
+				value_ && me.navigation.fadeIn();
 			break;
 
 			case 'navigationPlacement':
-				me.options.navigationPlacement && $me.addClass( '_' + value_ + '_' );
+				value_ && $me.addClass( '_' + value_ + '_' );
+			break;
+
+			case 'slideshow':
+				if( value_ ) {
+					me.slideshow = setInterval( function() { $.proxy( me.setActive('next'), me ) }, me.options.interval );
+					$me.on( 'mouseenter', function() { clearInterval( me.slideshow ) });
+					$me.on( 'mouseleave', function() { me.slideshow = setInterval( function() { $.proxy( me.setActive('next'), me ) }, me.options.interval ); } );
+				}
 			break;
 		}
 
@@ -149,6 +170,12 @@
 		$me.on( 'addItem', me.__setOption( 'itemSelector', me.options.itemSelector ) );
 		// TODO: Check if it works
 		
+		$me.on( 'click.' + me.name, function() {
+			for( var i = 0; i < me.controls.length; i++ ) {
+				me.controls[i].is(':visible') && me.slide( me.controls[i] );
+			}
+		});
+
 		setTimeout($.proxy(me.slideAnimate, me), 200);
 		$me.imagesLoaded( function() { $me.animate({ opacity: 1 }) });
 	}
@@ -174,16 +201,21 @@
 		var me = this
 		,	$me = $(me.element)
 		,	_btn = $(control_)
-		,	_direction = _btn.data( 'slide' )
+		,	_direction = _btn.data( 'slide' );
+
+		me.setActive( _direction );
+	}
+
+	Carousel.prototype.setActive = function( direction_ ) {
+		var me = this
+		,	$me = $(me.element)
 		,	_oldActive = me.active;
 
-		// me.clearImageShow();
-
-		if( _direction === 'next' )
+		if( direction_ === 'next' )
 			me.active === me.items.length-1 ? me.active = 0 : me.active++;
-		if( _direction === 'prev' )
+		if( direction_ === 'prev' )
 			me.active === 0 ? me.active = me.items.length-1 : me.active--;
-		
+
 		me.slideAnimate( _oldActive );
 	}
 
@@ -217,25 +249,27 @@
 		,	deltaHeight = $me.innerHeight() - image.height()
 		,	deltaWidth = $me.innerWidth() - image.width();
 
-		$me.imagesLoaded( function() {
-			setTimeout(function(){
-				oldImage.stop().css({ top:0, left:0 }); 
-				$.each( me.captions[ old_ ], function( index__, caption__ ) {
-					switch( me.options.captionAnimation ) {
-						case true:
-							setTimeout(function(){
-								$(caption__).stop().animate({opacity:0});
-							}, me.options.captionAnimationDelay * (index__ + 1));
-						break;
 
-						case 'blurIn':
-							setTimeout(function(){
-								$(caption__).removeClass( '-mx-start' );
-							}, me.options.captionAnimationDelay * (index__ + 1));
-						break;
-					}
-				});
-			}, 1000);
+		setTimeout(function(){
+			oldImage && oldImage.stop().css({ top:0, left:0 }); 
+			old_ && $.each( me.captions[ old_ ], function( index__, caption__ ) {
+				switch( me.options.captionAnimation ) {
+					case true:
+						setTimeout(function(){
+							$(caption__).stop().animate({opacity:0});
+						}, me.options.captionAnimationDelay * (index__ + 1));
+					break;
+
+					case 'blurIn':
+						setTimeout(function(){
+							$(caption__).removeClass( '-mx-start' );
+						}, me.options.captionAnimationDelay * (index__ + 1));
+					break;
+				}
+			});
+		}, 1000);
+
+		me.options.imageFill && me.options.imageShowAnimation && $me.imagesLoaded( function() {
 
 			switch( me.options.imageShowAnimation ) {
 				case 'scrollDown':
@@ -271,13 +305,13 @@
 		
 	}
 
-	Carousel.prototype.setActive = function() {
-		var me = this
-		,	$me = $(me.element);
+	// Carousel.prototype.setActive = function() {
+	// 	var me = this
+	// 	,	$me = $(me.element);
 
-		$me.find( me.options.itemSelector + '._active_' ).removeClass( '_active_' );
-		me.items.eq( me.active ).addClass( '_active_' );
-	}
+	// 	$me.find( me.options.itemSelector + '._active_' ).removeClass( '_active_' );
+	// 	me.items.eq( me.active ).addClass( '_active_' );
+	// }
 
 	$.fn[_name] = function( options_ ) {
 		return this.each(function() {

@@ -54,7 +54,7 @@ input[type="button"].-unstyled-, button._unclickable_.-unstyled-, button._unclic
 .-btn._unclickable_.-unstyled-:active,
 input[type="button"]._unclickable_.-unstyled-,
 input[type="button"]._unclickable_.-unstyled-:hover,
-input[type="button"]._unclickable_.-unstyled-:active, .-group .-group-appendix.-unstyled-, .-group.-unstyled- .-group-appendix, .-group.-unstyled- button, .-group.-unstyled- input[type="button"], .-group.-unstyled- .-btn, .-tabs.-unstyled- li a:hover, .-tabs.-unstyled- li:active a, .-tabs.-unstyled- li._active_ a, .-dropdown.-unstyled-, .-menu.-unstyled- li:hover > a, .-menu.-unstyled- > li._active_ > a, .-menu.-unstyled- > li > a:active, .-modal.-unstyled- {
+input[type="button"]._unclickable_.-unstyled-:active, .-group .-group-appendix.-unstyled-, .-group.-unstyled- .-group-appendix, .-group.-unstyled- button, .-group.-unstyled- input[type="button"], .-group.-unstyled- .-btn, .-tabs.-unstyled- li a:hover, .-tabs.-unstyled- li:active a, .-tabs.-unstyled- li._active_ a, .-dropdown.-unstyled-, .-menu.-unstyled- li:hover > a, .-menu.-unstyled- > li._active_ > a, .-menu.-unstyled- > li > a:active, .-modal.-unstyled-, .-progress.-unstyled- .-progress-bar, .-progress .-progress-bar.-unstyled-, .-progress .-progress-bar-global.-unstyled- {
   color: #333333; }
 
 button.-unstyled-,
@@ -65,7 +65,7 @@ input[type="button"].-unstyled-, button._unclickable_.-unstyled-, button._unclic
 .-btn._unclickable_.-unstyled-:active,
 input[type="button"]._unclickable_.-unstyled-,
 input[type="button"]._unclickable_.-unstyled-:hover,
-input[type="button"]._unclickable_.-unstyled-:active, .-group .-group-appendix.-unstyled-, .-group.-unstyled- .-group-appendix, .-group.-unstyled- button, .-group.-unstyled- input[type="button"], .-group.-unstyled- .-btn, .-tabs.-unstyled- li a:hover, .-tabs.-unstyled- li:active a, .-tabs.-unstyled- li._active_ a, .-dropdown.-unstyled- > .-dropdown-header, .-tooltip.-unstyled-, .-menu.-unstyled- li:hover > a, .-menu.-unstyled- > li._active_ > a, .-menu.-unstyled- > li > a:active, .-modal.-unstyled- > .-modal-header {
+input[type="button"]._unclickable_.-unstyled-:active, .-group .-group-appendix.-unstyled-, .-group.-unstyled- .-group-appendix, .-group.-unstyled- button, .-group.-unstyled- input[type="button"], .-group.-unstyled- .-btn, .-tabs.-unstyled- li a:hover, .-tabs.-unstyled- li:active a, .-tabs.-unstyled- li._active_ a, .-dropdown.-unstyled- > .-dropdown-header, .-tooltip.-unstyled-, .-menu.-unstyled- li:hover > a, .-menu.-unstyled- > li._active_ > a, .-menu.-unstyled- > li > a:active, .-modal.-unstyled- > .-modal-header, .-progress.-unstyled- .-progress-bar, .-progress .-progress-bar.-unstyled-, .-progress .-progress-bar-global.-unstyled- {
   -webkit-text-shadow: none;
   -moz-text-shadow: none;
   -ms-text-shadow: none;
@@ -92,7 +92,7 @@ input[type="button"]._unclickable_.-unstyled-:active, .-group .-group-appendix.-
 .-tooltip.-unstyled- .-arrow {
   border-color: transparent; }
 
-.-dropdown.-unstyled-, .-modal.-unstyled-, .-carousel.-unstyled- .-carousel-nav i._active_ {
+.-dropdown.-unstyled-, .-modal.-unstyled-, .-carousel.-unstyled- .-carousel-nav i._active_, .-carousel-nav.-unstyled- i._active_, .-progress.-unstyled- .-progress-bar, .-progress .-progress-bar.-unstyled-, .-progress .-progress-bar-global.-unstyled- {
   background-color: transparent; }
 
 .-group .-group-appendix.-unstyled-, .-group.-unstyled- .-group-appendix {
@@ -176,7 +176,7 @@ input[type="button"]._loading_.-dark-.-unstyled-, .-tabs li._loading_.-unstyled-
 
 button._loading_.-unstyled-,
 .-btn._loading_.-unstyled-,
-input[type="button"]._loading_.-unstyled-, .-group._loading_ button.-unstyled-, .-group._loading_ input[type="button"].-unstyled-, .-group._loading_ .-btn.-unstyled-, .-menu > li._loading_.-unstyled- > a {
+input[type="button"]._loading_.-unstyled-, .-group._loading_ button.-unstyled-, .-group._loading_ input[type="button"].-unstyled-, .-group._loading_ .-btn.-unstyled-, .-menu > li._loading_.-unstyled- > a, .-progress._loading_.-unstyled- .-progress-bar {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.1, rgba(0, 0, 0, 0.1)), color-stop(0.1, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(0, 0, 0, 0.1)), color-stop(0.75, rgba(0, 0, 0, 0.1)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
@@ -210,7 +210,7 @@ input[type="button"], button._unclickable_, button._unclickable_:hover, button._
 .-btn._unclickable_:active,
 input[type="button"]._unclickable_,
 input[type="button"]._unclickable_:hover,
-input[type="button"]._unclickable_:active, .-group .-group-appendix, .-group button, .-group input[type="button"], .-group .-btn, .-tabs li a:hover, .-tabs li:active a, .-tabs li._active_ a, .-dropdown, .-menu li:hover > a, .-menu > li._active_ > a, .-menu > li > a:active, .-modal {
+input[type="button"]._unclickable_:active, .-group .-group-appendix, .-group button, .-group input[type="button"], .-group .-btn, .-tabs li a:hover, .-tabs li:active a, .-tabs li._active_ a, .-dropdown, .-menu li:hover > a, .-menu > li._active_ > a, .-menu > li > a:active, .-modal, .-progress .-progress-bar, .-progress .-progress-bar-global {
   color: #333333; }
 
 button,
@@ -221,7 +221,7 @@ input[type="button"], button._unclickable_, button._unclickable_:hover, button._
 .-btn._unclickable_:active,
 input[type="button"]._unclickable_,
 input[type="button"]._unclickable_:hover,
-input[type="button"]._unclickable_:active, .-group .-group-appendix, .-group button, .-group input[type="button"], .-group .-btn, .-tabs li a:hover, .-tabs li:active a, .-tabs li._active_ a, .-dropdown > .-dropdown-header, .-tooltip, .-menu li:hover > a, .-menu > li._active_ > a, .-menu > li > a:active, .-modal > .-modal-header {
+input[type="button"]._unclickable_:active, .-group .-group-appendix, .-group button, .-group input[type="button"], .-group .-btn, .-tabs li a:hover, .-tabs li:active a, .-tabs li._active_ a, .-dropdown > .-dropdown-header, .-tooltip, .-menu li:hover > a, .-menu > li._active_ > a, .-menu > li > a:active, .-modal > .-modal-header, .-progress .-progress-bar, .-progress .-progress-bar-global {
   -webkit-text-shadow: 0 1px 0 rgba(255,255,255,1);
   -moz-text-shadow: 0 1px 0 rgba(255,255,255,1);
   -ms-text-shadow: 0 1px 0 rgba(255,255,255,1);
@@ -248,7 +248,7 @@ input[type="button"]._unclickable_:active, .-group .-group-appendix, .-group inp
 .-tooltip .-arrow {
   border-color: #999999; }
 
-.-dropdown, .-modal, .-carousel .-carousel-nav i {
+.-dropdown, .-modal, .-carousel .-carousel-nav i._active_, .-carousel-nav i._active_, .-progress, .-progress .-progress-bar, .-progress .-progress-bar-global {
   background-color: #fbfbfb; }
 
 .-group .-group-appendix {
@@ -256,7 +256,7 @@ input[type="button"]._unclickable_:active, .-group .-group-appendix, .-group inp
 
 button:hover,
 .-btn:hover,
-input[type="button"]:hover, .-group button:hover, .-group input[type="button"]:hover, .-group .-btn:hover, .-tabs li a:hover, .-dropdown > .-dropdown-header, .-menu li:hover > a, .-modal > .-modal-header {
+input[type="button"]:hover, .-group button:hover, .-group input[type="button"]:hover, .-group .-btn:hover, .-tabs li a:hover, .-dropdown > .-dropdown-header, .-menu li:hover > a, .-modal > .-modal-header, .-progress .-progress-bar {
   background-color: #eeeeee; }
 
 button:active, button._active_,
@@ -348,7 +348,7 @@ input[type="button"]._loading_.-dark-, .-tabs li._loading_ a, .-tabs._loading_ l
 
 button._loading_,
 .-btn._loading_,
-input[type="button"]._loading_, .-group._loading_ button, .-group._loading_ input[type="button"], .-group._loading_ .-btn, .-menu > li._loading_ > a {
+input[type="button"]._loading_, .-group._loading_ button, .-group._loading_ input[type="button"], .-group._loading_ .-btn, .-menu > li._loading_ > a, .-progress._loading_ .-progress-bar {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.1, rgba(0, 0, 0, 0.1)), color-stop(0.1, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(0, 0, 0, 0.1)), color-stop(0.75, rgba(0, 0, 0, 0.1)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
@@ -382,7 +382,7 @@ input[type="button"].-error-, button._unclickable_.-error-, button._unclickable_
 .-btn._unclickable_.-error-:active,
 input[type="button"]._unclickable_.-error-,
 input[type="button"]._unclickable_.-error-:hover,
-input[type="button"]._unclickable_.-error-:active, .-group .-group-appendix.-error-, .-group.-error- .-group-appendix, .-group.-error- button, .-group.-error- input[type="button"], .-group.-error- .-btn, .-tabs.-error- li a:hover, .-tabs.-error- li:active a, .-tabs.-error- li._active_ a, .-menu.-error- li:hover > a, .-menu.-error- > li._active_ > a, .-menu.-error- > li > a:active {
+input[type="button"]._unclickable_.-error-:active, .-group .-group-appendix.-error-, .-group.-error- .-group-appendix, .-group.-error- button, .-group.-error- input[type="button"], .-group.-error- .-btn, .-tabs.-error- li a:hover, .-tabs.-error- li:active a, .-tabs.-error- li._active_ a, .-menu.-error- li:hover > a, .-menu.-error- > li._active_ > a, .-menu.-error- > li > a:active, .-progress.-error- .-progress-bar, .-progress .-progress-bar.-error-, .-progress .-progress-bar-global.-error- {
   color: white; }
 
 button.-error-,
@@ -393,7 +393,7 @@ input[type="button"].-error-, button._unclickable_.-error-, button._unclickable_
 .-btn._unclickable_.-error-:active,
 input[type="button"]._unclickable_.-error-,
 input[type="button"]._unclickable_.-error-:hover,
-input[type="button"]._unclickable_.-error-:active, .-group .-group-appendix.-error-, .-group.-error- .-group-appendix, .-group.-error- button, .-group.-error- input[type="button"], .-group.-error- .-btn, .-tabs.-error- li a:hover, .-tabs.-error- li:active a, .-tabs.-error- li._active_ a, .-dropdown.-error- > .-dropdown-header, .-tooltip.-error-, .-menu.-error- li:hover > a, .-menu.-error- > li._active_ > a, .-menu.-error- > li > a:active, .-modal.-error- > .-modal-header {
+input[type="button"]._unclickable_.-error-:active, .-group .-group-appendix.-error-, .-group.-error- .-group-appendix, .-group.-error- button, .-group.-error- input[type="button"], .-group.-error- .-btn, .-tabs.-error- li a:hover, .-tabs.-error- li:active a, .-tabs.-error- li._active_ a, .-dropdown.-error- > .-dropdown-header, .-tooltip.-error-, .-menu.-error- li:hover > a, .-menu.-error- > li._active_ > a, .-menu.-error- > li > a:active, .-modal.-error- > .-modal-header, .-progress.-error- .-progress-bar, .-progress .-progress-bar.-error-, .-progress .-progress-bar-global.-error- {
   -webkit-text-shadow: 0 -1px rgba(0,0,0,.3);
   -moz-text-shadow: 0 -1px rgba(0,0,0,.3);
   -ms-text-shadow: 0 -1px rgba(0,0,0,.3);
@@ -420,7 +420,7 @@ input[type="button"]._unclickable_.-error-:active, .-group .-group-appendix.-err
 .-tooltip.-error- .-arrow {
   border-color: #982525; }
 
-.-carousel.-error- .-carousel-nav i._active_ {
+.-carousel.-error- .-carousel-nav i._active_, .-carousel-nav.-error- i._active_, .-progress.-error- .-progress-bar, .-progress .-progress-bar.-error-, .-progress .-progress-bar-global.-error- {
   background-color: #da4a39; }
 
 .-group .-group-appendix.-error-, .-group.-error- .-group-appendix {
@@ -537,7 +537,7 @@ input[type="button"]._loading_.-dark-.-error-, .-tabs li._loading_.-error- a, .-
 
 button._loading_.-error-,
 .-btn._loading_.-error-,
-input[type="button"]._loading_.-error-, .-group._loading_ button.-error-, .-group._loading_ input[type="button"].-error-, .-group._loading_ .-btn.-error-, .-menu > li._loading_.-error- > a {
+input[type="button"]._loading_.-error-, .-group._loading_ button.-error-, .-group._loading_ input[type="button"].-error-, .-group._loading_ .-btn.-error-, .-menu > li._loading_.-error- > a, .-progress._loading_.-error- .-progress-bar {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.1, rgba(0, 0, 0, 0.1)), color-stop(0.1, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(0, 0, 0, 0.1)), color-stop(0.75, rgba(0, 0, 0, 0.1)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
@@ -571,7 +571,7 @@ input[type="button"].-success-, button._unclickable_.-success-, button._unclicka
 .-btn._unclickable_.-success-:active,
 input[type="button"]._unclickable_.-success-,
 input[type="button"]._unclickable_.-success-:hover,
-input[type="button"]._unclickable_.-success-:active, .-group .-group-appendix.-success-, .-group.-success- .-group-appendix, .-group.-success- button, .-group.-success- input[type="button"], .-group.-success- .-btn, .-tabs.-success- li a:hover, .-tabs.-success- li:active a, .-tabs.-success- li._active_ a, .-menu.-success- li:hover > a, .-menu.-success- > li._active_ > a, .-menu.-success- > li > a:active {
+input[type="button"]._unclickable_.-success-:active, .-group .-group-appendix.-success-, .-group.-success- .-group-appendix, .-group.-success- button, .-group.-success- input[type="button"], .-group.-success- .-btn, .-tabs.-success- li a:hover, .-tabs.-success- li:active a, .-tabs.-success- li._active_ a, .-menu.-success- li:hover > a, .-menu.-success- > li._active_ > a, .-menu.-success- > li > a:active, .-progress.-success- .-progress-bar, .-progress .-progress-bar.-success-, .-progress .-progress-bar-global.-success- {
   color: white; }
 
 button.-success-,
@@ -582,7 +582,7 @@ input[type="button"].-success-, button._unclickable_.-success-, button._unclicka
 .-btn._unclickable_.-success-:active,
 input[type="button"]._unclickable_.-success-,
 input[type="button"]._unclickable_.-success-:hover,
-input[type="button"]._unclickable_.-success-:active, .-group .-group-appendix.-success-, .-group.-success- .-group-appendix, .-group.-success- button, .-group.-success- input[type="button"], .-group.-success- .-btn, .-tabs.-success- li a:hover, .-tabs.-success- li:active a, .-tabs.-success- li._active_ a, .-dropdown.-success- > .-dropdown-header, .-tooltip.-success-, .-menu.-success- li:hover > a, .-menu.-success- > li._active_ > a, .-menu.-success- > li > a:active, .-modal.-success- > .-modal-header {
+input[type="button"]._unclickable_.-success-:active, .-group .-group-appendix.-success-, .-group.-success- .-group-appendix, .-group.-success- button, .-group.-success- input[type="button"], .-group.-success- .-btn, .-tabs.-success- li a:hover, .-tabs.-success- li:active a, .-tabs.-success- li._active_ a, .-dropdown.-success- > .-dropdown-header, .-tooltip.-success-, .-menu.-success- li:hover > a, .-menu.-success- > li._active_ > a, .-menu.-success- > li > a:active, .-modal.-success- > .-modal-header, .-progress.-success- .-progress-bar, .-progress .-progress-bar.-success-, .-progress .-progress-bar-global.-success- {
   -webkit-text-shadow: 0 -1px rgba(0,0,0,.3);
   -moz-text-shadow: 0 -1px rgba(0,0,0,.3);
   -ms-text-shadow: 0 -1px rgba(0,0,0,.3);
@@ -609,7 +609,7 @@ input[type="button"]._unclickable_.-success-:active, .-group .-group-appendix.-s
 .-tooltip.-success- .-arrow {
   border-color: #1e6925; }
 
-.-carousel.-success- .-carousel-nav i._active_ {
+.-carousel.-success- .-carousel-nav i._active_, .-carousel-nav.-success- i._active_, .-progress.-success- .-progress-bar, .-progress .-progress-bar.-success-, .-progress .-progress-bar-global.-success- {
   background-color: #3ec84c; }
 
 .-group .-group-appendix.-success-, .-group.-success- .-group-appendix {
@@ -726,7 +726,7 @@ input[type="button"]._loading_.-dark-.-success-, .-tabs li._loading_.-success- a
 
 button._loading_.-success-,
 .-btn._loading_.-success-,
-input[type="button"]._loading_.-success-, .-group._loading_ button.-success-, .-group._loading_ input[type="button"].-success-, .-group._loading_ .-btn.-success-, .-menu > li._loading_.-success- > a {
+input[type="button"]._loading_.-success-, .-group._loading_ button.-success-, .-group._loading_ input[type="button"].-success-, .-group._loading_ .-btn.-success-, .-menu > li._loading_.-success- > a, .-progress._loading_.-success- .-progress-bar {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.1, rgba(0, 0, 0, 0.1)), color-stop(0.1, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(0, 0, 0, 0.1)), color-stop(0.75, rgba(0, 0, 0, 0.1)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
@@ -760,7 +760,7 @@ input[type="button"].-info-, button._unclickable_.-info-, button._unclickable_.-
 .-btn._unclickable_.-info-:active,
 input[type="button"]._unclickable_.-info-,
 input[type="button"]._unclickable_.-info-:hover,
-input[type="button"]._unclickable_.-info-:active, .-group .-group-appendix.-info-, .-group.-info- .-group-appendix, .-group.-info- button, .-group.-info- input[type="button"], .-group.-info- .-btn, .-tabs.-info- li a:hover, .-tabs.-info- li:active a, .-tabs.-info- li._active_ a, .-menu.-info- li:hover > a, .-menu.-info- > li._active_ > a, .-menu.-info- > li > a:active {
+input[type="button"]._unclickable_.-info-:active, .-group .-group-appendix.-info-, .-group.-info- .-group-appendix, .-group.-info- button, .-group.-info- input[type="button"], .-group.-info- .-btn, .-tabs.-info- li a:hover, .-tabs.-info- li:active a, .-tabs.-info- li._active_ a, .-menu.-info- li:hover > a, .-menu.-info- > li._active_ > a, .-menu.-info- > li > a:active, .-progress.-info- .-progress-bar, .-progress .-progress-bar.-info-, .-progress .-progress-bar-global.-info- {
   color: white; }
 
 button.-info-,
@@ -771,7 +771,7 @@ input[type="button"].-info-, button._unclickable_.-info-, button._unclickable_.-
 .-btn._unclickable_.-info-:active,
 input[type="button"]._unclickable_.-info-,
 input[type="button"]._unclickable_.-info-:hover,
-input[type="button"]._unclickable_.-info-:active, .-group .-group-appendix.-info-, .-group.-info- .-group-appendix, .-group.-info- button, .-group.-info- input[type="button"], .-group.-info- .-btn, .-tabs.-info- li a:hover, .-tabs.-info- li:active a, .-tabs.-info- li._active_ a, .-dropdown.-info- > .-dropdown-header, .-tooltip.-info-, .-menu.-info- li:hover > a, .-menu.-info- > li._active_ > a, .-menu.-info- > li > a:active, .-modal.-info- > .-modal-header {
+input[type="button"]._unclickable_.-info-:active, .-group .-group-appendix.-info-, .-group.-info- .-group-appendix, .-group.-info- button, .-group.-info- input[type="button"], .-group.-info- .-btn, .-tabs.-info- li a:hover, .-tabs.-info- li:active a, .-tabs.-info- li._active_ a, .-dropdown.-info- > .-dropdown-header, .-tooltip.-info-, .-menu.-info- li:hover > a, .-menu.-info- > li._active_ > a, .-menu.-info- > li > a:active, .-modal.-info- > .-modal-header, .-progress.-info- .-progress-bar, .-progress .-progress-bar.-info-, .-progress .-progress-bar-global.-info- {
   -webkit-text-shadow: 0 -1px rgba(0,0,0,.3);
   -moz-text-shadow: 0 -1px rgba(0,0,0,.3);
   -ms-text-shadow: 0 -1px rgba(0,0,0,.3);
@@ -798,7 +798,7 @@ input[type="button"]._unclickable_.-info-:active, .-group .-group-appendix.-info
 .-tooltip.-info- .-arrow {
   border-color: #258e98; }
 
-.-carousel.-info- .-carousel-nav i._active_ {
+.-carousel.-info- .-carousel-nav i._active_, .-carousel-nav.-info- i._active_, .-progress.-info- .-progress-bar, .-progress .-progress-bar.-info-, .-progress .-progress-bar-global.-info- {
   background-color: #64cfd9; }
 
 .-group .-group-appendix.-info-, .-group.-info- .-group-appendix {
@@ -915,7 +915,7 @@ input[type="button"]._loading_.-dark-.-info-, .-tabs li._loading_.-info- a, .-ta
 
 button._loading_.-info-,
 .-btn._loading_.-info-,
-input[type="button"]._loading_.-info-, .-group._loading_ button.-info-, .-group._loading_ input[type="button"].-info-, .-group._loading_ .-btn.-info-, .-menu > li._loading_.-info- > a {
+input[type="button"]._loading_.-info-, .-group._loading_ button.-info-, .-group._loading_ input[type="button"].-info-, .-group._loading_ .-btn.-info-, .-menu > li._loading_.-info- > a, .-progress._loading_.-info- .-progress-bar {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.1, rgba(0, 0, 0, 0.1)), color-stop(0.1, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(0, 0, 0, 0.1)), color-stop(0.75, rgba(0, 0, 0, 0.1)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
@@ -949,7 +949,7 @@ input[type="button"].-warning-, button._unclickable_.-warning-, button._unclicka
 .-btn._unclickable_.-warning-:active,
 input[type="button"]._unclickable_.-warning-,
 input[type="button"]._unclickable_.-warning-:hover,
-input[type="button"]._unclickable_.-warning-:active, .-group .-group-appendix.-warning-, .-group.-warning- .-group-appendix, .-group.-warning- button, .-group.-warning- input[type="button"], .-group.-warning- .-btn, .-tabs.-warning- li a:hover, .-tabs.-warning- li:active a, .-tabs.-warning- li._active_ a, .-menu.-warning- li:hover > a, .-menu.-warning- > li._active_ > a, .-menu.-warning- > li > a:active {
+input[type="button"]._unclickable_.-warning-:active, .-group .-group-appendix.-warning-, .-group.-warning- .-group-appendix, .-group.-warning- button, .-group.-warning- input[type="button"], .-group.-warning- .-btn, .-tabs.-warning- li a:hover, .-tabs.-warning- li:active a, .-tabs.-warning- li._active_ a, .-menu.-warning- li:hover > a, .-menu.-warning- > li._active_ > a, .-menu.-warning- > li > a:active, .-progress.-warning- .-progress-bar, .-progress .-progress-bar.-warning-, .-progress .-progress-bar-global.-warning- {
   color: white; }
 
 button.-warning-,
@@ -960,7 +960,7 @@ input[type="button"].-warning-, button._unclickable_.-warning-, button._unclicka
 .-btn._unclickable_.-warning-:active,
 input[type="button"]._unclickable_.-warning-,
 input[type="button"]._unclickable_.-warning-:hover,
-input[type="button"]._unclickable_.-warning-:active, .-group .-group-appendix.-warning-, .-group.-warning- .-group-appendix, .-group.-warning- button, .-group.-warning- input[type="button"], .-group.-warning- .-btn, .-tabs.-warning- li a:hover, .-tabs.-warning- li:active a, .-tabs.-warning- li._active_ a, .-dropdown.-warning- > .-dropdown-header, .-tooltip.-warning-, .-menu.-warning- li:hover > a, .-menu.-warning- > li._active_ > a, .-menu.-warning- > li > a:active, .-modal.-warning- > .-modal-header {
+input[type="button"]._unclickable_.-warning-:active, .-group .-group-appendix.-warning-, .-group.-warning- .-group-appendix, .-group.-warning- button, .-group.-warning- input[type="button"], .-group.-warning- .-btn, .-tabs.-warning- li a:hover, .-tabs.-warning- li:active a, .-tabs.-warning- li._active_ a, .-dropdown.-warning- > .-dropdown-header, .-tooltip.-warning-, .-menu.-warning- li:hover > a, .-menu.-warning- > li._active_ > a, .-menu.-warning- > li > a:active, .-modal.-warning- > .-modal-header, .-progress.-warning- .-progress-bar, .-progress .-progress-bar.-warning-, .-progress .-progress-bar-global.-warning- {
   -webkit-text-shadow: 0 -1px rgba(0,0,0,.3);
   -moz-text-shadow: 0 -1px rgba(0,0,0,.3);
   -ms-text-shadow: 0 -1px rgba(0,0,0,.3);
@@ -987,7 +987,7 @@ input[type="button"]._unclickable_.-warning-:active, .-group .-group-appendix.-w
 .-tooltip.-warning- .-arrow {
   border-color: #986b25; }
 
-.-carousel.-warning- .-carousel-nav i._active_ {
+.-carousel.-warning- .-carousel-nav i._active_, .-carousel-nav.-warning- i._active_, .-progress.-warning- .-progress-bar, .-progress .-progress-bar.-warning-, .-progress .-progress-bar-global.-warning- {
   background-color: #edb723; }
 
 .-group .-group-appendix.-warning-, .-group.-warning- .-group-appendix {
@@ -1104,7 +1104,7 @@ input[type="button"]._loading_.-dark-.-warning-, .-tabs li._loading_.-warning- a
 
 button._loading_.-warning-,
 .-btn._loading_.-warning-,
-input[type="button"]._loading_.-warning-, .-group._loading_ button.-warning-, .-group._loading_ input[type="button"].-warning-, .-group._loading_ .-btn.-warning-, .-menu > li._loading_.-warning- > a {
+input[type="button"]._loading_.-warning-, .-group._loading_ button.-warning-, .-group._loading_ input[type="button"].-warning-, .-group._loading_ .-btn.-warning-, .-menu > li._loading_.-warning- > a, .-progress._loading_.-warning- .-progress-bar {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.1, rgba(0, 0, 0, 0.1)), color-stop(0.1, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(0, 0, 0, 0.1)), color-stop(0.75, rgba(0, 0, 0, 0.1)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
@@ -1138,7 +1138,7 @@ input[type="button"].-primary-, button._unclickable_.-primary-, button._unclicka
 .-btn._unclickable_.-primary-:active,
 input[type="button"]._unclickable_.-primary-,
 input[type="button"]._unclickable_.-primary-:hover,
-input[type="button"]._unclickable_.-primary-:active, .-group .-group-appendix.-primary-, .-group.-primary- .-group-appendix, .-group.-primary- button, .-group.-primary- input[type="button"], .-group.-primary- .-btn, .-tabs.-primary- li a:hover, .-tabs.-primary- li:active a, .-tabs.-primary- li._active_ a, .-menu.-primary- li:hover > a, .-menu.-primary- > li._active_ > a, .-menu.-primary- > li > a:active {
+input[type="button"]._unclickable_.-primary-:active, .-group .-group-appendix.-primary-, .-group.-primary- .-group-appendix, .-group.-primary- button, .-group.-primary- input[type="button"], .-group.-primary- .-btn, .-tabs.-primary- li a:hover, .-tabs.-primary- li:active a, .-tabs.-primary- li._active_ a, .-menu.-primary- li:hover > a, .-menu.-primary- > li._active_ > a, .-menu.-primary- > li > a:active, .-progress.-primary- .-progress-bar, .-progress .-progress-bar.-primary-, .-progress .-progress-bar-global.-primary- {
   color: white; }
 
 button.-primary-,
@@ -1149,7 +1149,7 @@ input[type="button"].-primary-, button._unclickable_.-primary-, button._unclicka
 .-btn._unclickable_.-primary-:active,
 input[type="button"]._unclickable_.-primary-,
 input[type="button"]._unclickable_.-primary-:hover,
-input[type="button"]._unclickable_.-primary-:active, .-group .-group-appendix.-primary-, .-group.-primary- .-group-appendix, .-group.-primary- button, .-group.-primary- input[type="button"], .-group.-primary- .-btn, .-tabs.-primary- li a:hover, .-tabs.-primary- li:active a, .-tabs.-primary- li._active_ a, .-dropdown.-primary- > .-dropdown-header, .-tooltip.-primary-, .-menu.-primary- li:hover > a, .-menu.-primary- > li._active_ > a, .-menu.-primary- > li > a:active, .-modal.-primary- > .-modal-header {
+input[type="button"]._unclickable_.-primary-:active, .-group .-group-appendix.-primary-, .-group.-primary- .-group-appendix, .-group.-primary- button, .-group.-primary- input[type="button"], .-group.-primary- .-btn, .-tabs.-primary- li a:hover, .-tabs.-primary- li:active a, .-tabs.-primary- li._active_ a, .-dropdown.-primary- > .-dropdown-header, .-tooltip.-primary-, .-menu.-primary- li:hover > a, .-menu.-primary- > li._active_ > a, .-menu.-primary- > li > a:active, .-modal.-primary- > .-modal-header, .-progress.-primary- .-progress-bar, .-progress .-progress-bar.-primary-, .-progress .-progress-bar-global.-primary- {
   -webkit-text-shadow: 0 -1px rgba(0,0,0,.3);
   -moz-text-shadow: 0 -1px rgba(0,0,0,.3);
   -ms-text-shadow: 0 -1px rgba(0,0,0,.3);
@@ -1176,7 +1176,7 @@ input[type="button"]._unclickable_.-primary-:active, .-group .-group-appendix.-p
 .-tooltip.-primary- .-arrow {
   border-color: #0d4065; }
 
-.-carousel.-primary- .-carousel-nav i._active_ {
+.-carousel.-primary- .-carousel-nav i._active_, .-carousel-nav.-primary- i._active_, .-progress.-primary- .-progress-bar, .-progress .-progress-bar.-primary-, .-progress .-progress-bar-global.-primary- {
   background-color: #1b88d6; }
 
 .-group .-group-appendix.-primary-, .-group.-primary- .-group-appendix {
@@ -1293,7 +1293,7 @@ input[type="button"]._loading_.-dark-.-primary-, .-tabs li._loading_.-primary- a
 
 button._loading_.-primary-,
 .-btn._loading_.-primary-,
-input[type="button"]._loading_.-primary-, .-group._loading_ button.-primary-, .-group._loading_ input[type="button"].-primary-, .-group._loading_ .-btn.-primary-, .-menu > li._loading_.-primary- > a {
+input[type="button"]._loading_.-primary-, .-group._loading_ button.-primary-, .-group._loading_ input[type="button"].-primary-, .-group._loading_ .-btn.-primary-, .-menu > li._loading_.-primary- > a, .-progress._loading_.-primary- .-progress-bar {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.1, rgba(0, 0, 0, 0.1)), color-stop(0.1, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(0, 0, 0, 0.1)), color-stop(0.75, rgba(0, 0, 0, 0.1)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
@@ -1327,7 +1327,7 @@ input[type="button"].-dark-, button._unclickable_.-dark-, button._unclickable_.-
 .-btn._unclickable_.-dark-:active,
 input[type="button"]._unclickable_.-dark-,
 input[type="button"]._unclickable_.-dark-:hover,
-input[type="button"]._unclickable_.-dark-:active, .-group .-group-appendix.-dark-, .-group.-dark- .-group-appendix, .-group.-dark- button, .-group.-dark- input[type="button"], .-group.-dark- .-btn, .-tabs.-dark- li a:hover, .-tabs.-dark- li:active a, .-tabs.-dark- li._active_ a, .-menu.-dark- li:hover > a, .-menu.-dark- > li._active_ > a, .-menu.-dark- > li > a:active {
+input[type="button"]._unclickable_.-dark-:active, .-group .-group-appendix.-dark-, .-group.-dark- .-group-appendix, .-group.-dark- button, .-group.-dark- input[type="button"], .-group.-dark- .-btn, .-tabs.-dark- li a:hover, .-tabs.-dark- li:active a, .-tabs.-dark- li._active_ a, .-menu.-dark- li:hover > a, .-menu.-dark- > li._active_ > a, .-menu.-dark- > li > a:active, .-progress.-dark- .-progress-bar, .-progress .-progress-bar.-dark-, .-progress .-progress-bar-global.-dark- {
   color: white; }
 
 button.-dark-,
@@ -1338,7 +1338,7 @@ input[type="button"].-dark-, button._unclickable_.-dark-, button._unclickable_.-
 .-btn._unclickable_.-dark-:active,
 input[type="button"]._unclickable_.-dark-,
 input[type="button"]._unclickable_.-dark-:hover,
-input[type="button"]._unclickable_.-dark-:active, .-group .-group-appendix.-dark-, .-group.-dark- .-group-appendix, .-group.-dark- button, .-group.-dark- input[type="button"], .-group.-dark- .-btn, .-tabs.-dark- li a:hover, .-tabs.-dark- li:active a, .-tabs.-dark- li._active_ a, .-dropdown.-dark- > .-dropdown-header, .-tooltip.-dark-, .-menu.-dark- li:hover > a, .-menu.-dark- > li._active_ > a, .-menu.-dark- > li > a:active, .-modal.-dark- > .-modal-header {
+input[type="button"]._unclickable_.-dark-:active, .-group .-group-appendix.-dark-, .-group.-dark- .-group-appendix, .-group.-dark- button, .-group.-dark- input[type="button"], .-group.-dark- .-btn, .-tabs.-dark- li a:hover, .-tabs.-dark- li:active a, .-tabs.-dark- li._active_ a, .-dropdown.-dark- > .-dropdown-header, .-tooltip.-dark-, .-menu.-dark- li:hover > a, .-menu.-dark- > li._active_ > a, .-menu.-dark- > li > a:active, .-modal.-dark- > .-modal-header, .-progress.-dark- .-progress-bar, .-progress .-progress-bar.-dark-, .-progress .-progress-bar-global.-dark- {
   -webkit-text-shadow: 0 1px rgba(255,255,255,.1);
   -moz-text-shadow: 0 1px rgba(255,255,255,.1);
   -ms-text-shadow: 0 1px rgba(255,255,255,.1);
@@ -1365,7 +1365,7 @@ input[type="button"]._unclickable_.-dark-:active, .-group .-group-appendix.-dark
 .-tooltip.-dark- .-arrow {
   border-color: #525252; }
 
-.-carousel.-dark- .-carousel-nav i._active_ {
+.-carousel.-dark- .-carousel-nav i._active_, .-carousel-nav.-dark- i._active_, .-progress.-dark- .-progress-bar, .-progress .-progress-bar.-dark-, .-progress .-progress-bar-global.-dark- {
   background-color: #6b6b6b; }
 
 .-group .-group-appendix.-dark-, .-group.-dark- .-group-appendix {
@@ -1482,7 +1482,7 @@ input[type="button"]._loading_.-dark-, .-tabs li._loading_.-dark- a, .-tabs._loa
 
 button._loading_.-dark-,
 .-btn._loading_.-dark-,
-input[type="button"]._loading_.-dark-, .-group._loading_ button.-dark-, .-group._loading_ input[type="button"].-dark-, .-group._loading_ .-btn.-dark-, .-menu > li._loading_.-dark- > a {
+input[type="button"]._loading_.-dark-, .-group._loading_ button.-dark-, .-group._loading_ input[type="button"].-dark-, .-group._loading_ .-btn.-dark-, .-menu > li._loading_.-dark- > a, .-progress._loading_.-dark- .-progress-bar {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.1, rgba(0, 0, 0, 0.1)), color-stop(0.1, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(0, 0, 0, 0.1)), color-stop(0.75, rgba(0, 0, 0, 0.1)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
@@ -1514,7 +1514,7 @@ input[type="button"].-disabled-, button._unclickable_.-disabled-, button._unclic
 .-btn._unclickable_.-disabled-:active,
 input[type="button"]._unclickable_.-disabled-,
 input[type="button"]._unclickable_.-disabled-:hover,
-input[type="button"]._unclickable_.-disabled-:active, .-group .-group-appendix.-disabled-, .-group.-disabled- .-group-appendix, .-group.-disabled- button, .-group.-disabled- input[type="button"], .-group.-disabled- .-btn, .-tabs.-disabled- li:active a, .-tabs.-disabled- li._active_ a, .-menu.-disabled- > li > a {
+input[type="button"]._unclickable_.-disabled-:active, .-group .-group-appendix.-disabled-, .-group.-disabled- .-group-appendix, .-group.-disabled- button, .-group.-disabled- input[type="button"], .-group.-disabled- .-btn, .-tabs.-disabled- li:active a, .-tabs.-disabled- li._active_ a, .-menu.-disabled- > li > a, .-progress.-disabled- .-progress-bar, .-progress .-progress-bar.-disabled-, .-progress .-progress-bar-global.-disabled- {
   color: #cccccc!important; }
 
 button.-disabled-,
@@ -1525,7 +1525,7 @@ input[type="button"].-disabled-, button._unclickable_.-disabled-, button._unclic
 .-btn._unclickable_.-disabled-:active,
 input[type="button"]._unclickable_.-disabled-,
 input[type="button"]._unclickable_.-disabled-:hover,
-input[type="button"]._unclickable_.-disabled-:active, .-group .-group-appendix.-disabled-, .-group.-disabled- .-group-appendix, .-group.-disabled- button, .-group.-disabled- input[type="button"], .-group.-disabled- .-btn, .-tabs.-disabled- li:active a, .-tabs.-disabled- li._active_ a, .-dropdown.-disabled- > .-dropdown-header, .-tooltip.-disabled-, .-modal.-disabled- > .-modal-header {
+input[type="button"]._unclickable_.-disabled-:active, .-group .-group-appendix.-disabled-, .-group.-disabled- .-group-appendix, .-group.-disabled- button, .-group.-disabled- input[type="button"], .-group.-disabled- .-btn, .-tabs.-disabled- li:active a, .-tabs.-disabled- li._active_ a, .-dropdown.-disabled- > .-dropdown-header, .-tooltip.-disabled-, .-modal.-disabled- > .-modal-header, .-progress.-disabled- .-progress-bar, .-progress .-progress-bar.-disabled-, .-progress .-progress-bar-global.-disabled- {
   -webkit-text-shadow: none!important;
   -moz-text-shadow: none!important;
   -ms-text-shadow: none!important;
@@ -1549,7 +1549,7 @@ input[type="button"]._unclickable_.-disabled-:active, .-group .-group-appendix.-
 .-tabs.-disabled- li:active a, .-tabs.-disabled- li._active_ a {
   border-color: silver!important; }
 
-.-carousel.-disabled- .-carousel-nav i {
+.-carousel.-disabled- .-carousel-nav i, .-carousel-nav.-disabled- i, .-progress.-disabled-, .-progress .-progress-bar.-disabled-, .-progress .-progress-bar-global.-disabled- {
   background-color: #f3f3f3!important; }
 
 .-group .-group-appendix.-disabled-, .-group.-disabled- .-group-appendix {
@@ -1557,7 +1557,7 @@ input[type="button"]._unclickable_.-disabled-:active, .-group .-group-appendix.-
 
 button.-disabled-:hover,
 .-btn.-disabled-:hover,
-input[type="button"].-disabled-:hover, .-group.-disabled- button:hover, .-group.-disabled- input[type="button"]:hover, .-group.-disabled- .-btn:hover, .-dropdown.-disabled- > .-dropdown-header, .-modal.-disabled- > .-modal-header {
+input[type="button"].-disabled-:hover, .-group.-disabled- button:hover, .-group.-disabled- input[type="button"]:hover, .-group.-disabled- .-btn:hover, .-dropdown.-disabled- > .-dropdown-header, .-modal.-disabled- > .-modal-header, .-progress.-disabled- .-progress-bar {
   background-color: #f3f3f3!important; }
 
 .-tabs.-disabled- li:active a, .-tabs.-disabled- li._active_ a {
@@ -1646,13 +1646,16 @@ input[type="button"]._loading_.-disabled-, .-group._loading_ button.-disabled-, 
 
 button._tiny,
 .-btn._tiny,
-input[type="button"]._tiny, .-group .-group-appendix._tiny, .-group._tiny button, .-group._tiny input[type="button"], .-group._tiny .-btn, .-group._tiny .-group-appendix, .-tabs li._tiny a, .-tabs._tiny li a, .-menu > li._tiny > a, .-menu._tiny li a {
+input[type="button"]._tiny, .-group .-group-appendix._tiny, .-group._tiny button, .-group._tiny input[type="button"], .-group._tiny .-btn, .-group._tiny .-group-appendix, .-tabs li._tiny a, .-tabs._tiny li a, .-menu > li._tiny > a, .-menu._tiny li a, .-progress._tiny .-progress-bar, .-progress._tiny .-progress-bar-global {
   line-height: 12px; }
 
 button._tiny,
 .-btn._tiny,
-input[type="button"]._tiny, .-group .-group-appendix._tiny, .-group._tiny button, .-group._tiny input[type="button"], .-group._tiny .-btn, .-group._tiny .-group-appendix, .-tabs li._tiny a, .-tabs._tiny li a, .-menu > li._tiny > a, .-menu._tiny li a {
+input[type="button"]._tiny, .-group .-group-appendix._tiny, .-group._tiny button, .-group._tiny input[type="button"], .-group._tiny .-btn, .-group._tiny .-group-appendix, .-tabs li._tiny a, .-tabs._tiny li a, .-menu > li._tiny > a, .-menu._tiny li a, .-progress._tiny .-progress-bar, .-progress._tiny .-progress-bar-global {
   font-size: 10px; }
+
+.-progress._tiny .-progress-bar, .-progress._tiny .-progress-bar-global {
+  padding: 1px 3px; }
 
 .-tabs li._tiny a, .-tabs._tiny li a {
   padding: 6px 9px; }
@@ -1664,13 +1667,16 @@ input[type="button"]._tiny, .-group .-group-appendix._tiny, .-group._tiny button
 
 button._small,
 .-btn._small,
-input[type="button"]._small, .-group .-group-appendix._small, .-group._small button, .-group._small input[type="button"], .-group._small .-btn, .-group._small .-group-appendix, .-tabs li._small a, .-tabs._small li a, .-menu > li._small > a, .-menu._small li a {
+input[type="button"]._small, .-group .-group-appendix._small, .-group._small button, .-group._small input[type="button"], .-group._small .-btn, .-group._small .-group-appendix, .-tabs li._small a, .-tabs._small li a, .-menu > li._small > a, .-menu._small li a, .-progress._small .-progress-bar, .-progress._small .-progress-bar-global {
   line-height: 14px; }
 
 button._small,
 .-btn._small,
-input[type="button"]._small, .-group .-group-appendix._small, .-group._small button, .-group._small input[type="button"], .-group._small .-btn, .-group._small .-group-appendix, .-tabs li._small a, .-tabs._small li a, .-menu > li._small > a, .-menu._small li a {
+input[type="button"]._small, .-group .-group-appendix._small, .-group._small button, .-group._small input[type="button"], .-group._small .-btn, .-group._small .-group-appendix, .-tabs li._small a, .-tabs._small li a, .-menu > li._small > a, .-menu._small li a, .-progress._small .-progress-bar, .-progress._small .-progress-bar-global {
   font-size: 12px; }
+
+.-progress._small .-progress-bar, .-progress._small .-progress-bar-global {
+  padding: 1px 1px; }
 
 .-tabs li._small a, .-tabs._small li a {
   padding: 8px 11px; }
@@ -1682,7 +1688,7 @@ input[type="button"]._small, .-group .-group-appendix._small, .-group._small but
 
 button,
 .-btn,
-input[type="button"], .-group .-group-appendix, .-group button, .-group input[type="button"], .-group .-btn, .-tabs li a, .-menu li a {
+input[type="button"], .-group .-group-appendix, .-group button, .-group input[type="button"], .-group .-btn, .-tabs li a, .-menu li a, .-progress .-progress-bar, .-progress .-progress-bar-global {
   line-height: 18px; }
 
 .-badge, .-label, .-tooltip {
@@ -1690,13 +1696,13 @@ input[type="button"], .-group .-group-appendix, .-group button, .-group input[ty
 
 button,
 .-btn,
-input[type="button"], .-group .-group-appendix, .-group button, .-group input[type="button"], .-group .-btn, .-tabs li a, .-menu li a {
+input[type="button"], .-group .-group-appendix, .-group button, .-group input[type="button"], .-group .-btn, .-tabs li a, .-menu li a, .-progress .-progress-bar, .-progress .-progress-bar-global {
   font-size: 14px; }
 
 .-badge, .-label, .-tooltip {
   font-size: 12px; }
 
-.-badge, .-label, .-tooltip {
+.-badge, .-label, .-tooltip, .-progress .-progress-bar, .-progress .-progress-bar-global {
   padding: 3px 5px; }
 
 .-tabs li a {
@@ -1709,7 +1715,7 @@ input[type="button"], .-group .-group-appendix, .-group button, .-group input[ty
 
 button._big,
 .-btn._big,
-input[type="button"]._big, .-group .-group-appendix._big, .-group._big button, .-group._big input[type="button"], .-group._big .-btn, .-group._big .-group-appendix, .-tabs li._big a, .-tabs._big li a, .-menu > li._big > a, .-menu._big li a {
+input[type="button"]._big, .-group .-group-appendix._big, .-group._big button, .-group._big input[type="button"], .-group._big .-btn, .-group._big .-group-appendix, .-tabs li._big a, .-tabs._big li a, .-menu > li._big > a, .-menu._big li a, .-progress._big .-progress-bar, .-progress._big .-progress-bar-global {
   line-height: 20px; }
 
 .-badge._big, ._big.-label, .-tooltip._big {
@@ -1717,13 +1723,13 @@ input[type="button"]._big, .-group .-group-appendix._big, .-group._big button, .
 
 button._big,
 .-btn._big,
-input[type="button"]._big, .-group .-group-appendix._big, .-group._big button, .-group._big input[type="button"], .-group._big .-btn, .-group._big .-group-appendix, .-tabs li._big a, .-tabs._big li a, .-menu > li._big > a, .-menu._big li a {
+input[type="button"]._big, .-group .-group-appendix._big, .-group._big button, .-group._big input[type="button"], .-group._big .-btn, .-group._big .-group-appendix, .-tabs li._big a, .-tabs._big li a, .-menu > li._big > a, .-menu._big li a, .-progress._big .-progress-bar, .-progress._big .-progress-bar-global {
   font-size: 18px; }
 
 .-badge._big, ._big.-label, .-tooltip._big {
   font-size: 16px; }
 
-.-badge._big, ._big.-label, .-tooltip._big {
+.-badge._big, ._big.-label, .-tooltip._big, .-progress._big .-progress-bar, .-progress._big .-progress-bar-global {
   padding: 5px 7px; }
 
 .-tabs li._big a, .-tabs._big li a {
@@ -1736,7 +1742,7 @@ input[type="button"]._big, .-group .-group-appendix._big, .-group._big button, .
 
 button._huge,
 .-btn._huge,
-input[type="button"]._huge, .-group .-group-appendix._huge, .-group._huge button, .-group._huge input[type="button"], .-group._huge .-btn, .-group._huge .-group-appendix, .-tabs li._huge a, .-tabs._huge li a, .-menu > li._huge > a, .-menu._huge li a {
+input[type="button"]._huge, .-group .-group-appendix._huge, .-group._huge button, .-group._huge input[type="button"], .-group._huge .-btn, .-group._huge .-group-appendix, .-tabs li._huge a, .-tabs._huge li a, .-menu > li._huge > a, .-menu._huge li a, .-progress._huge .-progress-bar, .-progress._huge .-progress-bar-global {
   line-height: 22px; }
 
 .-badge._huge, ._huge.-label, .-tooltip._huge {
@@ -1744,13 +1750,13 @@ input[type="button"]._huge, .-group .-group-appendix._huge, .-group._huge button
 
 button._huge,
 .-btn._huge,
-input[type="button"]._huge, .-group .-group-appendix._huge, .-group._huge button, .-group._huge input[type="button"], .-group._huge .-btn, .-group._huge .-group-appendix, .-tabs li._huge a, .-tabs._huge li a, .-menu > li._huge > a, .-menu._huge li a {
+input[type="button"]._huge, .-group .-group-appendix._huge, .-group._huge button, .-group._huge input[type="button"], .-group._huge .-btn, .-group._huge .-group-appendix, .-tabs li._huge a, .-tabs._huge li a, .-menu > li._huge > a, .-menu._huge li a, .-progress._huge .-progress-bar, .-progress._huge .-progress-bar-global {
   font-size: 20px; }
 
 .-badge._huge, ._huge.-label, .-tooltip._huge {
   font-size: 18px; }
 
-.-badge._huge, ._huge.-label, .-tooltip._huge {
+.-badge._huge, ._huge.-label, .-tooltip._huge, .-progress._huge .-progress-bar, .-progress._huge .-progress-bar-global {
   padding: 7px 9px; }
 
 .-tabs li._huge a, .-tabs._huge li a {
@@ -1764,7 +1770,7 @@ input[type="button"]._huge, .-group .-group-appendix._huge, .-group._huge button
 button,
 .-btn,
 input[type="button"], .-group .-group-appendix, .-tabs li a, .-badge, .-label, .-dropdown, .-arrow, .-tooltip, .-menu li a, .-dropdown .-menu li.-menu-sub > a:after,
-.-menu._vertical_ li.-menu-sub > a:after, .-modal {
+.-menu._vertical_ li.-menu-sub > a:after, .-modal, .-progress .-progress-bar {
   display: inline-block;
   vertical-align: middle;
   outline: none;
@@ -2426,7 +2432,8 @@ input[type="button"]._unclickable_:active {
       padding: 10px 10px; } }
 
 .-group {
-  display: inline-block; }
+  display: inline-block;
+  font-size: 0; }
   .-group .-group-appendix {
     border-width: 1px;
     border-style: solid; }
@@ -3360,25 +3367,49 @@ input[type="button"]._unclickable_:active {
   position: relative;
   white-space: nowrap;
   height: 600px;
-  opacity: 0;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  -o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
+  opacity: 0; }
   .-carousel .-carousel-item {
     display: inline-block;
+    vertical-align: middle;
     text-align: center;
     position: relative;
-    top: 0;
-    left: 0;
     overflow: hidden;
     width: 100%;
+    max-height: 100%;
     transition: 0.3s margin-left ease-out;
     -webkit-transition: 0.3s margin-left ease-out;
     -moz-transition: 0.3s margin-left ease-out;
     -ms-transition: 0.3s margin-left ease-out;
     -o-transition: 0.3s margin-left ease-out; }
+    .-carousel .-carousel-item img {
+      max-width: 100%;
+      max-height: 100%; }
+  .-carousel .-carousel-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 15px;
+    text-align: left; }
+    .-carousel .-carousel-caption h1, .-carousel .-carousel-caption h2, .-carousel .-carousel-caption h3, .-carousel .-carousel-caption h4, .-carousel .-carousel-caption h5, .-carousel .-carousel-caption h6 {
+      margin-bottom: 5px; }
+    .-carousel .-carousel-caption > * {
+      opacity: 0; }
+  .-carousel.-carousel-imageFill {
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); }
+    .-carousel.-carousel-imageFill .-carousel-item {
+      max-height: inherit; }
+    .-carousel.-carousel-imageFill .-carousel-item img {
+      max-width: inherit;
+      max-height: inherit; }
+    .-carousel.-carousel-imageFill .-carousel-caption {
+      color: white; }
+      .-carousel.-carousel-imageFill .-carousel-caption a {
+        color: white; }
   .-carousel .-carousel-arrow-left,
   .-carousel .-carousel-arrow-right {
     position: absolute;
@@ -3395,43 +3426,96 @@ input[type="button"]._unclickable_:active {
     left: 10px; }
   .-carousel .-carousel-arrow-right {
     right: 10px; }
-  .-carousel .-carousel-caption {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 15px;
-    text-align: left;
-    color: white; }
-    .-carousel .-carousel-caption h1, .-carousel .-carousel-caption h2, .-carousel .-carousel-caption h3, .-carousel .-carousel-caption h4, .-carousel .-carousel-caption h5, .-carousel .-carousel-caption h6 {
-      margin-bottom: 5px; }
-    .-carousel .-carousel-caption a {
-      color: white; }
-    .-carousel .-carousel-caption > * {
-      opacity: 0; }
+  .-carousel._top_ .-carousel-nav {
+    bottom: inherit;
+    top: 0; }
   .-carousel .-carousel-nav {
     position: absolute;
     left: 0;
     right: 0;
+    bottom: 0; }
+
+.-carousel-nav {
+  text-align: center;
+  padding: 5px; }
+  .-carousel-nav i {
+    margin: 0 2px;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    -webkit-border-radius: 3.5px;
+    -moz-border-radius: 3.5px;
+    -ms-border-radius: 3.5px;
+    -o-border-radius: 3.5px;
+    border-radius: 3.5px;
+    -webkit-box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2), inset 0 -2px 7px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2), inset 0 -2px 7px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2), inset 0 -2px 7px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2), inset 0 -2px 7px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2), inset 0 -2px 7px rgba(0, 0, 0, 0.1);
+    cursor: pointer; }
+
+.cssanimations.csstransforms.csstransitions .-mx-scrollDown {
+  top: 0;
+  left: 0;
+  transition: left 20s ease-out, top 20s ease-out;
+  -webkit-transition: left 20s ease-out, top 20s ease-out;
+  -moz-transition: left 20s ease-out, top 20s ease-out;
+  -ms-transition: left 20s ease-out, top 20s ease-out;
+  -o-transition: left 20s ease-out, top 20s ease-out; }
+.cssanimations.csstransforms.csstransitions .-mx-scrollDown-fast {
+  top: 0;
+  left: 0;
+  transition: left 5s ease-out, top 5s ease-out;
+  -webkit-transition: left 5s ease-out, top 5s ease-out;
+  -moz-transition: left 5s ease-out, top 5s ease-out;
+  -ms-transition: left 5s ease-out, top 5s ease-out;
+  -o-transition: left 5s ease-out, top 5s ease-out; }
+
+.-progress {
+  font-size: 0;
+  position: relative;
+  display: inline-block;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  line-height: 0;
+  min-height: 12px; }
+  .-progress .-progress-bar {
+    height: 100%;
+    min-height: 12px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.05);
+    text-align: center; }
+  .-progress .-progress-bar-global {
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    border-radius: 40px;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.05);
+    position: absolute;
+    left: 0;
+    top: 0;
+    top: 0;
     bottom: 0;
-    text-align: center;
-    padding: 5px; }
-    .-carousel .-carousel-nav i {
-      margin: 0 2px;
-      display: inline-block;
-      width: 7px;
-      height: 7px;
-      -webkit-border-radius: 3.5px;
-      -moz-border-radius: 3.5px;
-      -ms-border-radius: 3.5px;
-      -o-border-radius: 3.5px;
-      border-radius: 3.5px;
-      -webkit-box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
-      -moz-box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
-      -ms-box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
-      -o-box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
-      box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
-      cursor: pointer; }
-  .-carousel._top_ .-carousel-nav {
-    bottom: inherit;
-    top: 0; }
+    text-align: center; }

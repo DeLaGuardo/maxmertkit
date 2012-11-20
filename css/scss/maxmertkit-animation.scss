@@ -82,18 +82,6 @@
 		}
 	}
 
-	// .-mx-scrollDown {
-	// 	top: 0;
-	// 	left: 0;
-	// 	@include transition( left 20s ease-out, top 20s ease-out );
-	// }
-
-	// .-mx-scrollDown-fast {
-	// 	top: 0;
-	// 	left: 0;
-	// 	@include transition( left 5s ease-out, top 5s ease-out );
-	// }
-
 	&.-mx-shader {
 		.-container
 		{
@@ -132,6 +120,15 @@
 
 		&.-mx-start {
 			display: block!important;
+			@include opacity( 1 );
+		}
+	}
+
+	.-mx-blurIn {
+		@include transitions( 1s opacity ease );
+		@include opacity( 0 );
+
+		&.-mx-start {
 			@include opacity( 1 );
 		}
 	}

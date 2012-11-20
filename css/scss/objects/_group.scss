@@ -7,6 +7,7 @@ $__after-object: '';
 
 .#{$object__group} {
 	display: inline-block;
+	font-size: 0;
 
 	.#{$object__group__appendix} {
 		@extend %__object;

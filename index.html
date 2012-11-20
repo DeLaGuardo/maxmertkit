@@ -20,6 +20,7 @@
 		<script type="text/javascript" src="js/plugins/maxmertkit.tabs.js"></script>
 		<script type="text/javascript" src="js/plugins/maxmertkit.modal.js"></script>
 		<script type="text/javascript" src="js/plugins/maxmertkit.carousel.js"></script>
+		<script type="text/javascript" src="js/plugins/maxmertkit.button.js"></script>
 
 		<script type="text/javascript">
 			(function($){
@@ -90,7 +91,8 @@
 					});
 
 					$('.js-modal').modal({
-						animation: 'dropIn'
+						animation: 'dropIn',
+						theme: 'error'
 					});
 
 					$('.js-modal-show').on('click', function() {
@@ -102,8 +104,23 @@
 					$('.js-scrollspy').scrollspy();
 
 					$('#js-carousel').carousel({
+						navigation: '#js-carousel-nav',
 						navigationPlacement: 'top',
-						theme: 'info'
+						theme: 'info',
+						imageFill: true,
+						imageShowAnimation: 'scrollDown'
+					});
+
+					$('.js-button1').button({
+						
+						
+						
+					
+					});
+
+					$('.js-button5').button({
+						
+					
 					});
 
 				});
@@ -1118,7 +1135,94 @@
 		
 
 
+		<article id="progressbar" class="-row">
+			<section class="-col6">
+				<h2>Progressbars</h2>
+				<div class="-progress _tiny _loading_" style="width: 100%">
+					<div class="-progress-bar" style="width: 85%">
+						current file - 85%
+					</div>
+					<div class="-progress-bar-global -info-" style="width: 22%">
+						global – 12%
+					</div>
+				</div>
+<br><br>
+				<div class="-progress _tiny _loading_" style="width: 100%">
+					<div class="-progress-bar" style="width: 15%">
+						file 1 - 15%
+					</div>
+					<div class="-progress-bar -error-" style="width: 25%">
+						file 2 - 25%
+					</div>
+				</div>
+<br><br>
+				<div class="-progress _tiny _loading_" style="width: 100%">
+					<div class="-progress-bar" style="width: 55%">
+						file 1 - 55%
+					</div>
+					<div class="-progress-bar" style="width: 25%">
+						file 2 - 25%
+					</div>
+					<div class="-progress-bar-global -info-" style="width: 12%">
+						global - 12%
+					</div>
+				</div>
+<br><br>
+				<div class="-progress _tiny _loading_" style="width: 100%">
+					<div class="-progress-bar -success-" style="width: 55%">
+						file 1 - 55%
+					</div>
+					<div class="-progress-bar -error-" style="width: 25%">
+						file 2 - 25%
+					</div>
+					<div class="-progress-bar-global -info-" style="width: 12%">
+						global - 12%
+					</div>
+				</div>
+<br><br>
+				<div class="-progress _tiny" style="width: 100%">
+					<div class="-progress-bar -success-" style="width: 55%">
+						file 1 - 55%
+					</div>
+					<div class="-progress-bar -error-" style="width: 25%">
+						file 2 - 25%
+					</div>
+					<div class="-progress-bar-global -info-" style="width: 12%">
+						global - 12%
+					</div>
+				</div>
 
+			</section>
+
+			<section class="-col6">
+				<h4>Progressbars by size</h4>
+				<div class="-progress _tiny _loading_" style="width: 100%">
+					<div class="-progress-bar" style="width: 85%">
+						tiny
+					</div>
+				</div><br><br>
+				<div class="-progress _small _loading_" style="width: 100%">
+					<div class="-progress-bar" style="width: 85%">
+						small
+					</div>
+				</div><br><br>
+				<div class="-progress _loading_" style="width: 100%">
+					<div class="-progress-bar" style="width: 85%">
+						normall
+					</div>
+				</div><br><br>
+				<div class="-progress _big _loading_" style="width: 100%">
+					<div class="-progress-bar" style="width: 85%">
+						big
+					</div>
+				</div><br><br>
+				<div class="-progress _huge _loading_" style="width: 100%">
+					<div class="-progress-bar" style="width: 85%">
+						huge
+					</div>
+				</div><br><br>
+			</section>
+		</article>
 
 
 		<div id="javascript" class="-container">
@@ -1160,7 +1264,20 @@
 					<div id="tab-forth" style="display: none;">forth tab content</div>
 				</div>
 				<div class="-col6">
+					<h4>Buttons</h4>
+					<a href="" class="-btn js-button1">Button 1</a>
 					
+					<div class="-group">
+						<a href="" class="-btn js-button2" data-checkbox="checkbox1">Button 1</a>
+						<a href="" class="-btn js-button3" data-checkbox="checkbox2">Button 2</a>
+						<a href="" class="-btn js-button4" data-checkbox="checkbox3">Button 3</a>
+					</div>
+
+					<div class="-group">
+						<a href="" class="-btn js-button5" data-radio="radio1">Button 5</a>
+						<a href="" class="-btn js-button6" data-radio="radio1">Button 2</a>
+						<a href="" class="-btn js-button7" data-radio="radio1">Button 3</a>
+					</div>
 				</div>
 			</article>
 
@@ -1232,6 +1349,7 @@
 						<a class="js-carousel-control -carousel-arrow-left" href="#js-carousel" data-slide="prev"><i class="-icon-chevron-left -icon-light-"></i></a>
 						<a class="js-carousel-control -carousel-arrow-right" href="#js-carousel" data-slide="next"><i class="-icon-chevron-right -icon-light-"></i></a>
 					</div>
+					<div class="-carousel-nav" id="js-carousel-nav"></div>
 
 				</div>
 			</article>
@@ -1249,6 +1367,7 @@
 			<li data-target="#dropdowns"><a href="#dropdowns">Dropdowns</a></li>
 			<li data-target="#menus"><a href="#menus">Menus</a></li>
 			<li data-target="#tooltips"><a href="#tooltips">Tooltips</a></li>
+			<li data-target="#progressbar"><a href="#progressbar">Progressbars</a></li>
 			<li data-target="#javascript"><a href="#javascript">Javascript</a></li>
 			<li data-target="#carousel"><a href="#carousel">Carousel</a></li>
 		</ul>

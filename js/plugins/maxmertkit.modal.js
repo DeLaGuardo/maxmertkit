@@ -76,6 +76,10 @@
 					}
 
 			break;
+
+			case 'theme':
+				$me.addClass( '-' + value_ + '-' );
+			break;
 		}
 
 		me.options[ key_ ] = value_;
