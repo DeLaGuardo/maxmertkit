@@ -22,8 +22,6 @@
 	Modal = function( element_, options_ ) {
 		this.element = element_;
 		this.name = _name;
-		// if( options_ === undefined )
-		// 	options_ = {};
 		this.options = $.extend( {}, this.options, _defaults, options_ );
 		this._setOptions( this.options );
 

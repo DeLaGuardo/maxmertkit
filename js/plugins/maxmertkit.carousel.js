@@ -305,14 +305,6 @@
 		
 	}
 
-	// Carousel.prototype.setActive = function() {
-	// 	var me = this
-	// 	,	$me = $(me.element);
-
-	// 	$me.find( me.options.itemSelector + '._active_' ).removeClass( '_active_' );
-	// 	me.items.eq( me.active ).addClass( '_active_' );
-	// }
-
 	$.fn[_name] = function( options_ ) {
 		return this.each(function() {
 			if( ! $.data( this, 'kit-' + _name ) ) {
