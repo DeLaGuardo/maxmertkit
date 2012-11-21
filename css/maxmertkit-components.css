@@ -2493,10 +2493,16 @@ input[type="button"]._unclickable_:active {
       -ms-border-radius: 0 0 3px 3px;
       -o-border-radius: 0 0 3px 3px;
       border-radius: 0 0 3px 3px; }
-  .-group .-disabled-,
   .-group ._active_,
   .-group :active {
     position: relative;
+    z-index: 0; }
+  .-group :not(:active),
+  .-group :not(._active_),
+  .-group :not(.-disabled-) {
+    position: relative;
+    z-index: 1; }
+  .-group .-disabled- {
     z-index: -1; }
 
 .-tabs li.-unstyled- a {

@@ -21,10 +21,10 @@
 		this.options = $.extend( {}, this.options, _defaults, options_ );
 		this._setOptions( this.options );
 
-		// if( typeof $.button === 'undefined' )
-		// 	$.button = [];
-		// if( this.element !== 'undefined' )
-		// 	$.button.push( this.element );
+		if( typeof $.button === 'undefined' )
+			$.button = [];
+		if( this.element !== 'undefined' )
+			$.button.push( this.element );
 
 		this.init();
 	}
@@ -51,14 +51,11 @@
 
 	Button.prototype.init = function() {
 		var me  = this;
-		debugger;
+		
 		$(me.element).on( 'click.' + me.name, function( event_ ) {
-			debugger;
 			me._toggle( me.element );
 			event_.preventDefault();
 		});
-
-		$(me.element).off('.' + me.name);
 	}
 
 	Button.prototype._toggle = function( btn_ ) {
@@ -67,7 +64,8 @@
 
 		if( btn_ === me.element ) {
 			if( me.state === 'unactive' )
-				me.action();
+				me.action()
+			else
 			if( me.state === 'active' )
 				me.unset();
 		}
@@ -111,16 +109,17 @@
 
 		if( me.state === 'loading' ) {
 			
-			// if( $me.data('radio') )
-			// 	var _radio = $me.data('radio');
-				// $.each( me._getOtherInstanses( $.button ), function() {
-				// 	var _plugin = $.data( this, 'kit-' + me.name )
-				// 	,	_el = $( _plugin.element );
-					
-				// 	if( _el.data('radio') && _el.data('radio') === _radio && _plugin.getState() === 'active' )
-				// 		_plugin.unset();
-				// });
-			
+			if( $me.data('radio') )
+			{
+				var _radio = $me.data('radio');
+				$.each( me._getOtherInstanses( $.button ), function() {
+					var _plugin = $.data( this, 'kit-' + me.name )
+					,	_el = $( _plugin.element );
+
+					if( _plugin.element !== me.element && _el.data('radio') && _el.data('radio') === _radio && _plugin.getState() === 'active' )
+						_plugin.unset();
+				});
+			}
 			
 			me.state = 'active';
 			$me.trigger('action.' + me.name);

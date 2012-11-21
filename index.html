@@ -111,14 +111,84 @@
 						imageShowAnimation: 'scrollDown'
 					});
 
-					$('.js-button1').button({
+					$('[data-radio="radio1"]').button({
 						
+						action: function() {
+							console.log('action')
+							$(this).addClass('_active_')
+						},
+
+						unsetted: function() {
+							console.log('unsetted')
+							$(this).removeClass('_active_')
+						},
+
+						beforeAction: function() {
+							$(this).addClass('_loading_ _active_');
+							
+							var d = $.Deferred();
+							setTimeout(function(){ d.resolve() },1000);
+							return d.promise();
+						},
 						
+						ifNotAction: function() {
+							
+						},
+						clicked: function() {
+							$(this).removeClass('_loading_')
+						},
+						beforeUnset: function() {
+							$(this).addClass('_loading_');
+							var d = $.Deferred();
+							setTimeout(function(){ d.resolve() },1000);
+							return d.promise();
+						},
+						unsetted: function() {
+							$(this).removeClass('_active_')
+						},
+						ifUnsettedOrNot: function() {
+							$(this).removeClass('_loading_');
+						}
 						
 					
 					});
 
-					$('.js-button5').button({
+					$('[data-checkbox], .js-button1').button({
+						
+						action: function() {
+							$(this).addClass('_active_')
+						},
+
+						unsetted: function() {
+							$(this).removeClass('_active_')
+						},
+
+						beforeAction: function() {
+							$(this).addClass('_loading_ _active_');
+							
+							var d = $.Deferred();
+							setTimeout(function(){ d.resolve() },1000);
+							return d.promise();
+						},
+						
+						ifNotAction: function() {
+							
+						},
+						clicked: function() {
+							$(this).removeClass('_loading_')
+						},
+						beforeUnset: function() {
+							$(this).addClass('_loading_');
+							var d = $.Deferred();
+							setTimeout(function(){ d.resolve() },1000);
+							return d.promise();
+						},
+						unsetted: function() {
+							$(this).removeClass('_active_')
+						},
+						ifUnsettedOrNot: function() {
+							$(this).removeClass('_loading_');
+						}
 						
 					
 					});

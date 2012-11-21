@@ -74,10 +74,20 @@ $__after-object: '';
 		}
 	}
 
-	.-#{$mod__status__disabled}-,
 	.#{$mod__active},
 	:active {
 		position: relative;
+		z-index: 0;
+	}
+
+	:not(:active),
+	:not(.#{$mod__active}),
+	:not(.-#{$mod__status__disabled}-) {
+		position: relative;
+		z-index: 1;
+	}
+
+	.-#{$mod__status__disabled}- {
 		z-index: -1;
 	}
 
