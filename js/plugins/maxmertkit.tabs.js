@@ -152,7 +152,6 @@
 				try {
 					$.get( item_.data('tabs-data') )
 						.done( function( document_, result_, answer_ ) {
-							debugger;
 							if( me.close() ) {
 								_target.html( answer_.responseText );
 								me._openAnimation( item_, _target );
