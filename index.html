@@ -21,6 +21,7 @@
 		<script type="text/javascript" src="js/plugins/maxmertkit.modal.js"></script>
 		<script type="text/javascript" src="js/plugins/maxmertkit.carousel.js"></script>
 		<script type="text/javascript" src="js/plugins/maxmertkit.button.js"></script>
+		<script type="text/javascript" src="js/plugins/maxmertkit.notify.js"></script>
 
 		<script type="text/javascript">
 			(function($){
@@ -154,7 +155,12 @@
 					$('[data-checkbox], .js-button1').button({
 						
 						action: function() {
-							$(this).addClass('_active_')
+							$(this).addClass('_active_');
+							$.notify(
+								"hello"
+								, {
+									header: 'header'
+								});
 						},
 
 						unsetted: function() {

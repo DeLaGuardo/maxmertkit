@@ -37,6 +37,10 @@
 			color: nth($mod__status-color, $num)#{$important};
 		}
 
+		%#{$__inheritance}-status-#{$status}-color-darken {
+			color: nth($mod__status-color-darken, $num)#{$important};
+		}
+
 		%#{$__inheritance}-status-#{$status}-color-invert {
 			color: nth($mod__status-color-invert, $num)#{$important};
 		}

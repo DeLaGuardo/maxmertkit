@@ -82,6 +82,17 @@
 		}
 	}
 
+	.-mx-releaseIn {
+		@include transform( rotateX(-90deg) rotateY(0deg) );
+		// @include opacity( 0 );
+
+		&.-mx-start {
+			@include animation( 2s releaseInKeyframes );
+			// @include opacity( 1 );
+			@include transform( rotateX(0deg) rotateY(0deg) );
+		}
+	}
+
 	&.-mx-shader {
 		.-container
 		{

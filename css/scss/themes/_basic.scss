@@ -221,6 +221,18 @@ $object__progressbar__bar-shadow: 0px 1px 2px rgba(0,0,0,.2), 0 4px 4px rgba(0,0
 $object__progressbar__globalBar: #{$object__progressbar__bar}-global;
 $object__progressbar__globalBar-shadow: $object__progressbar__bar-shadow;
 
+// ------------ Notify
+$object__notify: -notify;
+$object__notify-font-size: 85%;
+$object__notify-width: 300px;
+$object__notify-border-radius: 0;
+$object__notify-margin: 0;
+$object__notify__header: #{$object__notify}-header;
+$object__notify__header-padding: 7px 10px;
+$object__notify__content: #{$object__notify}-content;
+$object__notify__content-padding: 3px 10px 7px;
+$object__notify__container: #{$object__notify}-container;
+
 
 
 // ======================================================================================================== \\
@@ -254,6 +266,7 @@ $mod__status__unstyled: unstyled;
 
 $mod__status:							$mod__status__unstyled			default							error							success							info							warning							primary							dark						$mod__status__disabled;
 $mod__status-color:						$theme__color 					$theme__color 					red 							#3ec84c 						#64cfd9 						#EDB723 						#1b88d6							#6b6b6b						#ccc;						//color
+$mod__status-color-darken:				transparent						darken(#d9d9d9, 10%)			darken(#d96464, 10%)			darken(#3ec84c, 10%)			darken(#64cfd9, 10%)			darken(#d9ab64, 10%)			darken(#1b88d6, 10%)			darken(#6b6b6b, 5%)			darken(#d9d9d9, 10%);		//border-color-darken
 $mod__status-color-invert:				$theme__color 					$theme__color 					#fff 							#fff 							#fff 							#fff 							#fff							#fff						#ccc;						//color-invert
 $mod__status-border-color:				transparent						#d9d9d9							#d96464 						#3ec84c							#64cfd9							#d9ab64							darken(#1b88d6, 5%)				#6b6b6b						#d9d9d9; 					//border-color
 $mod__status-border-color-lighten:		transparent						#fbfbfb							lighten(#d96464, 20%)			lighten(#3ec84c, 10%)			lighten(#64cfd9, 10%)			lighten(#d9ab64, 10%)			lighten(#1b88d6, 10%)			lighten(#6b6b6b, 20%)		lighten(#d9d9d9, 10%);		//border-color-lighten
