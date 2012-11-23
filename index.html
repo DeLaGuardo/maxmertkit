@@ -112,13 +112,17 @@
 						imageShowAnimation: 'scrollDown'
 					});
 
+					$('#js-carousel').data('kit-carousel').disable();
+
 					$('[data-radio="radio1"]').button({
 						
 						action: function() {
+							console.log('action')
 							$(this).addClass('_active_')
 						},
 
 						unsetted: function() {
+							console.log('unsetted')
 							$(this).removeClass('_active_')
 						},
 
@@ -155,12 +159,15 @@
 					$('[data-checkbox], .js-button1').button({
 						
 						action: function() {
+
 							$(this).addClass('_active_');
 							$.notify(
-								"hello"
+								"Example of how can button get data, change statuses, and how $.notify works"
 								, {
-									header: 'header'
+									header: 'Approved',
+									theme: 'primary'
 								});
+
 						},
 
 						unsetted: function() {

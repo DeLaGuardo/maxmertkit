@@ -9,7 +9,7 @@ $__after-object: '';
 	top: 0; left: 50%;
 	width: $object__notify-width;
 	margin-left: -$object__notify-width / 2;
-	@include perspective( 1000 );
+	@include perspective( 1000px );
 
 	.#{$object__notify} {
 		@extend %__object;
