@@ -3573,6 +3573,37 @@ input[type="button"]._unclickable_:active {
     border-radius: 0; }
     .-notify-container .-notify .-notify-header {
       padding: 7px 10px;
-      font-weight: bold; }
+      font-weight: bold;
+      position: relative; }
+      .-notify-container .-notify .-notify-header .-closer {
+        font-size: 18px;
+        font-weight: bold;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin-top: -11px;
+        cursor: pointer;
+        color: #000;
+        opacity: 0.3;
+        -webkit-opacity: 0.3;
+        -moz-opacity: 0.3;
+        -ms-opacity: 0.3;
+        -o-opacity: 0.3; }
+        .-notify-container .-notify .-notify-header .-closer:hover {
+          opacity: 1;
+          -webkit-opacity: 1;
+          -moz-opacity: 1;
+          -ms-opacity: 1;
+          -o-opacity: 1; }
     .-notify-container .-notify .-notify-content {
       padding: 3px 10px 7px; }
+  .-notify-container .-notify-closeAll {
+    display: none;
+    position: absolute;
+    top: 2px;
+    margin-left: 2px;
+    left: 100%;
+    width: 70px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer; }

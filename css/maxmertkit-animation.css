@@ -9896,7 +9896,12 @@
   -webkit-transform: rotateX(-90deg) rotateY(0deg);
   -moz-transform: rotateX(-90deg) rotateY(0deg);
   -ms-transform: rotateX(-90deg) rotateY(0deg);
-  -o-transform: rotateX(-90deg) rotateY(0deg); }
+  -o-transform: rotateX(-90deg) rotateY(0deg);
+  transition: top 1s ease;
+  -webkit-transition: top 1s ease;
+  -moz-transition: top 1s ease;
+  -ms-transition: top 1s ease;
+  -o-transition: top 1s ease; }
   .cssanimations.csstransforms.csstransitions .-mx-releaseIn.-mx-start {
     animation: 2s releaseInKeyframes;
     -webkit-animation: 2s releaseInKeyframes;
