@@ -37,20 +37,30 @@
 	Carousel.prototype = new $.kit();
 	Carousel.prototype.constructor = Carousel;
 
+	Carousel.prototype.enable = function() {
+		var me = this;
+
+		me.__setOption( 'enabled', true )
+	}
+
+	Carousel.prototype.disable = function() {
+		var me = this;
+
+		me.__setOption( 'enabled', false )
+	}
+
 	Carousel.prototype.__setOption = function ( key_, value_ ) {
 		var me  = this;
 		var $me = $(me.element);
 
 		switch( key_ ) {
-			// case 'theme':
-			// 	$me.removeClass( '-' + me.options.theme + '-' );
-			// 	$me.addClass( '-' + value_ + '-' );
-			// 	me.navigation.addClass( '-' + value_ + '-' )
-			// break;
 
-			// case 'enabled':
-			// 	value_ === true ? $me.removeClass( '-disabled-' ) : $me.addClass( '-disabled-' );
-			// break;
+			case 'enabled':
+				if( ! value_ ) {
+					clearInterval( me.timer );
+					me.clearImageSlide();
+				}
+			break;
 			
 			case 'controlSelector':
 				// Remove old controls events
@@ -65,7 +75,7 @@
 						$(control_).on( 'click.' + me.name, function( event_ ) {
 							
 							// Use data-slide to find out where to slide. It should be 'prev' or 'next'
-							$(this).data( 'slide' ) && me[ $(this).data( 'slide' ) ]();
+							me.options.enabled && $(this).data( 'slide' ) && me[ $(this).data( 'slide' ) ]();
 
 							event_.preventDefault();
 						});
@@ -85,7 +95,7 @@
 					$(item_).addClass( '-' + me.options.theme + '-' );
 
 					$(item_).on( 'click.' + me.name, function( event_ ) {
-						if( $(event_.target).is('i') ) {
+						if( me.options.enabled && $(event_.target).is('i') ) {
 							me.active = $(event_.target).index();
 							me.to();
 						}
@@ -252,7 +262,7 @@
 		// We should hide only controls inside slider!!! Not good to use find every time, but...
 		$me.find( me.options.controlSelector ).each( function( index_, control_ ) {
 			// Just in case check if in href if id of our carousel
-			if( $(control_).attr( 'href' ).replace(/#/g, '') === $me.attr( 'id' ) )
+			if( me.options.enabled && $(control_).attr( 'href' ).replace(/#/g, '') === $me.attr( 'id' ) )
 				if( $( control_ ).data('slide') === 'prev' ) 
 					me.options.hideControlsDistance > x ?
 						$( control_ ).fadeIn(100) :
@@ -271,7 +281,7 @@
 		,	carouselHeight = $me.innerHeight()
 		,	carouselWidth = $me.innerWidth();
 
-		if( me.options.imageFillAnimation ) {
+		if( me.options.enabled && me.options.imageFillAnimation ) {
 			$me.imagesLoaded( function() {
 				var img = $( me.items[ me.active ].find( 'img' )[0] )
 				,	imgWidth = img.width()
@@ -318,7 +328,7 @@
 		var me = this
 		,	$me = $(me.element);
 
-		$me.imagesLoaded( function() {
+		me.options.enabled && $me.imagesLoaded( function() {
 			var	x = event_.pageX - $me.offset().left
 			,	y = event_.pageY - $me.offset().top
 			,	img = me.items[ me.active ].find('img')
