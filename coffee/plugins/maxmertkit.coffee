@@ -17,6 +17,7 @@ jQuery ->
 
 		_setOptions: ( options ) ->
 			me = @
+			newFunction = ->
 		
 			@options = {} if @options is undefined
 

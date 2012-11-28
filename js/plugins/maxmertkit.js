@@ -19,8 +19,9 @@
       }
 
       kit.prototype._setOptions = function(options) {
-        var me;
+        var me, newFunction;
         me = this;
+        newFunction = function() {};
         if (this.options === void 0) {
           this.options = {};
         }

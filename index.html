@@ -34,56 +34,56 @@
 						placement: 'top'
 					});
 					
-			// 		$('.js-tooltip2').popup({
-			// 			content: 'tooltip2', 
-			// 			animation: 'rotateIn', 
-			// 			animationDuration: 500,
-			// 			onlyOne: true,
+					$('.js-tooltip2').popup({
+						content: 'tooltip2', 
+						animation: 'rotateIn', 
+						animationDuration: 500,
+						onlyOne: true,
 
-			// 			beforeOpen: function() {
-			// 				$(this).addClass('_loading_ _active_');
+						beforeOpen: function() {
+							$(this).addClass('_loading_ _active_');
+							// console.log( $(this).attr('class') );
+							var d = $.Deferred();
+							setTimeout(function(){ d.resolve() },1000);
+							return d.promise();
+						},
+						open: function() {
+							$(this).addClass('_active_')
+						},
+						ifNotOpened: function() {
 							
-			// 				var d = $.Deferred();
-			// 				setTimeout(function(){ d.resolve() },1000);
-			// 				return d.promise();
-			// 			},
-			// 			open: function() {
-			// 				$(this).addClass('_active_')
-			// 			},
-			// 			ifNotOpened: function() {
-							
-			// 			},
-			// 			ifOpenedOrNot: function() {
-			// 				$(this).removeClass('_loading_')
-			// 			},
-			// 			beforeClose: function() {
-			// 				$(this).addClass('_loading_');
-			// 				var d = $.Deferred();
-			// 				setTimeout(function(){ d.resolve() },1000);
-			// 				return d.promise();
-			// 			},
-			// 			close: function() {
-			// 				$(this).removeClass('_active_')
-			// 			},
-			// 			ifClosedOrNot: function() {
-			// 				$(this).removeClass('_loading_');
-			// 			}
-			// 		});
+						},
+						ifOpenedOrNot: function() {
+							$(this).removeClass('_loading_')
+						},
+						beforeClose: function() {
+							$(this).addClass('_loading_');
+							var d = $.Deferred();
+							setTimeout(function(){ d.resolve() },1000);
+							return d.promise();
+						},
+						close: function() {
+							$(this).removeClass('_active_')
+						},
+						ifClosedOrNot: function() {
+							$(this).removeClass('_loading_');
+						}
+					});
 
-			// 		$('.js-dropdown').popup({
-			// 			template: '.dropdown-template',
-			// 			trigger: 'click',
-			// 			placement: 'bottom',
-			// 			animation: 'growUp',
-			// 			theme: 'primary',
-			// 			onlyOne: true,
-			// 			open: function() {
-			// 				$(this).addClass('_active_')
-			// 			},
-			// 			close: function() {
-			// 				$(this).removeClass('_active_')
-			// 			}
-			// 		});
+					$('.js-dropdown').popup({
+						template: '.dropdown-template',
+						trigger: 'click',
+						placement: 'bottom',
+						animation: 'growUp',
+						theme: 'primary',
+						onlyOne: true,
+						open: function() {
+							$(this).addClass('_active_')
+						},
+						close: function() {
+							$(this).removeClass('_active_')
+						}
+					});
 
 
 			// 		$('.js-tabs').tabs({
