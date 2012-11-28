@@ -185,11 +185,11 @@
 		
 		// Set autoscroll. Always check mouseenter and mouseleave, because autoSlide can change any time.
 		$me.on( 'mouseenter.' + me.name, function() {
-			if( me.options.autoSlide > 0 ) clearInterval( me.timer );
+			if( me.options.enabled && me.options.autoSlide > 0 ) clearInterval( me.timer );
 		});
 
 		$me.on( 'mouseleave.' + me.name, function( event_ ) {
-			if( me.options.autoSlide > 0 ) me.timer = setInterval( $.proxy(me.next, me), me.options.autoSlide );
+			if( me.options.enabled && me.options.autoSlide > 0 ) me.timer = setInterval( $.proxy(me.next, me), me.options.autoSlide );
 			$me.find( me.options.controlSelector ).each( function( index_, control_ ) { $(control_).fadeOut(100) });
 		});
 
