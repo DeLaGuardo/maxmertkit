@@ -107,6 +107,29 @@
         return this;
       };
 
+      Popup.prototype.open = function() {
+        var me;
+        me = this;
+        return this.timeout = setTimeout(function() {
+          var before;
+          if (me.options.enabled === true && me.state !== 'opened') {
+            me.state = 'in';
+            if (me.options.beforeOpen !== void 0) {
+              before = me.options.beforeOpen.call(me.$el);
+              return before.done(function() {
+                return me._open();
+              }).fail(function() {
+                me.state = 'closed';
+                me.$el.trigger(me.event('ifNotOpened'));
+                return me.$el.trigger(me.event('ifOpenedOrNot'));
+              });
+            }
+          } else {
+            return me._open();
+          }
+        });
+      };
+
       return Popup;
 
     })($.kit);
