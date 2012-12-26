@@ -3,6 +3,7 @@
 	var _name = 'affix'
 	,	_defaults = {
 			offset: 0	// Y
+		,	position: 'top'
 		,	inside: 'parent'
 		}
 

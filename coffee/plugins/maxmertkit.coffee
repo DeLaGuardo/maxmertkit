@@ -8,8 +8,8 @@ jQuery ->
 
 	class $.kit
 
-		constructor: (@element, options) ->
-			@$el = $(@element)
+		constructor: (@el, options) ->
+			@$el = $(@el)
 			@name = _name
 			@options = $.extend {}, _defaults, options
 			@init()

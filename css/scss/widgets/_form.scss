@@ -49,11 +49,12 @@ $_input-list: 'input' 'textarea' 'select';
 
 		border-width: $object__form__input-border-width;
 		border-style: solid;
+		margin: 0;
 
 		@include set_modificator($mod__status, border-color);
 		@include set_modificator($mod__size, input-line-height, font-size, input-padding);
 
-		&[disabled="disabled"] {
+		&[disabled="disabled"], &.-#{$mod__status__disabled}- {
 			@include set_modificator($mod__status__disabled, background-color, color);
 		}
 	}

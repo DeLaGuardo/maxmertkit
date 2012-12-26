@@ -157,7 +157,7 @@ dl {
     line-height: 0; }
   .-row:after {
     clear: both; }
-  .-row [class*='-col'] {
+  .-row [class^='-col'] {
     float: left;
     margin-left: 30px; }
   .-row > .-col1 {
@@ -219,7 +219,7 @@ dl {
     line-height: 0; }
   .-row-fluid:after {
     clear: both; }
-  .-row-fluid [class*='-col'] {
+  .-row-fluid [class^='-col'] {
     float: left;
     margin-left: 2.5%; }
   .-row-fluid > .-col1 {
@@ -271,7 +271,7 @@ dl {
   .-row-fluid > .-col-offset12 {
     margin-left: 102.5%; }
 
-.-table tr td.-unstyled-, .-table tr.-unstyled- td, .-table._striped_ tr:nth-child(odd).-unstyled- td, .-table._hovered_ tr:hover.-unstyled- td, .-caret.-unstyled-, .-btn.-unstyled- .-caret, button.-unstyled- .-caret, input[type="button"].-unstyled- .-caret, .-group.-unstyled- .-caret, .-tabs.-unstyled- .-caret {
+.-table.-unstyled- tr td, .-table._hovered_.-unstyled- tr:hover td, .-caret.-unstyled-, .-btn.-unstyled- .-caret, button.-unstyled- .-caret, input[type="button"].-unstyled- .-caret, .-group.-unstyled- .-caret, .-tabs.-unstyled- .-caret {
   color: #333333; }
 
 .-form input[type="text"].-unstyled-,
@@ -289,10 +289,10 @@ dl {
 .-form input[type="tel"].-unstyled-,
 .-form input[type="color"].-unstyled-,
 .-form textarea.-unstyled-,
-.-form select.-unstyled-, .-form .-form-field.-unstyled- > input, .-form .-form-field.-unstyled- > textarea, .-form .-form-field.-unstyled- > select, .-table tr.-unstyled- td {
+.-form select.-unstyled-, .-form .-form-field.-unstyled- > input, .-form .-form-field.-unstyled- > textarea, .-form .-form-field.-unstyled- > select, .-table tr.-unstyled- td, .-table._hovered_ tr:hover.-unstyled- td {
   border-color: transparent; }
 
-.-form input.-unstyled-:hover, .-form textarea.-unstyled-:hover, .-form select.-unstyled-:hover, .-form .-form-field:hover.-unstyled- > input, .-form .-form-field:hover.-unstyled- > textarea, .-form .-form-field:hover.-unstyled- > select, .-table tr td.-unstyled- {
+.-form input.-unstyled-:hover, .-form textarea.-unstyled-:hover, .-form select.-unstyled-:hover, .-form .-form-field:hover.-unstyled- > input, .-form .-form-field:hover.-unstyled- > textarea, .-form .-form-field:hover.-unstyled- > select, .-table.-unstyled- tr td, .-table._hovered_.-unstyled- tr:hover td {
   border-color: transparent; }
 
 .-caret.-unstyled-, .-btn.-unstyled- .-caret, button.-unstyled- .-caret, input[type="button"].-unstyled- .-caret, .-group.-unstyled- .-caret, .-tabs.-unstyled- .-caret {
@@ -301,20 +301,33 @@ dl {
 .-form .-form-field.-unstyled- {
   border-color: transparent; }
 
-.-table tr td.-unstyled-, .-table tr.-unstyled- td, .-table._striped_ tr:nth-child(odd).-unstyled- td {
+.-table.-unstyled- tr td, .-table._hovered_ tr:hover.-unstyled- td {
   background-color: transparent; }
 
-.-table._hovered_ tr:hover.-unstyled- td {
+.-table._hovered_.-unstyled- tr:hover td {
   background-color: transparent; }
 
 .-form input.-unstyled-:focus, .-form textarea.-unstyled-:focus, .-form select.-unstyled-:focus, .-form .-form-field.-unstyled- > input:focus, .-form .-form-field.-unstyled- > textarea:focus, .-form .-form-field.-unstyled- > select:focus {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  -ms-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none; }
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -ms-box-shadow: none !important;
+  -o-box-shadow: none !important;
+  box-shadow: none !important; }
 
-.-table._striped_ tr:nth-child(odd) td, .-table._hovered_ tr:hover td, .-caret, .-btn .-caret, button .-caret, input[type="button"] .-caret, .-group .-caret, .-tabs .-caret {
+.-table._loading_.-unstyled- tr td, .-table tr td._loading_.-unstyled- {
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.35, rgba(255, 255, 255, 0.35)), color-stop(0.35, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.35)), color-stop(0.75, rgba(255, 255, 255, 0.35)), color-stop(0.75, transparent), to(transparent)) !important;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-size: 40px 40px!important;
+  animation: stripes-animation 2s linear infinite;
+  -webkit-animation: stripes-animation 2s linear infinite;
+  -moz-animation: stripes-animation 2s linear infinite;
+  -o-animation: stripes-animation 2s linear infinite;
+  -ms-animation: stripes-animation 2s linear infinite; }
+
+.-caret, .-btn .-caret, button .-caret, input[type="button"] .-caret, .-group .-caret, .-tabs .-caret {
   color: #333333; }
 
 .-form input[type="text"],
@@ -332,7 +345,7 @@ dl {
 .-form input[type="tel"],
 .-form input[type="color"],
 .-form textarea,
-.-form select, .-form .-form-field > input, .-form .-form-field > textarea, .-form .-form-field > select, .-table tr td {
+.-form select, .-form .-form-field > input, .-form .-form-field > textarea, .-form .-form-field > select, .-table tr td, .-table._hovered_ tr:hover td {
   border-color: #d9d9d9; }
 
 .-form input:hover, .-form textarea:hover, .-form select:hover, .-form .-form-field:hover > input, .-form .-form-field:hover > textarea, .-form .-form-field:hover > select {
@@ -342,13 +355,10 @@ dl {
   border-color: #999999; }
 
 .-form .-form-field {
-  border-color: #fbfbfb; }
-
-.-table._striped_ tr:nth-child(odd) td {
-  background-color: #fbfbfb; }
+  border-color: #e6e6e6; }
 
 .-table._hovered_ tr:hover td {
-  background-color: #eeeeee; }
+  background-color: #fbfbfb; }
 
 .-form input:focus, .-form textarea:focus, .-form select:focus, .-form .-form-field > input:focus, .-form .-form-field > textarea:focus, .-form .-form-field > select:focus {
   -webkit-box-shadow: 0 0 10px rgba(100,207,217,1);
@@ -357,7 +367,20 @@ dl {
   -o-box-shadow: 0 0 10px rgba(100,207,217,1);
   box-shadow: 0 0 10px rgba(100,207,217,1); }
 
-.-table tr td.-error-, .-table tr.-error- td, .-table._striped_ tr:nth-child(odd).-error- td, .-table._hovered_ tr:hover.-error- td, .-caret.-error-, .-btn.-error- .-caret, button.-error- .-caret, input[type="button"].-error- .-caret, .-group.-error- .-caret, .-tabs.-error- .-caret {
+.-table._loading_ tr td, .-table tr td._loading_ {
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.35, rgba(255, 255, 255, 0.35)), color-stop(0.35, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.35)), color-stop(0.75, rgba(255, 255, 255, 0.35)), color-stop(0.75, transparent), to(transparent)) !important;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-size: 40px 40px!important;
+  animation: stripes-animation 2s linear infinite;
+  -webkit-animation: stripes-animation 2s linear infinite;
+  -moz-animation: stripes-animation 2s linear infinite;
+  -o-animation: stripes-animation 2s linear infinite;
+  -ms-animation: stripes-animation 2s linear infinite; }
+
+.-table.-error- tr td, .-table._hovered_.-error- tr:hover td, .-caret.-error-, .-btn.-error- .-caret, button.-error- .-caret, input[type="button"].-error- .-caret, .-group.-error- .-caret, .-tabs.-error- .-caret {
   color: white; }
 
 .-form input[type="text"].-error-,
@@ -375,10 +398,10 @@ dl {
 .-form input[type="tel"].-error-,
 .-form input[type="color"].-error-,
 .-form textarea.-error-,
-.-form select.-error-, .-form .-form-field.-error- > input, .-form .-form-field.-error- > textarea, .-form .-form-field.-error- > select, .-table tr.-error- td {
+.-form select.-error-, .-form .-form-field.-error- > input, .-form .-form-field.-error- > textarea, .-form .-form-field.-error- > select {
   border-color: #d96464; }
 
-.-form input.-error-:hover, .-form textarea.-error-:hover, .-form select.-error-:hover, .-form .-form-field:hover.-error- > input, .-form .-form-field:hover.-error- > textarea, .-form .-form-field:hover.-error- > select, .-table tr td.-error- {
+.-form input.-error-:hover, .-form textarea.-error-:hover, .-form select.-error-:hover, .-form .-form-field:hover.-error- > input, .-form .-form-field:hover.-error- > textarea, .-form .-form-field:hover.-error- > select, .-table.-error- tr td, .-table._hovered_.-error- tr:hover td {
   border-color: #cf3b3b; }
 
 .-caret.-error-, .-btn.-error- .-caret, button.-error- .-caret, input[type="button"].-error- .-caret, .-group.-error- .-caret, .-tabs.-error- .-caret {
@@ -387,10 +410,10 @@ dl {
 .-form .-form-field.-error- {
   border-color: #edb6b6; }
 
-.-table tr td.-error-, .-table tr.-error- td, .-table._striped_ tr:nth-child(odd).-error- td {
+.-table.-error- tr td {
   background-color: #da4a39; }
 
-.-table._hovered_ tr:hover.-error- td {
+.-table._hovered_.-error- tr:hover td {
   background-color: #d23927; }
 
 .-form input.-error-:focus, .-form textarea.-error-:focus, .-form select.-error-:focus, .-form .-form-field.-error- > input:focus, .-form .-form-field.-error- > textarea:focus, .-form .-form-field.-error- > select:focus {
@@ -400,7 +423,20 @@ dl {
   -o-box-shadow: 0 0 10px rgba(217,100,100,1);
   box-shadow: 0 0 10px rgba(217,100,100,1); }
 
-.-table tr td.-success-, .-table tr.-success- td, .-table._striped_ tr:nth-child(odd).-success- td, .-table._hovered_ tr:hover.-success- td, .-caret.-success-, .-btn.-success- .-caret, button.-success- .-caret, input[type="button"].-success- .-caret, .-group.-success- .-caret, .-tabs.-success- .-caret {
+.-table._loading_.-error- tr td, .-table tr td._loading_.-error- {
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.35, rgba(255, 255, 255, 0.35)), color-stop(0.35, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.35)), color-stop(0.75, rgba(255, 255, 255, 0.35)), color-stop(0.75, transparent), to(transparent)) !important;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-size: 40px 40px!important;
+  animation: stripes-animation 2s linear infinite;
+  -webkit-animation: stripes-animation 2s linear infinite;
+  -moz-animation: stripes-animation 2s linear infinite;
+  -o-animation: stripes-animation 2s linear infinite;
+  -ms-animation: stripes-animation 2s linear infinite; }
+
+.-table.-success- tr td, .-table._hovered_.-success- tr:hover td, .-caret.-success-, .-btn.-success- .-caret, button.-success- .-caret, input[type="button"].-success- .-caret, .-group.-success- .-caret, .-tabs.-success- .-caret {
   color: white; }
 
 .-form input[type="text"].-success-,
@@ -418,10 +454,10 @@ dl {
 .-form input[type="tel"].-success-,
 .-form input[type="color"].-success-,
 .-form textarea.-success-,
-.-form select.-success-, .-form .-form-field.-success- > input, .-form .-form-field.-success- > textarea, .-form .-form-field.-success- > select, .-table tr.-success- td {
+.-form select.-success-, .-form .-form-field.-success- > input, .-form .-form-field.-success- > textarea, .-form .-form-field.-success- > select {
   border-color: #3ec84c; }
 
-.-form input.-success-:hover, .-form textarea.-success-:hover, .-form select.-success-:hover, .-form .-form-field:hover.-success- > input, .-form .-form-field:hover.-success- > textarea, .-form .-form-field:hover.-success- > select, .-table tr td.-success- {
+.-form input.-success-:hover, .-form textarea.-success-:hover, .-form select.-success-:hover, .-form .-form-field:hover.-success- > input, .-form .-form-field:hover.-success- > textarea, .-form .-form-field:hover.-success- > select, .-table.-success- tr td, .-table._hovered_.-success- tr:hover td {
   border-color: #2fa43b; }
 
 .-caret.-success-, .-btn.-success- .-caret, button.-success- .-caret, input[type="button"].-success- .-caret, .-group.-success- .-caret, .-tabs.-success- .-caret {
@@ -430,10 +466,10 @@ dl {
 .-form .-form-field.-success- {
   border-color: #66d371; }
 
-.-table tr td.-success-, .-table tr.-success- td, .-table._striped_ tr:nth-child(odd).-success- td {
+.-table.-success- tr td {
   background-color: #3ec84c; }
 
-.-table._hovered_ tr:hover.-success- td {
+.-table._hovered_.-success- tr:hover td {
   background-color: #34b842; }
 
 .-form input.-success-:focus, .-form textarea.-success-:focus, .-form select.-success-:focus, .-form .-form-field.-success- > input:focus, .-form .-form-field.-success- > textarea:focus, .-form .-form-field.-success- > select:focus {
@@ -443,7 +479,20 @@ dl {
   -o-box-shadow: 0 0 10px rgba(100,217,134,1);
   box-shadow: 0 0 10px rgba(100,217,134,1); }
 
-.-table tr td.-info-, .-table tr.-info- td, .-table._striped_ tr:nth-child(odd).-info- td, .-table._hovered_ tr:hover.-info- td, .-caret.-info-, .-btn.-info- .-caret, button.-info- .-caret, input[type="button"].-info- .-caret, .-group.-info- .-caret, .-tabs.-info- .-caret {
+.-table._loading_.-success- tr td, .-table tr td._loading_.-success- {
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.35, rgba(255, 255, 255, 0.35)), color-stop(0.35, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.35)), color-stop(0.75, rgba(255, 255, 255, 0.35)), color-stop(0.75, transparent), to(transparent)) !important;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-size: 40px 40px!important;
+  animation: stripes-animation 2s linear infinite;
+  -webkit-animation: stripes-animation 2s linear infinite;
+  -moz-animation: stripes-animation 2s linear infinite;
+  -o-animation: stripes-animation 2s linear infinite;
+  -ms-animation: stripes-animation 2s linear infinite; }
+
+.-table.-info- tr td, .-table._hovered_.-info- tr:hover td, .-caret.-info-, .-btn.-info- .-caret, button.-info- .-caret, input[type="button"].-info- .-caret, .-group.-info- .-caret, .-tabs.-info- .-caret {
   color: white; }
 
 .-form input[type="text"].-info-,
@@ -461,10 +510,10 @@ dl {
 .-form input[type="tel"].-info-,
 .-form input[type="color"].-info-,
 .-form textarea.-info-,
-.-form select.-info-, .-form .-form-field.-info- > input, .-form .-form-field.-info- > textarea, .-form .-form-field.-info- > select, .-table tr.-info- td {
+.-form select.-info-, .-form .-form-field.-info- > input, .-form .-form-field.-info- > textarea, .-form .-form-field.-info- > select {
   border-color: #64cfd9; }
 
-.-form input.-info-:hover, .-form textarea.-info-:hover, .-form select.-info-:hover, .-form .-form-field:hover.-info- > input, .-form .-form-field:hover.-info- > textarea, .-form .-form-field:hover.-info- > select, .-table tr td.-info- {
+.-form input.-info-:hover, .-form textarea.-info-:hover, .-form select.-info-:hover, .-form .-form-field:hover.-info- > input, .-form .-form-field:hover.-info- > textarea, .-form .-form-field:hover.-info- > select, .-table.-info- tr td, .-table._hovered_.-info- tr:hover td {
   border-color: #3bc2cf; }
 
 .-caret.-info-, .-btn.-info- .-caret, button.-info- .-caret, input[type="button"].-info- .-caret, .-group.-info- .-caret, .-tabs.-info- .-caret {
@@ -473,10 +522,10 @@ dl {
 .-form .-form-field.-info- {
   border-color: #8ddce3; }
 
-.-table tr td.-info-, .-table tr.-info- td, .-table._striped_ tr:nth-child(odd).-info- td {
+.-table.-info- tr td {
   background-color: #64cfd9; }
 
-.-table._hovered_ tr:hover.-info- td {
+.-table._hovered_.-info- tr:hover td {
   background-color: #50c9d4; }
 
 .-form input.-info-:focus, .-form textarea.-info-:focus, .-form select.-info-:focus, .-form .-form-field.-info- > input:focus, .-form .-form-field.-info- > textarea:focus, .-form .-form-field.-info- > select:focus {
@@ -486,7 +535,20 @@ dl {
   -o-box-shadow: 0 0 10px rgba(100,207,217,1);
   box-shadow: 0 0 10px rgba(100,207,217,1); }
 
-.-table tr td.-warning-, .-table tr.-warning- td, .-table._striped_ tr:nth-child(odd).-warning- td, .-table._hovered_ tr:hover.-warning- td, .-caret.-warning-, .-btn.-warning- .-caret, button.-warning- .-caret, input[type="button"].-warning- .-caret, .-group.-warning- .-caret, .-tabs.-warning- .-caret {
+.-table._loading_.-info- tr td, .-table tr td._loading_.-info- {
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.35, rgba(255, 255, 255, 0.35)), color-stop(0.35, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.35)), color-stop(0.75, rgba(255, 255, 255, 0.35)), color-stop(0.75, transparent), to(transparent)) !important;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-size: 40px 40px!important;
+  animation: stripes-animation 2s linear infinite;
+  -webkit-animation: stripes-animation 2s linear infinite;
+  -moz-animation: stripes-animation 2s linear infinite;
+  -o-animation: stripes-animation 2s linear infinite;
+  -ms-animation: stripes-animation 2s linear infinite; }
+
+.-table.-warning- tr td, .-table._hovered_.-warning- tr:hover td, .-caret.-warning-, .-btn.-warning- .-caret, button.-warning- .-caret, input[type="button"].-warning- .-caret, .-group.-warning- .-caret, .-tabs.-warning- .-caret {
   color: white; }
 
 .-form input[type="text"].-warning-,
@@ -504,10 +566,10 @@ dl {
 .-form input[type="tel"].-warning-,
 .-form input[type="color"].-warning-,
 .-form textarea.-warning-,
-.-form select.-warning-, .-form .-form-field.-warning- > input, .-form .-form-field.-warning- > textarea, .-form .-form-field.-warning- > select, .-table tr.-warning- td {
+.-form select.-warning-, .-form .-form-field.-warning- > input, .-form .-form-field.-warning- > textarea, .-form .-form-field.-warning- > select {
   border-color: #d9ab64; }
 
-.-form input.-warning-:hover, .-form textarea.-warning-:hover, .-form select.-warning-:hover, .-form .-form-field:hover.-warning- > input, .-form .-form-field:hover.-warning- > textarea, .-form .-form-field:hover.-warning- > select, .-table tr td.-warning- {
+.-form input.-warning-:hover, .-form textarea.-warning-:hover, .-form select.-warning-:hover, .-form .-form-field:hover.-warning- > input, .-form .-form-field:hover.-warning- > textarea, .-form .-form-field:hover.-warning- > select, .-table.-warning- tr td, .-table._hovered_.-warning- tr:hover td {
   border-color: #cf953b; }
 
 .-caret.-warning-, .-btn.-warning- .-caret, button.-warning- .-caret, input[type="button"].-warning- .-caret, .-group.-warning- .-caret, .-tabs.-warning- .-caret {
@@ -516,10 +578,10 @@ dl {
 .-form .-form-field.-warning- {
   border-color: #e3c18d; }
 
-.-table tr td.-warning-, .-table tr.-warning- td, .-table._striped_ tr:nth-child(odd).-warning- td {
+.-table.-warning- tr td {
   background-color: #edb723; }
 
-.-table._hovered_ tr:hover.-warning- td {
+.-table._hovered_.-warning- tr:hover td {
   background-color: #e4ac13; }
 
 .-form input.-warning-:focus, .-form textarea.-warning-:focus, .-form select.-warning-:focus, .-form .-form-field.-warning- > input:focus, .-form .-form-field.-warning- > textarea:focus, .-form .-form-field.-warning- > select:focus {
@@ -529,7 +591,20 @@ dl {
   -o-box-shadow: 0 0 10px rgba(217,171,100,1);
   box-shadow: 0 0 10px rgba(217,171,100,1); }
 
-.-table tr td.-primary-, .-table tr.-primary- td, .-table._striped_ tr:nth-child(odd).-primary- td, .-table._hovered_ tr:hover.-primary- td, .-caret.-primary-, .-btn.-primary- .-caret, button.-primary- .-caret, input[type="button"].-primary- .-caret, .-group.-primary- .-caret, .-tabs.-primary- .-caret {
+.-table._loading_.-warning- tr td, .-table tr td._loading_.-warning- {
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.35, rgba(255, 255, 255, 0.35)), color-stop(0.35, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.35)), color-stop(0.75, rgba(255, 255, 255, 0.35)), color-stop(0.75, transparent), to(transparent)) !important;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-size: 40px 40px!important;
+  animation: stripes-animation 2s linear infinite;
+  -webkit-animation: stripes-animation 2s linear infinite;
+  -moz-animation: stripes-animation 2s linear infinite;
+  -o-animation: stripes-animation 2s linear infinite;
+  -ms-animation: stripes-animation 2s linear infinite; }
+
+.-table.-primary- tr td, .-table._hovered_.-primary- tr:hover td, .-caret.-primary-, .-btn.-primary- .-caret, button.-primary- .-caret, input[type="button"].-primary- .-caret, .-group.-primary- .-caret, .-tabs.-primary- .-caret {
   color: white; }
 
 .-form input[type="text"].-primary-,
@@ -547,10 +622,10 @@ dl {
 .-form input[type="tel"].-primary-,
 .-form input[type="color"].-primary-,
 .-form textarea.-primary-,
-.-form select.-primary-, .-form .-form-field.-primary- > input, .-form .-form-field.-primary- > textarea, .-form .-form-field.-primary- > select, .-table tr.-primary- td {
+.-form select.-primary-, .-form .-form-field.-primary- > input, .-form .-form-field.-primary- > textarea, .-form .-form-field.-primary- > select {
   border-color: #187abf; }
 
-.-form input.-primary-:hover, .-form textarea.-primary-:hover, .-form select.-primary-:hover, .-form .-form-field:hover.-primary- > input, .-form .-form-field:hover.-primary- > textarea, .-form .-form-field:hover.-primary- > select, .-table tr td.-primary- {
+.-form input.-primary-:hover, .-form textarea.-primary-:hover, .-form select.-primary-:hover, .-form .-form-field:hover.-primary- > input, .-form .-form-field:hover.-primary- > textarea, .-form .-form-field:hover.-primary- > select, .-table.-primary- tr td, .-table._hovered_.-primary- tr:hover td {
   border-color: #156ba9; }
 
 .-caret.-primary-, .-btn.-primary- .-caret, button.-primary- .-caret, input[type="button"].-primary- .-caret, .-group.-primary- .-caret, .-tabs.-primary- .-caret {
@@ -559,10 +634,10 @@ dl {
 .-form .-form-field.-primary- {
   border-color: #3da0e7; }
 
-.-table tr td.-primary-, .-table tr.-primary- td, .-table._striped_ tr:nth-child(odd).-primary- td {
+.-table.-primary- tr td {
   background-color: #1b88d6; }
 
-.-table._hovered_ tr:hover.-primary- td {
+.-table._hovered_.-primary- tr:hover td {
   background-color: #187abf; }
 
 .-form input.-primary-:focus, .-form textarea.-primary-:focus, .-form select.-primary-:focus, .-form .-form-field.-primary- > input:focus, .-form .-form-field.-primary- > textarea:focus, .-form .-form-field.-primary- > select:focus {
@@ -572,7 +647,20 @@ dl {
   -o-box-shadow: 0 0 10px rgba(26,120,217,1);
   box-shadow: 0 0 10px rgba(26,120,217,1); }
 
-.-table tr td.-dark-, .-table tr.-dark- td, .-table._striped_ tr:nth-child(odd).-dark- td, .-table._hovered_ tr:hover.-dark- td, .-caret.-dark-, .-btn.-dark- .-caret, button.-dark- .-caret, input[type="button"].-dark- .-caret, .-group.-dark- .-caret, .-tabs.-dark- .-caret {
+.-table._loading_.-primary- tr td, .-table tr td._loading_.-primary- {
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.35, rgba(255, 255, 255, 0.35)), color-stop(0.35, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.35)), color-stop(0.75, rgba(255, 255, 255, 0.35)), color-stop(0.75, transparent), to(transparent)) !important;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-size: 40px 40px!important;
+  animation: stripes-animation 2s linear infinite;
+  -webkit-animation: stripes-animation 2s linear infinite;
+  -moz-animation: stripes-animation 2s linear infinite;
+  -o-animation: stripes-animation 2s linear infinite;
+  -ms-animation: stripes-animation 2s linear infinite; }
+
+.-table.-dark- tr td, .-table._hovered_.-dark- tr:hover td, .-caret.-dark-, .-btn.-dark- .-caret, button.-dark- .-caret, input[type="button"].-dark- .-caret, .-group.-dark- .-caret, .-tabs.-dark- .-caret {
   color: white; }
 
 .-form input[type="text"].-dark-,
@@ -590,10 +678,10 @@ dl {
 .-form input[type="tel"].-dark-,
 .-form input[type="color"].-dark-,
 .-form textarea.-dark-,
-.-form select.-dark-, .-form .-form-field.-dark- > input, .-form .-form-field.-dark- > textarea, .-form .-form-field.-dark- > select, .-table tr.-dark- td {
+.-form select.-dark-, .-form .-form-field.-dark- > input, .-form .-form-field.-dark- > textarea, .-form .-form-field.-dark- > select {
   border-color: #6b6b6b; }
 
-.-form input.-dark-:hover, .-form textarea.-dark-:hover, .-form select.-dark-:hover, .-form .-form-field:hover.-dark- > input, .-form .-form-field:hover.-dark- > textarea, .-form .-form-field:hover.-dark- > select, .-table tr td.-dark- {
+.-form input.-dark-:hover, .-form textarea.-dark-:hover, .-form select.-dark-:hover, .-form .-form-field:hover.-dark- > input, .-form .-form-field:hover.-dark- > textarea, .-form .-form-field:hover.-dark- > select, .-table.-dark- tr td, .-table._hovered_.-dark- tr:hover td {
   border-color: #5e5e5e; }
 
 .-caret.-dark- {
@@ -605,10 +693,10 @@ dl {
 .-btn.-dark- .-caret, button.-dark- .-caret, input[type="button"].-dark- .-caret, .-group.-dark- .-caret, .-tabs.-dark- .-caret {
   border-color: #d1d1d1; }
 
-.-table tr td.-dark-, .-table tr.-dark- td, .-table._striped_ tr:nth-child(odd).-dark- td {
+.-table.-dark- tr td {
   background-color: #6b6b6b; }
 
-.-table._hovered_ tr:hover.-dark- td {
+.-table._hovered_.-dark- tr:hover td {
   background-color: #5e5e5e; }
 
 .-form input.-dark-:focus, .-form textarea.-dark-:focus, .-form select.-dark-:focus, .-form .-form-field.-dark- > input:focus, .-form .-form-field.-dark- > textarea:focus, .-form .-form-field.-dark- > select:focus {
@@ -618,25 +706,53 @@ dl {
   -o-box-shadow: 0;
   box-shadow: 0; }
 
-.-form input[type="text"][disabled="disabled"].-disabled-,
+.-table._loading_.-dark- tr td, .-table tr td._loading_.-dark- {
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.35, rgba(255, 255, 255, 0.35)), color-stop(0.35, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.35)), color-stop(0.75, rgba(255, 255, 255, 0.35)), color-stop(0.75, transparent), to(transparent)) !important;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-size: 40px 40px!important;
+  animation: stripes-animation 2s linear infinite;
+  -webkit-animation: stripes-animation 2s linear infinite;
+  -moz-animation: stripes-animation 2s linear infinite;
+  -o-animation: stripes-animation 2s linear infinite;
+  -ms-animation: stripes-animation 2s linear infinite; }
+
+.-form input[type="text"][disabled="disabled"].-disabled-, .-form input[type="text"].-disabled-,
 .-form input[type="password"][disabled="disabled"].-disabled-,
+.-form input[type="password"].-disabled-,
 .-form input[type="datetime"][disabled="disabled"].-disabled-,
+.-form input[type="datetime"].-disabled-,
 .-form input[type="datetime-local"][disabled="disabled"].-disabled-,
+.-form input[type="datetime-local"].-disabled-,
 .-form input[type="date"][disabled="disabled"].-disabled-,
+.-form input[type="date"].-disabled-,
 .-form input[type="month"][disabled="disabled"].-disabled-,
+.-form input[type="month"].-disabled-,
 .-form input[type="time"][disabled="disabled"].-disabled-,
+.-form input[type="time"].-disabled-,
 .-form input[type="week"][disabled="disabled"].-disabled-,
+.-form input[type="week"].-disabled-,
 .-form input[type="number"][disabled="disabled"].-disabled-,
+.-form input[type="number"].-disabled-,
 .-form input[type="email"][disabled="disabled"].-disabled-,
+.-form input[type="email"].-disabled-,
 .-form input[type="url"][disabled="disabled"].-disabled-,
+.-form input[type="url"].-disabled-,
 .-form input[type="search"][disabled="disabled"].-disabled-,
+.-form input[type="search"].-disabled-,
 .-form input[type="tel"][disabled="disabled"].-disabled-,
+.-form input[type="tel"].-disabled-,
 .-form input[type="color"][disabled="disabled"].-disabled-,
+.-form input[type="color"].-disabled-,
 .-form textarea[disabled="disabled"].-disabled-,
-.-form select[disabled="disabled"].-disabled-, .-form .-form-field.-disabled- > input, .-form .-form-field.-disabled- > textarea, .-form .-form-field.-disabled- > select {
+.-form textarea.-disabled-,
+.-form select[disabled="disabled"].-disabled-,
+.-form select.-disabled-, .-form .-form-field.-disabled- > input, .-form .-form-field.-disabled- > textarea, .-form .-form-field.-disabled- > select {
   color: #cccccc!important; }
 
-.-table tr td.-disabled-, .-table tr.-disabled- td, .-table._striped_ tr:nth-child(odd).-disabled- td, .-table._hovered_ tr:hover.-disabled- td, .-caret.-disabled-, .-btn.-disabled- .-caret, button.-disabled- .-caret, input[type="button"].-disabled- .-caret, .-group.-disabled- .-caret, .-tabs.-disabled- .-caret {
+.-table.-disabled- tr td, .-table._hovered_.-disabled- tr:hover td, .-caret.-disabled-, .-btn.-disabled- .-caret, button.-disabled- .-caret, input[type="button"].-disabled- .-caret, .-group.-disabled- .-caret, .-tabs.-disabled- .-caret {
   color: #cccccc!important; }
 
 .-form input[type="text"].-disabled-,
@@ -654,10 +770,10 @@ dl {
 .-form input[type="tel"].-disabled-,
 .-form input[type="color"].-disabled-,
 .-form textarea.-disabled-,
-.-form select.-disabled-, .-form .-form-field.-disabled- > input, .-form .-form-field.-disabled- > textarea, .-form .-form-field.-disabled- > select, .-table tr.-disabled- td {
+.-form select.-disabled-, .-form .-form-field.-disabled- > input, .-form .-form-field.-disabled- > textarea, .-form .-form-field.-disabled- > select {
   border-color: #d9d9d9!important; }
 
-.-table tr td.-disabled- {
+.-table.-disabled- tr td, .-table._hovered_.-disabled- tr:hover td {
   border-color: silver!important; }
 
 .-caret.-disabled- {
@@ -666,35 +782,63 @@ dl {
 .-form .-form-field.-disabled- {
   border-color: #f3f3f3!important; }
 
-.-form input[type="text"][disabled="disabled"].-disabled-,
+.-form input[type="text"][disabled="disabled"].-disabled-, .-form input[type="text"].-disabled-,
 .-form input[type="password"][disabled="disabled"].-disabled-,
+.-form input[type="password"].-disabled-,
 .-form input[type="datetime"][disabled="disabled"].-disabled-,
+.-form input[type="datetime"].-disabled-,
 .-form input[type="datetime-local"][disabled="disabled"].-disabled-,
+.-form input[type="datetime-local"].-disabled-,
 .-form input[type="date"][disabled="disabled"].-disabled-,
+.-form input[type="date"].-disabled-,
 .-form input[type="month"][disabled="disabled"].-disabled-,
+.-form input[type="month"].-disabled-,
 .-form input[type="time"][disabled="disabled"].-disabled-,
+.-form input[type="time"].-disabled-,
 .-form input[type="week"][disabled="disabled"].-disabled-,
+.-form input[type="week"].-disabled-,
 .-form input[type="number"][disabled="disabled"].-disabled-,
+.-form input[type="number"].-disabled-,
 .-form input[type="email"][disabled="disabled"].-disabled-,
+.-form input[type="email"].-disabled-,
 .-form input[type="url"][disabled="disabled"].-disabled-,
+.-form input[type="url"].-disabled-,
 .-form input[type="search"][disabled="disabled"].-disabled-,
+.-form input[type="search"].-disabled-,
 .-form input[type="tel"][disabled="disabled"].-disabled-,
+.-form input[type="tel"].-disabled-,
 .-form input[type="color"][disabled="disabled"].-disabled-,
+.-form input[type="color"].-disabled-,
 .-form textarea[disabled="disabled"].-disabled-,
-.-form select[disabled="disabled"].-disabled-, .-form .-form-field.-disabled- > input, .-form .-form-field.-disabled- > textarea, .-form .-form-field.-disabled- > select, .-table tr td.-disabled-, .-table tr.-disabled- td, .-table._striped_ tr:nth-child(odd).-disabled- td {
+.-form textarea.-disabled-,
+.-form select[disabled="disabled"].-disabled-,
+.-form select.-disabled-, .-form .-form-field.-disabled- > input, .-form .-form-field.-disabled- > textarea, .-form .-form-field.-disabled- > select, .-table.-disabled- tr td {
   background-color: #f3f3f3!important; }
 
-.-table._hovered_ tr:hover.-disabled- td {
+.-table._hovered_.-disabled- tr:hover td {
   background-color: #f3f3f3!important; }
 
 .-form input.-disabled-:focus, .-form textarea.-disabled-:focus, .-form select.-disabled-:focus, .-form .-form-field.-disabled- > input:focus, .-form .-form-field.-disabled- > textarea:focus, .-form .-form-field.-disabled- > select:focus {
-  -webkit-box-shadow: 0!important;
-  -moz-box-shadow: 0!important;
-  -ms-box-shadow: 0!important;
-  -o-box-shadow: 0!important;
-  box-shadow: 0!important; }
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -ms-box-shadow: none !important;
+  -o-box-shadow: none !important;
+  box-shadow: none !important; }
 
-.-form .-form-field._tiny > .-form-field-placeholder, .-table th._tiny, .-table tr._tiny td {
+.-table._loading_.-disabled- tr td, .-table tr td._loading_.-disabled- {
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.35, rgba(255, 255, 255, 0.35)), color-stop(0.35, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.35)), color-stop(0.75, rgba(255, 255, 255, 0.35)), color-stop(0.75, transparent), to(transparent)) !important;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
+  background-size: 40px 40px!important;
+  animation: stripes-animation 2s linear infinite;
+  -webkit-animation: stripes-animation 2s linear infinite;
+  -moz-animation: stripes-animation 2s linear infinite;
+  -o-animation: stripes-animation 2s linear infinite;
+  -ms-animation: stripes-animation 2s linear infinite; }
+
+.-form .-form-field._tiny > .-form-field-placeholder, .-table th._tiny, .-table tr._tiny td, .-table._tiny tr td, .-table tr td._tiny {
   line-height: 12px; }
 
 .-form input[type="text"]._tiny,
@@ -730,7 +874,7 @@ dl {
 .-form input[type="tel"]._tiny,
 .-form input[type="color"]._tiny,
 .-form textarea._tiny,
-.-form select._tiny, .-form .-form-field._tiny > .-form-field-placeholder, .-form .-form-field._tiny input, .-form .-form-field._tiny textarea, .-form .-form-field._tiny select, .-table th._tiny, .-table tr._tiny td {
+.-form select._tiny, .-form .-form-field._tiny > .-form-field-placeholder, .-form .-form-field._tiny input, .-form .-form-field._tiny textarea, .-form .-form-field._tiny select, .-table th._tiny, .-table tr._tiny td, .-table._tiny tr td, .-table tr td._tiny {
   font-size: 10px; }
 
 .-form input[type="text"]._tiny,
@@ -749,9 +893,9 @@ dl {
 .-form input[type="color"]._tiny,
 .-form textarea._tiny,
 .-form select._tiny, .-form .-form-field._tiny > .-form-field-placeholder, .-form .-form-field._tiny input, .-form .-form-field._tiny textarea, .-form .-form-field._tiny select {
-  padding: 3px 4px 4px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding: 3px 4px 3px;
+  padding-top: 3px \9;
+  padding-bottom: 3px \9;
   @-moz-document url-prefix() {
     padding-top: 2px;
     padding-bottom: 2px; }
@@ -773,15 +917,15 @@ dl {
     .-form input[type="color"]._tiny,
     .-form textarea._tiny,
     .-form select._tiny, .-form .-form-field._tiny > .-form-field-placeholder, .-form .-form-field._tiny input, .-form .-form-field._tiny textarea, .-form .-form-field._tiny select {
-      padding: 5px 4px; } }
+      padding: 4px 4px; } }
 
-.-table th._tiny, .-table tr._tiny td {
+.-table th._tiny, .-table tr._tiny td, .-table._tiny tr td, .-table tr td._tiny {
   padding: 3px 4px; }
 
 .-caret._tiny, .-btn._tiny .-caret, button._tiny .-caret, input[type="button"]._tiny .-caret, .-group._tiny .-caret, .-tabs._tiny .-caret {
   border-width: 3px; }
 
-.-form .-form-field._small > .-form-field-placeholder, .-table th._small, .-table tr._small td {
+.-form .-form-field._small > .-form-field-placeholder, .-table th._small, .-table tr._small td, .-table._small tr td, .-table tr td._small {
   line-height: 14px; }
 
 .-form input[type="text"]._small,
@@ -817,7 +961,7 @@ dl {
 .-form input[type="tel"]._small,
 .-form input[type="color"]._small,
 .-form textarea._small,
-.-form select._small, .-form .-form-field._small > .-form-field-placeholder, .-form .-form-field._small input, .-form .-form-field._small textarea, .-form .-form-field._small select, .-table th._small, .-table tr._small td {
+.-form select._small, .-form .-form-field._small > .-form-field-placeholder, .-form .-form-field._small input, .-form .-form-field._small textarea, .-form .-form-field._small select, .-table th._small, .-table tr._small td, .-table._small tr td, .-table tr td._small {
   font-size: 12px; }
 
 .-form input[type="text"]._small,
@@ -836,9 +980,9 @@ dl {
 .-form input[type="color"]._small,
 .-form textarea._small,
 .-form select._small, .-form .-form-field._small > .-form-field-placeholder, .-form .-form-field._small input, .-form .-form-field._small textarea, .-form .-form-field._small select {
-  padding: 3px 2px 4px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding: 2px 2px 3px;
+  padding-top: 3px \9;
+  padding-bottom: 3px \9;
   @-moz-document url-prefix() {
     padding-top: 2px;
     padding-bottom: 2px; }
@@ -860,9 +1004,9 @@ dl {
     .-form input[type="color"]._small,
     .-form textarea._small,
     .-form select._small, .-form .-form-field._small > .-form-field-placeholder, .-form .-form-field._small input, .-form .-form-field._small textarea, .-form .-form-field._small select {
-      padding: 5px 2px; } }
+      padding: 4px 2px; } }
 
-.-table th._small, .-table tr._small td {
+.-table th._small, .-table tr._small td, .-table._small tr td, .-table tr td._small {
   padding: 3px 5px; }
 
 .-caret._small, .-btn._small .-caret, button._small .-caret, input[type="button"]._small .-caret, .-group._small .-caret, .-tabs._small .-caret {
@@ -927,8 +1071,8 @@ dl {
   padding-top: 5px\9;
   padding-bottom: 5px\9;
   @-moz-document url-prefix() {
-    padding-top: 4px;
-    padding-bottom: 4px; }
+    padding-top: 2;
+    padding-bottom: 2; }
  }
   @media all and (-webkit-min-device-pixel-ratio: 10000), not all and (-webkit-min-device-pixel-ratio: 0) {
     .-form input[type="text"],
@@ -955,7 +1099,7 @@ dl {
 .-caret, .-btn .-caret, button .-caret, input[type="button"] .-caret, .-group .-caret, .-tabs .-caret {
   border-width: 4px; }
 
-.-form .-form-field._big > .-form-field-placeholder, .-table th._big, .-table tr._big td {
+.-form .-form-field._big > .-form-field-placeholder, .-table th._big, .-table tr._big td, .-table._big tr td, .-table tr td._big {
   line-height: 20px; }
 
 .-form input[type="text"]._big,
@@ -991,7 +1135,7 @@ dl {
 .-form input[type="tel"]._big,
 .-form input[type="color"]._big,
 .-form textarea._big,
-.-form select._big, .-form .-form-field._big > .-form-field-placeholder, .-form .-form-field._big input, .-form .-form-field._big textarea, .-form .-form-field._big select, .-table th._big, .-table tr._big td {
+.-form select._big, .-form .-form-field._big > .-form-field-placeholder, .-form .-form-field._big input, .-form .-form-field._big textarea, .-form .-form-field._big select, .-table th._big, .-table tr._big td, .-table._big tr td, .-table tr td._big {
   font-size: 18px; }
 
 .-form input[type="text"]._big,
@@ -1010,12 +1154,12 @@ dl {
 .-form input[type="color"]._big,
 .-form textarea._big,
 .-form select._big, .-form .-form-field._big > .-form-field-placeholder, .-form .-form-field._big input, .-form .-form-field._big textarea, .-form .-form-field._big select {
-  padding: 6px 8px 7px;
+  padding: 5px 8px 6px;
   padding-top: 7px\9;
   padding-bottom: 7px\9;
   @-moz-document url-prefix() {
-    padding-top: 6px;
-    padding-bottom: 6px; }
+    padding-top: 4;
+    padding-bottom: 4; }
  }
   @media all and (-webkit-min-device-pixel-ratio: 10000), not all and (-webkit-min-device-pixel-ratio: 0) {
     .-form input[type="text"]._big,
@@ -1034,15 +1178,15 @@ dl {
     .-form input[type="color"]._big,
     .-form textarea._big,
     .-form select._big, .-form .-form-field._big > .-form-field-placeholder, .-form .-form-field._big input, .-form .-form-field._big textarea, .-form .-form-field._big select {
-      padding: 8px 8px; } }
+      padding: 7px 8px; } }
 
-.-table th._big, .-table tr._big td {
+.-table th._big, .-table tr._big td, .-table._big tr td, .-table tr td._big {
   padding: 6px 11px; }
 
 .-caret._big, .-btn._big .-caret, button._big .-caret, input[type="button"]._big .-caret, .-group._big .-caret, .-tabs._big .-caret {
   border-width: 5px; }
 
-.-form .-form-field._huge > .-form-field-placeholder, .-table th._huge, .-table tr._huge td {
+.-form .-form-field._huge > .-form-field-placeholder, .-table th._huge, .-table tr._huge td, .-table._huge tr td, .-table tr td._huge {
   line-height: 22px; }
 
 .-form input[type="text"]._huge,
@@ -1078,7 +1222,7 @@ dl {
 .-form input[type="tel"]._huge,
 .-form input[type="color"]._huge,
 .-form textarea._huge,
-.-form select._huge, .-form .-form-field._huge > .-form-field-placeholder, .-form .-form-field._huge input, .-form .-form-field._huge textarea, .-form .-form-field._huge select, .-table th._huge, .-table tr._huge td {
+.-form select._huge, .-form .-form-field._huge > .-form-field-placeholder, .-form .-form-field._huge input, .-form .-form-field._huge textarea, .-form .-form-field._huge select, .-table th._huge, .-table tr._huge td, .-table._huge tr td, .-table tr td._huge {
   font-size: 20px; }
 
 .-form input[type="text"]._huge,
@@ -1097,12 +1241,12 @@ dl {
 .-form input[type="color"]._huge,
 .-form textarea._huge,
 .-form select._huge, .-form .-form-field._huge > .-form-field-placeholder, .-form .-form-field._huge input, .-form .-form-field._huge textarea, .-form .-form-field._huge select {
-  padding: 8px 10px 9px;
+  padding: 7px 10px 8px;
   padding-top: 9px\9;
   padding-bottom: 9px\9;
   @-moz-document url-prefix() {
-    padding-top: 8px;
-    padding-bottom: 8px; }
+    padding-top: 6;
+    padding-bottom: 6; }
  }
   @media all and (-webkit-min-device-pixel-ratio: 10000), not all and (-webkit-min-device-pixel-ratio: 0) {
     .-form input[type="text"]._huge,
@@ -1121,9 +1265,9 @@ dl {
     .-form input[type="color"]._huge,
     .-form textarea._huge,
     .-form select._huge, .-form .-form-field._huge > .-form-field-placeholder, .-form .-form-field._huge input, .-form .-form-field._huge textarea, .-form .-form-field._huge select {
-      padding: 10px 10px; } }
+      padding: 9px 10px; } }
 
-.-table th._huge, .-table tr._huge td {
+.-table th._huge, .-table tr._huge td, .-table._huge tr td, .-table tr td._huge {
   padding: 8px 13px; }
 
 .-caret._huge, .-btn._huge .-caret, button._huge .-caret, input[type="button"]._huge .-caret, .-group._huge .-caret, .-tabs._huge .-caret {
@@ -1191,7 +1335,8 @@ dl {
 .-form textarea,
 .-form select {
   border-width: 1px;
-  border-style: solid; }
+  border-style: solid;
+  margin: 0; }
 .-form label {
   display: inline-block;
   position: relative;
@@ -1875,16 +2020,106 @@ dl {
   border: inherit;
   background: inherit; }
 
-.-table.-unstyled- td {
+.-table._striped_.-unstyled- tr:nth-child(odd) td, .-table._striped_.-unstyled- tr:nth-child(even) td, .-table._striped_._hovered_.-unstyled- tr:nth-child(even):hover td {
   color: #333333; }
 
-.-table tr.-unstyled- td, .-table.-unstyled- td {
+.-table._striped_ tr:nth-child(odd).-unstyled- td, .-table._striped_ tr:nth-child(even).-unstyled- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-unstyled- td {
   border-color: transparent; }
 
-.-table tr.-unstyled- td {
+.-table._striped_.-unstyled- tr:nth-child(odd) td, .-table._striped_.-unstyled- tr:nth-child(even) td, .-table._striped_._hovered_.-unstyled- tr:nth-child(even):hover td {
   border-color: transparent; }
 
-.-table tr.-unstyled- td, .-table.-unstyled- td {
+.-table._striped_.-unstyled- tr:nth-child(even) td, .-table._striped_._hovered_.-unstyled- tr:nth-child(even):hover td {
+  background-color: transparent; }
+
+.-table._striped_.-unstyled- tr:nth-child(odd) td {
+  background-color: transparent; }
+
+.-table._striped_ tr:nth-child(even) td, .-table._striped_._hovered_ tr:nth-child(even):hover td {
+  color: #333333; }
+
+.-table._striped_ tr:nth-child(odd) td, .-table._striped_ tr:nth-child(even) td, .-table._striped_._hovered_ tr:nth-child(even):hover td {
+  border-color: #d9d9d9; }
+
+.-table._striped_ tr:nth-child(even) td, .-table._striped_._hovered_ tr:nth-child(even):hover td {
+  border-color: silver; }
+
+.-table._striped_ tr:nth-child(even) td, .-table._striped_._hovered_ tr:nth-child(even):hover td {
+  background-color: #fbfbfb; }
+
+.-table._striped_.-error- tr:nth-child(odd) td {
+  color: white; }
+
+.-table._striped_.-error- tr:nth-child(odd) td {
+  border-color: #cf3b3b; }
+
+.-table._striped_.-error- tr:nth-child(odd) td {
+  background-color: #da4a39; }
+
+.-table._striped_.-success- tr:nth-child(odd) td {
+  color: white; }
+
+.-table._striped_.-success- tr:nth-child(odd) td {
+  border-color: #2fa43b; }
+
+.-table._striped_.-success- tr:nth-child(odd) td {
+  background-color: #3ec84c; }
+
+.-table._striped_.-info- tr:nth-child(odd) td {
+  color: white; }
+
+.-table._striped_.-info- tr:nth-child(odd) td {
+  border-color: #3bc2cf; }
+
+.-table._striped_.-info- tr:nth-child(odd) td {
+  background-color: #64cfd9; }
+
+.-table._striped_.-warning- tr:nth-child(odd) td {
+  color: white; }
+
+.-table._striped_.-warning- tr:nth-child(odd) td {
+  border-color: #cf953b; }
+
+.-table._striped_.-warning- tr:nth-child(odd) td {
+  background-color: #edb723; }
+
+.-table._striped_.-primary- tr:nth-child(odd) td {
+  color: white; }
+
+.-table._striped_.-primary- tr:nth-child(odd) td {
+  border-color: #156ba9; }
+
+.-table._striped_.-primary- tr:nth-child(odd) td {
+  background-color: #1b88d6; }
+
+.-table._striped_.-dark- tr:nth-child(odd) td {
+  color: white; }
+
+.-table._striped_.-dark- tr:nth-child(odd) td {
+  border-color: #5e5e5e; }
+
+.-table._striped_.-dark- tr:nth-child(odd) td {
+  background-color: #6b6b6b; }
+
+.-table._striped_.-disabled- tr:nth-child(odd) td {
+  color: #cccccc!important; }
+
+.-table._striped_.-disabled- tr:nth-child(odd) td {
+  border-color: silver!important; }
+
+.-table._striped_.-disabled- tr:nth-child(odd) td {
+  background-color: #f3f3f3!important; }
+
+.-table tr.-unstyled- td, .-table._hovered_ tr:hover.-unstyled- td, .-table._striped_ tr:nth-child(odd).-unstyled- td, .-table._striped_ tr:nth-child(even).-unstyled- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-unstyled- td {
+  color: #333333; }
+
+.-table tr.-unstyled- td, .-table._hovered_ tr:hover.-unstyled- td, .-table._striped_ tr:nth-child(odd).-unstyled- td, .-table._striped_ tr:nth-child(even).-unstyled- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-unstyled- td {
+  border-color: transparent; }
+
+.-table tr.-unstyled- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-unstyled- td {
+  background-color: transparent; }
+
+.-table._hovered_ tr:hover.-unstyled- td, .-table._striped_ tr:nth-child(odd).-unstyled- td, .-table._striped_ tr:nth-child(even).-unstyled- td {
   background-color: transparent; }
 
 .-table tr._loading_.-unstyled- td {
@@ -1893,15 +2128,12 @@ dl {
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
-  background-size: 40px 40px;
+  background-size: 40px 40px!important;
   animation: stripes-animation 2s linear infinite;
   -webkit-animation: stripes-animation 2s linear infinite;
   -moz-animation: stripes-animation 2s linear infinite;
   -o-animation: stripes-animation 2s linear infinite;
   -ms-animation: stripes-animation 2s linear infinite; }
-
-.-table tr td {
-  border-color: #d9d9d9; }
 
 .-table tr._loading_ td {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.35, rgba(255, 255, 255, 0.35)), color-stop(0.35, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.35)), color-stop(0.75, rgba(255, 255, 255, 0.35)), color-stop(0.75, transparent), to(transparent)) !important;
@@ -1909,24 +2141,24 @@ dl {
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
-  background-size: 40px 40px;
+  background-size: 40px 40px!important;
   animation: stripes-animation 2s linear infinite;
   -webkit-animation: stripes-animation 2s linear infinite;
   -moz-animation: stripes-animation 2s linear infinite;
   -o-animation: stripes-animation 2s linear infinite;
   -ms-animation: stripes-animation 2s linear infinite; }
 
-.-table.-error- td {
+.-table tr.-error- td, .-table._hovered_ tr:hover.-error- td, .-table._striped_ tr:nth-child(odd).-error- td, .-table._striped_ tr:nth-child(even).-error- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-error- td {
   color: white; }
 
-.-table.-error- td {
-  border-color: #d96464; }
-
-.-table tr.-error- td {
+.-table tr.-error- td, .-table._hovered_ tr:hover.-error- td, .-table._striped_ tr:nth-child(odd).-error- td, .-table._striped_ tr:nth-child(even).-error- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-error- td {
   border-color: #cf3b3b; }
 
-.-table tr.-error- td, .-table.-error- td {
+.-table tr.-error- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-error- td {
   background-color: #da4a39; }
+
+.-table._hovered_ tr:hover.-error- td, .-table._striped_ tr:nth-child(odd).-error- td, .-table._striped_ tr:nth-child(even).-error- td {
+  background-color: #d23927; }
 
 .-table tr._loading_.-error- td {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.35, rgba(255, 255, 255, 0.35)), color-stop(0.35, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.35)), color-stop(0.75, rgba(255, 255, 255, 0.35)), color-stop(0.75, transparent), to(transparent)) !important;
@@ -1934,24 +2166,24 @@ dl {
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
-  background-size: 40px 40px;
+  background-size: 40px 40px!important;
   animation: stripes-animation 2s linear infinite;
   -webkit-animation: stripes-animation 2s linear infinite;
   -moz-animation: stripes-animation 2s linear infinite;
   -o-animation: stripes-animation 2s linear infinite;
   -ms-animation: stripes-animation 2s linear infinite; }
 
-.-table.-success- td {
+.-table tr.-success- td, .-table._hovered_ tr:hover.-success- td, .-table._striped_ tr:nth-child(odd).-success- td, .-table._striped_ tr:nth-child(even).-success- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-success- td {
   color: white; }
 
-.-table.-success- td {
-  border-color: #3ec84c; }
-
-.-table tr.-success- td {
+.-table tr.-success- td, .-table._hovered_ tr:hover.-success- td, .-table._striped_ tr:nth-child(odd).-success- td, .-table._striped_ tr:nth-child(even).-success- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-success- td {
   border-color: #2fa43b; }
 
-.-table tr.-success- td, .-table.-success- td {
+.-table tr.-success- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-success- td {
   background-color: #3ec84c; }
+
+.-table._hovered_ tr:hover.-success- td, .-table._striped_ tr:nth-child(odd).-success- td, .-table._striped_ tr:nth-child(even).-success- td {
+  background-color: #34b842; }
 
 .-table tr._loading_.-success- td {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.35, rgba(255, 255, 255, 0.35)), color-stop(0.35, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.35)), color-stop(0.75, rgba(255, 255, 255, 0.35)), color-stop(0.75, transparent), to(transparent)) !important;
@@ -1959,24 +2191,24 @@ dl {
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
-  background-size: 40px 40px;
+  background-size: 40px 40px!important;
   animation: stripes-animation 2s linear infinite;
   -webkit-animation: stripes-animation 2s linear infinite;
   -moz-animation: stripes-animation 2s linear infinite;
   -o-animation: stripes-animation 2s linear infinite;
   -ms-animation: stripes-animation 2s linear infinite; }
 
-.-table.-info- td {
+.-table tr.-info- td, .-table._hovered_ tr:hover.-info- td, .-table._striped_ tr:nth-child(odd).-info- td, .-table._striped_ tr:nth-child(even).-info- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-info- td {
   color: white; }
 
-.-table.-info- td {
-  border-color: #64cfd9; }
-
-.-table tr.-info- td {
+.-table tr.-info- td, .-table._hovered_ tr:hover.-info- td, .-table._striped_ tr:nth-child(odd).-info- td, .-table._striped_ tr:nth-child(even).-info- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-info- td {
   border-color: #3bc2cf; }
 
-.-table tr.-info- td, .-table.-info- td {
+.-table tr.-info- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-info- td {
   background-color: #64cfd9; }
+
+.-table._hovered_ tr:hover.-info- td, .-table._striped_ tr:nth-child(odd).-info- td, .-table._striped_ tr:nth-child(even).-info- td {
+  background-color: #50c9d4; }
 
 .-table tr._loading_.-info- td {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.35, rgba(255, 255, 255, 0.35)), color-stop(0.35, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.35)), color-stop(0.75, rgba(255, 255, 255, 0.35)), color-stop(0.75, transparent), to(transparent)) !important;
@@ -1984,24 +2216,24 @@ dl {
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
-  background-size: 40px 40px;
+  background-size: 40px 40px!important;
   animation: stripes-animation 2s linear infinite;
   -webkit-animation: stripes-animation 2s linear infinite;
   -moz-animation: stripes-animation 2s linear infinite;
   -o-animation: stripes-animation 2s linear infinite;
   -ms-animation: stripes-animation 2s linear infinite; }
 
-.-table.-warning- td {
+.-table tr.-warning- td, .-table._hovered_ tr:hover.-warning- td, .-table._striped_ tr:nth-child(odd).-warning- td, .-table._striped_ tr:nth-child(even).-warning- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-warning- td {
   color: white; }
 
-.-table.-warning- td {
-  border-color: #d9ab64; }
-
-.-table tr.-warning- td {
+.-table tr.-warning- td, .-table._hovered_ tr:hover.-warning- td, .-table._striped_ tr:nth-child(odd).-warning- td, .-table._striped_ tr:nth-child(even).-warning- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-warning- td {
   border-color: #cf953b; }
 
-.-table tr.-warning- td, .-table.-warning- td {
+.-table tr.-warning- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-warning- td {
   background-color: #edb723; }
+
+.-table._hovered_ tr:hover.-warning- td, .-table._striped_ tr:nth-child(odd).-warning- td, .-table._striped_ tr:nth-child(even).-warning- td {
+  background-color: #e4ac13; }
 
 .-table tr._loading_.-warning- td {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.35, rgba(255, 255, 255, 0.35)), color-stop(0.35, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.35)), color-stop(0.75, rgba(255, 255, 255, 0.35)), color-stop(0.75, transparent), to(transparent)) !important;
@@ -2009,24 +2241,24 @@ dl {
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
-  background-size: 40px 40px;
+  background-size: 40px 40px!important;
   animation: stripes-animation 2s linear infinite;
   -webkit-animation: stripes-animation 2s linear infinite;
   -moz-animation: stripes-animation 2s linear infinite;
   -o-animation: stripes-animation 2s linear infinite;
   -ms-animation: stripes-animation 2s linear infinite; }
 
-.-table.-primary- td {
+.-table tr.-primary- td, .-table._hovered_ tr:hover.-primary- td, .-table._striped_ tr:nth-child(odd).-primary- td, .-table._striped_ tr:nth-child(even).-primary- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-primary- td {
   color: white; }
 
-.-table.-primary- td {
-  border-color: #187abf; }
-
-.-table tr.-primary- td {
+.-table tr.-primary- td, .-table._hovered_ tr:hover.-primary- td, .-table._striped_ tr:nth-child(odd).-primary- td, .-table._striped_ tr:nth-child(even).-primary- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-primary- td {
   border-color: #156ba9; }
 
-.-table tr.-primary- td, .-table.-primary- td {
+.-table tr.-primary- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-primary- td {
   background-color: #1b88d6; }
+
+.-table._hovered_ tr:hover.-primary- td, .-table._striped_ tr:nth-child(odd).-primary- td, .-table._striped_ tr:nth-child(even).-primary- td {
+  background-color: #187abf; }
 
 .-table tr._loading_.-primary- td {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.35, rgba(255, 255, 255, 0.35)), color-stop(0.35, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.35)), color-stop(0.75, rgba(255, 255, 255, 0.35)), color-stop(0.75, transparent), to(transparent)) !important;
@@ -2034,24 +2266,24 @@ dl {
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
-  background-size: 40px 40px;
+  background-size: 40px 40px!important;
   animation: stripes-animation 2s linear infinite;
   -webkit-animation: stripes-animation 2s linear infinite;
   -moz-animation: stripes-animation 2s linear infinite;
   -o-animation: stripes-animation 2s linear infinite;
   -ms-animation: stripes-animation 2s linear infinite; }
 
-.-table.-dark- td {
+.-table tr.-dark- td, .-table._hovered_ tr:hover.-dark- td, .-table._striped_ tr:nth-child(odd).-dark- td, .-table._striped_ tr:nth-child(even).-dark- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-dark- td {
   color: white; }
 
-.-table.-dark- td {
-  border-color: #6b6b6b; }
-
-.-table tr.-dark- td {
+.-table tr.-dark- td, .-table._hovered_ tr:hover.-dark- td, .-table._striped_ tr:nth-child(odd).-dark- td, .-table._striped_ tr:nth-child(even).-dark- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-dark- td {
   border-color: #5e5e5e; }
 
-.-table tr.-dark- td, .-table.-dark- td {
+.-table tr.-dark- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-dark- td {
   background-color: #6b6b6b; }
+
+.-table._hovered_ tr:hover.-dark- td, .-table._striped_ tr:nth-child(odd).-dark- td, .-table._striped_ tr:nth-child(even).-dark- td {
+  background-color: #5e5e5e; }
 
 .-table tr._loading_.-dark- td {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.35, rgba(255, 255, 255, 0.35)), color-stop(0.35, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.35)), color-stop(0.75, rgba(255, 255, 255, 0.35)), color-stop(0.75, transparent), to(transparent)) !important;
@@ -2059,23 +2291,23 @@ dl {
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
-  background-size: 40px 40px;
+  background-size: 40px 40px!important;
   animation: stripes-animation 2s linear infinite;
   -webkit-animation: stripes-animation 2s linear infinite;
   -moz-animation: stripes-animation 2s linear infinite;
   -o-animation: stripes-animation 2s linear infinite;
   -ms-animation: stripes-animation 2s linear infinite; }
 
-.-table.-disabled- td {
+.-table tr.-disabled- td, .-table._hovered_ tr:hover.-disabled- td, .-table._striped_ tr:nth-child(odd).-disabled- td, .-table._striped_ tr:nth-child(even).-disabled- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-disabled- td {
   color: #cccccc!important; }
 
-.-table.-disabled- td {
-  border-color: #d9d9d9!important; }
-
-.-table tr.-disabled- td {
+.-table tr.-disabled- td, .-table._hovered_ tr:hover.-disabled- td, .-table._striped_ tr:nth-child(odd).-disabled- td, .-table._striped_ tr:nth-child(even).-disabled- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-disabled- td {
   border-color: silver!important; }
 
-.-table tr.-disabled- td, .-table.-disabled- td {
+.-table tr.-disabled- td, .-table._striped_._hovered_ tr:nth-child(even):hover.-disabled- td {
+  background-color: #f3f3f3!important; }
+
+.-table._hovered_ tr:hover.-disabled- td, .-table._striped_ tr:nth-child(odd).-disabled- td, .-table._striped_ tr:nth-child(even).-disabled- td {
   background-color: #f3f3f3!important; }
 
 .-table tr._loading_.-disabled- td {
@@ -2084,15 +2316,112 @@ dl {
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.35) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0.35) 75%, transparent 75%, transparent) !important;
-  background-size: 40px 40px;
+  background-size: 40px 40px!important;
   animation: stripes-animation 2s linear infinite;
   -webkit-animation: stripes-animation 2s linear infinite;
   -moz-animation: stripes-animation 2s linear infinite;
   -o-animation: stripes-animation 2s linear infinite;
   -ms-animation: stripes-animation 2s linear infinite; }
 
+.-table tr td.-unstyled-, .-table._hovered_ tr:hover td.-unstyled-, .-table._striped_ tr:nth-child(odd) td.-unstyled-, .-table._striped_ tr:nth-child(even) td.-unstyled-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-unstyled- {
+  color: #333333; }
+
+.-table tr td.-unstyled-, .-table._hovered_ tr:hover td.-unstyled-, .-table._striped_ tr:nth-child(odd) td.-unstyled-, .-table._striped_ tr:nth-child(even) td.-unstyled-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-unstyled- {
+  border-color: transparent; }
+
+.-table tr td.-unstyled-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-unstyled- {
+  background-color: transparent; }
+
+.-table._hovered_ tr:hover td.-unstyled-, .-table._striped_ tr:nth-child(odd) td.-unstyled-, .-table._striped_ tr:nth-child(even) td.-unstyled- {
+  background-color: transparent; }
+
+.-table tr td.-error-, .-table._hovered_ tr:hover td.-error-, .-table._striped_ tr:nth-child(odd) td.-error-, .-table._striped_ tr:nth-child(even) td.-error-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-error- {
+  color: white; }
+
+.-table tr td.-error-, .-table._hovered_ tr:hover td.-error-, .-table._striped_ tr:nth-child(odd) td.-error-, .-table._striped_ tr:nth-child(even) td.-error-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-error- {
+  border-color: #cf3b3b; }
+
+.-table tr td.-error-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-error- {
+  background-color: #da4a39; }
+
+.-table._hovered_ tr:hover td.-error-, .-table._striped_ tr:nth-child(odd) td.-error-, .-table._striped_ tr:nth-child(even) td.-error- {
+  background-color: #d23927; }
+
+.-table tr td.-success-, .-table._hovered_ tr:hover td.-success-, .-table._striped_ tr:nth-child(odd) td.-success-, .-table._striped_ tr:nth-child(even) td.-success-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-success- {
+  color: white; }
+
+.-table tr td.-success-, .-table._hovered_ tr:hover td.-success-, .-table._striped_ tr:nth-child(odd) td.-success-, .-table._striped_ tr:nth-child(even) td.-success-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-success- {
+  border-color: #2fa43b; }
+
+.-table tr td.-success-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-success- {
+  background-color: #3ec84c; }
+
+.-table._hovered_ tr:hover td.-success-, .-table._striped_ tr:nth-child(odd) td.-success-, .-table._striped_ tr:nth-child(even) td.-success- {
+  background-color: #34b842; }
+
+.-table tr td.-info-, .-table._hovered_ tr:hover td.-info-, .-table._striped_ tr:nth-child(odd) td.-info-, .-table._striped_ tr:nth-child(even) td.-info-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-info- {
+  color: white; }
+
+.-table tr td.-info-, .-table._hovered_ tr:hover td.-info-, .-table._striped_ tr:nth-child(odd) td.-info-, .-table._striped_ tr:nth-child(even) td.-info-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-info- {
+  border-color: #3bc2cf; }
+
+.-table tr td.-info-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-info- {
+  background-color: #64cfd9; }
+
+.-table._hovered_ tr:hover td.-info-, .-table._striped_ tr:nth-child(odd) td.-info-, .-table._striped_ tr:nth-child(even) td.-info- {
+  background-color: #50c9d4; }
+
+.-table tr td.-warning-, .-table._hovered_ tr:hover td.-warning-, .-table._striped_ tr:nth-child(odd) td.-warning-, .-table._striped_ tr:nth-child(even) td.-warning-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-warning- {
+  color: white; }
+
+.-table tr td.-warning-, .-table._hovered_ tr:hover td.-warning-, .-table._striped_ tr:nth-child(odd) td.-warning-, .-table._striped_ tr:nth-child(even) td.-warning-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-warning- {
+  border-color: #cf953b; }
+
+.-table tr td.-warning-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-warning- {
+  background-color: #edb723; }
+
+.-table._hovered_ tr:hover td.-warning-, .-table._striped_ tr:nth-child(odd) td.-warning-, .-table._striped_ tr:nth-child(even) td.-warning- {
+  background-color: #e4ac13; }
+
+.-table tr td.-primary-, .-table._hovered_ tr:hover td.-primary-, .-table._striped_ tr:nth-child(odd) td.-primary-, .-table._striped_ tr:nth-child(even) td.-primary-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-primary- {
+  color: white; }
+
+.-table tr td.-primary-, .-table._hovered_ tr:hover td.-primary-, .-table._striped_ tr:nth-child(odd) td.-primary-, .-table._striped_ tr:nth-child(even) td.-primary-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-primary- {
+  border-color: #156ba9; }
+
+.-table tr td.-primary-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-primary- {
+  background-color: #1b88d6; }
+
+.-table._hovered_ tr:hover td.-primary-, .-table._striped_ tr:nth-child(odd) td.-primary-, .-table._striped_ tr:nth-child(even) td.-primary- {
+  background-color: #187abf; }
+
+.-table tr td.-dark-, .-table._hovered_ tr:hover td.-dark-, .-table._striped_ tr:nth-child(odd) td.-dark-, .-table._striped_ tr:nth-child(even) td.-dark-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-dark- {
+  color: white; }
+
+.-table tr td.-dark-, .-table._hovered_ tr:hover td.-dark-, .-table._striped_ tr:nth-child(odd) td.-dark-, .-table._striped_ tr:nth-child(even) td.-dark-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-dark- {
+  border-color: #5e5e5e; }
+
+.-table tr td.-dark-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-dark- {
+  background-color: #6b6b6b; }
+
+.-table._hovered_ tr:hover td.-dark-, .-table._striped_ tr:nth-child(odd) td.-dark-, .-table._striped_ tr:nth-child(even) td.-dark- {
+  background-color: #5e5e5e; }
+
+.-table tr td.-disabled-, .-table._hovered_ tr:hover td.-disabled-, .-table._striped_ tr:nth-child(odd) td.-disabled-, .-table._striped_ tr:nth-child(even) td.-disabled-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-disabled- {
+  color: #cccccc!important; }
+
+.-table tr td.-disabled-, .-table._hovered_ tr:hover td.-disabled-, .-table._striped_ tr:nth-child(odd) td.-disabled-, .-table._striped_ tr:nth-child(even) td.-disabled-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-disabled- {
+  border-color: silver!important; }
+
+.-table tr td.-disabled-, .-table._striped_._hovered_ tr:nth-child(even):hover td.-disabled- {
+  background-color: #f3f3f3!important; }
+
+.-table._hovered_ tr:hover td.-disabled-, .-table._striped_ tr:nth-child(odd) td.-disabled-, .-table._striped_ tr:nth-child(even) td.-disabled- {
+  background-color: #f3f3f3!important; }
+
 .-table {
   width: 100%;
+  border-collapse: collapse;
   border-spacing: 0; }
   .-table th {
     text-align: left; }

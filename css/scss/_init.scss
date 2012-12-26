@@ -176,7 +176,7 @@ dl {
 	width: $object__row-width;
 	@include clearfix;
 
-	[class*='#{$object__column}'] {
+	[class^='#{$object__column}'] {
 		float: left;
 		margin-left: $object__column__gutter-width;
 	}
@@ -193,11 +193,11 @@ dl {
 }
 
 .#{$object__row-fluid} {
-	width: $object__row-fluid-width;
+	width: $object__row-fluid-width;// + $object__row-fluid__column__gutter-width;
 	margin-left: -$object__row-fluid__column__gutter-width;
 	@include clearfix;
 
-	[class*='#{$object__column}'] {
+	[class^='#{$object__column}'] {
 		float: left;
 		margin-left: $object__row-fluid__column__gutter-width;
 	}

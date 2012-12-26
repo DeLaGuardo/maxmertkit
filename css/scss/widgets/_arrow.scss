@@ -26,6 +26,7 @@ $__after-object: '.#{$object__arrow}';
 {
 	.#{$object} .#{$object__arrow} {
 		border-width: $arrow-size;
+		display: none;
 	}
 
 	.#{$object}.#{$mod__side-top} .#{$object__arrow}{
@@ -35,6 +36,7 @@ $__after-object: '.#{$object__arrow}';
 		bottom: -$arrow-size;
 		left: 50%;
 		margin-left: -$arrow-size;
+		display: block;
 	}
 
 	.#{$object}.#{$mod__side-bottom} .#{$object__arrow}{
@@ -44,6 +46,7 @@ $__after-object: '.#{$object__arrow}';
 		top: -$arrow-size;
 		left: 50%;
 		margin-left: -$arrow-size;
+		display: block;
 	}
 
 	.#{$object}.#{$mod__side-left} .#{$object__arrow}{
@@ -53,6 +56,7 @@ $__after-object: '.#{$object__arrow}';
 		right: -$arrow-size;
 		top: 50%;
 		margin-top: -$arrow-size;
+		display: block;
 	}
 
 	.#{$object}.#{$mod__side-right} .#{$object__arrow}{
@@ -62,6 +66,7 @@ $__after-object: '.#{$object__arrow}';
 		left: -$arrow-size;
 		top: 50%;
 		margin-top: -$arrow-size;
+		display: block;
 	}
 }
 

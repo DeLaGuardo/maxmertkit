@@ -5,6 +5,9 @@
 		,	onlyOne: true
 		,	shaderClass: '-shader'
 		,	closerClass: '-closer'
+		,	content: null
+		,	header: null
+		// ,	template: '<div class="-modal"><div class="-modal-header"></div><div class="-modal-content"></div></div>'
 
 		,	beforeOpen: $.noop()
 		,	open: $.noop()

@@ -42,6 +42,7 @@ $__after-object: '';
 				border-color: transparent!important;
 				cursor: default!important;
 				background-color: transparent!important;
+				@include box-shadow( none!important );
 			}
 		}
 
@@ -52,6 +53,7 @@ $__after-object: '';
 			border-color: transparent!important;
 			background-color: transparent!important;
 			cursor: default!important;
+			@include box-shadow( none!important );
 		}
 	}
 

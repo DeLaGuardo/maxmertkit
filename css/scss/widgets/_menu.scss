@@ -23,10 +23,27 @@ $__after-object: '';
 			display: none;
 			position: absolute;
 		}
+	}
 
-		&:hover {
-			& > .#{$object__dropdown} {
+	&.#{$mod__active} {
+		li {
+			a {
+				border-width: 1px;
+				border-style: solid;
+				border-color: transparent;
+			}
+
+			&:hover > .#{$object__dropdown} {
 				display: block;
+			}
+
+			.#{$object__dropdown} {
+				border-width: 1px;
+				border-style: solid;
+				border-color: transparent;
+				@include border-radius( 0 );
+				margin-top: -1px;
+				@include box-shadow( 0 2px 4px rgba(0,0,0,.2) );
 			}
 		}
 	}
@@ -39,6 +56,7 @@ $__after-object: '';
 
 		a:hover, a {
 			background: transparent!important;
+			border-color: transparent!important;
 			text-shadow: none!important;
 			cursor: default;
 		}
@@ -129,11 +147,11 @@ $__after-object: '';
 				opacity: .7;
 			}
 
-			[class*='#{$object__icon}'],
-			[class^='#{$object__icon}'],
-			.#{$object__icon} {
-				@extend .-icon-light-;	
-			}
+			// [class*='#{$object__icon}'],
+			// [class^='#{$object__icon}'],
+			// .#{$object__icon} {
+			// 	@extend .-icon-light-;	
+			// }
 		}
 	}
 
@@ -236,3 +254,30 @@ $__object: '.#{$object__menu}';
 $__after-object: ' li.#{$object__menu__submenu}:hover > a:after';
 @include set_modificator(exclude-items($mod__status, $mod__status__disabled), border-color-darkener);
 
+
+
+
+$__inheritance: object;
+$__before-object: '';
+$__object: '.#{$object__menu}.#{$mod__active}';
+$__after-object: '> li:hover > a';
+@include set_modificator(exclude-items($mod__status, $mod__status__disabled), border-color);
+
+$__inheritance: object;
+$__before-object: '';
+$__object: '.#{$object__menu}.#{$mod__active}';
+$__after-object: 'li:hover .#{$object__dropdown}';
+@include set_modificator(only-items($mod__status, $mod__status__unstyled, default), border-color);
+
+
+$__inheritance: $object__menu;
+$__before-object: '.#{$object__menu}.#{$mod__active} >';
+$__object: 'li:hover';
+$__after-object: '> a';
+@include set_modificator(exclude-items($mod__status, $mod__status__disabled), border-color);
+
+$__inheritance: $object__menu;
+$__before-object: '.#{$object__menu}.#{$mod__active}';
+$__object: 'li:hover';
+$__after-object: '.#{$object__dropdown}';
+@include set_modificator(only-items($mod__status, $mod__status__unstyled, default), border-color);

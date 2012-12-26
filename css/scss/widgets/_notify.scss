@@ -13,7 +13,7 @@ $__after-object: '';
 
 	.#{$object__notify} {
 		@extend %__object;
-		// @include box-shadow( 0 0 10px rgba(0,0,0,.3) );
+		@include box-shadow( 0 3px 3px rgba(0,0,0,.3) );
 
 		margin: $object__notify-margin;
 		position: relative;
@@ -69,7 +69,7 @@ $__inheritance: object;
 $__before-object: '';
 $__object: '.#{$object__notify}';
 $__after-object: '';
-@include set_modificator($mod__status, shadow, border-color-darken);
+@include set_modificator($mod__status, border-color-darken);
 @include set_modificator(only-items($mod__status, default, $mod__status__disabled), background-color);
 
 $__inheritance: object;

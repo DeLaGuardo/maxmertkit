@@ -102,22 +102,33 @@
 		}
 
 		%#{$__inheritance}-size-#{$size}-input-padding {
-			$_vertical: 3px;
-			$_vertical_ie: 3px;
+			$_vertical: 2px;
+			$_vertical_ie: 3px\9;
 			$_vertical_fox: 2px;
 			$_horizontal: 4px;
 			
 			@if (2px + nth($mod__size-delta, $num)) > 0 {
 				$_vertical_ie: 3px + nth($mod__size-delta, $num)#{'\9'};
-				$_vertical_fox: 2px + nth($mod__size-delta, $num);
-				$_vertical: 2px + nth($mod__size-delta, $num);
+				$_vertical_fox: nth($mod__size-delta, $num);
+				@if (2 + nth($mod__size-delta, $num) == 8 or 2 + nth($mod__size-delta, $num) == 6) {
+					$_vertical: 1px + nth($mod__size-delta, $num);
+				} @else
+				{
+					$_vertical: 2px + nth($mod__size-delta, $num);
+				}
+
 			}
 
-			@if (4px + nth($mod__size-delta, $num)) > 0 {
+			@if (4px + nth($mod__size-delta, $num) > 0 )  {
 				$_horizontal: 4px + nth($mod__size-delta, $num);
 			}
 
-			padding: $_vertical $_horizontal $_vertical + 1;
+			@if( nth($mod__size-delta, $num) != -4 ) {
+				padding: $_vertical $_horizontal $_vertical + 1;
+			} @else 
+			{
+				padding: $_vertical +1 $_horizontal $_vertical + 1;
+			}
 			padding-top: $_vertical_ie;
 			padding-bottom: $_vertical_ie;
 			@-moz-document url-prefix() {

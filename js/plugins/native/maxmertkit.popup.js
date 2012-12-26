@@ -321,8 +321,13 @@
 			});
 		}
 		else {
-			if( Modernizr && Modernizr.csstransitions && Modernizr.csstransforms3d && Modernizr.cssanimations )
+			if( Modernizr && Modernizr.csstransitions && Modernizr.csstransforms3d && Modernizr.cssanimations ) {
 				me.El.removeClass('-mx-start');
+				setTimeout(function(){
+					if ( me.state === 'closed' )
+						me.El.hide()
+				},1000)
+			}
 			else
 				me.El.hide();
 		}

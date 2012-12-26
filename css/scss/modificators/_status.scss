@@ -108,21 +108,21 @@
 
 
 		%#{$__inheritance}-status-#{$status}-gradient-vertical {
-			@if nth($mod__status-background-color, $num) != transparent and $status != disabled and $status != default {
+			@if nth($mod__status-background-color, $num) != transparent and $status != disabled  {
 				@include gradient-vertical( lighten(nth($mod__status-background-color, $num), 15%), nth($mod__status-background-color, $num) );
 			}
 			@else {
-				background-color: nth($mod__status-background-color, $num)#{$important};
+				background: nth($mod__status-background-color, $num)#{$important};
 			}
 			// background-color: nth($mod__status-background-color, $num)#{$important};
 		}
 
 		%#{$__inheritance}-status-#{$status}-gradient-vertical-darken {
-			@if nth($mod__status-background-color, $num) != transparent and $status != disabled and $status != default {
+			@if nth($mod__status-background-color, $num) != transparent and $status != disabled {
 				@include gradient-vertical( lighten(nth($mod__status-background-color, $num),5%), darken(nth($mod__status-background-color, $num), 5%) );
 			}
 			@else {
-				background-color: nth($mod__status-background-color, $num)#{$important};
+				background: nth($mod__status-background-color, $num)#{$important};
 			}
 		}
 
@@ -131,7 +131,7 @@
 				@include gradient-vertical( darken(nth($mod__status-background-color, $num),5%), darken(nth($mod__status-background-color, $num), 15%) );
 			}
 			@else {
-				background-color: nth($mod__status-background-color, $num)#{$important};
+				background: nth($mod__status-background-color, $num)#{$important};
 			}
 		}
 
@@ -140,7 +140,7 @@
 				@include gradient-vertical-three-colors( rgba(nth($mod__status-background-color, $num), 0), nth($mod__status-background-color, $num), 50%, rgba(nth($mod__status-background-color, $num),0) );
 			}
 			@else {
-				background-color: nth($mod__status-background-color, $num)#{$important};
+				background: nth($mod__status-background-color, $num)#{$important};
 			}
 			// background-color: nth($mod__status-background-color, $num)#{$important};
 		}
@@ -150,7 +150,7 @@
 				@include gradient-horizontal-three-colors( rgba(nth($mod__status-background-color, $num),0), nth($mod__status-background-color, $num), 50%, rgba(nth($mod__status-background-color, $num),0) );
 			}
 			@else {
-				background-color: nth($mod__status-background-color, $num)#{$important};
+				background: nth($mod__status-background-color, $num)#{$important};
 			}
 			// background-color: nth($mod__status-background-color, $num)#{$important};
 		}
@@ -168,13 +168,17 @@
 		}
 
 		%#{$__inheritance}-status-#{$status}-outline {
-			@include box-shadow(#{nth($mod__status-outline, $num)}#{$important});
+			@if nth($mod__status-background-color, $num) != transparent and $status != disabled {
+				@include box-shadow(#{nth($mod__status-outline, $num)}#{$important});
+			} @else {
+				@include box-shadow(none!important);
+			}
 		}
 
 		%#{$__inheritance}-status-#{$status}-loading {
 			
 			@include gradient-stripes( 45deg );
-			background-size: 40px 40px;
+			background-size: 40px 40px!important;
 			@include animation( stripes-animation 2s linear infinite );
 
 		}
@@ -182,7 +186,7 @@
 		%#{$__inheritance}-status-#{$status}-loading-dark {
 			
 			@include gradient-stripes-dark( 45deg );
-			background-size: 40px 40px;
+			background-size: 40px 40px!important;
 			@include animation( stripes-animation 2s linear infinite );
 
 		}

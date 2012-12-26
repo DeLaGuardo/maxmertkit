@@ -4,353 +4,64 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   jQuery(function() {
-    var Popup, _defaults, _name;
+    var Popup, isSelector, _defaults, _name;
     _name = 'popup';
     _defaults = {
       placement: 'top',
       offset: [0, 0],
       autoOpen: false,
-      template: '<div class="js-content"></div>',
       onlyOne: false,
       content: null,
       header: null,
+      template: '<div class="js-content"></div>',
       trigger: 'click',
-      delay: 0
+      delay: 0,
+      beforeOpen: $.noop(),
+      open: $.noop(),
+      ifOpenedOrNot: $.noop(),
+      ifNotOpened: $.noop(),
+      beforeClose: $.noop(),
+      close: $.noop(),
+      ifClosedOrNot: $.noop(),
+      ifNotClosed: $.noop()
     };
-    Popup = (function(_super) {
+    isSelector = function(st) {
+      return st.charAt(0) === '.' || st.charAt(0) === '#';
+    };
+    return Popup = (function(_super) {
 
       __extends(Popup, _super);
 
-      function Popup() {
-        return Popup.__super__.constructor.apply(this, arguments);
-      }
-
-      Popup.prototype._setOption = function(key, value) {
-        var events, me;
-        me = this;
-        switch (key) {
-          case 'enabled':
-            if (value) {
-              this.$el.removeClass('-disabled-');
-            } else {
-              this.$el.addClass('-disabled-');
-            }
-            break;
-          case 'content':
-            if (value !== void 0 && value !== null) {
-              this.$popup.find('.js-content').html(value);
-            } else {
-              this.$popup.find('.js-content').html(this.$el.data('content'));
-            }
-            break;
-          case 'placement':
-            if (this.options.placement !== void 0) {
-              this.$popup.removeClass(this.options.placement);
-            }
-            this.$popup.addClass('_' + value + '_');
-            break;
-          case 'animation':
-            if ($.easing !== void 0 || !value_ in $.easing) {
-              switch (value) {
-                case 'scaleIn':
-                  this.$popup.addClass('-mx-scaleIn');
-                  break;
-                case 'growUp':
-                  this.$popup.addClass('-mx-growUp');
-                  break;
-                case 'rotateIn':
-                  this.$popup.addClass('-mx-rotateIn');
-                  break;
-                case 'dropIn':
-                  this.$popup.addClass('-mx-dropIn');
-              }
-            }
-            break;
-          case 'theme':
-            if (this.options.theme !== void 0) {
-              this.$popup.removeClass('-' + this.options.theme + '-');
-            }
-            this.$popup.addClass('-' + value + '-');
-            break;
-          case 'trigger':
-            events = value.split(/[ ,]+/);
-            this.$el.off(this.event('mouseenter'), this.event('mouseleave'), this.event('click'));
-            this.options[key] = {
-              'in': events[0],
-              'out': events[1] !== void 0 && events[1] !== '' ? events[1] : events[0]
-            };
-            switch (this.options[key]["in"]) {
-              case 'hover':
-                this.$el.on(me.event('mouseenter'), function(event) {
-                  if (me.state === 'closed') {
-                    return me.open();
-                  }
-                });
-                break;
-              default:
-                this.$el.on(me.event(this.options[key]["in"]), function(event) {
-                  if (me.state === 'closed') {
-                    me.open();
-                  }
-                  return event.preventDefault();
-                });
-            }
-            switch (this.options[key].out) {
-              case 'hover':
-                this.$el.on(me.event('mouseleave'), function(event) {
-                  if (me.state === 'opened') {
-                    return me.close();
-                  }
-                });
-                break;
-              default:
-                this.$el.on(me.event(this.options[key].out), function(event) {
-                  if (me.state === 'opened') {
-                    me.close();
-                  }
-                  return event.preventDefault();
-                });
-            }
-        }
-        return this.options[key] = value;
-      };
-
-      Popup.prototype.init = function() {
-        this.state = 'closed';
-        if (this.options.template.charAt(0) !== '.' && this.options.template.charAt(0) !== '#') {
-          this.$popup = $(this.options.template);
-        } else {
-          this.$popup = $($(this.options.template).html());
-        }
-        this._setOptions($.extend({}, _defaults, this.options));
+      function Popup(el, options) {
+        var _ref;
+        this.el = el;
+        this.$el = $(this.el);
         this.name = _name;
-        this.$popup.css({
+        this.options = $.extend({}, _defaults, options);
+        if (isSelector(this.options.template)) {
+          this.Popup = $($(this.options.template).html());
+        } else {
+          this.Popup = $(this.options.template);
+        }
+        this.Popup.css({
           position: 'absolute',
           display: 'none'
-        }).find('.-arrow').css({
-          opacity: 0
         });
-        $('body').append(this.$popup);
-        if ($.popup === void 0) {
+        $('body').append(this.Popup);
+        this._setOptions(this.options);
+        if ((_ref = $.popup) == null) {
           $.popup = [];
         }
-        if (this.element !== void 0) {
-          $.popup.push(this.element);
+        if (this.el != null) {
+          $.popup.push(this.el);
         }
-        this.timeout = void 0;
-        if (this.options.autoOpen) {
-          this.open();
-        }
-        return this;
-      };
-
-      Popup.prototype.open = function() {
-        var me;
-        me = this;
-        return this.timeout = setTimeout(function() {
-          var before;
-          if (me.options.enabled === true && me.state !== 'opened') {
-            me.state = 'in';
-            if (me.options.beforeOpen !== void 0) {
-              before = me.options.beforeOpen.call(me.$el);
-              return before.done(function() {
-                return me._open();
-              }).fail(function() {
-                me.state = 'closed';
-                me.$el.trigger(me.event('ifOpenedOrNot'));
-                return me.$el.trigger(me.event('ifNotOpened'));
-              });
-            } else {
-              return me._open();
-            }
-          }
-        }, this.options.delay);
-      };
-
-      Popup.prototype._open = function() {
-        var me;
-        me = this;
-        if (this.state === 'in') {
-          if (this.options.onlyOne === true) {
-            $.each(this._getInstances($.popup), function() {
-              var instance;
-              instance = $(this).data('kit-' + me.name);
-              if (instance.getState() === 'opened') {
-                return instance.close();
-              }
-            });
-          }
-          this._setPosition();
-          if (this.options.animation !== void 0) {
-            this._openAnimation();
-          } else {
-            this.$popup.show().find('.-arrow').css({
-              opacity: 1
-            });
-          }
-          this.state = 'opened';
-          this.$el.trigger(this.event('open'));
-        }
-        return this.$el.trigger(this.event('ifOpenedOrNot'));
-      };
-
-      Popup.prototype._openAnimation = function() {
-        var animation, animationIn, animationOut;
-        animation = this.options.animation.split(/[ ,]+/);
-        animationIn = animation[0];
-        animationOut = animation[1];
-        if ($.easing !== void 0 && (animationIn in $.easing || animationOut in $.easing)) {
-          return this.$popup.slideDown({
-            duration: this.options.animationDuration,
-            easing: animationIn,
-            complete: function() {
-              return $(this).find('.-arrow').animate({
-                opacity: 1
-              });
-            }
-          });
-        } else {
-          this.$popup.show().find('.-arrow').css({
-            opacity: 1
-          });
-          if (Modernizr !== void 0 && Modernizr.csstransitions && Modernizr.csstransforms3d && Modernizr.cssanimations) {
-            return this.$popup.addClass('-mx-start');
-          }
-        }
-      };
-
-      Popup.prototype._setPosition = function() {
-        var arrowSize, buttonHeight, buttonPosition, buttonWidth, popupHeight, popupWidth, position, positionSetter, zIndex;
-        buttonWidth = this.$el.outerWidth();
-        buttonHeight = this.$el.outerHeight();
-        buttonPosition = this.$el.offset();
-        popupHeight = this.$popup.outerHeight();
-        popupWidth = this.$popup.outerWidth();
-        arrowSize = 8;
-        zIndex = 1;
-        position = 'absolute';
-        $.each(this.$el.parents, function(index, item) {
-          var $item, itemZIndex;
-          $item = $(item);
-          itemZIndex = $item.css('z-index');
-          if (itemZIndex !== 'auto' && parseInt(itemZIndex) > zIndex) {
-            zIndex = itemZIndex + 1;
-          }
-          if ($item.css('position') === 'fixed') {
-            return position = 'fixed';
-          }
-        });
-        this.$popup.css({
-          zIndex: zIndex
-        });
-        if (position === 'fixed') {
-          buttonPosition.top += $(document).scrollTop();
-        }
-        switch (this.options.placement) {
-          case 'top':
-            positionSetter = {
-              top: buttonPosition.top - popupHeight - arrowSize + this.options.offset[0],
-              left: buttonPosition.left + buttonWidth / 2 - popupWidth / 2 + this.options.offset[1]
-            };
-            break;
-          case 'bottom':
-            positionSetter = {
-              top: buttonPosition.top + buttonHeight + arrowSize + this.options.offset[0],
-              left: buttonPosition.left + buttonWidth / 2 - popupWidth / 2 + this.options.offset[1]
-            };
-            break;
-          case 'left':
-            positionSetter = {
-              top: buttonPosition.top + buttonHeight / 2 - popupHeight / 2 + this.options.offset[0],
-              left: buttonPosition.left - popupWidth - arrowSize + this.options.offset[1]
-            };
-            break;
-          case 'right':
-            positionSetter = {
-              top: buttonPosition.top + buttonHeight / 2 - popupHeight / 2 + this.options.offset[0],
-              left: buttonPosition.left + buttonWidth + arrowSize + this.options.offset[1]
-            };
-        }
-        return this.$popup.css(positionSetter);
-      };
-
-      Popup.prototype.close = function() {
-        var after, me;
-        me = this;
-        clearTimeout(this.timeout);
-        if (this.options.enabled === true && this.state !== 'closed') {
-          this.state = 'out';
-          if (this.options.beforeClose !== void 0) {
-            after = this.options.beforeClose.call(this.$el);
-            return after.done(function() {
-              return me._close();
-            }).fail(function() {
-              me.$el.trigger(me.event('ifNotClosed'));
-              me.$el.trigger(me.event('ifClosedOrNot'));
-              return me.state = 'opened';
-            });
-          } else {
-            return this._close();
-          }
-        }
-      };
-
-      Popup.prototype._close = function() {
-        if (this.state === 'out') {
-          if (this.options.animation === void 0) {
-            this.$popup.hide();
-          } else {
-            this._closeAnimation();
-          }
-          this.state = 'closed';
-          this.$el.trigger(this.event('close'));
-        }
-        return this.$el.trigger(this.event('ifClosedOrNot'));
-      };
-
-      Popup.prototype._closeAnimation = function() {
-        var animation, animationIn, animationOut;
-        animation = this.options.animation.split(/[ ,]+/);
-        animationIn = animation[0];
-        animationOut = animation[1];
-        if ($.easing !== void 0 && (animationIn in $.easing || animationOut in $.easing)) {
-          return this.$popup.slideUp({
-            duration: this.options.animationDuration,
-            easing: animationOut,
-            complete: function() {
-              return $(this).find('.-arrow').animate({
-                opacity: 0
-              });
-            }
-          });
-        } else {
-          if (Modernizr !== void 0 && Modernizr.csstransitions && Modernizr.csstransforms3d && Modernizr.cssanimations) {
-            return this.$popup.removeClass('-mx-start');
-          }
-        }
-      };
+        this.timer = null;
+        this.init();
+      }
 
       return Popup;
 
     })($.kit);
-    return $.fn[_name] = function(options) {
-      return this.each(function() {
-        var instance;
-        instance = $.data(this, 'kit-' + _name);
-        if (!instance) {
-          return $.data(this, 'kit-' + _name, new Popup(this, options));
-        } else {
-          if (typeof options === 'object') {
-            instance._setOptions(options);
-          } else {
-
-          }
-          if (typeof options === 'string' && options.charAt(0) !== '_') {
-            return instance[options];
-          }
-        }
-      });
-    };
   });
 
 }).call(this);

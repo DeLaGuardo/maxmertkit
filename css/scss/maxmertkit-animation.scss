@@ -23,36 +23,38 @@
 	}
 
 	.-mx-scaleIn {
-		@include animation( .2s scaleOutKeyframes );
-		@include transform( scale(0) );
-		@include opacity( 0 );
+		// @include animation( .2s scaleOutKeyframes );
+		// @include transform( scale(0) );
+		// @include opacity( 0 );
+		opacity: 0;
+		@include transition( opacity .1s linear );
 
 		&.-mx-start {
 			@include animation( 1s scaleInKeyframes );
-			@include transform( scale(1) );
-			@include opacity( 1 );
+			opacity: 1;
+			// @include transform( scale(1) );
+			// @include opacity( 1 );
 		}
 	}
 
 	.-mx-growUp {
-		@include animation( 0.2s growDownKeyframes );
-		@include transform( rotateX(-90deg) );
+		opacity: 0;
+		@include transition( opacity .1s linear );
 
 		&.-mx-start {
+			opacity: 1;
 			@include animation( 1.5s growUpKeyframes );
-			@include transform( rotateX(0deg) rotateY(0deg)  );
+			@include transform( rotateX(0deg) rotateY(0deg) rotateZ(0deg)  );
 		}
 	}
 
 	.-mx-rotateIn {
-		@include animation( .3s rotateOutKeyframes );
-		@include transform( rotateY(-540deg)  );
-		@include opacity( 0 );
+		opacity: 0;
+		@include transition( opacity .1s linear );
 
 		&.-mx-start {
 			@include animation( 1.5s rotateInKeyframes );
-			@include transform( rotateY(0deg)  );
-			@include opacity( 1 );
+			opacity: 1;
 		}
 	}
 
@@ -61,20 +63,19 @@
 	}
 
 	.-mx-dropIn {
-		@include transform( scale(2) );
-		@include opacity( 0 );
+		opacity: 0;
+		@include transition( opacity .1s linear );
 
 		&.-mx-start {
 			@include animation( .5s dropInKeyframes );
-			@include transform( scale( 1 ) );
-			@include opacity( 1 );
+			opacity: 1;
 		}
 	}
 
 	.-mx-blurIn {
 		@include transitions( 1s opacity ease, 1s filter ease );
 		@include filter( blur(10px) );
-		@include opacity( 0 );
+		opacity: 0;
 
 		&.-mx-start {
 			@include filter( blur(0px) );

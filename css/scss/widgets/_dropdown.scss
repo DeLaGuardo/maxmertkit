@@ -107,3 +107,10 @@ $__before-object: '';
 $__object: '.#{$object__dropdown}';
 $__after-object: '> .#{$object__dropdown__header}';
 @include set_modificator($mod__status, background-color-darken, color-invert-important, text-shadow);
+
+$__inheritance: object;
+$__before-object: '';
+$__object: '.#{$object__dropdown}.#{$mod__loading}';
+$__after-object: '> .#{$object__dropdown__header}';
+@include set_modificator(exclude-items($mod__status, default, $mod__status__unstyled), loading);
+@include set_modificator(only-items($mod__status, default, $mod__status__unstyled), loading-dark);

@@ -10,9 +10,9 @@
     };
     return $.kit = (function() {
 
-      function kit(element, options) {
-        this.element = element;
-        this.$el = $(this.element);
+      function kit(el, options) {
+        this.el = el;
+        this.$el = $(this.el);
         this.name = _name;
         this.options = $.extend({}, _defaults, options);
         this.init();

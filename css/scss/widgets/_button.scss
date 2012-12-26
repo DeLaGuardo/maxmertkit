@@ -1,3 +1,5 @@
+@include init_modificator-status($object__button);
+
 $__inheritance: object;
 $__before-object: '';
 $__object: this;
@@ -23,31 +25,53 @@ input[type="button"] {
 	@include set_modificator($mod__status, color-invert, border-color, gradient-vertical, text-shadow);
 }
 
+
+$__inheritance: object;
+$__before-object: '';
+$__object: 'button' 'input[type="button"]' '.#{$object__button}';
+$__after-object: '';
+@include set_modificator($mod__status, color-invert, border-color, gradient-vertical, text-shadow);
+
+
+$__inheritance: object;
+$__before-object: '';
+$__object: append-list('button' 'input[type="button"]' '.#{$object__button}', '', ':hover');
+$__after-object: '';
+@include set_modificator($mod__status, gradient-vertical-darken);
+
+
+$__inheritance: object;
+$__before-object: '';
+$__object: append-list('button' 'input[type="button"]' '.#{$object__button}', '', ':active');
+$__after-object: '';
+@include set_modificator($mod__status, gradient-vertical-darkener);
+
+$__inheritance: object;
+$__before-object: '';
+$__object: append-list('button' 'input[type="button"]' '.#{$object__button}', '', '.#{$mod__active}');
+$__after-object: '';
+@include set_modificator($mod__status, gradient-vertical-darkener);
+
+$__inheritance: object;
+$__before-object: '';
+$__object: 'button.#{$mod__loading}' 'input[type="button"].#{$mod__loading}' '.#{$object__button}.#{$mod__loading}';
+$__after-object: '';
+@include set_modificator(exclude-items($mod__status,$mod__status__disabled, default), loading);
+@include set_modificator(only-items($mod__status,$mod__status__disabled, default), loading-dark);
+
+
 button,
 .#{$object__button},
 input[type="button"] {
 	
 
 	&:hover {
-		text-decoration: none;
-
-		$__inheritance: object;
-		$__before-object: '';
-		$__object: this;
-		$__after-object: '';
-		@include set_modificator(exclude-items($mod__status,$mod__status__disabled, default), gradient-vertical-darken);
-		@include set_modificator(only-items($mod__status, default, $mod__status__disabled), background-color-darken);
 		@include box-shadow( $object__button-hover-shadow );
 	}
 
 
 	&:active,
 	&.#{$mod__active} {
-		$__inheritance: object;
-		$__before-object: '';
-		$__object: this;
-		$__after-object: '';
-		@include set_modificator(exclude-items($mod__status,$mod__status__disabled), background-color-darkener);
 		@include box-shadow( $object__button-active-shadow );
 	}
 
@@ -60,15 +84,11 @@ input[type="button"] {
 		cursor: default;
 	}
 
-	&.#{$mod__loading} {
-		@include set_modificator($mod__status, loading-dark);
 
-		$_statuses: append-list(exclude-items($mod__status, disabled, default), '&.-','-', comma);
-		#{$_statuses} {
-			@include set_modificator($mod__status, loading);
-		}
-	}
-
+	$__inheritance: object;
+	$__before-object: '';
+	$__object: this;
+	$__after-object: '';
 	&.-#{$mod__status__unstyled}-,
 	&:hover.-#{$mod__status__unstyled}-,
 	&:active.-#{$mod__status__unstyled}-,
@@ -102,7 +122,8 @@ input[type="button"] {
 	&.#{$mod__unclickable},
 	&.#{$mod__unclickable}:hover,
 	&.#{$mod__unclickable}:active {
-		@include set_modificator($mod__status, color-invert, border-color, gradient-vertical, text-shadow);
+		@include set_modificator(exclude-items($mod__status,$mod__status__disabled), color-invert, border-color, gradient-vertical, text-shadow);
+		@include set_modificator(only-items($mod__status,$mod__status__disabled), color-invert, border-color, background-color, text-shadow);
 		@include box-shadow( $object__button-shadow );
 		cursor: default;
 	}

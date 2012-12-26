@@ -1,342 +1,441 @@
 jQuery ->
-	
+
 	_name = 'popup'
-	_defaults = 
+	_defaults =
 		placement: 'top'
 		offset: [0, 0]
-		autoOpen: false
-		template: '<div class="js-content"></div>'
-		onlyOne: false
+		autoOpen: off
+		onlyOne: off
 		content: null
 		header: null
+		template: '<div class="js-content"></div>'
 		trigger: 'click'
 		delay: 0
 
-		# beforeOpen: $.noop()
-		# open: $.noop()
-		# ifOpenedOrNot: $.noop()
-		# ifNotOpened: $.noop()
-		# beforeClose: $.noop()
-		# close: $.noop()
-		# ifClosedOrNot: $.noop()
-		# ifNotClosed: $.noop()
+		beforeOpen: $.noop()
+		open: $.noop()
+		ifOpenedOrNot: $.noop()
+		ifNotOpened: $.noop()
+		beforeClose: $.noop()
+		close: $.noop()
+		ifClosedOrNot: $.noop()
+		ifNotClosed: $.noop()
+
+	isSelector = ( st ) ->
+		st.charAt(0) is '.' or st.charAt(0) is '#'
+
 
 	class Popup extends $.kit
 
-		_setOption: ( key, value ) ->
-			me = @
-
-			# Do something if changing specific option
-			switch key
-
-				when 'enabled'
-					if value then @$el.removeClass( '-disabled-' ) else @$el.addClass( '-disabled-' )
-
-				when 'content'
-					if value isnt undefined and value isnt null
-						@$popup.find( '.js-content' ).html value
-					else
-						@$popup.find( '.js-content' ).html @$el.data 'content'
-
-				when 'placement'
-					if @options.placement isnt undefined
-						@$popup.removeClass @options.placement
-
-					@$popup.addClass '_' + value + '_'
-
-				when 'animation'
-					if $.easing isnt undefined or not value_ of $.easing
-						switch value
-							when 'scaleIn'
-								@$popup.addClass('-mx-scaleIn')
-
-							when 'growUp'
-								@$popup.addClass('-mx-growUp')
-
-							when 'rotateIn'
-								@$popup.addClass('-mx-rotateIn')
-
-							when 'dropIn'
-								@$popup.addClass('-mx-dropIn')
-
-				when 'theme'
-					if @options.theme isnt undefined
-						@$popup.removeClass '-'+@options.theme+'-'
-
-					@$popup.addClass '-'+value+'-'
-
-
-				when 'trigger'
-					events = value.split /[ ,]+/
-
-					# Off all binds from clicker
-					@$el.off @.event('mouseenter'), @.event('mouseleave'), @.event('click')
-
-					# Set trigger.in and trigger.out
-					@options[ key ] =
-						'in': events[0]
-						'out': if events[1] isnt undefined and events[1] isnt '' then events[1] else events[0]
-
-					# If trigger.in is hover
-					#	then set 'mouseenter' event
-					# 	else set custom event
-					switch @options[ key ].in
-						when 'hover'
-							@$el.on me.event('mouseenter'), ( event ) ->
-								me.open() if me.state is 'closed'
-						else
-							@$el.on me.event( @options[ key ].in ), ( event ) ->
-								me.open() if me.state is 'closed'
-								event.preventDefault()
-
-					# If trigger.out is hover
-					# 	then set 'mouseleave' event
-					# 	else set custom event
-					switch @options[ key ].out
-						when 'hover'
-							@$el.on me.event('mouseleave'), ( event ) ->
-								me.close() if me.state is 'opened'
-						else
-							@$el.on me.event( @options[ key ].out ), ( event ) ->
-								me.close() if me.state is 'opened'
-								event.preventDefault()
-
-			# After all processes save option
-			@options[ key ] = value;
-
-
-		init: ->
-			@state = 'closed'
-
-
-			# Check if template has selector
-			# 	then find it in DOM
-			# 	else create element and add it to DOM
-			if @options.template.charAt( 0 ) isnt '.' and @options.template.charAt( 0 ) isnt '#'
-				@$popup = $( @options.template )
-			else
-				@$popup = $( $(@options.template).html() )
-
-			
-
-			@_setOptions $.extend {}, _defaults, @options
+		constructor: ( @el, options ) ->
+			@$el = $(@el)
 			@name = _name
-			
-			
+			@options = $.extend {}, _defaults, options
 
-			@$popup.css
+			# Set template
+			# get template from DOM, if options.template is a selector
+			if isSelector @options.template
+				@Popup = $( $(@options.template).html() )
+			else
+				@Popup = $(@options.template)
+
+
+			# First config needed default styles
+			@Popup.css
 				position: 'absolute'
 				display: 'none'
-			.find('.-arrow')
-				.css
-					opacity: 0
-
-			$( 'body' ).append @$popup
-
-			# Create instance collector if undefined
-			# And push every instance to collector
-			$.popup = [] if $.popup is undefined	
-			$.popup.push @element if @element != undefined
-
-			# Timer before popup show
-			@timeout = undefined
-
-			@open() if @options.autoOpen
-
-			@
-
-
-		
-		open: ->
-			me = @
 			
-			# Timer before popup show
-			@timeout = setTimeout ->
+			# Add template to the body
+			$('body').append( @Popup )
+
+			# Config options
+			@_setOptions @options
+
+			# Init instanses if undefined
+			$.popup ?= []
+			$.popup.push( @el ) if @el?
+
+			# Init timer before open
+			@timer = null;
+
+			@init()
 				
-				# We can show popup if its not already opened and its enabled
-				if me.options.enabled is on and me.state isnt 'opened'
+
+
+
+
+
+# ;(function ( $, window, document, undefined ) {
+
+# 	var _name = 'popup'
+# 	,	_defaults = {
+# 			placement: 'top'
+# 		,	offset: [0, 0]
+# 		,	autoOpen: false
+# 		,	template: '<div class="js-content"></div>'
+# 		,	onlyOne: false
+# 		,	content: null
+# 		,	header: null
+# 		,	trigger: 'click'
+# 		,	delay: 0
+
+# 		,	beforeOpen: $.noop()
+# 		,	open: $.noop()
+# 		,	ifOpenedOrNot: $.noop()
+# 		,	ifNotOpened: $.noop()
+# 		,	beforeClose: $.noop()
+# 		,	close: $.noop()
+# 		,	ifClosedOrNot: $.noop()
+# 		,	ifNotClosed: $.noop()
+# 		}
+
+# 	Popup = function( element_, options_ ) {
+# 		// Don't need this string, if this constructor will do the same and more, than $.kit constructor.
+# 		// $.kit.apply( this, element_, options_ );
+
+			
+
+# 		
+		
+# 		// For delay before open
+# 		this.timeout = null;
+
+# 		this.init();
+# 	}
+
+# 	Popup.prototype = new $.kit();
+# 	Popup.prototype.constructor = Popup;
+
+# 	Popup.prototype.__setOption = function ( key_, value_ ) {
+# 		var me  = this;
+# 		var $me = $(me.element);
+# 		switch( key_ ) {
+
+# 			case 'trigger':
+# 				var _events = value_.split(/[ ,]+/);
 					
-					# We use state to check popup's condition
-					me.state = 'in'
+				
+# 				// me.options[key_]['in'] – for IE < 8
+# 				if( typeof me.options[key_]['in'] !== undefined )
+# 					$me.off( 'mouseenter.' + me.name, 'click.' + me.name );
 
-					# Do beforeOpen() function if it exists
-					if me.options.beforeOpen isnt undefined
-						before = me.options.beforeOpen.call me.$el
-						before
-							.done ->
-								me._open()
-							.fail ->
-								me.state = 'closed'
-								me.$el.trigger me.event( 'ifOpenedOrNot' )
-								me.$el.trigger me.event( 'ifNotOpened' )
+# 				if( typeof me.options[key_]['out'] !== undefined )
+# 					$me.off( 'mouseleave.' + me.name, 'click.' + me.name );
 
-					# If there is no beforeOpen(), then just show popup
-					else
-						me._open()
-
-			, @options.delay
-
-
-		_open: ->
-			me = @
-
-			if @state is 'in'
-
-				# If we can show only one instance of the popup, then
-				# check all instances status, and
-				# if status is opened, then close instance
-				if @options.onlyOne is on
+# 				me.options[key_] = {
+# 					'in': _events[0] 
+# 				,   'out': (_events[1] == undefined || _events[1] == '') ? _events[0] : _events[1]
+# 				};
+				
+# 				switch( me.options[key_]['in'] ) {
+# 					case 'hover':
+# 						$me.on('mouseenter.' + me.name, function( event ) {
+# 							if( me.state === 'closed' )
+# 								me.open();
+# 						});
+# 					break;
 					
-					$.each @_getInstances($.popup), ->
-						instance = $(@).data 'kit-'+me.name
-						instance.close() if instance.getState() is 'opened'
+# 					default:
+# 						$me.on( me.options[key_]['in'] + '.' + me.name, function() {
+# 							if( me.state === 'closed' )
+# 								me.open();
+# 						});
+# 				}
 
-				# Popup positioning
-				@_setPosition()
+# 				switch( me.options[key_].out ) {
+# 					case 'hover':
+# 						$me.on('mouseleave.' + me.name, function( event ) {
+# 							me.close();
+# 						});
+# 					break;
 
-				# Show animation or just show popup
-				if @options.animation isnt undefined
-					@_openAnimation() 
-				else 
-					@$popup
-						.show()
-						.find('.-arrow')
-						.css(opacity: 1)
+# 					default:
+# 						$me.on( me.options[key_].out + '.' + me.name, function() {
+# 							if( me.state == 'opened' )
+# 								me.close();
+# 						});
+# 				}
+# 			break;
 
-				@state = 'opened'
+# 			case 'content':
+# 				if( value_ !== null )
+# 					me.El.find('.js-content').html(value_);
+# 				else
+# 					me.El.find('.js-content').html( $me.data('content') );
+# 			break;
 
-				@$el.trigger @event 'open'
+# 			case 'header':
+# 				if( value_ !== null )
+# 					me.El.find('.js-header').html(value_);
+# 				else
+# 					me.El.find('.js-header').html( $me.data('header') );
+# 			break;
 
-			@$el.trigger @event 'ifOpenedOrNot'			
+# 			case 'placement':
+# 				me.El.removeClass('_' + me.options.placement + '_')
+# 				me.El.addClass('_' + value_ + '_')
+# 			break;
 
+# 			case 'animation':
+# 				if( $.easing === undefined || !(value_ in $.easing) )
+# 					switch( value_ ) {
+# 						case 'scaleIn':
+# 							me.El.addClass('-mx-scaleIn');
+# 						break;
 
-		_openAnimation: ->
-			animation = @options.animation.split /[ ,]+/
-			animationIn = animation[0]
-			animationOut = animation[1]
+# 						case 'growUp':
+# 							me.El.addClass('-mx-growUp');
+# 						break;
 
-			if $.easing isnt undefined and ( animationIn of $.easing or animationOut of $.easing )
-				@$popup.slideDown
-					duration: @options.animationDuration
-					easing: animationIn
-					complete: ->
-						$(@).find( '.-arrow' ).animate opacity: 1
+# 						case 'rotateIn':
+# 							me.El.addClass('-mx-rotateIn');
+# 						break;
 
-			else
-				@$popup
-					.show()
-					.find( '.-arrow' ).css opacity: 1
-				if Modernizr isnt undefined and Modernizr.csstransitions and Modernizr.csstransforms3d and Modernizr.cssanimations
-					@$popup.addClass '-mx-start'
+# 						case 'dropIn':
+# 							me.El.addClass('-mx-dropIn');
+# 						break;
+# 					}
 
+# 			break;
+				
+# 		}
 
-		_setPosition: ->
-			buttonWidth = @$el.outerWidth()
-			buttonHeight = @$el.outerHeight()
-			buttonPosition = @$el.offset()
-			popupHeight = @$popup.outerHeight()
-			popupWidth = @$popup.outerWidth()
-			arrowSize = 8
+# 		if( key_ !== 'trigger' )
+# 			me.options[ key_ ] = value_;
+# 	}
 
-			# Fix. If buttun and popup are in position:fixed element
-			zIndex = 1
-			position = 'absolute'
+# 	Popup.prototype.init = function() {
+# 		var me  = this;
 
-			$.each @$el.parents, (index, item) ->
-				$item = $(item)
-				itemZIndex = $item.css('z-index')
-				if itemZIndex isnt 'auto' and parseInt( itemZIndex ) > zIndex
-					zIndex = itemZIndex + 1
-				if $item.css( 'position' ) is 'fixed'
-					position = 'fixed'
+# 		if( me.options.autoOpen )
+# 			me.open()
+# 	}
 
-			@$popup.css zIndex: zIndex
-			if position is 'fixed'
-				buttonPosition.top += $(document).scrollTop()
+# 	Popup.prototype.open = function() {
+# 		var me  = this;
+# 		var $me = $(me.element);
+		
+# 		me.timeout = setTimeout(function(){
+# 			if( me.options.enabled === true && me.state !== 'opened' ) {
+				
+# 				me.state = 'in';
 
-			switch @options.placement
-				when 'top'
-					positionSetter =
-						top: buttonPosition.top - popupHeight - arrowSize + @options.offset[0]
-						left: buttonPosition.left + buttonWidth / 2 - popupWidth / 2 + @options.offset[1]
+# 				if( me.options.beforeOpen !== undefined && (typeof me.options.beforeOpen === 'object' || typeof me.options.beforeOpen === 'function' )) {
+					
+# 					try {
+# 						var deferred = me.options.beforeOpen.call( $me );
+# 						deferred
+# 							.done(function(){
+# 								me._open();
+# 							})
+# 							.fail(function(){
+# 								me.state = 'closed';
+# 								$me.trigger('ifNotOpened.' + me.name);
+# 								$me.trigger('ifOpenedOrNot.' + me.name);
+# 							})
+# 					} catch( e ) {
+# 						me._open();
+# 					}
+					
+# 				}
+# 				else {
+# 					me._open();
+# 				}
+# 			}
+# 		}, me.options.delay)
+# 	}
 
-				when 'bottom'
-					positionSetter = 
-						top: buttonPosition.top + buttonHeight + arrowSize + @options.offset[0]
-						left: buttonPosition.left + buttonWidth / 2 - popupWidth / 2 + @options.offset[1]
+# 	Popup.prototype._open = function() {
+# 		var me  = this;
+# 		var $me = $(me.element);
 
-				when 'left'
-					positionSetter = 
-						top: buttonPosition.top + buttonHeight / 2 - popupHeight / 2 + @options.offset[0]
-						left: buttonPosition.left - popupWidth - arrowSize + @options.offset[1]
+# 		if( me.state === 'in' ) {
+			
+# 			if( me.options.onlyOne )
+				
+# 				$.each( me._getOtherInstanses( $.popup ), function() {
+# 					if( $.data( this, 'kit-' + me.name ).getState() === 'opened' )
+# 						$.data( this, 'kit-' + me.name ).close();
+# 				});
 
-				when 'right'
-					positionSetter = 
-						top: buttonPosition.top + buttonHeight / 2 - popupHeight / 2 + @options.offset[0]
-						left: buttonPosition.left + buttonWidth + arrowSize + @options.offset[1]
+# 			me._setPosition();
+			
+# 			if( me.options.animation !== null && me.options.animation !== false )
+# 			{	
+# 				me._openAnimation();
+# 			}
+# 			else
+# 			{
+# 				me.El.find('.-arrow').css({opacity: 1});
+# 				me.El.show();
+# 			}
+			
+# 			me.state = 'opened';
+# 			$me.trigger('open.' + me.name);
+# 		}
 
-			@$popup.css positionSetter
+# 		$me.trigger('ifOpenedOrNot.' + me.name);
+# 	}
 
+# 	Popup.prototype._openAnimation = function() {
+# 		var me  = this;
+# 		var $me = $(me.element);
 
-		close: ->
-			me = @
-			clearTimeout @timeout
+# 		if( $.easing !== undefined && (me.options.animation.split(/[ ,]+/)[1] in $.easing || me.options.animation.split(/[ ,]+/)[0] in $.easing) ) {
+# 			me.El.slideDown({
+# 				duration: me.options.animationDuration,
+# 				easing: me.options.animation.split(/[ ,]+/)[0],
+# 				complete: function(){
+# 					me.El.find('.-arrow').animate({opacity: 1});
+# 				}
+# 			});
+# 		}
+# 		else {
+# 			me.El.show();
+# 			this.El.find('.-arrow').css({opacity: 1});
+# 			if( Modernizr && Modernizr.csstransitions && Modernizr.csstransforms3d && Modernizr.cssanimations )
+# 				me.El.addClass('-mx-start');
+# 		}
+# 	}
 
-			if @options.enabled is on and @state isnt 'closed'
-				@state = 'out'
+# 	Popup.prototype.close = function() {
+# 		var me  = this;
+# 		var $me = $(me.element);
+		
+# 		clearTimeout( me.timeout );
 
-				if @options.beforeClose isnt undefined
-					after = @options.beforeClose.call @$el
-					after
-						.done ->
-							me._close()
-						.fail ->
-							me.$el.trigger me.event 'ifNotClosed'
-							me.$el.trigger me.event 'ifClosedOrNot'
-							me.state = 'opened'
-				else
-					@_close()
+# 		if( me.options.enabled === true && me.state !== 'closed' ) {
 
+# 			me.state = 'out';
 
-		_close: ->
-			if @state is 'out'
-				if @options.animation is undefined
-					@$popup.hide()
-				else
-					@_closeAnimation()
-				@state = 'closed'
-				@$el.trigger @event 'close'
+# 			if( me.options.beforeClose != undefined && (typeof me.options.beforeClose === 'object' || typeof me.options.beforeClose === 'function' ))
+# 			{
+				
+# 				try {
+# 					var deferred = me.options.beforeClose.call( $me );
+# 					deferred
+# 						.done(function(){
+# 							me._close();
+# 						})
+# 						.fail(function(){
+# 							$me.trigger('ifNotClosed.' + me.name);
+# 							$me.trigger('ifClosedOrNot.' + me.name);
+# 							me.state = 'opened';
+# 						})
+# 				} catch( e ) {
+# 					me._close();
+# 				}
+				
+# 			}
+# 			else {
+# 				me._close();
+# 			}
+# 		}
+# 	}
 
-			@$el.trigger @event 'ifClosedOrNot'
+# 	Popup.prototype._close = function() {
+# 		var me  = this;
+# 		var $me = $(me.element);
 
+# 		if( me.state === 'out' ) {
+			
+# 			if( me.options.animation === null )
+# 				me.El.hide();
+# 			else {
+# 				me._closeAnimation();
+# 			}
+# 			me.state = 'closed';
 
-		_closeAnimation: ->
-			animation = @options.animation.split /[ ,]+/
-			animationIn = animation[0]
-			animationOut = animation[1]
+# 			$me.trigger('close');	
+# 		}
+		
+# 		$me.trigger('ifClosedOrNot.' + me.name);
+# 	}
 
-			if $.easing isnt undefined and ( animationIn of $.easing or animationOut of $.easing )
-				@$popup.slideUp
-					duration: @options.animationDuration
-					easing: animationOut
-					complete: ->
-						$(@).find( '.-arrow' ).animate opacity: 0
+# 	Popup.prototype._closeAnimation = function() {
+# 		var me  = this;
+# 		var $me = $(me.element);
 
-			else
-				if Modernizr isnt undefined and Modernizr.csstransitions and Modernizr.csstransforms3d and Modernizr.cssanimations
-					@$popup.removeClass '-mx-start'
+# 		if( $.easing !== undefined && (me.options.animation.split(/[ ,]+/)[1] in $.easing || me.options.animation.split(/[ ,]+/)[0] in $.easing) ) {
+# 			me.El.slideUp({
+# 				duration: me.options.animationDuration,
+# 				easing: me.options.animation.split(/[ ,]+/)[1] !== undefined ? me.options.animation.split(/[ ,]+/)[1] : me.options.animation,
+# 				complete: function(){
+# 					me.El.find('.-arrow').animate({opacity: 0});
+# 				}
+# 			});
+# 		}
+# 		else {
+# 			if( Modernizr && Modernizr.csstransitions && Modernizr.csstransforms3d && Modernizr.cssanimations ) {
+# 				me.El.removeClass('-mx-start');
+# 				setTimeout(function(){
+# 					if ( me.state === 'closed' )
+# 						me.El.hide()
+# 				},1000)
+# 			}
+# 			else
+# 				me.El.hide();
+# 		}
+# 	}
 
+# 	Popup.prototype._setPosition = function() {
+# 		var me  = this;
+# 		var $me = $(me.element);
 
-	$.fn[ _name ] = ( options ) ->
-		@each ->
-			instance = $.data @, 'kit-' + _name
-			if not instance
-				$.data @, 'kit-' + _name, new Popup this, options
-			else
-				if typeof(options) is 'object'
-					instance._setOptions options
-				else
-				if typeof(options) is 'string' and options.charAt(0) isnt '_'
-					instance[options]
-				# else 
-				# 	$.error( 'Error in popup' )
+# 		var actualWidth = $me.outerWidth() ;
+# 		var actualHeight = $me.outerHeight() ;
+# 		var actualPosition = $me.offset();
+# 		var arrowSize = 8;
+# // console.log(actualPosition, $me.height(), actualHeight, parseInt($me.css('paddingTop')), parseInt($me.css('paddingBottom')));
+		
+# 		var _zIndex = 1
+# 		,	_position = 'absolute';
+# 		$.each( $me.parents(), function( index_, item_ ) {
+# 			if( $(item_).css('z-index') !== 'auto' && parseInt( $(item_).css('z-index')) > _zIndex )
+# 				_zIndex = $(item_).css('z-index') + 1;
+# 			if( $(item_).css('position') === 'fixed' )
+# 				_position = 'fixed';
+# 		});
+# 		if( _position === 'fixed' ) {
+# 			actualPosition.top = actualPosition.top - $(document).scrollTop();
+# 		}
+# 		me.El.css({'z-index': _zIndex, 'position': _position});
+
+# 		var pos = {}
+
+# 		switch( me.options.placement ) {
+# 			case 'top':
+# 				pos = { top: actualPosition.top - me.El.outerHeight() - arrowSize + me.options.offset[0], left: actualPosition.left + actualWidth / 2 - me.El.outerWidth() / 2 + me.options.offset[1] }
+# 			break;
+
+# 			case 'bottom':
+# 				pos = { top: actualPosition.top + actualHeight + arrowSize + me.options.offset[0], left: actualPosition.left + actualWidth / 2 - me.El.outerWidth() / 2 + me.options.offset[1] };
+# 			break;
+
+# 			case 'left':
+# 				pos = { top: actualPosition.top + actualHeight / 2 - me.El.outerHeight() / 2, left: actualPosition.left - me.El.outerWidth() - arrowSize + me.options.offset[1] }
+# 			break;
+
+# 			case 'right':
+# 				pos = { top: actualPosition.top + actualHeight / 2 - me.El.outerHeight() / 2, left: actualPosition.left + actualWidth + arrowSize + me.options.offset[1]}
+# 			break;
+# 		}
+
+# 		me.El.css(pos);
+# 	}
+
+# 	$.fn[_name] = function( options_ ) {
+# 		return this.each(function() {
+# 			if( ! $.data( this, 'kit-' + _name ) ) {
+# 				$.data( this, 'kit-' + _name, new Popup( this, options_ ) );
+# 			}
+# 			else {
+# 				typeof options_ === 'object' ? $.data( this, 'kit-' + _name )._setOptions( options_ ) :
+# 					typeof options_ === 'string' && options_.charAt(0) !== '_' ? $.data( this, 'kit-' + _name )[ options_ ] : $.error( 'What do you want to do?' );
+# 			}
+# 		});
+# 	}
+	
+	
+
+# })( jQuery, window, document );
