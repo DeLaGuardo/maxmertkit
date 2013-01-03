@@ -1,4 +1,0 @@
-.#{$object__label} {
-	@extend .#{$object__badge};
-	@include border-radius( $object__label-border-radius );
-}
