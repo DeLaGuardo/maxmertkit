@@ -186,6 +186,8 @@
 			else {
 				target_.show();
 			}
+
+			$me.trigger('open.' + me.name);
 	}
 
 	Tabs.prototype.close = function() {
@@ -198,6 +200,8 @@
 				item_.removeClass('_active_');
 			}
 		});
+
+		$me.trigger('close.' + me.name);
 
 		return true;
 	}

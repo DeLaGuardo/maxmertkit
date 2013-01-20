@@ -1,0 +1,31 @@
+{
+  "name": "maxmertkit",
+  "description": "Css framework based on widget-modifier coding style.",
+  "version": "0.0.2",
+  "homepage": "https://github.com/maxmert/maxmertkit",
+  "author": {
+    "name": "Vetrenko Maxim",
+    "email": "me@maxmert.com"
+  },
+  "keywords":[
+      "maxmertkit css framework"
+  ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@github.com:maxmert/maxmertkit.git"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/maxmert/maxmertkit/issues"
+  },
+  "main": "grunt.js",
+  "engines": {
+    "node": ">=0.4.11"
+  },
+  "dependencies": {
+    "grunt": ">=0.3.7",
+    "grunt-contrib-sass": "0.1.3",
+    "grunt-contrib-coffee": "*"
+  }
+}

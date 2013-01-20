@@ -5,9 +5,6 @@
 		,	onlyOne: true
 		,	shaderClass: '-shader'
 		,	closerClass: '-closer'
-		,	content: null
-		,	header: null
-		// ,	template: '<div class="-modal"><div class="-modal-header"></div><div class="-modal-content"></div></div>'
 
 		,	beforeOpen: $.noop()
 		,	open: $.noop()
@@ -97,8 +94,8 @@
 		,	height = $me.outerHeight();
 
 		$me.css({
-			marginLeft: -width / 2,
-			marginTop: -height / 2
+			marginLeft: Math.round(-width / 2),
+			marginTop: Math.round(-height / 2)
 		});
 	}
 
@@ -227,7 +224,7 @@
 		if( me.state === 'out' ) {
 			
 			if( me.options.animation === null )
-				me.element.hide();
+				$me.hide();
 			else {
 				me._closeAnimation();
 			}

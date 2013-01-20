@@ -3,8 +3,6 @@
 	var _name = 'notify'
 	,	_defaults = {
 			enabled: true
-		,	animation: null
-		,	animationDuration: 0
 		,	theme: 'dark'
 
 		,	template: '<div class="-notify-container js-notify-container"></div>'
@@ -81,6 +79,7 @@
 		notification.$element = $( me.options.templateNotify );
 		notification._id = me._id++;
 		notification.$element.attr('id', 'notification' + notification._id );
+		notification.$element.css('z-index', 10*notification._id );
 
 		options_ && $.each( options_, function( key_, value_ ) {
 			switch( key_ ) {
