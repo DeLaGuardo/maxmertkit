@@ -23,8 +23,6 @@
 		}
 
 	Popup = function( element_, options_ ) {
-		// Don't need this string, if this constructor will do the same and more, than $.kit constructor.
-		// $.kit.apply( this, element_, options_ );
 
 		this.element = element_;
 		this.name = _name;

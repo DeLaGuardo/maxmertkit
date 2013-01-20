@@ -187,8 +187,6 @@
 				{
 					typeof options_ === 'string' && options_.charAt(0) !== '_' ? $.data( this, 'kit-' + _name )[ options_ ] : $.error( 'What do you want to do?' );
 				}
-				// typeof options_ === 'object' ? $.data( this, 'kit-' + _name )._setOptions( options_ ) :
-					// typeof options_ === 'string' && options_.charAt(0) !== '_' ? $.data( this, 'kit-' + _name )[ options_ ] : $.error( 'What do you want to do?' );
 			}
 		});
 	}
