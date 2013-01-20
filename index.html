@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>MOSKVA.FM</title>
+		<title>Maxmertkit</title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/maxmertkit.css">
 		<link rel="stylesheet" type="text/css" href="css/maxmertkit-components.css">
@@ -93,7 +93,11 @@
 
 					$('.js-modal').modal({
 						animation: 'dropIn',
-						theme: 'error'
+						theme: 'error',
+						beforeClose: function() {
+							if( $('.js-dropdown4').data('kit-popup').state === 'opened' )
+								$('.js-dropdown4').click();
+						}
 					});
 
 					$('.js-modal-show').on('click', function() {
@@ -104,15 +108,9 @@
 
 					$('.js-scrollspy').scrollspy();
 
-					$('#js-carousel').carousel({
-						// navigation: '#js-carousel-nav',
-						// navigationPlacement: 'top',
-						// theme: 'info',
-						// imageFill: false
-						// imageShowAnimation: 'scrollDown'
-					});
+					$('#js-carousel').carousel({theme: 'info'});
 
-					$('#js-carousel').data('kit-carousel').disable();
+					
 
 					$('[data-radio="radio1"]').button({
 						
@@ -230,8 +228,9 @@
 			</div>
 		</script>
 	</head>
-	<body>
+	<body class="_responsive_">
 		<div class="-container">
+
 			<br><br>
 			For all examples and documentation go to <a href="http://maxmert.com">maxmert.com</a>
 			<br><br><br><br>
@@ -630,6 +629,7 @@
 									<option>USA</option>
 									<option>Germany</option>
 								</select>
+								<i class="-caret"></i>
 							</span>
 						</div>
 
@@ -1353,68 +1353,69 @@
 			<h4 id="carousel">Carousel</h4>
 			<article class="-row">
 				<div class="-col12">
-					
-					<div class="-carousel" id="js-carousel">
-						<div class="js-carousel-item -carousel-item">
-							<img src="img/carousel/1.jpg">
-							<div class="-carousel-caption">
-								<div class="-carousel-caption-title"><h3>Geisha</h3></div>
-								<div class="-carousel-caption-text">Japan, Kioto. <a href="http://www.flickr.com/photos/michaelchandler/">Momoyama's photo</a> &copy;</div>
+					<section>
+						<div class="-carousel" id="js-carousel">
+							<div class="js-carousel-item -carousel-item">
+								<img src="img/carousel/1.jpg">
+								<div class="-carousel-caption">
+									<div class="-carousel-caption-title"><h3>Geisha</h3></div>
+									<div class="-carousel-caption-text">Japan, Kioto. <a href="http://www.flickr.com/photos/michaelchandler/">Momoyama's photo</a> &copy;</div>
+								</div>
+							</div><div class="js-carousel-item -carousel-item">
+								<img src="img/carousel/2.jpg">
+								<div class="-carousel-caption">
+									<div class="-carousel-caption-title"><h3>Geisha</h3></div>
+									<div class="-carousel-caption-text">Japan, Kioto. <a href="http://www.flickr.com/photos/michaelchandler/">Momoyama's photo</a> &copy;</div>
+								</div>
+							</div><div class="js-carousel-item -carousel-item">
+								<img src="img/carousel/3.jpg">
+								<div class="-carousel-caption">
+									<div class="-carousel-caption-title"><h3>Geisha</h3></div>
+									<div class="-carousel-caption-text">Japan, Kioto. <a href="http://www.flickr.com/photos/michaelchandler/">Momoyama's photo</a> &copy;</div>
+								</div>
+							</div><div class="js-carousel-item -carousel-item">
+								<img src="img/carousel/4.jpg">
+								<div class="-carousel-caption">
+									<div class="-carousel-caption-title"><h3>Geisha</h3></div>
+									<div class="-carousel-caption-text">Japan, Kioto. <a href="http://www.flickr.com/photos/michaelchandler/">Momoyama's photo</a> &copy;</div>
+								</div>
+							</div><div class="js-carousel-item -carousel-item">
+								<img src="img/carousel/5.jpg">
+								<div class="-carousel-caption">
+									<div class="-carousel-caption-title"><h3>Geisha</h3></div>
+									<div class="-carousel-caption-text">Japan, Kioto. <a href="http://www.flickr.com/photos/michaelchandler/">Momoyama's photo</a> &copy;</div>
+								</div>
+							</div><div class="js-carousel-item -carousel-item">
+								<img src="img/carousel/6.jpg">
+								<div class="-carousel-caption">
+									<div class="-carousel-caption-title"><h3>Geisha</h3></div>
+									<div class="-carousel-caption-text">Japan, Kioto. <a href="http://www.flickr.com/photos/michaelchandler/">Momoyama's photo</a> &copy;</div>
+								</div>
+							</div><div class="js-carousel-item -carousel-item">
+								<img src="img/carousel/7.jpg">
+								<div class="-carousel-caption">
+									<div class="-carousel-caption-title"><h3>Geisha</h3></div>
+									<div class="-carousel-caption-text">Japan, Kioto. <a href="http://www.flickr.com/photos/michaelchandler/">Momoyama's photo</a> &copy;</div>
+								</div>
+							</div><div class="js-carousel-item -carousel-item">
+								<img src="img/carousel/8.jpg">
+								<div class="-carousel-caption">
+									<div class="-carousel-caption-title"><h3>Geisha</h3></div>
+									<div class="-carousel-caption-text">Japan, Kioto. <a href="http://www.flickr.com/photos/michaelchandler/">Momoyama's photo</a> &copy;</div>
+								</div>
 							</div>
-						</div><div class="js-carousel-item -carousel-item">
-							<img src="img/carousel/2.jpg">
-							<div class="-carousel-caption">
-								<div class="-carousel-caption-title"><h3>Geisha</h3></div>
-								<div class="-carousel-caption-text">Japan, Kioto. <a href="http://www.flickr.com/photos/michaelchandler/">Momoyama's photo</a> &copy;</div>
-							</div>
-						</div><div class="js-carousel-item -carousel-item">
-							<img src="img/carousel/3.jpg">
-							<div class="-carousel-caption">
-								<div class="-carousel-caption-title"><h3>Geisha</h3></div>
-								<div class="-carousel-caption-text">Japan, Kioto. <a href="http://www.flickr.com/photos/michaelchandler/">Momoyama's photo</a> &copy;</div>
-							</div>
-						</div><div class="js-carousel-item -carousel-item">
-							<img src="img/carousel/4.jpg">
-							<div class="-carousel-caption">
-								<div class="-carousel-caption-title"><h3>Geisha</h3></div>
-								<div class="-carousel-caption-text">Japan, Kioto. <a href="http://www.flickr.com/photos/michaelchandler/">Momoyama's photo</a> &copy;</div>
-							</div>
-						</div><div class="js-carousel-item -carousel-item">
-							<img src="img/carousel/5.jpg">
-							<div class="-carousel-caption">
-								<div class="-carousel-caption-title"><h3>Geisha</h3></div>
-								<div class="-carousel-caption-text">Japan, Kioto. <a href="http://www.flickr.com/photos/michaelchandler/">Momoyama's photo</a> &copy;</div>
-							</div>
-						</div><div class="js-carousel-item -carousel-item">
-							<img src="img/carousel/6.jpg">
-							<div class="-carousel-caption">
-								<div class="-carousel-caption-title"><h3>Geisha</h3></div>
-								<div class="-carousel-caption-text">Japan, Kioto. <a href="http://www.flickr.com/photos/michaelchandler/">Momoyama's photo</a> &copy;</div>
-							</div>
-						</div><div class="js-carousel-item -carousel-item">
-							<img src="img/carousel/7.jpg">
-							<div class="-carousel-caption">
-								<div class="-carousel-caption-title"><h3>Geisha</h3></div>
-								<div class="-carousel-caption-text">Japan, Kioto. <a href="http://www.flickr.com/photos/michaelchandler/">Momoyama's photo</a> &copy;</div>
-							</div>
-						</div><div class="js-carousel-item -carousel-item">
-							<img src="img/carousel/8.jpg">
-							<div class="-carousel-caption">
-								<div class="-carousel-caption-title"><h3>Geisha</h3></div>
-								<div class="-carousel-caption-text">Japan, Kioto. <a href="http://www.flickr.com/photos/michaelchandler/">Momoyama's photo</a> &copy;</div>
-							</div>
-						</div>
 
-						<a class="js-carousel-control -carousel-arrow-left" href="#js-carousel" data-slide="prev"><i class="-icon-chevron-left -icon-light-"></i></a>
-						<a class="js-carousel-control -carousel-arrow-right" href="#js-carousel" data-slide="next"><i class="-icon-chevron-right -icon-light-"></i></a>
-					</div>
-					<div class="-carousel-nav" id="js-carousel-nav"></div>
+							<a class="js-carousel-control -carousel-arrow-left" href="#js-carousel" data-slide="prev"><i class="-icon-chevron-left -icon-light-"></i></a>
+							<a class="js-carousel-control -carousel-arrow-right" href="#js-carousel" data-slide="next"><i class="-icon-chevron-right -icon-light-"></i></a>
+						</div>
+						<div class="-carousel-nav" id="js-carousel-nav"></div>
+					</section>
 
 				</div>
 			</article>
 		</div>
 
-		<ul class="-menu -primary- _vertical_ js-affix js-scrollspy -mx-affix-scrollspy _right_" style="right: 0; width: 200px">
+		<!--ul class="-menu -primary- _vertical_ js-affix js-scrollspy _right_" style="right: 0; width: 200px">
 			<li data-target="#text"><a href="#text">Text</a></li>
 			<li data-target="#lists"><a href="#lists">Lists</a></li>
 			<li data-target="#tables"><a href="#tables">Tables</a></li>
@@ -1429,11 +1430,11 @@
 			<li data-target="#progressbar"><a href="#progressbar">Progressbars</a></li>
 			<li data-target="#javascript"><a href="#javascript">Javascript</a></li>
 			<li data-target="#carousel"><a href="#carousel">Carousel</a></li>
-		</ul>
+		</ul-->
 
 		<div class="-modal js-modal">
 			<div class="-modal-header">Header <i class="-closer">&times;</i></div>
-			<div class="-modal-content"><span class="js-dropdown js-dropdown1 -btn" data-content="Dropdown1" data-header="Header">Show dropdown</span></div>
+			<div class="-modal-content"><span class="js-dropdown js-dropdown4 -btn" data-content="Dropdown4" data-header="Header">Show dropdown</span></div>
 		</div>
 	</body>
 </html>

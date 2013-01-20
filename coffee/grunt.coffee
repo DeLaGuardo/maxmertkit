@@ -1,5 +1,8 @@
 module.exports = (grunt) ->
 
+	grunt.loadNpmTasks 'grunt-contrib-sass'
+	grunt.loadNpmTasks 'grunt-contrib-coffee'
+
 	grunt.initConfig
 
 		pkg: grunt.file.readJSON 'package.json'
@@ -19,9 +22,52 @@ module.exports = (grunt) ->
 				src: '<%= concat.prod.dest %>'
 				dest: '<%= concat.prod.dest %>'
 
+		sass:
+			prodkit:
+				options:
+					style: 'compressed'
+				files:
+					'css/maxmertkit.css':'css/sass/maxmertkit.scss'
+					'css/maxmertkit-components.css':'css/sass/maxmertkit-components.scss'
+					'css/maxmertkit-animation.css':'css/sass/maxmertkit-animation.scss'
+
+			prodkitmain:
+				options:
+					style: 'compressed'
+				files:
+					'css/maxmertkit.css':'css/sass/maxmertkit.scss'
+			prodkitwidgets:
+				options:
+					style: 'compressed'
+				files:
+					'css/maxmertkit-components.css':'css/sass/maxmertkit-components.scss'
+			prodkitanimation:
+				options:
+					style: 'compressed'
+				files:
+					'css/maxmertkit-animation.css':'css/sass/maxmertkit-animation.scss'
+
+
+		# coffee:
+		# 	dist:
+		# 		files:
+		# 			'*.js':['coffee/**/*.coffee']
+
 
 		watch:
 			prod:
-				files: '<%= concat.prod.src %>'
+				files: ['<%= concat.prod.src %>']
 				tasks: 'concat:prod min:prod'
+
+			# prodcoffee:
+			# 	files: ['coffee/**/*.coffee']
+			# 	tasks: 'coffee'
+
+			prodkit:
+				files: ['css/sass/_font.scss', 'css/sass/_mixin.scss', 'css/sass/themes/*.scss', 'css/sass/modificators/*.scss', 'css/sass/classes/*.scss']
+				tasks: 'sass:prodkit'
+
+			prodkitmain:
+				files: ['css/sass/_init.scss', 'css/sass/maxmertkit.scss']
+				tasks: 'sass:prodkitmain'
 
