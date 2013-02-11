@@ -4,3 +4,93 @@ body,html {
     height      : 100%;
     line-height : 19px;
 }
+
+@mixin heading {
+    background-color: #565656;
+    color: transparent;
+    text-shadow: 0px 2px 3px rgba(255,255,255,0.7);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+}
+
+@mixin nav_inner {
+    ul {
+        background-color: #303236;
+    }
+    ul li a {
+        color: #fff;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .logo {
+        display: inline-block;
+        width: 39px;
+        height: 26px;
+        margin-top: 5px;
+        background-image: url("/images/logo.png");
+        float: left;
+        &:hover { background-position: -39px 0; }
+    }
+}
+
+.navigator {
+    width: 100%;
+    z-index: 9999;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+    -ms-box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+    -o-box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+    background-color: #303236;
+
+    @include nav_inner;
+}
+
+.main {
+    position: relative;
+    padding: 50px;
+    height: 100%;
+
+    h1 {
+        @include heading;
+    }
+
+    label {
+        font-size: 35px;
+        font-weight: bold;
+        padding-top: 7px;
+        padding-bottom: 15px;
+        @include heading;
+    }
+
+    .social {
+        width: 60px;
+        text-align: center;
+        margin-right: 12px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main-menu-major {
+        display: none;
+    }
+
+    .main-menu-minor {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .main-menu-major {
+        display: block;
+    }
+
+    .main-menu-minor {
+        display: none;
+    }
+}
+
